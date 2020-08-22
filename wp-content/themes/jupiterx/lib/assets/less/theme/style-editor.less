@@ -1,0 +1,61 @@
+#editor .wp-block {
+    line-height: inherit;
+}
+
+.wp-block {
+
+    // General.
+    .jupiterx-typography('body');
+    line-height: inherit; // Override the line height.
+
+    a {
+        color: @link-color;
+        text-decoration: @link-decoration;
+
+        &:hover {
+            color: @link-hover-color;
+            text-decoration: @link-hover-decoration;
+        };
+    }
+
+    h1, .h1 { .jupiterx-typography('h1'); }
+    h2, .h2 { .jupiterx-typography('h2'); }
+    h3, .h3 { .jupiterx-typography('h3'); }
+    h4, .h4 { .jupiterx-typography('h4'); }
+    h5, .h5 { .jupiterx-typography('h5'); }
+    h6, .h6 { .jupiterx-typography('h6'); }
+
+    .btn-link {
+        color: @link-color;
+        background-color: transparent;
+
+        &:hover {
+            color: @link-hover-color;
+            text-decoration: @link-hover-decoration;
+            background-color: transparent;
+            border-color: transparent;
+        };
+
+        &:focus,
+        &.focus {
+            text-decoration: @link-hover-decoration;
+            border-color: transparent;
+            box-shadow: none;
+        }
+
+        &:disabled,
+        &.disabled {
+            color: @btn-link-disabled-color;
+            pointer-events: none;
+        }
+    }
+
+    table th,
+    table td {
+        padding: .75rem;
+        vertical-align: top;
+        border: none;
+        border-top: 1px solid #dee2e6;
+    }
+
+}

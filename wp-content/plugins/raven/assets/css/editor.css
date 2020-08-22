@@ -1,0 +1,351 @@
+.raven-spinner {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  -webkit-animation: raven-spin 1s infinite linear;
+  animation: raven-spin 1s infinite linear;
+}
+
+.raven-spinner:before, .raven-spinner:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border: .125em solid transparent;
+  border-radius: 50%;
+  content: '';
+}
+
+.raven-spinner:before {
+  border-color: initial;
+  opacity: .2;
+}
+
+.raven-spinner:after {
+  border-top-color: initial;
+}
+
+.elementor-element .icon {
+  position: relative;
+}
+
+.elementor-element .raven-element-icon:before {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 23px;
+  height: 16px;
+  padding: 5px;
+  border-radius: 2px;
+  background-color: #0077ff;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  line-height: 8px;
+  text-align: center;
+  content: "JX";
+}
+
+.raven-fix-responsive-label .elementor-control-title {
+  width: auto !important;
+}
+
+.elementor-template-library-template-remote {
+  position: relative;
+}
+
+.raven-template-library-badge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 3px 5px;
+  border-radius: 3px;
+  background-color: #0077ff;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1;
+  z-index: 100;
+}
+
+.raven-template-library-badge svg {
+  display: block;
+  width: 9px;
+  height: 9px;
+  margin-left: 3px;
+}
+
+.raven-template-library-badge.raven-template-pro {
+  background-color: #f23c97;
+}
+
+.raven-template-library-filter {
+  margin-left: 20px;
+  padding-left: 19px;
+  border-left: 1px solid #d5dadf;
+}
+
+.raven-template-library-filter label {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.raven-template-library-filter label:hover, .raven-template-library-filter label.raven-template-library-filter-active {
+  color: #D30C5C;
+}
+
+#elementor-template-library-header-preview-insert-wrapper .raven-go-pro-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #f23c97;
+  color: #fff;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+#elementor-template-library-header-preview-insert-wrapper .raven-go-pro-button:hover {
+  background-color: #f44ea1;
+  color: #fff;
+}
+
+#elementor-template-library-header-preview-insert-wrapper .raven-go-pro-button .jupiterx-icon-rocket-solid {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.elementor-template-library-template-footer .raven-go-pro-button {
+  height: 11px;
+  color: #f23c97;
+}
+
+.elementor-control-section_raven_custom_scripts .elementor-section-title:after {
+  display: inline;
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+  padding: 3px 17px 3px 5px;
+  border-radius: 3px;
+  background: #0077ff url(../img/x-badge.svg) no-repeat;
+  background-position: right 5px center;
+  background-size: 9px 9px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 1;
+  white-space: nowrap;
+  content: 'Jupiter';
+  vertical-align: middle;
+}
+
+.elementor-control-type-raven_media .elementor-control-input-wrapper {
+  position: relative;
+}
+
+.elementor-control-type-raven_media .elementor-control-input-wrapper input {
+  padding-right: 46px;
+}
+
+.elementor-control-type-raven_media .raven-control-media-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 40px;
+  height: 26px;
+  border-left: 1px solid #a4afb7;
+  border-radius: 0 3px 3px 0;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.elementor-control-type-raven_media .elementor-control-input-wrapper input:not(:focus),
+.elementor-control-type-raven_media .elementor-control-input-wrapper input:not(:focus) + .raven-control-media-upload {
+  border-color: #d5dadf;
+}
+
+.raven-control-title {
+  margin-right: 5px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.elementor-control-type-raven_checkbox .raven-control-checkbox-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.elementor-control-type-raven_checkbox .raven-control-checkbox-wrapper > span {
+  min-width: 50%;
+  padding: 5px 0;
+}
+
+.raven-control-file-uploader .elementor-button-wrapper {
+  position: relative;
+}
+
+.raven-control-file-uploader .elementor-button-wrapper input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.01;
+  z-index: 10;
+}
+
+.raven-control-file-uploader-warning {
+  display: none;
+  margin-top: 15px;
+}
+
+.raven-control-file-uploader-progress {
+  display: none;
+}
+
+.raven-control-file-uploader-progress span {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.raven-control-file-uploader-value {
+  display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.raven-control-file-uploader-value .fa {
+  margin-left: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.raven-control-file-uploader-button {
+  width: 100%;
+}
+
+.raven-control-presets .raven-element-presets-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.raven-control-presets .raven-element-presets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.raven-control-presets .raven-element-presets-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -ms-flex-preferred-size: 49%;
+  flex-basis: 49%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  padding: 10px 5px;
+  border: 1px solid #ebebeb;
+  text-align: center;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.raven-control-presets .raven-element-presets-item img {
+  max-width: 100%;
+}
+
+.raven-control-presets .raven-element-presets-item i {
+  display: none;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #71d7f7;
+  color: white;
+  font-size: 10px;
+  line-height: 16px;
+}
+
+.raven-control-presets .raven-element-presets-item.active, .raven-control-presets .raven-element-presets-item:hover {
+  border: 2px solid #71d7f7;
+}
+
+.raven-control-presets .raven-element-presets-item.active i {
+  display: block;
+}
+
+.raven-control-presets .raven-element-presets-item.active .raven-control-presets .raven-element-presets-item-title,
+.raven-control-presets .raven-element-presets-item:hover .raven-control-presets .raven-element-presets-item-title {
+  color: #71d7f7;
+}
+
+.raven-control-presets .raven-element-presets-loading {
+  display: none;
+}
+
+.raven-control-presets .raven-element-presets.loading .raven-element-presets-loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.raven-control-presets .raven-element-presets.loading .raven-element-presets-loading span {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.raven-control-presets .raven-element-presets.loading .raven-element-presets-404 {
+  display: none;
+}

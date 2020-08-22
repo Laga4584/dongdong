@@ -1,0 +1,3110 @@
+# Copyright (C) 2020 Jupiter X Core
+# This file is distributed under the same license as the Jupiter X Core package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupiter X Core\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Artbees <info@artbees.net>\n"
+"Last-Translator: Artbees Team <info@artbees.net>\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: jupiterx-core.php:259, jupiterx-core.php:259, jupiterx-core.php:295, includes/dashboard/widgets/class-overview.php:128
+msgid "Control Panel"
+msgstr ""
+
+#: jupiterx-core.php:263, jupiterx-core.php:263, includes/dashboard/widgets/class-overview.php:127, includes/customizer/api/includes/control/class-child-popup.php:107
+msgid "Customize"
+msgstr ""
+
+#: jupiterx-core.php:267, jupiterx-core.php:267, includes/dashboard/widgets/class-overview.php:248
+msgid "Help"
+msgstr ""
+
+#: jupiterx-core.php:272, jupiterx-core.php:272, includes/dashboard/widgets/class-overview.php:256
+msgid "Upgrade"
+msgstr ""
+
+#: jupiterx-core.php:520
+msgid "Activate Product"
+msgstr ""
+
+#: includes/compiler/class-compiler.php:993
+msgid "Not cool, Jupiter cannot work its magic :("
+msgstr ""
+
+#: includes/compiler/class-compiler.php:998
+msgid "Your current install or file permission prevents Jupiter from working its magic. Please get in touch with Jupiter support. We will gladly get you started within 24 - 48 hours (working days)."
+msgstr ""
+
+#: includes/compiler/class-compiler.php:1003
+msgid "Contact Jupiter Support"
+msgstr ""
+
+#: includes/compiler/class-compiler.php:1008
+msgid "Send us an automatic report"
+msgstr ""
+
+#: includes/compiler/class-compiler.php:1009
+msgid "We respect your time and understand you might not be able to contact us."
+msgstr ""
+
+#: includes/compiler/class-compiler.php:1045
+msgid "Thanks for your contribution by reporting this issue. We hope to hear from you again."
+msgstr ""
+
+#: includes/control-panel/functions.php:38
+msgid "Get started:"
+msgstr ""
+
+#: includes/control-panel/functions.php:52, includes/control-panel/views/image-sizes.php:16
+msgid "Image Sizes"
+msgstr ""
+
+#: includes/control-panel/functions.php:59, includes/control-panel/views/system-status.php:11
+msgid "System Status"
+msgstr ""
+
+#: includes/control-panel/functions.php:66, includes/control-panel/views/export-import-content.php:34, includes/control-panel/views/settings.php:15, includes/customizer/settings/404/popup.php:16, includes/customizer/settings/blog-archive/popup.php:16, includes/customizer/settings/blog-single/popup.php:34, includes/customizer/settings/cart-quick-view/popup.php:16, includes/customizer/settings/checkout-cart/popup.php:16, includes/customizer/settings/comment/popup.php:27, includes/customizer/settings/footer/popup.php:29, includes/customizer/settings/header/popup.php:26, includes/customizer/settings/logo/popup.php:26, includes/customizer/settings/maintenance/popup.php:16, includes/customizer/settings/page-single/popup.php:22, includes/customizer/settings/portfolio-archive/popup.php:16, includes/customizer/settings/portfolio-single/popup.php:26, includes/customizer/settings/post-types/popup.php:41, includes/customizer/settings/post-types/popup.php:183, includes/customizer/settings/product-archive/popup.php:16, includes/customizer/settings/product-list/popup.php:16, includes/customizer/settings/product-page/popup.php:16, includes/customizer/settings/search/popup.php:16, includes/customizer/settings/sidebar/popup.php:25, includes/customizer/settings/site-settings/popup.php:23, includes/customizer/settings/title-bar/popup.php:23
+msgid "Settings"
+msgstr ""
+
+#: includes/control-panel/functions.php:73
+msgid "Export/Import"
+msgstr ""
+
+#: includes/control-panel/functions.php:91
+msgid "SVG Support"
+msgstr ""
+
+#: includes/control-panel/functions.php:99
+msgid "Enable this option to upload SVG to WordPress Media Library."
+msgstr ""
+
+#: includes/control-panel/functions.php:106
+msgid "Google Analytics ID"
+msgstr ""
+
+#: includes/control-panel/functions.php:107
+msgid "Adding Google Analytics code into Jupiter X"
+msgstr ""
+
+#: includes/control-panel/functions.php:111
+msgid "IP Anonymization"
+msgstr ""
+
+#: includes/control-panel/functions.php:117
+msgid "Enable IP Anonymization for Google Analytics."
+msgstr ""
+
+#: includes/control-panel/functions.php:120
+msgid "Adobe Fonts Project ID"
+msgstr ""
+
+#: includes/control-panel/functions.php:121
+msgid "Using Adobe fonts (formerly Typekit) in Jupiter X"
+msgstr ""
+
+#. translators: %s: html
+#. translators: %s: html
+#: includes/control-panel/functions.php:129, includes/control-panel/functions.php:145
+msgid "Tracking Codes After %s Tag"
+msgstr ""
+
+#. translators: %s: html
+#. translators: %s: html
+#: includes/control-panel/functions.php:137, includes/control-panel/functions.php:153
+msgid "Tracking Codes Before %s Tag"
+msgstr ""
+
+#: includes/custom-fields/title-bar.php:28, includes/customizer/settings/title-bar/popup.php:12, includes/customizer/settings/title-bar/settings.php:87, includes/customizer/settings/title-bar/settings.php:198
+msgid "Subtitle"
+msgstr ""
+
+#: includes/customizer/functions.php:711
+msgid "Search param is empty."
+msgstr ""
+
+#: includes/customizer/functions.php:748
+msgid "ID param is empty."
+msgstr ""
+
+#: includes/customizer/functions.php:754
+msgid "No valid post is found."
+msgstr ""
+
+#: includes/dashboard/class.php:45, includes/control-panel/includes/class-export-import-content.php:123, includes/control-panel/includes/class-settings.php:51, includes/control-panel/includes/class-system-status.php:128
+msgid "Type param is missing."
+msgstr ""
+
+#. translators: action type
+#. translators: Function request type to initialize.
+#: includes/dashboard/class.php:54, includes/control-panel/includes/class-export-import-content.php:159, includes/control-panel/includes/class-settings.php:65, includes/control-panel/includes/class-system-status.php:134
+msgid "Type param (%s) is not valid."
+msgstr ""
+
+#: includes/dashboard/class.php:68
+msgid "The get_sites function is not defined."
+msgstr ""
+
+#: includes/dashboard/class.php:95
+msgid "Site param is missing."
+msgstr ""
+
+#: includes/post-type/class.php:36
+msgctxt "Portfolio General Name"
+msgid "Portfolios"
+msgstr ""
+
+#: includes/post-type/class.php:37
+msgctxt "Portfolio Singular Name"
+msgid "Portfolio"
+msgstr ""
+
+#: includes/post-type/class.php:38
+msgid "Portfolios"
+msgstr ""
+
+#: includes/post-type/class.php:39, includes/post-type/class.php:51, includes/widgets/widget-posts.php:41, includes/customizer/settings/settings.php:19, includes/customizer/settings/search/settings.php:22, includes/customizer/settings/sidebar/settings.php:61, includes/customizer/settings/title-bar/settings.php:127
+msgid "Portfolio"
+msgstr ""
+
+#: includes/post-type/class.php:40
+msgid "All Portfolios"
+msgstr ""
+
+#: includes/post-type/class.php:52
+msgid "Portfolio Description"
+msgstr ""
+
+#: includes/post-type/class.php:86
+msgctxt "Category General Name"
+msgid "Portfolio Categories"
+msgstr ""
+
+#: includes/post-type/class.php:87
+msgctxt "Category Singular Name"
+msgid "Category"
+msgstr ""
+
+#: includes/post-type/class.php:88, includes/customizer/settings/blog-single/settings.php:129, includes/customizer/settings/portfolio-single/settings.php:78, includes/customizer/settings/product-page/settings.php:97
+msgid "Categories"
+msgstr ""
+
+#: includes/post-type/class.php:89
+msgid "All Categories"
+msgstr ""
+
+#: includes/post-type/class.php:90
+msgid "Parent Category"
+msgstr ""
+
+#: includes/post-type/class.php:91
+msgid "Parent Category:"
+msgstr ""
+
+#: includes/post-type/class.php:92
+msgid "New Category Name"
+msgstr ""
+
+#: includes/post-type/class.php:93
+msgid "Add New Category"
+msgstr ""
+
+#: includes/post-type/class.php:94
+msgid "Edit Category"
+msgstr ""
+
+#: includes/post-type/class.php:95
+msgid "Update Category"
+msgstr ""
+
+#: includes/post-type/class.php:96
+msgid "View Category"
+msgstr ""
+
+#: includes/post-type/class.php:97
+msgid "Separate categories  with commas"
+msgstr ""
+
+#: includes/post-type/class.php:98
+msgid "Add or remove categories "
+msgstr ""
+
+#: includes/post-type/class.php:99, includes/post-type/class.php:147
+msgid "Choose from the most used"
+msgstr ""
+
+#: includes/post-type/class.php:100
+msgid "Popular Categories"
+msgstr ""
+
+#: includes/post-type/class.php:101
+msgid "Search Categories"
+msgstr ""
+
+#: includes/post-type/class.php:102, includes/post-type/class.php:150
+msgid "Not Found"
+msgstr ""
+
+#: includes/post-type/class.php:103
+msgid "No categories "
+msgstr ""
+
+#: includes/post-type/class.php:104
+msgid "Categories list"
+msgstr ""
+
+#: includes/post-type/class.php:105
+msgid "Categories list navigation"
+msgstr ""
+
+#: includes/post-type/class.php:134
+msgctxt "Tag General Name"
+msgid "Portfolio Tags"
+msgstr ""
+
+#: includes/post-type/class.php:135
+msgctxt "Tag Singular Name"
+msgid "Tag"
+msgstr ""
+
+#: includes/post-type/class.php:136, includes/customizer/settings/blog-single/popup.php:15, includes/customizer/settings/blog-single/popup.php:92, includes/customizer/settings/blog-single/settings.php:130, includes/customizer/settings/product-page/settings.php:98
+msgid "Tags"
+msgstr ""
+
+#: includes/post-type/class.php:137
+msgid "All Tags"
+msgstr ""
+
+#: includes/post-type/class.php:138
+msgid "Parent Tag"
+msgstr ""
+
+#: includes/post-type/class.php:139
+msgid "Parent Tag:"
+msgstr ""
+
+#: includes/post-type/class.php:140
+msgid "New Tag Name"
+msgstr ""
+
+#: includes/post-type/class.php:141
+msgid "Add New Tag"
+msgstr ""
+
+#: includes/post-type/class.php:142
+msgid "Edit Tag"
+msgstr ""
+
+#: includes/post-type/class.php:143
+msgid "Update Tag"
+msgstr ""
+
+#: includes/post-type/class.php:144
+msgid "View Tag"
+msgstr ""
+
+#: includes/post-type/class.php:145
+msgid "Separate tags with commas"
+msgstr ""
+
+#: includes/post-type/class.php:146
+msgid "Add or remove tags"
+msgstr ""
+
+#: includes/post-type/class.php:148
+msgid "Popular Tags"
+msgstr ""
+
+#: includes/post-type/class.php:149
+msgid "Search Tags"
+msgstr ""
+
+#: includes/post-type/class.php:151
+msgid "No tags"
+msgstr ""
+
+#: includes/post-type/class.php:152
+msgid "Tags list"
+msgstr ""
+
+#: includes/post-type/class.php:153
+msgid "Tags list navigation"
+msgstr ""
+
+#: includes/templates/class.php:91, includes/templates/class.php:126
+msgid "e.g. Portfolio, Real estate, Minimal, Dark, ..."
+msgstr ""
+
+#: includes/templates/class.php:103
+msgid "Filters"
+msgstr ""
+
+#: includes/templates/class.php:108
+msgid "Template was found."
+msgstr ""
+
+#: includes/templates/class.php:114
+msgid "Filter & Refine"
+msgstr ""
+
+#: includes/templates/class.php:115
+msgid "Clear all"
+msgstr ""
+
+#: includes/templates/class.php:116
+msgid "Done"
+msgstr ""
+
+#: includes/templates/class.php:136, includes/widgets/widget-posts.php:58, includes/widgets/widget-posts.php:69, includes/customizer/settings/product-list/settings.php:76
+msgid "Category"
+msgstr ""
+
+#: includes/templates/class.php:143
+msgid "Style"
+msgstr ""
+
+#: includes/templates/class.php:144
+msgid "Header Type"
+msgstr ""
+
+#: includes/templates/class.php:145
+msgid "Menu Type"
+msgstr ""
+
+#: includes/templates/class.php:146
+msgid "Components"
+msgstr ""
+
+#: includes/templates/class.php:147
+msgid "Content Type"
+msgstr ""
+
+#: includes/templates/class.php:183
+msgid "All"
+msgstr ""
+
+#: includes/templates/class.php:189
+msgid "Click to expand"
+msgstr ""
+
+#: includes/templates/class.php:192
+msgid "Clear"
+msgstr ""
+
+#: includes/templates/class.php:320
+msgid "Your API key could not be verified."
+msgstr ""
+
+#: includes/templates/class.php:367, includes/templates/class.php:374
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#. translators: 1. Heads up title.
+#: includes/updater/functions.php:38
+msgid "%1$s We have found conflicts on updating this plugin. Please resolve following issues before you continue otherwise it may cause unknown issues."
+msgstr ""
+
+#: includes/updater/functions.php:38
+msgid "Heads up!"
+msgstr ""
+
+#: includes/widget-area/functions.php:28
+msgid "name field is required"
+msgstr ""
+
+#: includes/widget-area/functions.php:52
+msgid "id field is required"
+msgstr ""
+
+#: includes/widget-area/functions.php:81
+msgid "Add Custom Sidebar"
+msgstr ""
+
+#: includes/widgets/class.php:484
+msgid "Add"
+msgstr ""
+
+#: includes/widgets/widget-nav-menu.php:105, includes/customizer/api/includes/control/group/class-box-shadow.php:53
+msgid "Vertical"
+msgstr ""
+
+#: includes/widgets/widget-nav-menu.php:106, includes/customizer/api/includes/control/group/class-box-shadow.php:44
+msgid "Horizontal"
+msgstr ""
+
+#: includes/widgets/widget-nav-menu.php:113
+msgid "Orientation:"
+msgstr ""
+
+#: includes/widgets/widget-nav-menu.php:146
+msgid "Space between:"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:28, includes/widgets/widget-posts.php:136
+msgid "Jupiter X - Posts"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:29
+msgid "Custom lists of posts."
+msgstr ""
+
+#: includes/widgets/widget-posts.php:34, includes/widgets/widget-posts.php:125, includes/widgets/widget-social.php:33, includes/customizer/settings/blog-single/popup.php:12, includes/customizer/settings/blog-single/popup.php:89, includes/customizer/settings/blog-single/settings.php:126, includes/customizer/settings/comment/popup.php:11, includes/customizer/settings/comment/popup.php:65, includes/customizer/settings/page-single/popup.php:11, includes/customizer/settings/page-single/popup.php:60, includes/customizer/settings/page-single/settings.php:71, includes/customizer/settings/portfolio-single/popup.php:11, includes/customizer/settings/portfolio-single/popup.php:64, includes/customizer/settings/portfolio-single/settings.php:75, includes/customizer/settings/post-types/popup.php:158, includes/customizer/settings/title-bar/popup.php:11, includes/customizer/settings/title-bar/settings.php:86, includes/customizer/settings/title-bar/settings.php:197
+msgid "Title"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:40, includes/customizer/settings/search/settings.php:21
+msgid "Post"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:49
+msgid "Recent"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:50
+msgid "Popular"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:51
+msgid "Commented"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:80
+msgid "Show portfolio title on hover"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:89
+msgid "Show post date"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:98
+msgid "Show comment count"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:107
+msgid "Show thumbnail"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:116
+msgid "Number of posts to show"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:122
+msgid "Order by"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:124, includes/customizer/settings/blog-single/settings.php:127, includes/customizer/settings/comment/popup.php:16, includes/customizer/settings/comment/popup.php:70, includes/customizer/settings/comment/settings.php:34, includes/customizer/settings/portfolio-single/settings.php:76, includes/customizer/settings/post-types/popup.php:159
+msgid "Date"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:126
+msgid "Menu order"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:127
+msgid "Random"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:318
+msgid " on "
+msgstr ""
+
+#: includes/widgets/widget-posts.php:442
+msgid "1 Comment"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:440
+msgid " Comments"
+msgstr ""
+
+#: includes/widgets/widget-posts.php:438
+msgid "No Comments"
+msgstr ""
+
+#: includes/widgets/widget-social.php:28, includes/widgets/widget-social.php:157
+msgid "Jupiter X - Social Networks"
+msgstr ""
+
+#: includes/widgets/widget-social.php:29
+msgid "Social network icons."
+msgstr ""
+
+#: includes/widgets/widget-social.php:37
+msgid "Choose social networks"
+msgstr ""
+
+#: includes/widgets/widget-social.php:41
+msgid "Android"
+msgstr ""
+
+#: includes/widgets/widget-social.php:42
+msgid "Apple"
+msgstr ""
+
+#: includes/widgets/widget-social.php:43
+msgid "Behance"
+msgstr ""
+
+#: includes/widgets/widget-social.php:44
+msgid "Bitbucket"
+msgstr ""
+
+#: includes/widgets/widget-social.php:45
+msgid "Delicious"
+msgstr ""
+
+#: includes/widgets/widget-social.php:46
+msgid "Digg"
+msgstr ""
+
+#: includes/widgets/widget-social.php:47
+msgid "Dribbble"
+msgstr ""
+
+#: includes/widgets/widget-social.php:48
+msgid "Facebook"
+msgstr ""
+
+#: includes/widgets/widget-social.php:49
+msgid "Flickr"
+msgstr ""
+
+#: includes/widgets/widget-social.php:50
+msgid "Foursquare"
+msgstr ""
+
+#: includes/widgets/widget-social.php:51
+msgid "Github"
+msgstr ""
+
+#: includes/widgets/widget-social.php:52
+msgid "Instagram"
+msgstr ""
+
+#: includes/widgets/widget-social.php:53
+msgid "JSFiddle"
+msgstr ""
+
+#: includes/widgets/widget-social.php:54
+msgid "Linkedin"
+msgstr ""
+
+#: includes/widgets/widget-social.php:55
+msgid "Medium"
+msgstr ""
+
+#: includes/widgets/widget-social.php:56
+msgid "Pinterest"
+msgstr ""
+
+#: includes/widgets/widget-social.php:57
+msgid "Product Hunt"
+msgstr ""
+
+#: includes/widgets/widget-social.php:58
+msgid "Reddit"
+msgstr ""
+
+#: includes/widgets/widget-social.php:59
+msgid "RSS"
+msgstr ""
+
+#: includes/widgets/widget-social.php:60
+msgid "Skype"
+msgstr ""
+
+#: includes/widgets/widget-social.php:61
+msgid "Snapchat"
+msgstr ""
+
+#: includes/widgets/widget-social.php:62
+msgid "Soundcloud"
+msgstr ""
+
+#: includes/widgets/widget-social.php:63
+msgid "Spotify"
+msgstr ""
+
+#: includes/widgets/widget-social.php:64
+msgid "Stack Overflow"
+msgstr ""
+
+#: includes/widgets/widget-social.php:65
+msgid "Steam"
+msgstr ""
+
+#: includes/widgets/widget-social.php:66
+msgid "Stumbleupon"
+msgstr ""
+
+#: includes/widgets/widget-social.php:67
+msgid "Telegram"
+msgstr ""
+
+#: includes/widgets/widget-social.php:68
+msgid "TripAdvisor"
+msgstr ""
+
+#: includes/widgets/widget-social.php:69
+msgid "Tumblr"
+msgstr ""
+
+#: includes/widgets/widget-social.php:70
+msgid "Twitch"
+msgstr ""
+
+#: includes/widgets/widget-social.php:71
+msgid "Twitter"
+msgstr ""
+
+#: includes/widgets/widget-social.php:72
+msgid "Vimeo"
+msgstr ""
+
+#: includes/widgets/widget-social.php:73
+msgid "VK"
+msgstr ""
+
+#: includes/widgets/widget-social.php:74
+msgid "Weibo"
+msgstr ""
+
+#: includes/widgets/widget-social.php:75
+msgid "Weixin"
+msgstr ""
+
+#: includes/widgets/widget-social.php:76
+msgid "Whatsapp"
+msgstr ""
+
+#: includes/widgets/widget-social.php:77
+msgid "WordPress"
+msgstr ""
+
+#: includes/widgets/widget-social.php:78
+msgid "Xing"
+msgstr ""
+
+#: includes/widgets/widget-social.php:79
+msgid "Yelp"
+msgstr ""
+
+#: includes/widgets/widget-social.php:80
+msgid "Youtube"
+msgstr ""
+
+#: includes/widgets/widget-social.php:81
+msgid "500px"
+msgstr ""
+
+#: includes/widgets/widget-social.php:87
+msgid "Open links in new tab"
+msgstr ""
+
+#: includes/widgets/widget-social.php:96
+msgid "Icon size"
+msgstr ""
+
+#: includes/widgets/widget-social.php:103
+msgid "Border radius"
+msgstr ""
+
+#: includes/widgets/widget-social.php:109
+msgid "Space between icons"
+msgstr ""
+
+#: includes/widgets/widget-social.php:114
+msgid "Use custom colors"
+msgstr ""
+
+#: includes/widgets/widget-social.php:119
+msgid "Icon color"
+msgstr ""
+
+#: includes/widgets/widget-social.php:128
+msgid "Background color"
+msgstr ""
+
+#: includes/widgets/widget-social.php:137
+msgid "Icon hover color"
+msgstr ""
+
+#: includes/widgets/widget-social.php:146
+msgid "Background hover color"
+msgstr ""
+
+#: includes/woocommerce/woocommerce-load-more.php:37, includes/woocommerce/woocommerce-load-more.php:61, includes/customizer/settings/product-list/settings.php:43
+msgid "Load More"
+msgstr ""
+
+#: includes/woocommerce/woocommerce-load-more.php:62
+msgid "Loading"
+msgstr ""
+
+#: includes/woocommerce/woocommerce-load-more.php:83, includes/control-panel/includes/class-system-status.php:55
+msgid "Nonce can't be verified"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:24
+msgid "Raven"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:31, includes/admin/tgmpa/tgmpa-plugin-list.php:41, includes/admin/tgmpa/tgmpa-plugin-list.php:51, includes/admin/tgmpa/tgmpa-plugin-list.php:61, includes/admin/tgmpa/tgmpa-plugin-list.php:71, includes/admin/tgmpa/tgmpa-plugin-list.php:81, includes/admin/tgmpa/tgmpa-plugin-list.php:91, includes/admin/tgmpa/tgmpa-plugin-list.php:101, includes/admin/tgmpa/tgmpa-plugin-list.php:111, includes/admin/tgmpa/tgmpa-plugin-list.php:121, includes/admin/tgmpa/tgmpa-plugin-list.php:131, includes/admin/tgmpa/tgmpa-plugin-list.php:141, includes/admin/tgmpa/tgmpa-plugin-list.php:151, includes/admin/tgmpa/tgmpa-plugin-list.php:161, includes/admin/tgmpa/tgmpa-plugin-list.php:171, includes/admin/tgmpa/tgmpa-plugin-list.php:181, includes/admin/tgmpa/tgmpa-plugin-list.php:190, includes/admin/tgmpa/tgmpa-plugin-list.php:199
+msgid "Optional"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:34
+msgid "Jupiter Donut"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:44
+msgid "Jet Elements"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:54
+msgid "Jet Blog"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:64
+msgid "Jet Menu"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:74
+msgid "Jet Popup"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:84
+msgid "Jet Tabs"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:94
+msgid "Jet WooBuilder"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:104
+msgid "Jet Tricks"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:114
+msgid "Jet Engine"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:124
+msgid "Jet SmartFilters"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:134
+msgid "Advanced Custom Fields PRO"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:144
+msgid "Slider Revolution"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:154
+msgid "Master Slider"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:164
+msgid "Layer Slider"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:174
+msgid "WPBakery Page Builder"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:184
+msgid "Customizer Reset"
+msgstr ""
+
+#: includes/admin/tgmpa/tgmpa-plugin-list.php:193
+msgid "Customizer Export/Import"
+msgstr ""
+
+#: includes/control-panel/includes/class-db-manager.php:139
+msgid "Can not create backup db file."
+msgstr ""
+
+#: includes/control-panel/includes/class-db-manager.php:174
+msgid "Can not create media records backup file."
+msgstr ""
+
+#: includes/control-panel/includes/class-db-manager.php:227
+msgid "Invalid backup file."
+msgstr ""
+
+#: includes/control-panel/includes/class-db-manager.php:213
+msgid "There was an error unzipping the backup file."
+msgstr ""
+
+#: includes/control-panel/includes/class-db-manager.php:234
+msgid "The backup file is not exists or not readable."
+msgstr ""
+
+#: includes/control-panel/includes/class-db-manager.php:338
+msgid "Media records backup file is not exists or not readable"
+msgstr ""
+
+#: includes/control-panel/includes/class-db-php-manager.php:52
+msgid "Can't open: "
+msgstr ""
+
+#: includes/control-panel/includes/class-db-php-manager.php:115
+msgid "Please contact your database administrator to fix the error. Error: "
+msgstr ""
+
+#: includes/control-panel/includes/class-db-php-manager.php:164
+msgid "File not exist: "
+msgstr ""
+
+#: includes/control-panel/includes/class-db-php-manager.php:169
+msgid "Can't read: "
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:129
+msgid "Step param is missing."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:146
+msgid "Attachment ID param is missing."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:202, includes/control-panel/includes/class-export-import-content.php:828
+msgid "Step param (%s) is not valid."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:223
+msgid "A problem occurred in cleaning export directory."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:249
+msgid "A problem occurred in exporting Content."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:434
+msgid "A problem occurred in exporting widgets."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:486
+msgid "All settings in Settings are set to default. Uncheck the Settings option or change one setting in Settings then export."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:490
+msgid "A problem occurred in exporting Settings."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:874, includes/control-panel/includes/class-export-import-content.php:1034
+msgid "A required file (%s) is missing in the selected zip file."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:895
+msgid "Error in parsing %s."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:1046
+msgid "A problem occurred in importing Widgets."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:1078
+msgid "%s is missing in the selected zip file."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:1092
+msgid "Error importing settings! Please check that you uploaded (%s) a Settings export file."
+msgstr ""
+
+#: includes/control-panel/includes/class-export-import-content.php:1097
+msgid "Error importing settings! template Please check that you uploaded (%s) a Settings export file."
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:115
+msgid "Unable to connect to the filesystem. Please confirm your credentials."
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:169
+msgid "Invalid method for $wp_filesystem object!"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:235, includes/control-panel/includes/class-helpers.php:95
+msgid "Can't create directory %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:255
+msgid "A directory exists has same name %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:279
+msgid "File already exists %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:284
+msgid "Copy source file not exists: %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:289
+msgid "Copy source file not valid: %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:294
+msgid "Copy source file not readable: %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:395
+msgid "Zip source file not exists: %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:400
+msgid "Zip source file not valid: %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:405
+msgid "Zip source file not readable: %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:419
+msgid "Failed to create unzip destination directory: %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:426
+msgid "Unzip destination is not writable: %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-filesystem.php:440
+msgid "Failed unzipping file: %s"
+msgstr ""
+
+#: includes/control-panel/includes/class-helpers.php:39
+msgid "Zip file that you are looking for is not exist"
+msgstr ""
+
+#: includes/control-panel/includes/class-helpers.php:45
+msgid "Unzip destination path not exist"
+msgstr ""
+
+#: includes/control-panel/includes/class-helpers.php:51
+msgid "Unzip destination is not writable , Please resolve this issue first."
+msgstr ""
+
+#: includes/control-panel/includes/class-helpers.php:89
+msgid "%s directory is not writable"
+msgstr ""
+
+#: includes/control-panel/includes/class-helpers.php:120
+msgid "Destination directory is not ready for upload . {%s}"
+msgstr ""
+
+#: includes/control-panel/includes/class-helpers.php:151
+msgid "Can't write file to {%s}"
+msgstr ""
+
+#: includes/control-panel/includes/class-helpers.php:282
+msgid "SSL connection error. Code: template-assets-get"
+msgstr ""
+
+#: includes/control-panel/includes/class-install-plugins.php:301
+msgid "Action is not valid."
+msgstr ""
+
+#: includes/control-panel/includes/class-install-plugins.php:326
+msgid "Can't deactivate plugin"
+msgstr ""
+
+#: includes/control-panel/includes/class-install-plugins.php:332
+msgid "Sorry, you are not allowed to deactivate this plugin."
+msgstr ""
+
+#: includes/control-panel/includes/class-install-plugins.php:337
+msgid "Deactivated Successfully."
+msgstr ""
+
+#: includes/control-panel/includes/class-install-template.php:672
+msgid "Completed"
+msgstr ""
+
+#: includes/control-panel/includes/class-install-template.php:695
+msgid "Plugins are activated,"
+msgstr ""
+
+#: includes/control-panel/includes/class-install-template.php:722
+msgid "Data of plugins have imported."
+msgstr ""
+
+#: includes/control-panel/includes/class-install-template.php:1111
+msgid "Error importing settings! Please check that you uploaded (%s) a settings export file."
+msgstr ""
+
+#: includes/control-panel/includes/class-install-template.php:1116
+msgid "Error importing settings! template Please check that you uploaded (%s) a settings export file."
+msgstr ""
+
+#: includes/control-panel/includes/class-settings.php:78
+msgid "Assets flushed successfully."
+msgstr ""
+
+#: includes/control-panel/includes/class-settings.php:90
+msgid "Fields param is missing."
+msgstr ""
+
+#: includes/control-panel/includes/class-settings.php:112
+msgid "Settings saved successfully."
+msgstr ""
+
+#: includes/control-panel/includes/class-system-status.php:157
+msgid "HTTP requests have been blocked by the WP_HTTP_BLOCK_EXTERNAL constant, with no allowed hosts."
+msgstr ""
+
+#: includes/control-panel/includes/class-system-status.php:163
+msgid "HTTP requests have been blocked by the WP_HTTP_BLOCK_EXTERNAL constant, with some hosts whitelisted: %s."
+msgstr ""
+
+#: includes/control-panel/includes/class-system-status.php:365, includes/control-panel/views/install-templates.php:15
+msgid "Read More"
+msgstr ""
+
+#: includes/control-panel/includes/class-system-status.php:368, includes/control-panel/includes/class-system-status.php:373
+msgid "Insufficient memory. You need at least 256MB of memory."
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:37, includes/control-panel/includes/logic-messages.php:45, includes/control-panel/includes/logic-messages.php:49, includes/control-panel/includes/logic-messages.php:53, includes/control-panel/includes/logic-messages.php:57, includes/control-panel/includes/logic-messages.php:61, includes/control-panel/includes/logic-messages.php:160, includes/control-panel/includes/logic-messages.php:164, includes/control-panel/includes/logic-messages.php:168, includes/control-panel/includes/logic-messages.php:172, includes/control-panel/includes/logic-messages.php:176, includes/control-panel/includes/logic-messages.php:180, includes/control-panel/includes/logic-messages.php:184, includes/control-panel/includes/logic-messages.php:188, includes/control-panel/includes/logic-messages.php:192, includes/control-panel/includes/logic-messages.php:196, includes/control-panel/includes/logic-messages.php:200, includes/control-panel/includes/logic-messages.php:208, includes/control-panel/includes/logic-messages.php:212, includes/control-panel/includes/logic-messages.php:216, includes/control-panel/includes/logic-messages.php:220, includes/control-panel/includes/logic-messages.php:224, includes/control-panel/includes/logic-messages.php:228, includes/control-panel/includes/logic-messages.php:232, includes/control-panel/includes/logic-messages.php:236, includes/control-panel/includes/logic-messages.php:240, includes/control-panel/includes/logic-messages.php:244, includes/control-panel/includes/logic-messages.php:248, includes/control-panel/includes/logic-messages.php:252, includes/control-panel/includes/logic-messages.php:256, includes/control-panel/includes/logic-messages.php:260, includes/control-panel/includes/logic-messages.php:264, includes/control-panel/includes/logic-messages.php:268, includes/control-panel/includes/logic-messages.php:272, includes/control-panel/includes/logic-messages.php:276, includes/control-panel/includes/logic-messages.php:280, includes/control-panel/includes/logic-messages.php:284, includes/control-panel/includes/logic-messages.php:288, includes/control-panel/includes/logic-messages.php:292, includes/control-panel/includes/logic-messages.php:296, includes/control-panel/includes/logic-messages.php:300, includes/control-panel/includes/logic-messages.php:304, includes/control-panel/includes/logic-messages.php:308, includes/control-panel/includes/logic-messages.php:312, includes/control-panel/includes/logic-messages.php:316, includes/control-panel/includes/logic-messages.php:320, includes/control-panel/includes/logic-messages.php:324, includes/control-panel/includes/logic-messages.php:328, includes/control-panel/includes/logic-messages.php:332, includes/control-panel/includes/logic-messages.php:336, includes/control-panel/includes/logic-messages.php:340, includes/control-panel/includes/logic-messages.php:344, includes/control-panel/includes/logic-messages.php:348
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:68
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 200)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:72
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 201)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:76
+msgid "Your plugin has been successfully added and activated."
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:80
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 202)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:84
+msgid "Congratulations,your operation has been done successfully"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:88
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 203)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:92
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 204)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:96
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 205)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:100
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 206)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:104
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 207)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:108
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 208)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:112
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 209)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:116
+msgid "To remove your plugin, please deactivate it first and then try again."
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:120
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 210)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:124
+msgid "Your plugin have been successfully updated."
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:128
+msgid "Your plugin have been successfully removed."
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:132
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 211)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:136
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 212)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:140
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 213)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:144
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 214)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:148
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 215)"
+msgstr ""
+
+#: includes/control-panel/includes/logic-messages.php:152
+msgid "Whoops! We seem to be having some problems. Please contact Support and supply the number shown and we'll be happy to figure this out for you. (code 216)"
+msgstr ""
+
+#: includes/control-panel/views/export-import-content.php:7
+msgid "The Export/Import feature is deprecated. To migrate/backup your website use <a href=\"%s\" target=\"_blank\">3rd-party plugins</a>."
+msgstr ""
+
+#: includes/control-panel/views/export-import-content.php:8, includes/control-panel/views/export-import-content.php:49
+msgid "Export"
+msgstr ""
+
+#: includes/control-panel/views/export-import-content.php:20
+msgid "Site Content"
+msgstr ""
+
+#: includes/control-panel/views/export-import-content.php:27, includes/customizer/settings/sidebar/divider.php:54
+msgid "Widgets"
+msgstr ""
+
+#: includes/control-panel/views/export-import-content.php:41
+msgid "Custom Tables"
+msgstr ""
+
+#: includes/control-panel/views/export-import-content.php:54, includes/control-panel/views/export-import-content.php:72
+msgid "Import"
+msgstr ""
+
+#: includes/control-panel/views/export-import-content.php:62
+msgid "Upload"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:17
+msgid "Custom size for images"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:20
+msgid "Add a New Size"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:33, includes/control-panel/views/system-status.php:316, includes/customizer/settings/comment/popup.php:15, includes/customizer/settings/comment/popup.php:69, includes/customizer/settings/product-list/settings.php:75
+msgid "Name"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:36, includes/customizer/settings/footer/widgets-thumbnail.php:17, includes/customizer/settings/sidebar/widgets-thumbnail.php:17
+msgid "Size"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:39
+msgid "Hard Crop"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:43
+msgid "Off"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:41
+msgid "On"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:46, includes/customizer/api/includes/control/class-template.php:100
+msgid "Edit"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:47, includes/customizer/api/includes/class-templates.php:75, includes/customizer/api/includes/class-templates.php:152
+msgid "Remove"
+msgstr ""
+
+#: includes/control-panel/views/install-templates.php:13
+msgid "Template installation is only allowed for user with Super Admin role. Please contact your website's administrator."
+msgstr ""
+
+#: includes/control-panel/views/install-templates.php:34
+msgid "Restore from Last Backup"
+msgstr ""
+
+#: includes/control-panel/views/install-templates.php:42
+msgid "Installed Template"
+msgstr ""
+
+#: includes/control-panel/views/install-templates.php:43, includes/control-panel/views/install-templates.php:53
+msgid "Installing a Template"
+msgstr ""
+
+#: includes/control-panel/views/install-templates.php:52
+msgid "Templates"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:20
+msgid "Flush Assets Cache"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:21
+msgid "Flushing..."
+msgstr ""
+
+#: includes/control-panel/views/settings.php:22
+msgid "Clear CSS, Javascript and images cached files. New cached versions will be compiled/created on page load."
+msgstr ""
+
+#: includes/control-panel/views/settings.php:26
+msgid "Development Mode"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:32
+msgid "This option should be enabled while your website is in development."
+msgstr ""
+
+#: includes/control-panel/views/settings.php:35
+msgid "Cache Busting"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:41
+msgid "Enable cache busting technique."
+msgstr ""
+
+#: includes/control-panel/views/settings.php:46, includes/control-panel/views/settings.php:101
+msgid "Custom Post Types"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:47
+msgid "Enable Jupiter features (customizer, meta options, etc.) for these post types."
+msgstr ""
+
+#: includes/control-panel/views/settings.php:60
+msgid "No custom post type was found."
+msgstr ""
+
+#: includes/control-panel/views/settings.php:69
+msgid "Theme Accent Color"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:73
+msgid "Twitter Consumer Key"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:77
+msgid "Twitter Consumer Secret"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:81
+msgid "Twitter Access Token"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:85
+msgid "Twitter Access Token Secret"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:89
+msgid "MailChimp API Key"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:93
+msgid "Mailchimp List ID"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:97
+msgid "Google Maps API Key"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:104
+msgid "Clients"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:105
+msgid "Animated Columns"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:106
+msgid "Banner Builder"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:107
+msgid "Edge Slider"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:108
+msgid "Employees"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:109
+msgid "FAQ"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:110
+msgid "News"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:111
+msgid "Pricing Tables"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:112
+msgid "FlexSlider"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:113
+msgid "Tab Slider"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:114
+msgid "Testimonial"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:115
+msgid "Photo Album"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:135
+msgid "Save Settings"
+msgstr ""
+
+#: includes/control-panel/views/settings.php:136
+msgid "Saving..."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:12
+msgid "Checking Server Requirements"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:16
+msgid "Get System Report"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:27
+msgid "WordPress Environment"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:34
+msgid "Home URL"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:37
+msgid "The URL of your site's homepage."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:44
+msgid "Site URL"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:47
+msgid "The root URL of your site."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:55
+msgid "WP Content URL"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:58
+msgid "The URL of WordPress's content directory."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:66
+msgid "WP Upload Path"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:69
+msgid "The absolute path to WordPress's upload directory."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:77
+msgid "WP Upload URL"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:80
+msgid "The URL of WordPress's upload directory."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:88
+msgid "WP Version"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:91
+msgid "The version of WordPress installed on your site."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:99
+msgid "WP Multisite"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:102
+msgid "Whether or not you have WordPress Multisite enabled."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:107, includes/control-panel/views/system-status.php:348, includes/control-panel/views/system-status.php:446
+msgid "No"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:115
+msgid "Permalink Structure"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:118
+msgid "The current permalink structure as defined in WordPress Settings->Permalinks."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:127
+msgid "Front Page Display"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:130
+msgid "The current Reading mode of WordPress."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:140
+msgid "Front Page"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:143
+msgid "The currently selected page which acts as the site's Front Page."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:151
+msgid "Posts Page"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:154
+msgid "The currently selected page in where blog posts are displayed."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:165
+msgid "WP Memory Limit"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:168
+msgid "The maximum amount of memory (RAM) that your site can use at one time."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:184
+msgid "Database Table Prefix"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:187
+msgid "The prefix structure of the current WordPress database."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:195
+msgid "WP Debug Mode"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:198
+msgid "Displays whether or not WordPress is in Debug Mode."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:203, includes/control-panel/views/system-status.php:544, includes/control-panel/views/system-status.php:561
+msgid "Disabled"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:211
+msgid "Language"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:214
+msgid "The current language used by WordPress. Default = English"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:222
+msgid "The Main WP Directory"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:225
+msgid "Check if main WP directory is writable."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:233, includes/control-panel/views/system-status.php:250, includes/control-panel/views/system-status.php:267, includes/control-panel/views/system-status.php:284, includes/control-panel/views/system-status.php:301
+msgid "Make sure <code>%s</code> directory is writable."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:230, includes/control-panel/views/system-status.php:247, includes/control-panel/views/system-status.php:264, includes/control-panel/views/system-status.php:281, includes/control-panel/views/system-status.php:298
+msgid "Writable"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:239
+msgid "The wp-content Directory"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:242
+msgid "Check if wp-content directory is writable."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:256
+msgid "The uploads Directory"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:259
+msgid "Check if uploads directory is writable."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:273
+msgid "The plugins Directory"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:276
+msgid "Check if plugins directory is writable."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:290
+msgid "The themes Directory"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:293
+msgid "Check if themes directory is writable."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:311
+msgid "Theme"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:318
+msgid "The name of the current active theme."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:323
+msgid "Version"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:325
+msgid "The installed version of the current active theme."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:332
+msgid "Author URL"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:334
+msgid "The theme developers URL."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:339
+msgid "Child Theme"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:341
+msgid "Displays whether or not the current theme is a child theme."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:354
+msgid "Parent Theme Name"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:357
+msgid "The name of the parent theme."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:363
+msgid "Parent Theme Version"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:366
+msgid "The installed version of the parent theme."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:372
+msgid "Parent Theme Author URL"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:375
+msgid "The parent theme developers URL."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:388
+msgid "Browser"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:395
+msgid "Browser Info"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:398
+msgid "Information about the web browser currently in use."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:418
+msgid "Server Environment"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:425
+msgid "Server Info"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:428
+msgid "Information about the web server that is currently hosting your site."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:436
+msgid "Localhost Environment"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:439
+msgid "Is the server running in a localhost environment."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:452
+msgid "PHP Version"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:455
+msgid "The version of PHP installed on your hosting server."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:463
+msgid "ABSPATH"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:466
+msgid "The ABSPATH variable on the server."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:477
+msgid "PHP Memory Limit"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:479, includes/control-panel/views/system-status.php:496
+msgid "The largest file size that can be contained in one post."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:494
+msgid "PHP Post Max Size"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:501
+msgid "PHP Time Limit"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:503
+msgid "max_execution_time : The amount of time (in seconds) that your site will spend on a single operation before timing out (to avoid server lockups)."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:509
+msgid "PHP Max Input Vars"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:511
+msgid "The maximum number of variables your server can use for a single function to avoid overloads."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:520
+msgid "Suhosin Max Request Vars"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:522, includes/control-panel/views/system-status.php:529
+msgid "The maximum number of variables your server running Suhosin can use for a single function to avoid overloads."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:527
+msgid "Suhosin Max Post Vars"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:537
+msgid "PHP Display Errors"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:539
+msgid "Determines if PHP will display errors within the browser."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:554
+msgid "SUHOSIN Installed"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:556
+msgid "Suhosin is an advanced protection system for PHP installations. It was designed to protect your servers on the one hand against a number of well known problems in PHP applications and on the other hand against potential unknown vulnerabilities within these applications or the PHP core itself.  If enabled on your server, Suhosin may need to be configured to increase its data submission limits."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:569
+msgid "MySQL Version"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:571
+msgid "The version of MySQL installed on your hosting server."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:576
+msgid "Max Upload Size"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:578
+msgid "The largest file size that can be uploaded to your WordPress installation."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:584
+msgid "Network Upload Limit"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:586
+msgid "Maximum file size that you can upload based on network settings."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:593
+msgid "Default Timezone is UTC"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:596
+msgid "The default timezone for your server."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:601
+msgid "Default timezone is %s - it should be UTC"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:610
+msgid "PHP XML"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:613
+msgid "Theme requires PHP XML Library to be installed."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:625
+msgid "MBString"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:628
+msgid "Theme requires MBString PHP Library to be installed."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:640
+msgid "SimpleXML"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:643
+msgid "Theme requires SimpleXML PHP Library to be installed."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:656
+msgid "Fsockopen/cURL"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:657
+msgid "Used when communicating with remote services with PHP."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:663
+msgid "Your server does not have fsockopen or cURL enabled - cURL is used to communicate with other servers. Please contact your hosting provider."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:666
+msgid "SoapClient"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:667
+msgid "Some webservices like shipping use SOAP to get information from remote servers, for example, live shipping quotes from FedEx require SOAP to be installed."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:673
+msgid "Your server does not have the <a href=\"%s\">SOAP Client</a> class enabled - some gateway plugins which use SOAP may not work as expected."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:676
+msgid "DOMDocument"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:677
+msgid "HTML/Multipart emails use DOMDocument to generate inline CSS in templates."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:683
+msgid "Your server does not have the <a href=\"%s\">DOMDocument</a> class enabled - HTML/Multipart emails, and also some extensions, will not work without DOMDocument."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:687
+msgid "GZip"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:688
+msgid "GZip (gzopen) is used to open the GEOIP database from MaxMind."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:694
+msgid "Your server does not support the <a href=\"%s\">gzopen</a> function - this is required to use the GeoIP database from MaxMind. The API fallback will be used instead for geolocation."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:698
+msgid "Zip Archive"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:699
+msgid "Used to read or write ZIP compressed archives and the files inside them."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:704
+msgid "ZipArchive library is missing. Install the Zip extension. Contact your hosting provider."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:709
+msgid "Iconv"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:710
+msgid "Used in CSS parser to handle the character set conversion."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:715
+msgid "Iconv library is missing. Install the iconv extension. Contact your hosting provider."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:720
+msgid "OPcache"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:721
+msgid "OPcache improves PHP performance by storing precompiled script bytecode in shared memory, thereby removing the need for PHP to load and parse scripts on each request."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:726
+msgid "OPcache extension is disabled. Contact your hosting provider to enable it."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:751
+msgid "HTTP Requests"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:754
+msgid "Check if HTTP requests (get, post and ...) are working properly."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:763
+msgid "Communication with artbees.net"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:766
+msgid "Check if you have proper access to artbees.net server."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:781
+msgid "Database"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:788
+msgid "Database Size"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:791
+msgid "Information about database."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:893
+msgid "Theme Mods Size"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:896
+msgid "Size of customizer options."
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:912
+msgid "Cleanup"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:923
+msgid "Active Plugins"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:935
+msgid "Visit plugin homepage"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:944
+msgctxt "by author"
+msgid "by %s"
+msgstr ""
+
+#: includes/customizer/settings/settings.php:13, includes/dashboard/widgets/class-overview.php:243, includes/customizer/settings/sidebar/settings.php:59, includes/customizer/settings/title-bar/settings.php:125
+msgid "Blog"
+msgstr ""
+
+#: includes/customizer/settings/settings.php:26, includes/customizer/settings/sidebar/settings.php:71, includes/customizer/settings/title-bar/settings.php:137
+msgid "Shop"
+msgstr ""
+
+#: includes/customizer/settings/settings.php:33
+msgid "Pages"
+msgstr ""
+
+#: includes/customizer/settings/settings.php:40
+msgid "Post Types"
+msgstr ""
+
+#: includes/customizer/settings/settings.php:47, includes/customizer/settings/title-bar/settings.php:81
+msgid "Elements"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:41
+msgid "Jupiter X Overview"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:124
+msgid "Jupiter X"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:151
+msgid "Recently Edited"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:157
+msgctxt "Dashboard Overview Widget Recently Date"
+msgid "M jS"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:176
+msgid "Flush network cache"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:177
+msgid "Regenerate Jupiter X and Elementor's cache in all network sites."
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:183
+msgid "Tools"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:191
+msgid "Run"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:209
+msgid "News & Updates"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:222, includes/customizer/api/includes/control/class-template.php:104
+msgid "New"
+msgstr ""
+
+#: includes/dashboard/widgets/class-overview.php:269
+msgid "(opens in a new window)"
+msgstr ""
+
+#: includes/updater/views/html-notice-update-extensions-themes-inline.php:18
+msgid "Plugins"
+msgstr ""
+
+#: includes/updater/views/html-notice-update-extensions-themes-inline.php:19, includes/updater/views/html-notice-update-extensions-themes-inline.php:37
+msgid "Upgrade to version"
+msgstr ""
+
+#: includes/updater/views/html-notice-update-extensions-themes-inline.php:36
+msgid "Themes"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:183
+msgid "Could not open the file for parsing"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:219, includes/control-panel/includes/importer/class-wxr-importer.php:331
+msgid "This WXR file (version %s) is newer than the importer (version %s) and may not be supported. Please consider updating."
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:466
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:526
+msgid "Invalid author mapping"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:627
+msgid "Cannot import auto-draft posts"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:713
+msgid "%s \"%s\" already exists."
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:798
+msgid "Skipping attachment \"%s\", fetching attachments disabled"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:819
+msgid "Failed to import \"%s\" (%s)"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:851, includes/control-panel/includes/importer/class-wxr-importer.php:1548
+msgid "Imported \"%s\" (%s)"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:856
+msgid "Post %d remapped to %d"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1000
+msgid "Invalid file type"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1524
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1553
+msgid "Term %d remapped to %d"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1606
+msgid "Remote server returned %1$d %2$s for %3$s"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1619
+msgid "Remote file is incorrect size"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1624
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1630
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1652
+msgid "Running post-processing for post %d"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1665
+msgid "Could not find the post parent for \"%s\" (post #%d)"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1670
+msgid "Post %d was imported with parent %d, but could not be found"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1684
+msgid "Could not find the author for \"%s\" (post #%d)"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1689
+msgid "Post %d was imported with author \"%s\", but could not be found"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1715
+msgid "Post %d was marked for post-processing, but none was required."
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1726
+msgid "Could not update \"%s\" (post #%d) with mapped data"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1771
+msgid "Could not find the menu object for \"%s\" (post #%d)"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1776
+msgid "Post %d was imported with object \"%d\" of type \"%s\", but could not be found"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1798
+msgid "Could not find the comment parent for comment #%d"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1802
+msgid "Comment %d was imported with parent %d, but could not be found"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1816
+msgid "Could not find the author for comment #%d"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1820
+msgid "Comment %d was imported with author %d, but could not be found"
+msgstr ""
+
+#: includes/control-panel/includes/importer/class-wxr-importer.php:1837
+msgid "Could not update comment #%d with mapped data"
+msgstr ""
+
+#: includes/customizer/api/classes/class-multilingual.php:377
+msgid "Language:"
+msgstr ""
+
+#: includes/customizer/api/classes/class-status.php:47
+msgid "Customizer Settings Name"
+msgstr ""
+
+#: includes/customizer/api/classes/class-status.php:48
+msgid "Control Type"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:58, includes/customizer/api/includes/section/class-popup.php:168, includes/customizer/api/includes/section/class-popup.php:247
+msgid "Close"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:71, includes/customizer/api/includes/class-templates.php:86
+msgid "The spectate before us was indeed sublime."
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:88
+msgid "Select a Font Family"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:104
+msgid "All Fonts"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:136
+msgid "Cancel"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:140
+msgid "Submit"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:160
+msgid "Back"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:167, includes/customizer/settings/pro/popup.php:14, includes/customizer/api/includes/control/class-pro-box.php:101
+msgid "Upgrade to Jupiter X Pro"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:163
+msgid "Activate Jupiter X to unlock this feature"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:164, includes/customizer/api/includes/control/class-pro-box.php:97
+msgid "Activate Now"
+msgstr ""
+
+#: includes/customizer/settings/404/popup.php:13
+msgid "404"
+msgstr ""
+
+#: includes/customizer/settings/404/popup.php:21
+msgid "Setting custom template for 404 page"
+msgstr ""
+
+#: includes/customizer/settings/404/settings.php:17, includes/customizer/settings/maintenance/settings.php:45, includes/customizer/settings/product-page/settings.php:17
+msgid "Template"
+msgstr ""
+
+#: includes/customizer/settings/404/settings.php:20, includes/customizer/settings/maintenance/settings.php:48, includes/customizer/settings/product-list/settings.php:44
+msgid "None"
+msgstr ""
+
+#: includes/customizer/settings/blog-archive/popup.php:13
+msgid "Blog Archive"
+msgstr ""
+
+#: includes/customizer/settings/blog-archive/settings.php:17, includes/customizer/settings/portfolio-archive/settings.php:17, includes/customizer/settings/post-types/popup.php:206
+msgid "My Templates"
+msgstr ""
+
+#: includes/customizer/settings/blog-archive/settings.php:18, includes/customizer/settings/portfolio-archive/settings.php:18, includes/customizer/settings/post-types/popup.php:207
+msgid "Select one"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/avatar.php:18
+msgid "Width"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/featured-image.php:17, includes/customizer/settings/comment/button.php:34, includes/customizer/settings/footer/settings.php:99, includes/customizer/settings/footer/settings.php:222, includes/customizer/settings/header/settings.php:93, includes/customizer/settings/page-single/featured-image.php:18, includes/customizer/settings/portfolio-single/featured-image.php:18, includes/customizer/settings/product-page/settings.php:137, includes/customizer/settings/site-settings/settings.php:21, includes/customizer/settings/title-bar/settings.php:36, includes/customizer/settings/title-bar/settings.php:169
+msgid "Full Width"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/featured-image.php:34, includes/customizer/settings/blog-single/featured-image.php:88, includes/customizer/settings/page-single/featured-image.php:28, includes/customizer/settings/portfolio-single/featured-image.php:28
+msgid "Min Height"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/featured-image.php:61, includes/customizer/settings/blog-single/featured-image.php:118, includes/customizer/settings/page-single/featured-image.php:48, includes/customizer/settings/portfolio-single/featured-image.php:48
+msgid "Max Height"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/featured-image.php:145
+msgid "Overlay Color"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/meta.php:18, includes/customizer/settings/blog-single/post-content.php:18, includes/customizer/settings/blog-single/tags.php:18, includes/customizer/settings/blog-single/title.php:18, includes/customizer/settings/comment/button.php:17, includes/customizer/settings/footer/widgets-container.php:17, includes/customizer/settings/footer/widgets-title.php:17, includes/customizer/settings/header/settings.php:48, includes/customizer/settings/page-single/title.php:17, includes/customizer/settings/portfolio-single/meta.php:18, includes/customizer/settings/portfolio-single/post-content.php:18, includes/customizer/settings/portfolio-single/title.php:17, includes/customizer/settings/post-types/post-content.php:30, includes/customizer/settings/sidebar/widgets-container.php:33, includes/customizer/settings/sidebar/widgets-title.php:17, includes/customizer/settings/title-bar/breadcrumb.php:17, includes/customizer/settings/title-bar/subtitle.php:17, includes/customizer/settings/title-bar/title.php:17
+msgid "Align"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/meta.php:42, includes/customizer/settings/blog-single/popup.php:23, includes/customizer/settings/comment/popup.php:68, includes/customizer/settings/comment/settings.php:32
+msgid "Avatar"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/meta.php:78, includes/customizer/settings/portfolio-single/meta.php:55
+msgid "Meta Divider"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/meta.php:104, includes/customizer/settings/portfolio-single/meta.php:74
+msgid "Divider Color"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/meta.php:132, includes/customizer/settings/portfolio-single/meta.php:95, includes/customizer/settings/typography/popup.php:12
+msgid "Links"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:11, includes/customizer/settings/blog-single/popup.php:88, includes/customizer/settings/blog-single/settings.php:125, includes/customizer/settings/page-single/popup.php:12, includes/customizer/settings/page-single/popup.php:61, includes/customizer/settings/page-single/settings.php:70, includes/customizer/settings/portfolio-single/popup.php:13, includes/customizer/settings/portfolio-single/popup.php:66, includes/customizer/settings/portfolio-single/settings.php:74, includes/customizer/settings/post-types/popup.php:157
+msgid "Featured Image"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:13, includes/customizer/settings/blog-single/popup.php:90, includes/customizer/settings/portfolio-single/popup.php:12, includes/customizer/settings/portfolio-single/popup.php:65
+msgid "Meta"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:14, includes/customizer/settings/blog-single/popup.php:91, includes/customizer/settings/portfolio-single/popup.php:14, includes/customizer/settings/portfolio-single/popup.php:67, includes/customizer/settings/post-types/popup.php:21, includes/customizer/settings/post-types/popup.php:110
+msgid "Post Content"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:16, includes/customizer/settings/blog-single/popup.php:94, includes/customizer/settings/blog-single/settings.php:131, includes/customizer/settings/page-single/popup.php:13, includes/customizer/settings/page-single/popup.php:63, includes/customizer/settings/page-single/settings.php:72, includes/customizer/settings/portfolio-single/popup.php:16, includes/customizer/settings/portfolio-single/popup.php:73, includes/customizer/settings/portfolio-single/settings.php:79, includes/customizer/settings/post-types/popup.php:161, includes/customizer/settings/product-page/settings.php:102
+msgid "Social Share"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:17, includes/customizer/settings/blog-single/popup.php:98, includes/customizer/settings/blog-single/settings.php:132, includes/customizer/settings/portfolio-single/popup.php:15, includes/customizer/settings/portfolio-single/popup.php:69, includes/customizer/settings/portfolio-single/settings.php:80, includes/customizer/settings/post-types/popup.php:162
+msgid "Navigation"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:18, includes/customizer/settings/blog-single/popup.php:102, includes/customizer/settings/blog-single/settings.php:133, includes/customizer/settings/post-types/popup.php:163
+msgid "Author Box"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:19, includes/customizer/settings/blog-single/popup.php:106, includes/customizer/settings/blog-single/settings.php:134
+msgid "Recommended Posts"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:31
+msgid "Blog Single"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:35, includes/customizer/settings/cart-quick-view/popup.php:17, includes/customizer/settings/checkout-cart/popup.php:17, includes/customizer/settings/comment/popup.php:28, includes/customizer/settings/footer/popup.php:30, includes/customizer/settings/header/popup.php:27, includes/customizer/settings/page-single/popup.php:23, includes/customizer/settings/portfolio-single/popup.php:27, includes/customizer/settings/post-types/popup.php:42, includes/customizer/settings/product-archive/popup.php:17, includes/customizer/settings/product-list/popup.php:18, includes/customizer/settings/product-page/popup.php:18, includes/customizer/settings/sidebar/popup.php:26, includes/customizer/settings/site-settings/popup.php:24, includes/customizer/settings/title-bar/popup.php:24
+msgid "Styles"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/popup.php:41, includes/customizer/settings/comment/popup.php:34, includes/customizer/settings/page-single/popup.php:29, includes/customizer/settings/portfolio-single/popup.php:33
+msgid "Display settings for Blog, Shop single pages"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/settings.php:17, includes/customizer/settings/blog-single/settings.php:35, includes/customizer/settings/footer/settings.php:29, includes/customizer/settings/header/settings.php:29, includes/customizer/settings/page-single/settings.php:17, includes/customizer/settings/portfolio-single/settings.php:17, includes/customizer/settings/post-types/popup.php:66, includes/customizer/settings/title-bar/settings.php:17, includes/customizer/settings/title-bar/settings.php:154
+msgid "Type"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/settings.php:21, includes/customizer/settings/blog-single/settings.php:39, includes/customizer/settings/footer/settings.php:34, includes/customizer/settings/footer/subfooter-menu.php:106, includes/customizer/settings/footer/widgets-link.php:37, includes/customizer/settings/footer/widgets-link.php:83, includes/customizer/settings/header/settings.php:33, includes/customizer/settings/page-single/settings.php:21, includes/customizer/settings/portfolio-single/settings.php:21, includes/customizer/settings/post-types/popup.php:70, includes/customizer/settings/sidebar/widgets-link.php:37, includes/customizer/settings/sidebar/widgets-link.php:83, includes/customizer/settings/title-bar/settings.php:22, includes/customizer/settings/title-bar/settings.php:159, includes/customizer/api/includes/control/group/class-typography.php:45, includes/customizer/api/includes/control/group/class-typography.php:67, includes/customizer/api/includes/control/group/class-typography.php:108
+msgid "Default"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/settings.php:24, includes/customizer/settings/blog-single/settings.php:42, includes/customizer/settings/footer/settings.php:37, includes/customizer/settings/header/settings.php:36, includes/customizer/settings/page-single/settings.php:24, includes/customizer/settings/portfolio-single/settings.php:24, includes/customizer/settings/post-types/popup.php:73, includes/customizer/settings/title-bar/settings.php:25, includes/customizer/settings/title-bar/settings.php:162
+msgid "Custom"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/settings.php:96, includes/customizer/settings/checkout-cart/settings.php:17, includes/customizer/settings/footer/settings.php:233, includes/customizer/settings/header/settings.php:110, includes/customizer/settings/page-single/settings.php:49, includes/customizer/settings/portfolio-single/settings.php:49, includes/customizer/settings/post-types/popup.php:138, includes/customizer/settings/product-list/settings.php:53, includes/customizer/settings/product-page/settings.php:73
+msgid "Display Elements"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/settings.php:128, includes/customizer/settings/portfolio-single/settings.php:77, includes/customizer/settings/post-types/popup.php:160
+msgid "Author"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/settings.php:135, includes/customizer/settings/page-single/settings.php:73, includes/customizer/settings/portfolio-single/settings.php:82, includes/customizer/settings/post-types/popup.php:164
+msgid "Comments"
+msgstr ""
+
+#: includes/customizer/settings/blog-single/tags.php:126, includes/customizer/settings/cart-quick-view/styles.php:73, includes/customizer/settings/comment/action-link.php:53, includes/customizer/settings/footer/subfooter-menu.php:76, includes/customizer/settings/footer/widgets-link.php:53, includes/customizer/settings/header/menu.php:95, includes/customizer/settings/header/submenu.php:56, includes/customizer/settings/sidebar/widgets-link.php:53, includes/customizer/settings/typography/links.php:54
+msgid "Hover"
+msgstr ""
+
+#: includes/customizer/settings/cart-quick-view/popup.php:13, includes/customizer/settings/cart-quick-view/settings.php:17
+msgid "Cart Quick View"
+msgstr ""
+
+#: includes/customizer/settings/cart-quick-view/popup.php:21, includes/customizer/settings/checkout-cart/popup.php:23
+msgid "Checkout & Cart Pages in Shop Customizer"
+msgstr ""
+
+#: includes/customizer/settings/cart-quick-view/settings.php:26, includes/customizer/settings/header/settings.php:166, includes/customizer/api/includes/control/group/class-background.php:78, includes/customizer/api/includes/control/group/class-box-shadow.php:80
+msgid "Position"
+msgstr ""
+
+#: includes/customizer/settings/checkout-cart/popup.php:13
+msgid "Checkout & Cart"
+msgstr ""
+
+#: includes/customizer/settings/checkout-cart/settings.php:23
+msgid "Steps"
+msgstr ""
+
+#: includes/customizer/settings/comment/button.php:102
+msgid "hover"
+msgstr ""
+
+#: includes/customizer/settings/comment/field.php:63
+msgid "Focus"
+msgstr ""
+
+#: includes/customizer/settings/comment/popup.php:12, includes/customizer/settings/comment/popup.php:66
+msgid "Field"
+msgstr ""
+
+#: includes/customizer/settings/comment/popup.php:13, includes/customizer/settings/comment/popup.php:67
+msgid "Button"
+msgstr ""
+
+#: includes/customizer/settings/comment/popup.php:14
+msgid "Avater"
+msgstr ""
+
+#: includes/customizer/settings/comment/popup.php:17, includes/customizer/settings/comment/popup.php:71
+msgid "Comment Text"
+msgstr ""
+
+#: includes/customizer/settings/comment/popup.php:18
+msgid "Action Link"
+msgstr ""
+
+#: includes/customizer/settings/comment/popup.php:24
+msgid "Comment"
+msgstr ""
+
+#: includes/customizer/settings/comment/popup.php:72
+msgid "Action Links"
+msgstr ""
+
+#: includes/customizer/settings/comment/settings.php:17
+msgid "Display Contents"
+msgstr ""
+
+#: includes/customizer/settings/comment/settings.php:33
+msgid "Role"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:11, includes/customizer/settings/footer/popup.php:78, includes/customizer/settings/sidebar/popup.php:11
+msgid "Widgets Title"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:12, includes/customizer/settings/footer/popup.php:79, includes/customizer/settings/sidebar/popup.php:12
+msgid "Widgets Text"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:13, includes/customizer/settings/footer/popup.php:80, includes/customizer/settings/sidebar/popup.php:13
+msgid "Widgets Link"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:14, includes/customizer/settings/footer/popup.php:81, includes/customizer/settings/sidebar/popup.php:14
+msgid "Widgets Thumbnail"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:15, includes/customizer/settings/footer/popup.php:82, includes/customizer/settings/sidebar/popup.php:15
+msgid "Widgets Container"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:16, includes/customizer/settings/footer/popup.php:83
+msgid "Widgets Divider"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:17, includes/customizer/settings/footer/popup.php:84
+msgid "Widget Area Container"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:18, includes/customizer/settings/footer/popup.php:109
+msgid "Sub Footer Copyright"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:19, includes/customizer/settings/footer/popup.php:110
+msgid "Sub Footer Menu"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:20, includes/customizer/settings/footer/popup.php:133
+msgid "Sub Footer Container"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:25
+msgid "Footer"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:35
+msgid "Assigning the Footer Globally"
+msgstr ""
+
+#: includes/customizer/settings/footer/popup.php:64, includes/customizer/settings/footer/settings.php:17, includes/customizer/settings/header/popup.php:61, includes/customizer/settings/header/settings.php:17, includes/customizer/settings/logo/settings.php:17, includes/customizer/settings/typography/popup.php:62
+msgid "Learn how to use the following settings properly."
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:48, includes/customizer/settings/header/settings.php:137
+msgid "Behavior"
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:52, includes/customizer/settings/header/settings.php:142
+msgid "Static"
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:53, includes/customizer/settings/header/settings.php:145, includes/customizer/api/includes/control/group/class-background.php:107
+msgid "Fixed"
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:69
+msgid "Widget Area"
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:110, includes/customizer/settings/sidebar/popup.php:21, includes/customizer/settings/sidebar/settings.php:17, includes/customizer/settings/sidebar/settings.php:88
+msgid "Layout"
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:140, includes/customizer/settings/footer/settings.php:248, includes/customizer/settings/header/settings.php:222
+msgid "Enable on Tablet"
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:152, includes/customizer/settings/footer/settings.php:260, includes/customizer/settings/header/settings.php:245
+msgid "Enable on Mobile"
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:192
+msgid "Sub Footer"
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:236
+msgid "Copyright Text"
+msgstr ""
+
+#: includes/customizer/settings/footer/settings.php:237, includes/customizer/settings/header/popup.php:12, includes/customizer/settings/header/popup.php:76, includes/customizer/settings/header/settings.php:118
+msgid "Menu"
+msgstr ""
+
+#: includes/customizer/settings/footer/subfooter-container.php:36, includes/customizer/settings/footer/widget-area-container.php:55, includes/customizer/settings/footer/widgets-container.php:50, includes/customizer/settings/sidebar/widgets-container.php:51, includes/customizer/settings/site-settings/container.php:48
+msgid "Border"
+msgstr ""
+
+#: includes/customizer/settings/footer/widget-area-container.php:32
+msgid "Column Gap"
+msgstr ""
+
+#: includes/customizer/settings/footer/widgets-divider.php:41, includes/customizer/settings/header/submenu.php:15, includes/customizer/settings/sidebar/divider.php:84
+msgid "Items"
+msgstr ""
+
+#: includes/customizer/settings/header/logo.php:18, includes/customizer/settings/header/popup.php:11, includes/customizer/settings/header/popup.php:75, includes/customizer/settings/header/settings.php:117, includes/customizer/settings/logo/popup.php:17, includes/customizer/settings/logo/popup.php:23
+msgid "Logo"
+msgstr ""
+
+#: includes/customizer/settings/header/logo.php:21
+msgid "Primary"
+msgstr ""
+
+#: includes/customizer/settings/header/logo.php:22
+msgid "Secondary"
+msgstr ""
+
+#: includes/customizer/settings/header/logo.php:32, includes/customizer/settings/header/sticky-logo.php:18
+msgid "Max Width"
+msgstr ""
+
+#: includes/customizer/settings/header/menu.php:139, includes/customizer/settings/header/submenu.php:100
+msgid "Active"
+msgstr ""
+
+#: includes/customizer/settings/header/popup.php:13, includes/customizer/settings/header/popup.php:77
+msgid "Submenu"
+msgstr ""
+
+#: includes/customizer/settings/header/popup.php:14, includes/customizer/settings/header/popup.php:78, includes/customizer/settings/header/settings.php:119, includes/customizer/settings/search/popup.php:13, includes/customizer/settings/sidebar/settings.php:70, includes/customizer/settings/title-bar/settings.php:136
+msgid "Search"
+msgstr ""
+
+#: includes/customizer/settings/header/popup.php:15, includes/customizer/settings/header/popup.php:79, includes/customizer/settings/header/submenu.php:173, includes/customizer/settings/site-settings/popup.php:14, includes/customizer/settings/site-settings/popup.php:95, includes/customizer/settings/title-bar/popup.php:14
+msgid "Container"
+msgstr ""
+
+#: includes/customizer/settings/header/popup.php:16, includes/customizer/settings/header/popup.php:98
+msgid "Sticky Container"
+msgstr ""
+
+#: includes/customizer/settings/header/popup.php:17, includes/customizer/settings/header/popup.php:97, includes/customizer/settings/logo/settings.php:45
+msgid "Sticky Logo"
+msgstr ""
+
+#: includes/customizer/settings/header/popup.php:22
+msgid "Header"
+msgstr ""
+
+#: includes/customizer/settings/header/popup.php:32
+msgid "Assigning the Header Globally"
+msgstr ""
+
+#: includes/customizer/settings/header/settings.php:77
+msgid "Overlap Content"
+msgstr ""
+
+#: includes/customizer/settings/header/settings.php:120
+msgid "Cart"
+msgstr ""
+
+#: includes/customizer/settings/header/settings.php:148
+msgid "Sticky"
+msgstr ""
+
+#: includes/customizer/settings/header/settings.php:171
+msgid "Top"
+msgstr ""
+
+#: includes/customizer/settings/header/settings.php:174
+msgid "Bottom"
+msgstr ""
+
+#: includes/customizer/settings/header/settings.php:197
+msgid "Offset"
+msgstr ""
+
+#: includes/customizer/settings/logo/popup.php:16
+msgid "Site Logo"
+msgstr ""
+
+#: includes/customizer/settings/logo/popup.php:31
+msgid "Adding Multiple versions of logo to website"
+msgstr ""
+
+#: includes/customizer/settings/logo/settings.php:27
+msgid "Primary Logo"
+msgstr ""
+
+#: includes/customizer/settings/logo/settings.php:36
+msgid "Secondary Logo"
+msgstr ""
+
+#: includes/customizer/settings/logo/settings.php:54
+msgid "Retina Primary Logo"
+msgstr ""
+
+#: includes/customizer/settings/logo/settings.php:63
+msgid "Retina Secondary Logo"
+msgstr ""
+
+#: includes/customizer/settings/logo/settings.php:72
+msgid "Retina Sticky Logo"
+msgstr ""
+
+#: includes/customizer/settings/logo/settings.php:81
+msgid "Mobile Logo"
+msgstr ""
+
+#: includes/customizer/settings/logo/settings.php:91
+msgid "Retina Mobile Logo"
+msgstr ""
+
+#: includes/customizer/settings/maintenance/popup.php:13, includes/customizer/settings/maintenance/settings.php:35
+msgid "Maintenance"
+msgstr ""
+
+#: includes/customizer/settings/maintenance/popup.php:21
+msgid "Enabling Maintenance Mode in Jupiter X"
+msgstr ""
+
+#: includes/customizer/settings/maintenance/settings.php:17
+msgid "Maintenance Mode returns HTTP 503 code, so search engines know to come back a short time later. It is not recommended to use this mode for more than a couple of days."
+msgstr ""
+
+#: includes/customizer/settings/maintenance/settings.php:26
+msgid "Maintenance page will be displayed to guests only."
+msgstr ""
+
+#: includes/customizer/settings/page-single/popup.php:19
+msgid "Page Single"
+msgstr ""
+
+#: includes/customizer/settings/portfolio-archive/popup.php:13
+msgid "Portfolio Archive"
+msgstr ""
+
+#: includes/customizer/settings/portfolio-single/popup.php:17, includes/customizer/settings/portfolio-single/popup.php:77, includes/customizer/settings/portfolio-single/settings.php:81
+msgid "Related Works"
+msgstr ""
+
+#: includes/customizer/settings/portfolio-single/popup.php:23
+msgid "Portfolio Single"
+msgstr ""
+
+#: includes/customizer/settings/post-types/popup.php:38
+msgid "Single"
+msgstr ""
+
+#: includes/customizer/settings/post-types/popup.php:180, includes/customizer/settings/sidebar/settings.php:69, includes/customizer/settings/title-bar/settings.php:135
+msgid "Archive"
+msgstr ""
+
+#: includes/customizer/settings/product-archive/popup.php:13
+msgid "Product Archive"
+msgstr ""
+
+#: includes/customizer/settings/product-archive/popup.php:22
+msgid "Product Archive in Shop Customizer"
+msgstr ""
+
+#: includes/customizer/settings/product-list/popup.php:13
+msgid "Product List"
+msgstr ""
+
+#: includes/customizer/settings/product-list/popup.php:25
+msgid "Product List in Shop Customizer"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:17, includes/customizer/settings/title-bar/settings.php:53, includes/customizer/settings/title-bar/settings.php:175
+msgid "Title HTML Tag"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:38
+msgid "Pagination"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:42
+msgid "Page Based"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:73
+msgid "Image"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:74, includes/customizer/settings/product-page/settings.php:108
+msgid "Rating"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:77
+msgid "Price"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:78
+msgid "Add to Cart Button"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:79, includes/customizer/settings/product-page/settings.php:106
+msgid "Sale Badge"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:80, includes/customizer/settings/product-page/settings.php:107
+msgid "Out of Stock Badge"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:96
+msgid "Grid Settings"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:228
+msgid "Quick View"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:238
+msgid "Quick View Opener"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:260
+msgid "Quick View Content"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:268
+msgid "Description"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:269
+msgid "Meta Information"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:270
+msgid "Social Icons"
+msgstr ""
+
+#: includes/customizer/settings/product-list/settings.php:271
+msgid "Reviews"
+msgstr ""
+
+#: includes/customizer/settings/product-page/popup.php:13
+msgid "Product Page"
+msgstr ""
+
+#: includes/customizer/settings/product-page/popup.php:25
+msgid "Product Page in Shop Customizer"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:99
+msgid "SKU"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:100
+msgid "Short Description"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:101
+msgid "Quantity"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:103
+msgid "Description Tab"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:104
+msgid "Review Tab"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:105
+msgid "Additional Info Tab"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:117
+msgid "Image Lightbox"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:127
+msgid "Image Zoom"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:154
+msgid "Upsells Products"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:167
+msgid "Related Products"
+msgstr ""
+
+#: includes/customizer/settings/product-page/settings.php:315
+msgid "Sticky Product Info"
+msgstr ""
+
+#: includes/customizer/settings/search/popup.php:21
+msgid "Displaying Search Results from specific Post Types"
+msgstr ""
+
+#: includes/customizer/settings/search/settings.php:17
+msgid "Display section"
+msgstr ""
+
+#: includes/customizer/settings/search/settings.php:23, includes/customizer/settings/sidebar/settings.php:60, includes/customizer/settings/title-bar/settings.php:126
+msgid "Page"
+msgstr ""
+
+#: includes/customizer/settings/search/settings.php:24
+msgid "Product"
+msgstr ""
+
+#: includes/customizer/settings/search/settings.php:51
+msgid "Posts per page"
+msgstr ""
+
+#: includes/customizer/settings/sidebar/divider.php:18
+msgid "Sidebar"
+msgstr ""
+
+#: includes/customizer/settings/sidebar/popup.php:16
+msgid "Divider"
+msgstr ""
+
+#: includes/customizer/settings/sidebar/popup.php:31
+msgid "Adding a Sidebar globally"
+msgstr ""
+
+#: includes/customizer/settings/sidebar/settings.php:30, includes/customizer/settings/sidebar/settings.php:97
+msgid "Primary Sidebar"
+msgstr ""
+
+#: includes/customizer/settings/sidebar/settings.php:41, includes/customizer/settings/sidebar/settings.php:104
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: includes/customizer/settings/sidebar/settings.php:119, includes/customizer/settings/title-bar/settings.php:215
+msgid "Conditions"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/container.php:17
+msgid "Box Shadow"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/popup.php:11, includes/customizer/settings/site-settings/popup.php:60, includes/customizer/settings/typography/popup.php:11
+msgid "Body"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/popup.php:12, includes/customizer/settings/site-settings/popup.php:61
+msgid "Main"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/popup.php:13, includes/customizer/settings/site-settings/popup.php:72, includes/customizer/settings/site-settings/settings.php:105
+msgid "Body Border"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/popup.php:19
+msgid "Site Settings"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/popup.php:29
+msgid "Setting container width in Jupiter X"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/settings.php:18
+msgid "Site Width"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/settings.php:22
+msgid "Boxed"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/settings.php:32, includes/customizer/settings/site-settings/settings.php:69
+msgid "Container Width"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/settings.php:122
+msgid "Header & Footer On Top of Border"
+msgstr ""
+
+#: includes/customizer/settings/site-settings/settings.php:145
+msgid "Scroll to top button"
+msgstr ""
+
+#: includes/customizer/settings/title-bar/breadcrumb.php:53
+msgid "Breadcrumb divider"
+msgstr ""
+
+#: includes/customizer/settings/title-bar/breadcrumb.php:72
+msgid "Divider color"
+msgstr ""
+
+#: includes/customizer/settings/title-bar/breadcrumb.php:96
+msgid "Links color"
+msgstr ""
+
+#: includes/customizer/settings/title-bar/popup.php:13, includes/customizer/settings/title-bar/settings.php:88, includes/customizer/settings/title-bar/settings.php:199
+msgid "Breadcrumb"
+msgstr ""
+
+#: includes/customizer/settings/title-bar/popup.php:19
+msgid "Title Bar"
+msgstr ""
+
+#: includes/customizer/settings/title-bar/popup.php:29
+msgid "Including/Excluding pages from displaying the Title Bar"
+msgstr ""
+
+#: includes/customizer/settings/title-bar/settings.php:192
+msgid "Content"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:13
+msgid "Heading 1"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:14
+msgid "Heading 2"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:15
+msgid "Heading 3"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:16
+msgid "Heading 4"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:17
+msgid "Heading 5"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:18
+msgid "Heading 6"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:23
+msgid "Fonts & Typography"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:27
+msgid "Fonts"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:28
+msgid "Typography"
+msgstr ""
+
+#: includes/customizer/settings/typography/popup.php:33
+msgid "Changing typography for Body, Headings and Links"
+msgstr ""
+
+#: includes/customizer/settings/typography/settings.php:17
+msgid "Please click \"Publish\" and then refresh the page to make selected fonts available in all the typography settings."
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-alert.php:84
+msgid "Learn more"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-box-model.php:109
+msgid "Margin"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-box-model.php:113
+msgid "Padding"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-exceptions.php:76, includes/customizer/api/includes/control/class-image.php:45
+msgid "Remove image icon"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-exceptions.php:76
+msgid "Add New Condition"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-fonts.php:76
+msgid "Add Font Family"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-image.php:46
+msgid "Upload image icon"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-image.php:47
+msgid "Click to Upload Image"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-pro-box.php:81
+msgid "Upgrade to unlock this feature"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-pro-box.php:82
+msgid "You can unlock more customization options."
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-pro-box.php:78
+msgid "Activate Jupiter X"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-pro-box.php:79
+msgid "To unlock this feature you must activate Jupiter X"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-select.php:99
+msgid "Fetching..."
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-template.php:97
+msgid "OR"
+msgstr ""
+
+#: includes/customizer/api/includes/section/class-link.php:98, includes/customizer/api/includes/section/class-popup.php:143
+msgid "Press return or enter to open this section"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-background.php:43
+msgid "Background Color Type"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-background.php:71
+msgid "BG Image"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-background.php:85
+msgid "Repeat"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-background.php:123
+msgid "Cover"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-background.php:171, includes/customizer/api/includes/control/group/class-box-shadow.php:84
+msgid "Linear"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-background.php:174
+msgid "Radial"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-background.php:231
+msgid "Social or Self hosted video link"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-background.php:233
+msgid "Video Link"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-background.php:240
+msgid "Video Fallback"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-border.php:48
+msgid "Dashed"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-border.php:49
+msgid "Dotted"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-border.php:50
+msgid "Solid"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-box-shadow.php:62
+msgid "Blur"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-box-shadow.php:71
+msgid "Spread"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-box-shadow.php:87
+msgid "Inset"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-box-shadow.php:94
+msgid "Color"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:110
+msgid "Capitalize"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:111
+msgid "Lowercase"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:112
+msgid "Uppercase"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:163
+msgid "Normal"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:164
+msgid "Bold"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:165
+msgid "Bolder"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:166
+msgid "Lighter"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:167
+msgid "100"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:168
+msgid "200"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:169
+msgid "300"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:170
+msgid "400"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:171
+msgid "500"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:172
+msgid "600"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:173
+msgid "700"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:174
+msgid "800"
+msgstr ""
+
+#: includes/customizer/api/includes/control/group/class-typography.php:175
+msgid "900"
+msgstr ""

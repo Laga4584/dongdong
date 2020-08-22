@@ -1,0 +1,69 @@
+// WordPress theme requirement
+//
+// Every WordPress theme requires styles.
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.alignleft {
+    display: block;
+    margin-right: 1rem;
+    float: left;
+}
+
+.alignright {
+    display: block;
+    margin-left: 1rem;
+    float: right;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption,
+.wp-caption img {
+    max-width: 100%;
+    text-align: center;
+}
+
+.wp-caption-text {
+    font-size: @font-size-sm;
+    color: @secondary;
+    margin: 3px 0;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+.kirki-customizer-loading-wrapper {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='65' height='62'%3E%3Cpath fill='%23D1D1D1' d='M64.75 1.629C65.32.977 64.83 0 64.017 0H54.65c-3.013 0-5.782 1.303-7.656 3.584L33.23 20.28a1 1 0 0 1-1.548 0L18 3.584C16.126 1.304 13.275 0 10.343 0H.977C.162 0-.326.977.244 1.629l23.7 28.67c.327.406.327.895 0 1.302l-23.7 28.67c-.57.651-.082 1.629.733 1.629h9.366c3.014 0 5.783-1.304 7.656-3.584L64.75 1.629zM41.863 33.475l-7.412 9.04a.495.495 0 0 0 0 .652l12.543 15.23c1.874 2.28 4.724 3.584 7.656 3.584h9.367c.814 0 1.303-.977.733-1.629L42.596 33.475c-.163-.245-.57-.245-.733 0z'/%3E%3C/svg%3E") !important;
+}
