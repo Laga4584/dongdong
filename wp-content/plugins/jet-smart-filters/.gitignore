@@ -1,0 +1,8 @@
+*.log
+node_modules
+.sass-cache
+.idea
+.tgitconfig
+package-lock.json
+prepros.cfg
+prepros.config

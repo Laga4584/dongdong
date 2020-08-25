@@ -1,0 +1,8 @@
+<wpml-config>
+    <admin-texts>
+        <key name="pafw_mshop_eximbay">
+            <key name="eximbay_easypay_title" />
+            <key name="eximbay_easypay_description" />
+        </key>
+    </admin-texts>
+</wpml-config>
