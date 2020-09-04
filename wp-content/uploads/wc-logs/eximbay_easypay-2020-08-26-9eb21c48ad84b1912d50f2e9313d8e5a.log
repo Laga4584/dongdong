@@ -1,0 +1,406 @@
+08-26-2020 @ 06:04:34 - Process Payment Response : request
+08-26-2020 @ 06:04:34 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 165236_200826_060433
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1280
+    [shop] => SEOUL LIFE
+    [buyer] => 奈々水樹
+    [email] => karhell4@naver.com
+    [tel] => 01049209431
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL Collagen コラーゲン インパクト マスク EX 10枚#アンプルマスクEX #シートパック #マスク 韓国 パック
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:04:40 - Process Payment Response : return
+08-26-2020 @ 06:04:40 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 165236_200826_060433
+    [cur] => JPY
+    [amt] => 1280
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:04:40 - Process Payment Response : finish
+08-26-2020 @ 06:04:40 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [mid] => 1849705C64
+    [ref] => 165236_200826_060433
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1280
+    [shop] => SEOUL LIFE
+    [buyer] => 奈々水樹
+    [email] => karhell4@naver.com
+    [tel] => 01049209431
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL Collagen コラーゲン インパクト マスク EX 10枚#アンプルマスクEX #シートパック #マスク 韓国 パック
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:08:24 - Process Payment Response : request
+08-26-2020 @ 06:08:24 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 165238_200826_060823
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1280
+    [shop] => SEOUL LIFE
+    [buyer] => 奈々水樹
+    [email] => karhell4@naver.com
+    [tel] => 01049209431
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL Collagen コラーゲン インパクト マスク EX 10枚#アンプルマスクEX #シートパック #マスク 韓国 パック
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:08:28 - Process Payment Response : return
+08-26-2020 @ 06:08:28 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 165238_200826_060823
+    [cur] => JPY
+    [amt] => 1280
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:08:28 - Process Payment Response : finish
+08-26-2020 @ 06:08:28 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [mid] => 1849705C64
+    [ref] => 165238_200826_060823
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1280
+    [shop] => SEOUL LIFE
+    [buyer] => 奈々水樹
+    [email] => karhell4@naver.com
+    [tel] => 01049209431
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL Collagen コラーゲン インパクト マスク EX 10枚#アンプルマスクEX #シートパック #マスク 韓国 パック
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:23:54 - Process Payment Response : request
+08-26-2020 @ 06:23:54 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 165238_200826_060823
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1280
+    [shop] => SEOUL LIFE
+    [buyer] => 奈々水樹
+    [email] => karhell4@naver.com
+    [tel] => 01049209431
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL Collagen コラーゲン インパクト マスク EX 10枚#アンプルマスクEX #シートパック #マスク 韓国 パック
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:23:57 - Process Payment Response : return
+08-26-2020 @ 06:23:57 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 165238_200826_060823
+    [cur] => JPY
+    [amt] => 1280
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:23:58 - Process Payment Response : finish
+08-26-2020 @ 06:23:58 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [mid] => 1849705C64
+    [ref] => 165238_200826_060823
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1280
+    [shop] => SEOUL LIFE
+    [buyer] => 奈々水樹
+    [email] => karhell4@naver.com
+    [tel] => 01049209431
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL Collagen コラーゲン インパクト マスク EX 10枚#アンプルマスクEX #シートパック #マスク 韓国 パック
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:33:01 - Process Payment Response : request
+08-26-2020 @ 06:33:01 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 165238_200826_060823
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1280
+    [shop] => SEOUL LIFE
+    [buyer] => 奈々水樹
+    [email] => karhell4@naver.com
+    [tel] => 01049209431
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL Collagen コラーゲン インパクト マスク EX 10枚#アンプルマスクEX #シートパック #マスク 韓国 パック
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:34:28 - Process Payment Response : request
+08-26-2020 @ 06:34:28 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 165238_200826_060823
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1280
+    [shop] => SEOUL LIFE
+    [buyer] => 奈々水樹
+    [email] => karhell4@naver.com
+    [tel] => 01049209431
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL Collagen コラーゲン インパクト マスク EX 10枚#アンプルマスクEX #シートパック #マスク 韓国 パック
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:34:54 - Process Payment Response : return
+08-26-2020 @ 06:34:54 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 165238_200826_060823
+    [cur] => JPY
+    [amt] => 1280
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-26-2020 @ 06:34:54 - Process Payment Response : finish
+08-26-2020 @ 06:34:54 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [mid] => 1849705C64
+    [ref] => 165238_200826_060823
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1280
+    [shop] => SEOUL LIFE
+    [buyer] => 奈々水樹
+    [email] => karhell4@naver.com
+    [tel] => 01049209431
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL Collagen コラーゲン インパクト マスク EX 10枚#アンプルマスクEX #シートパック #マスク 韓国 パック
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### 2.0.1
+- Updated: pot file
+- Updated: minor fixes
+
 ### 2.0.0
 - Added: Advanced Review widget containing the Leave a review button, the List of approved reviews, the ability to comment the reviews by administrator.
 - Added: JetReviews dashboard to WordPress console.

@@ -4,6 +4,10 @@ Brand new addon for Elementor Page builder. It provides the set of modules to cr
 
 # ChangeLog
 
+## [2.3.3](https://github.com/ZemezLab/jet-elements/archive/2.3.3.zip) - 28.08.2020
+* Fixed: compatibility with Elementor 3.0 ( Repeater issue )
+* Fixed: a fold init in the Pricing table widget
+
 ## [2.3.2](https://github.com/ZemezLab/jet-elements/archive/2.3.2.zip) - 17.08.2020
 * Added: compatibility the Vertical Timeline widget with popups
 * Added: getting a list of templates in controls through ajax

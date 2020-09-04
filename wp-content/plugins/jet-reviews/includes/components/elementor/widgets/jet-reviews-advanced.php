@@ -49,6 +49,7 @@ class Jet_Reviews_Advanced extends Jet_Reviews_Base {
 				'header'       => '.jet-reviews-advanced__header',
 				'reviews'      => '.jet-reviews-advanced__reviews',
 				'review'       => '.jet-reviews-advanced__review',
+				'comments'      => '.jet-reviews-advanced__review-comments',
 				'comment'      => '.jet-reviews-advanced__review-comment',
 				'control'      => '.jet-reviews-button',
 				'rating-field' => '.jet-reviews-field',
@@ -614,7 +615,7 @@ class Jet_Reviews_Advanced extends Jet_Reviews_Base {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} ' . $css_scheme['control'] . ' .jet-reviews-button__icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} ' . $css_scheme['control'] . ' .jet-reviews-button__icon svg' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} ' . $css_scheme['control'] . ' .jet-reviews-button__icon svg' => 'width: {{SIZE}}{{UNIT}};',
 				),
 			)
 		);
@@ -669,6 +670,40 @@ class Jet_Reviews_Advanced extends Jet_Reviews_Base {
 			)
 		);
 
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'           => 'primary_control_border',
+				'label'          => esc_html__( 'Border', 'jet-reviews' ),
+				'placeholder'    => '1px',
+				'selector'       => '{{WRAPPER}} ' . $css_scheme['control'] . '.jet-reviews-button--primary',
+			)
+		);
+
+		$this->add_responsive_control(
+			'primary_control_border_radius',
+			array(
+				'label'      => esc_html__( 'Border Radius', 'jet-reviews' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} ' . $css_scheme['control'] . '.jet-reviews-button--primary' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'primary_control_padding',
+			array(
+				'label'      => esc_html__( 'Padding', 'jet-reviews' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
+					'{{WRAPPER}} ' . $css_scheme['control'] . '.jet-reviews-button--primary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
@@ -705,6 +740,40 @@ class Jet_Reviews_Advanced extends Jet_Reviews_Base {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} ' . $css_scheme['control'] . '.jet-reviews-button--secondary .jet-reviews-button__text' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'           => 'secondary_control_border',
+				'label'          => esc_html__( 'Border', 'jet-reviews' ),
+				'placeholder'    => '1px',
+				'selector'       => '{{WRAPPER}} ' . $css_scheme['control'] . '.jet-reviews-button--secondary',
+			)
+		);
+
+		$this->add_responsive_control(
+			'secondary_control_border_radius',
+			array(
+				'label'      => esc_html__( 'Border Radius', 'jet-reviews' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} ' . $css_scheme['control'] . '.jet-reviews-button--secondary' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'secondary_control_padding',
+			array(
+				'label'      => esc_html__( 'Padding', 'jet-reviews' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
+					'{{WRAPPER}} ' . $css_scheme['control'] . '.jet-reviews-button--secondary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -928,6 +997,23 @@ class Jet_Reviews_Advanced extends Jet_Reviews_Base {
 			)
 		);
 
+		$this->add_responsive_control(
+			'review_author_avatar_space',
+			array(
+				'label' => __( 'Avatar Spacing', 'jet-reviews' ),
+				'type'  => Controls_Manager::SLIDER,
+				'range' => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 100,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} ' . $css_scheme['review'] . ' .jet-reviews-user-data__avatar' => 'margin-right: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
+
 		$this->add_control(
 			'review_author_name_color',
 			array(
@@ -982,6 +1068,23 @@ class Jet_Reviews_Advanced extends Jet_Reviews_Base {
 				'label'     => esc_html__( 'Title', 'jet-reviews' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
+			)
+		);
+
+		$this->add_responsive_control(
+			'review_title_bottom_space',
+			array(
+				'label' => __( 'Spacing', 'jet-reviews' ),
+				'type'  => Controls_Manager::SLIDER,
+				'range' => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 100,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} ' . $css_scheme['review'] . ' .jet-reviews-advanced__review-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				),
 			)
 		);
 
@@ -1116,11 +1219,145 @@ class Jet_Reviews_Advanced extends Jet_Reviews_Base {
 		$this->end_controls_section();
 
 		$this->start_controls_section(
+			'section_review_misc_style',
+			array(
+				'label'      => esc_html__( 'Reviews Misc', 'jet-reviews' ),
+				'tab'        => Controls_Manager::TAB_STYLE,
+				'show_label' => false,
+			)
+		);
+
+		$this->add_control(
+			'review_misc_verify_label_heading',
+			array(
+				'label'     => esc_html__( 'Virify Label', 'jet-reviews' ),
+				'type'      => Controls_Manager::HEADING,
+			)
+		);
+
+		$this->add_control(
+			'review_verify_label_color',
+			array(
+				'label'  => esc_html__( 'Verify Label Color', 'jet-reviews' ),
+				'type'   => Controls_Manager::COLOR,
+				'scheme' => array(
+					'type'  => Scheme_Color::get_type(),
+					'value' => Scheme_Color::COLOR_2,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} ' . $css_scheme['review'] . ' .jet-reviews-user-data__verification .verification-icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} ' . $css_scheme['review'] . ' .jet-reviews-user-data__verification .verification-label' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'review_verify_icon_size',
+			array(
+				'label'   => esc_html__( 'Verify Icon Size', 'jet-reviews' ),
+				'type'    => Controls_Manager::SLIDER,
+				'range' => array(
+					'px' => array(
+						'min' => 10,
+						'max' => 50,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} ' . $css_scheme['review'] . ' .jet-reviews-user-data__verification .verification-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} ' . $css_scheme['review'] . ' .jet-reviews-user-data__verification .verification-icon svg' => 'width: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'label'    => esc_html__( 'Verify Label Typography', 'jet-reviews' ),
+				'name'     => 'review_verify_label_typography',
+				'selector' => '{{WRAPPER}} ' . $css_scheme['review'] . ' .jet-reviews-user-data__verification .verification-label',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'           => 'review_verify_label_border',
+				'label'          => esc_html__( 'Border', 'jet-reviews' ),
+				'placeholder'    => '1px',
+				'selector'       => '{{WRAPPER}} ' . $css_scheme['review'] . ' .jet-reviews-user-data__verification',
+			)
+		);
+
+		$this->add_responsive_control(
+			'review_verify_label_border_radius',
+			array(
+				'label'      => esc_html__( 'Border Radius', 'jet-reviews' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} ' . $css_scheme['review'] . ' .jet-reviews-user-data__verification' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
 			'section_comments_style',
 			array(
 				'label'      => esc_html__( 'Comments', 'jet-reviews' ),
 				'tab'        => Controls_Manager::TAB_STYLE,
 				'show_label' => false,
+			)
+		);
+
+		$this->add_control(
+			'comments_general_heading',
+			array(
+				'label'     => esc_html__( 'General', 'jet-reviews' ),
+				'type'      => Controls_Manager::HEADING,
+			)
+		);
+
+		$this->add_responsive_control(
+			'comments_title_bottom_space',
+			array(
+				'label' => __( 'Title Spacing', 'jet-reviews' ),
+				'type'  => Controls_Manager::SLIDER,
+				'range' => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 100,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} ' . $css_scheme['comments'] . ' .jet-reviews-advanced__comments-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'comments_title_color',
+			array(
+				'label'  => esc_html__( 'Title Color', 'jet-reviews' ),
+				'type'   => Controls_Manager::COLOR,
+				'scheme' => array(
+					'type'  => Scheme_Color::get_type(),
+					'value' => Scheme_Color::COLOR_2,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} ' . $css_scheme['comments'] . ' .jet-reviews-advanced__comments-title' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'label'    => esc_html__( 'Title Typography', 'jet-reviews' ),
+				'name'     => 'comments_title_typography',
+				'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
+				'selector' => '{{WRAPPER}} ' . $css_scheme['comments'] . ' .jet-reviews-advanced__comments-title',
 			)
 		);
 
@@ -1145,6 +1382,23 @@ class Jet_Reviews_Advanced extends Jet_Reviews_Base {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} ' . $css_scheme['comment'] . ' .jet-reviews-comment-user-avatar' => 'min-width: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'comment_author_avatar_space',
+			array(
+				'label' => __( 'Avatar Spacing', 'jet-reviews' ),
+				'type'  => Controls_Manager::SLIDER,
+				'range' => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 100,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} ' . $css_scheme['comment'] . ' .jet-reviews-comment-user-avatar' => 'margin-right: {{SIZE}}{{UNIT}};',
 				),
 			)
 		);

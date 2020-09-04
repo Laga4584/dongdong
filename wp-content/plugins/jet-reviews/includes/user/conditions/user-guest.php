@@ -40,7 +40,7 @@ class User_Guest extends Base_Condition {
 	 * @return [type] [description]
 	 */
 	public function get_invalid_message() {
-		return $this->invalid_message;
+		return apply_filters( 'jet-reviews/user/conditions/invalid-message/{$this->slug}', $this->invalid_message, $this );
 	}
 
 	/**

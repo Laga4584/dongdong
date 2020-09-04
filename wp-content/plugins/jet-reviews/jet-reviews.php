@@ -3,7 +3,7 @@
  * Plugin Name: JetReviews For Elementor
  * Plugin URI:  https://crocoblock.com/plugins/jetreviews/
  * Description: JetReviews - Reviews Widget for Elementor Page Builder
- * Version:     2.0.0
+ * Version:     2.0.1
  * Author:      Crocoblock
  * Author URI:  https://crocoblock.com/
  * Text Domain: jet-reviews
@@ -39,7 +39,7 @@ if ( ! class_exists( 'Jet_Reviews' ) ) {
 		 *
 		 * @var string
 		 */
-		private $version = '2.0.0';
+		private $version = '2.0.1';
 
 		/**
 		 * Holder for base plugin URL

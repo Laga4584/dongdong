@@ -2037,12 +2037,14 @@
 				
 				maskHeight();
 				fold_content_height();
-
+				
 				if ( !$fold_target.hasClass( 'pricing-table-unfold-state' ) ) {
 					$fold_mask.css( {
 						'height': fold_maskHeight
 					} );
 				}
+
+				$scope.find( '.pricing-table__fold-mask' ).css('max-height', 'none');
 
 				$fold_button.on( 'click.jetPricingTable', function() {
 					var $this         = $( this ),

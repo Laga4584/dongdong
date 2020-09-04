@@ -215,7 +215,11 @@
 									options.at = JetThemeEditor.atIndex;
 								}
 
-								elementor.sections.currentView.addChildModel( data.content, options );
+								if ( elementor.sections ) {
+									elementor.sections.currentView.addChildModel( data.content, options );
+								} else {
+									elementor.getPreviewView().addChildModel( data.content, options ); // For compat with Elementor 3.0
+								}
 
 								if ( data.page_settings ) {
 									elementor.settings.page.model.set( data.page_settings );
@@ -224,6 +228,10 @@
 								elementor.channels.data.trigger( 'template:after:insert', templateModel );
 
 								JetThemeEditor.atIndex = null;
+
+								if ( $e ) {
+									$e.run( 'document/save/update' );
+								}
 
 							}
 						}
@@ -883,10 +891,17 @@
 
 					var $this    = $( this ),
 						$section = $this.closest( '.elementor-top-section' ),
-						modelID  = $section.data( 'model-cid' );
+						modelID  = $section.data( 'model-cid' ),
+						models   = null;
 
-					if ( window.elementor.sections.currentView.collection.length ) {
-						$.each( window.elementor.sections.currentView.collection.models, function( index, model ) {
+					if ( window.elementor.sections && window.elementor.sections.currentView.collection.length ) {
+						models = window.elementor.sections.currentView.collection.models
+					} else if ( elementor.getPreviewView().collection.length ) { // For compat with Elementor 3.0
+						models = elementor.getPreviewView().collection.models;
+					}
+
+					if ( models ) {
+						$.each( models, function( index, model ) {
 							if ( modelID === model.cid ) {
 								JetThemeEditor.atIndex = index;
 							}

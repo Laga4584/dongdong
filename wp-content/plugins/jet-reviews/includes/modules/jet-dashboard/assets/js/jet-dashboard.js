@@ -181,15 +181,19 @@ var eventBus = new Vue();
 				actionPluginRequest: null,
 				actionPluginProcessed: false,
 				licenseActionProcessed: false,
+				updatePluginProcessed: false,
+				rollbackPluginProcessed: false,
 				licenseKey: '',
-				ajaxLicenseAction: null
+				ajaxLicenseAction: null,
+				rollbackPopupVisible: false,
+				rollbackVersion: this.pluginData['version']
 			}
 		},
 
 		computed: {
 
 			deactivateAvaliable: function() {
-				return ( ! this.pluginData['licenseControl'] && this.pluginData['isInstalled'] && this.pluginData['isActivated'] ) ? true : false;
+				return ( this.pluginData['isInstalled'] && this.pluginData['isActivated'] ) ? true : false;
 			},
 
 			activateAvaliable: function() {
@@ -211,6 +215,38 @@ var eventBus = new Vue();
 			deactivateLicenseVisible: function() {
 				return ( this.pluginData['licenseActivated'] ) ? true : false;
 			},
+
+			versionRollbackAvaliable: function() {
+				return ( 0 < this.pluginData['versions'].length ) && this.pluginData['licenseActivated'] ? true : false;
+			},
+
+			rollbackButtonVisible: function() {
+				return this.rollbackVersion !== this.pluginData['currentVersion'];
+			},
+
+			proccesingState: function() {
+				return this.actionPluginProcessed || this.updatePluginProcessed || this.rollbackPluginProcessed;
+			},
+
+			rollbackOptions: function() {
+
+				return this.pluginData['versions'].map( ( version ) => {
+					let label = version;
+
+					if ( label === this.pluginData['currentVersion'] ) {
+						label = label + ' - Current Version';
+					}
+
+					if ( label === this.pluginData['version'] ) {
+						label = label + ' - Latest Version';
+					}
+
+					return {
+						label: label,
+						value: version,
+					}
+				} );
+			}
 		},
 
 		methods: {
@@ -227,8 +263,6 @@ var eventBus = new Vue();
 
 			updatePlugin: function() {
 
-				console.log(this.updateActionAvaliable);
-
 				if ( this.updateActionAvaliable ) {
 
 					this.actionPlugin = 'update';
@@ -243,6 +277,15 @@ var eventBus = new Vue();
 				eventBus.$emit( 'showPopupActivation', this.pluginData['slug'] );
 			},
 
+			showRollbackPopup: function() {
+				this.rollbackPopupVisible = true;
+			},
+
+			rollbackPluginVersion: function() {
+				this.actionPlugin = 'rollback';
+				this.pluginAction();
+			},
+
 			pluginAction: function() {
 				let self = this;
 
@@ -255,6 +298,7 @@ var eventBus = new Vue();
 						data: {
 							action: self.actionPlugin,
 							plugin: self.pluginData['slug'],
+							version: self.rollbackVersion,
 						}
 					},
 					beforeSend: function( jqXHR, ajaxSettings ) {
@@ -263,10 +307,39 @@ var eventBus = new Vue();
 							self.actionPluginRequest.abort();
 						}
 
-						self.actionPluginProcessed = true;
+						switch( self.actionPlugin ) {
+
+							case 'activate':
+							case 'deactivate':
+								self.actionPluginProcessed = true;
+							break;
+
+							case 'update':
+								self.updatePluginProcessed = true;
+							break;
+
+							case 'rollback':
+								self.rollbackPluginProcessed = true;
+							break;
+						}
 					},
 					success: function( responce, textStatus, jqXHR ) {
-						self.actionPluginProcessed = false;
+
+						switch(  self.actionPlugin ) {
+
+							case 'activate':
+							case 'deactivate':
+								self.actionPluginProcessed = false;
+							break;
+
+							case 'update':
+								self.updatePluginProcessed = false;
+							break;
+
+							case 'rollback':
+								self.rollbackPluginProcessed = false;
+							break;
+						}
 
 						self.$CXNotice.add( {
 							message: responce.message,
@@ -275,6 +348,8 @@ var eventBus = new Vue();
 						} );
 
 						if ( 'success' === responce.status ) {
+							self.rollbackPopupVisible = false;
+
 							eventBus.$emit( 'updateUserPluginData', {
 								'slug': self.pluginData['slug'],
 								'pluginData': responce.data,
@@ -362,9 +437,7 @@ var eventBus = new Vue();
 					}
 				} );
 			}
-
 		}
-
 	});
 
 	/**

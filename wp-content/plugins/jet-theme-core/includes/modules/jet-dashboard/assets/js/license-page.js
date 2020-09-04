@@ -22,7 +22,8 @@
 				debugActionList: window.JetDashboardPageConfig.debugActions || [],
 				debugConsoleActionProcessed: false,
 				ajaxDebugConsoleAction: null,
-				responceData: {}
+				responceData: {},
+				proccesingState: false
 			};
 		},
 
@@ -44,6 +45,15 @@
 					this.debugConsoleVisible = true;
 				}
 			};
+
+			if ( window.location.hash ) {
+
+				switch( window.location.hash ) {
+					case '#license-manager':
+						this.showLicenseManager();
+					break;
+				}
+			}
 		},
 
 		computed: {
@@ -220,11 +230,22 @@
 				this.licensePopupVisible = false;
 			},
 
+			checkPluginsUpdate: function() {
+				this.debugConsoleAction = 'check-plugin-update';
+				this.executeAction();
+			},
+
 			updateUserPluginData: function( data ) {
 				let slug       = data.slug,
 					pluginData = data.pluginData;
 
 				this.allJetPlugins[ slug ] = Object.assign( {}, this.allJetPlugins[ slug ], pluginData );
+
+				this.proccesingState = true;
+
+				setTimeout( function() {
+					window.location.reload();
+				}, 1000 );
 			},
 
 			licenseAction: function() {
@@ -300,6 +321,12 @@
 							type: responce.status,
 							duration: 3000,
 						} );
+
+						self.proccesingState = true;
+
+						setTimeout( function() {
+							window.location.reload();
+						}, 1000 );
 					}
 				} );
 			}

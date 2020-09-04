@@ -329,7 +329,9 @@ class Plugin_Manager {
 			Utils::get_api_url()
 		);
 
-		$response = wp_remote_get( $query_url );
+		$response = wp_remote_get( $query_url, array(
+			'timeout' => 30,
+		) );
 
 		if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) != '200' ) {
 			return false;
@@ -347,7 +349,7 @@ class Plugin_Manager {
 
 		$remote_jet_plugin_list = $response['data'];
 
-		set_site_transient( 'jet_dashboard_remote_jet_plugin_list', $remote_jet_plugin_list, HOUR_IN_SECONDS * 12 );
+		set_site_transient( 'jet_dashboard_remote_jet_plugin_list', $remote_jet_plugin_list, HOUR_IN_SECONDS * 24 );
 
 		return $remote_jet_plugin_list;
 	}
@@ -505,13 +507,11 @@ class Plugin_Manager {
 			);
 		}
 
-		$action = $data['action'];
-		$plugin = $data['plugin'];
+		$action  = $data['action'];
+		$plugin  = $data['plugin'];
+		$version = isset( $data['version'] ) ? $data['version'] : false;
 
 		switch ( $action ) {
-			case 'install':
-				$this->install_plugin( $plugin );
-			break;
 
 			case 'activate':
 				$this->activate_plugin( $plugin );
@@ -521,8 +521,16 @@ class Plugin_Manager {
 				$this->deactivate_plugin( $plugin );
 			break;
 
+			case 'install':
+				$this->install_plugin( $plugin );
+			break;
+
 			case 'update':
 				$this->update_plugin( $plugin );
+			break;
+
+			case 'rollback':
+				$this->rollback_plugin( $plugin, $version );
 			break;
 		}
 
@@ -531,104 +539,6 @@ class Plugin_Manager {
 				'status'  => 'success',
 				'message' => 'Success',
 				'data'    => [],
-			)
-		);
-	}
-
-	/**
-	 * Perform plugin installtion by passed plugin slug and plugin package URL (optional)
-	 *
-	 * @param  [type]  $plugin     [description]
-	 * @param  boolean $plugin_url [description]
-	 * @return [type]              [description]
-	 */
-	public function install_plugin( $plugin_file ) {
-
-		$status = array();
-
-		if ( ! current_user_can( 'install_plugins' ) ) {
-			wp_send_json(
-				array(
-					'status'  => 'error',
-					'message' => 'Sorry, you are not allowed to install plugins on this site.'
-				)
-			);
-		}
-
-		if ( ! $plugin_file ) {
-			wp_send_json(
-				array(
-					'status'  => 'error',
-					'message' => 'Plugin slug is required'
-				)
-			);
-		}
-
-		$package = Utils::package_url( $plugin_file );
-
-		include_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
-		include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
-
-		$skin     = new \WP_Ajax_Upgrader_Skin();
-		$upgrader = new \Plugin_Upgrader( $skin );
-		$result   = $upgrader->install( $package );
-
-		if ( is_wp_error( $result ) ) {
-			$status['errorCode']    = $result->get_error_code();
-			$status['errorMessage'] = $result->get_error_message();
-
-			wp_send_json(
-				array(
-					'status'  => 'error',
-					'message' => $result->get_error_message(),
-					'data'    => [],
-				)
-			);
-		} elseif ( is_wp_error( $skin->result ) ) {
-			$status['errorCode']    = $skin->result->get_error_code();
-			$status['errorMessage'] = $skin->result->get_error_message();
-
-			wp_send_json(
-				array(
-					'status'  => 'error',
-					'message' => $skin->result->get_error_message(),
-					'data'    => [],
-				)
-			);
-		} elseif ( $skin->get_errors()->get_error_code() ) {
-			$status['errorMessage'] = $skin->get_error_messages();
-
-			wp_send_json(
-				array(
-					'status'  => 'error',
-					'message' => $skin->get_error_messages(),
-					'data'    => [],
-				)
-			);
-		} elseif ( is_null( $result ) ) {
-			global $wp_filesystem;
-
-			$status['errorMessage'] = 'Unable to connect to the filesystem. Please confirm your credentials.';
-
-			// Pass through the error from WP_Filesystem if one was raised.
-			if ( $wp_filesystem instanceof \WP_Filesystem_Base && is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->get_error_code() ) {
-				$status['errorMessage'] = esc_html( $wp_filesystem->errors->get_error_message() );
-			}
-
-			wp_send_json(
-				array(
-					'status'  => 'error',
-					'message' => $status['errorMessage'],
-					'data'    => [],
-				)
-			);
-		}
-
-		wp_send_json(
-			array(
-				'status'  => 'success',
-				'message' => 'The plugin has been Installed',
-				'data'    => $this->get_installed_plugin_data( $plugin_file ),
 			)
 		);
 	}
@@ -732,6 +642,104 @@ class Plugin_Manager {
 			array(
 				'status'  => 'success',
 				'message' => 'The plugin has been deactivated',
+				'data'    => $this->get_installed_plugin_data( $plugin_file ),
+			)
+		);
+	}
+
+	/**
+	 * Perform plugin installtion by passed plugin slug and plugin package URL (optional)
+	 *
+	 * @param  [type]  $plugin     [description]
+	 * @param  boolean $plugin_url [description]
+	 * @return [type]              [description]
+	 */
+	public function install_plugin( $plugin_file ) {
+
+		$status = array();
+
+		if ( ! current_user_can( 'install_plugins' ) ) {
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => 'Sorry, you are not allowed to install plugins on this site.'
+				)
+			);
+		}
+
+		if ( ! $plugin_file ) {
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => 'Plugin slug is required'
+				)
+			);
+		}
+
+		$package = Utils::package_url( $plugin_file );
+
+		include_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
+		//include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+
+		$skin     = new \WP_Ajax_Upgrader_Skin();
+		$upgrader = new \Plugin_Upgrader( $skin );
+		$result   = $upgrader->install( $package );
+
+		if ( is_wp_error( $result ) ) {
+			$status['errorCode']    = $result->get_error_code();
+			$status['errorMessage'] = $result->get_error_message();
+
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => $result->get_error_message(),
+					'data'    => [],
+				)
+			);
+		} elseif ( is_wp_error( $skin->result ) ) {
+			$status['errorCode']    = $skin->result->get_error_code();
+			$status['errorMessage'] = $skin->result->get_error_message();
+
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => $skin->result->get_error_message(),
+					'data'    => [],
+				)
+			);
+		} elseif ( $skin->get_errors()->get_error_code() ) {
+			$status['errorMessage'] = $skin->get_error_messages();
+
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => $skin->get_error_messages(),
+					'data'    => [],
+				)
+			);
+		} elseif ( is_null( $result ) ) {
+			global $wp_filesystem;
+
+			$status['errorMessage'] = 'Unable to connect to the filesystem. Please confirm your credentials.';
+
+			// Pass through the error from WP_Filesystem if one was raised.
+			if ( $wp_filesystem instanceof \WP_Filesystem_Base && is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->get_error_code() ) {
+				$status['errorMessage'] = esc_html( $wp_filesystem->errors->get_error_message() );
+			}
+
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => $status['errorMessage'],
+					'data'    => [],
+				)
+			);
+		}
+
+		wp_send_json(
+			array(
+				'status'  => 'success',
+				'message' => 'The plugin has been Installed',
 				'data'    => $this->get_installed_plugin_data( $plugin_file ),
 			)
 		);
@@ -866,11 +874,137 @@ class Plugin_Manager {
 	}
 
 	/**
+	 * [update_plugin_to_version description]
+	 * @param  boolean $plugin_file [description]
+	 * @param  boolean $version     [description]
+	 * @return [type]               [description]
+	 */
+	public function rollback_plugin( $plugin_file = false, $version = false ) {
+		$status = array();
+
+		if ( ! current_user_can( 'install_plugins' ) ) {
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => 'Sorry, you are not allowed to install plugins on this site.'
+				)
+			);
+		}
+
+		if ( ! $plugin_file ) {
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => 'Plugin slug is required'
+				)
+			);
+		}
+
+		$package = Utils::package_url( $plugin_file );
+
+		include_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
+
+		$skin            = new \WP_Ajax_Upgrader_Skin();
+		$plugin_upgrader = new \Plugin_Upgrader( $skin );
+		$plugin_upgrader->init();
+		$plugin_upgrader->upgrade_strings();
+
+		// Get the URL to the zip file.
+		$package = Utils::package_url( $plugin_file, $version );
+
+		add_filter( 'upgrader_pre_install', array( $plugin_upgrader, 'active_before' ), 10, 2 );
+		add_filter( 'upgrader_clear_destination', array( $plugin_upgrader, 'delete_old_plugin' ), 10, 4 );
+		add_filter( 'upgrader_post_install', array( $plugin_upgrader, 'active_after' ), 10, 2 );
+		add_action( 'upgrader_process_complete', 'wp_clean_plugins_cache', 9, 0 );
+
+		$result = $plugin_upgrader->run(
+			array(
+				'package'           => $package,
+				'destination'       => WP_PLUGIN_DIR,
+				'clear_destination' => true,
+				'clear_working'     => true,
+				'hook_extra'        => array(
+					'plugin' => $plugin_file,
+					'type'   => 'plugin',
+					'action' => 'update',
+				),
+			)
+		);
+
+		remove_action( 'upgrader_process_complete', 'wp_clean_plugins_cache', 9 );
+		remove_filter( 'upgrader_pre_install', array( $plugin_upgrader, 'active_before' ) );
+		remove_filter( 'upgrader_clear_destination', array( $plugin_upgrader, 'delete_old_plugin' ) );
+		remove_filter( 'upgrader_post_install', array( $plugin_upgrader, 'active_after' ) );
+
+		// Force refresh of plugin update information.
+		wp_clean_plugins_cache( true );
+
+		$upgrade_messages = [];
+
+		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+			$upgrade_messages = $skin->get_upgrade_messages();
+		}
+
+		if ( is_wp_error( $skin->result ) ) {
+
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => $skin->result->get_error_message(),
+					'debug'   => $upgrade_messages,
+				)
+			);
+		} elseif ( $skin->get_errors()->get_error_code() ) {
+
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => $skin->get_error_messages(),
+					'debug'   => $upgrade_messages,
+				)
+			);
+		} elseif ( $result ) {
+
+			wp_send_json(
+				array(
+					'status'  => 'success',
+					'message' => 'Plugin version has been changed',
+					'data'    => $this->get_installed_plugin_data( $plugin_file ),
+				)
+			);
+
+		} elseif ( false === $result ) {
+			global $wp_filesystem;
+
+			$errorMessage = 'Unable to connect to the filesystem. Please confirm your credentials.';
+
+			// Pass through the error from WP_Filesystem if one was raised.
+			if ( $wp_filesystem instanceof \WP_Filesystem_Base && is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->get_error_code() ) {
+				$errorMessage = esc_html( $wp_filesystem->errors->get_error_message() );
+			}
+
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'message' => $errorMessage,
+				)
+			);
+		}
+
+		wp_send_json(
+			array(
+				'status'  => 'error',
+				'message' => 'Plugin update failed.',
+			)
+		);
+	}
+
+	/**
 	 * [allow_unsafe_urls description]
 	 * @param  [type] $args [description]
 	 * @return [type]       [description]
 	 */
-	public function allow_unsafe_urls ( $args ) {
+	public function allow_unsafe_urls( $args ) {
 
 		if ( isset( $_REQUEST['action'] ) && 'jet_dashboard_plugin_action' === $_REQUEST['action'] ) {
 			$args['reject_unsafe_urls'] = false;

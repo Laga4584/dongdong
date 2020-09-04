@@ -21,6 +21,11 @@ $direction: ltr !default;
 	font-family: Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
 	margin: 25px 15px 0 15px;
 
+	.proccesing-state {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
 	&__header {
 		position: relative;
 		padding: 40px;
@@ -309,6 +314,23 @@ $direction: ltr !default;
 			}
 		}
 
+		&.rollback-popup {
+			p {
+				text-align: center;
+				line-height: 30px;
+
+				i {
+					display: block;
+					color: #D6336C;
+				}
+			}
+
+			.cx-vui-button {
+				margin-top: 10px;
+				width: 100%;
+			}
+		}
+
 		&.responce-data-popup {
 
 			.responce-data-popup__inner {
@@ -386,6 +408,16 @@ $direction: ltr !default;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: stretch;
+
+	.header-controls {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		.cx-vui-button {
+			margin-left: 20px;
+		}
+	}
 
 	.ready-for-use-plugins {
 		display: flex;
@@ -524,7 +556,23 @@ $direction: ltr !default;
 			border-radius: 3px;
 			background-color: #46B450;
 			color: white;
+			white-space: nowrap;
 			@include margin-start(10px);
+		}
+
+		.plugin-rollback {
+			line-height: 0;
+			margin-left: 10px;
+			cursor: pointer;
+
+			.cx-vui-button {
+				font-size: 13px;
+				white-space: nowrap;
+			}
+
+			span {
+				color: #007cba;
+			}
 		}
 
 		.plugin-actions {
@@ -532,7 +580,7 @@ $direction: ltr !default;
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
-			flex-wrap: wrap;
+			flex-wrap: nowrap;
 			margin-top: 20px;
 
 			.cx-vui-button {
@@ -689,9 +737,9 @@ $direction: ltr !default;
 			}
 
 			.label {
-				min-width: 120px;
+				min-width: 110px;
 				font-weight: 700;
-				white-space: nowrap;
+
 				color: #23282D;
 			}
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.24 - 01.09.2020
+- FIX: compatibility with Elementor 3.0
+- UPD: JetDashboard module to v1.1.0
+
 ## 1.1.23 - 23.04.2020
 - FIX: minor bugs
 

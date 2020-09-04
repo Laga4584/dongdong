@@ -37,7 +37,7 @@ class User_Logged_In extends Base_Verification {
 	 */
 	public function __construct() {
 		$this->name = __( 'User Logged In', 'jet-reviews' );
-		$this->icon = '<i class="fas fa-check"></i>';
+		$this->icon = '<i class="fas fa-user-check"></i>';
 		$this->message = __( 'Logged In', 'jet-reviews' );
 	}
 

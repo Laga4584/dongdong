@@ -273,6 +273,14 @@
 						return this.isDetailsFieldsAvaliable && this.detailsVisibleState;
 					},
 
+					detailsVisible: function() {
+						return this.isDetailsFieldsAvaliable && this.detailsVisibleState;
+					},
+
+					authorVerificationData: function() {
+						return this.itemData.verification;
+					},
+
 					isCommentsEmpty: function() {
 						return 0 === this.itemData.comments.length;
 					},
@@ -346,7 +354,8 @@
 
 					userCanApproval: function() {
 						return this.options.approvalAllowed && this.$root.currentUserData.canApproval;
-					}
+					},
+
 				},
 
 				methods: {

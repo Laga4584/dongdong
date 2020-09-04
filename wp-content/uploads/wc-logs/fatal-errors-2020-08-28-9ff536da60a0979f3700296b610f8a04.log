@@ -1,0 +1,45 @@
+2020-08-28T14:02:30+00:00 CRITICAL Uncaught Error: Call to undefined method Elementor\Utils::get_edit_link() in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php:179
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): Jet_Woo_Builder_Post_Type->create_template()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#3 /var/www/html/wordpress/wp-admin/admin.php(408): do_action()
+#4 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php on line 179
+
+2020-08-28T14:02:39+00:00 CRITICAL Uncaught Error: Call to undefined method Elementor\Utils::get_edit_link() in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php:179
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): Jet_Woo_Builder_Post_Type->create_template()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#3 /var/www/html/wordpress/wp-admin/admin.php(408): do_action()
+#4 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php on line 179
+
+2020-08-28T14:02:57+00:00 CRITICAL Uncaught Error: Call to undefined method Elementor\Utils::get_edit_link() in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php:179
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): Jet_Woo_Builder_Post_Type->create_template()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#3 /var/www/html/wordpress/wp-admin/admin.php(408): do_action()
+#4 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php on line 179
+
+2020-08-28T14:07:24+00:00 CRITICAL Uncaught Error: Call to undefined method Elementor\Utils::get_edit_link() in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php:179
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): Jet_Woo_Builder_Post_Type->create_template()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#3 /var/www/html/wordpress/wp-admin/admin.php(408): do_action()
+#4 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php on line 179
+
+2020-08-28T14:19:49+00:00 CRITICAL Uncaught Error: Call to undefined method Elementor\Utils::get_edit_link() in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php:179
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): Jet_Woo_Builder_Post_Type->create_template()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#3 /var/www/html/wordpress/wp-admin/admin.php(408): do_action()
+#4 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/jet-woo-builder/includes/class-jet-woo-builder-post-type.php on line 179
+

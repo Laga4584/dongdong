@@ -2,7 +2,7 @@
 /**
  * Jet Elementor Extension Module.
  *
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
 namespace Jet_Elementor_Extension;
@@ -35,7 +35,7 @@ if ( ! class_exists( 'Jet_Elementor_Extension\Module' ) ) {
 		 *
 		 * @var string
 		 */
-		protected $version = '1.0.0';
+		protected $version = '1.0.1';
 
 		/**
 		 * Module directory path.
@@ -81,6 +81,7 @@ if ( ! class_exists( 'Jet_Elementor_Extension\Module' ) ) {
 		 */
 		public function load_files() {
 			require trailingslashit( $this->path ) . 'inc/controls/query.php';
+			require trailingslashit( $this->path ) . 'inc/controls/repeater.php';
 			require trailingslashit( $this->path ) . 'inc/ajax-handlers.php';
 		}
 
@@ -91,7 +92,8 @@ if ( ! class_exists( 'Jet_Elementor_Extension\Module' ) ) {
 		 * @return void
 		 */
 		public function register_controls( $controls_manager ) {
-			$controls_manager->register_control( 'jet-query', new Query_Control() );
+			$controls_manager->register_control( 'jet-query',    new Query_Control() );
+			$controls_manager->register_control( 'jet-repeater', new Repeater_Control() );
 		}
 
 		/**

@@ -92,7 +92,15 @@
 				}
 			});
 
-			elementor.addControlView( 'jet-query', QueryControlItemView );
+			var RepeaterControlItemView = elementor.modules.controls.Repeater.extend({
+				className: function className() {
+					return elementor.modules.controls.Repeater.prototype.className.apply( this, arguments ) + ' elementor-control-type-repeater';
+				}
+			});
+
+			// Add controls views
+			elementor.addControlView( 'jet-query',    QueryControlItemView );
+			elementor.addControlView( 'jet-repeater', RepeaterControlItemView );
 		}
 
 	};

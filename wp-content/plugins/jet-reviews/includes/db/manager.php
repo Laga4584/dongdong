@@ -200,7 +200,9 @@ class Manager {
 
 		global $wpdb;
 
-		$query = $wpdb->replace( 'wp_jet_review_types', array(
+		$prefix = 'jet_';
+
+		$query = $wpdb->replace( $wpdb->prefix . $prefix . 'review_types', array(
 			'id'          => 1,
 			'name'        => 'Default',
 			'slug'        => 'default',

@@ -1,0 +1,68 @@
+08-29-2020 @ 13:45:13 - Process Payment Response : request
+08-29-2020 @ 13:45:13 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 166254_200829_014457
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 3230
+    [shop] => SEOUL LIFE
+    [buyer] => TESTTEST
+    [email] => seoullife@ddpac.co.kr
+    [tel] => 01039807539
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【ビューティーモリ】BEAUTYMORY リアルグロウ ホワイトトリュフマスク 1箱(10枚)
+    [param1] => http://www.seoulperlife.com/checkout/?customize_changeset_uuid=b4eac8dd-3d6a-4bf4-8ae1-a709d0f2df6c&customize_theme=jupiterx-child&customize_messenger_channel=preview-3
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+08-29-2020 @ 13:47:02 - Process Payment Response : request
+08-29-2020 @ 13:47:02 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 166254_200829_014457
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 3230
+    [shop] => SEOUL LIFE
+    [buyer] => TESTTEST
+    [email] => seoullife@ddpac.co.kr
+    [tel] => 01039807539
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【ビューティーモリ】BEAUTYMORY リアルグロウ ホワイトトリュフマスク 1箱(10枚)
+    [param1] => http://www.seoulperlife.com/checkout/?customize_changeset_uuid=a8d29112-3159-466c-a9e4-f351bfc330a9&customize_theme=jupiterx-child&customize_messenger_channel=preview-2
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

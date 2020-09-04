@@ -79,19 +79,29 @@ class License_Manager {
 		$responce_data = [];
 
 		if ( 'error' === $responce['status'] ) {
-
 			wp_send_json(
 				array(
 					'status'  => 'error',
-					'code'    => $responce['code'],
-					'message' => $responce['message'],
-					'data'    => isset( $responce['data'] ) ? $responce['data'] : [],
+					'code'    => 'server_error',
+					'message' => 'Server Error, try again later',
+					'data'    => [],
 				)
 			);
 		}
 
 		if ( isset( $responce['data'] ) ) {
 			$responce_data = $responce['data'];
+		}
+
+		if ( 'activate' === $license_action && empty( $responce_data ) ) {
+			wp_send_json(
+				array(
+					'status'  => 'error',
+					'code'    => 'server_error',
+					'message' => 'Server Error. Try again later',
+					'data'    => [],
+				)
+			);
 		}
 
 		$responce_data = $this->maybe_modify_tm_responce_data( $responce_data );
@@ -407,7 +417,7 @@ class License_Manager {
 					array(
 						'status'  => 'success',
 						'code'    => 'plugin_update_cheking',
-						'message' => 'Plugin Update Cheking',
+						'message' => 'Plugins Update Checked',
 						'data'    => [],
 					)
 				);
@@ -435,7 +445,7 @@ class License_Manager {
 					array(
 						'status'  => 'success',
 						'code'    => 'transient_deleted',
-						'message' => 'License Expire Check',
+						'message' => 'License Expire Checked',
 						'data'    => [],
 					)
 				);
@@ -449,7 +459,7 @@ class License_Manager {
 					array(
 						'status'  => 'success',
 						'code'    => 'transient_deleted',
-						'message' => 'License Expire Check',
+						'message' => 'Tm license modified',
 						'data'    => [],
 					)
 				);

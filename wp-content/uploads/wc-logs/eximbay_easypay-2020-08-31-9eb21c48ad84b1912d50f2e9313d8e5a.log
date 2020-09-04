@@ -1,0 +1,9 @@
+08-31-2020 @ 22:12:16 - Process Payment Response : request
+08-31-2020 @ 22:12:16 - Array
+(
+    [type] => request
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

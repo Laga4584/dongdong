@@ -76,14 +76,6 @@ if ( ! class_exists( 'Jet_Elements_Ext_Section' ) ) {
 				)
 			);
 
-			$obj->add_control(
-				'jet_parallax_items_heading',
-				array(
-					'label'     => esc_html__( 'Layouts', 'jet-elements' ),
-					'type'      => Elementor\Controls_Manager::HEADING,
-				)
-			);
-
 			$repeater = new Elementor\Repeater();
 
 			$repeater->add_responsive_control(
@@ -95,6 +87,7 @@ if ( ! class_exists( 'Jet_Elements_Ext_Section' ) ) {
 					'selectors' => array(
 						'{{WRAPPER}} {{CURRENT_ITEM}}.jet-parallax-section__layout .jet-parallax-section__image' => 'background-image: url("{{URL}}") !important;'
 					),
+					'render_type' => 'template',
 				)
 			);
 
@@ -256,7 +249,8 @@ if ( ! class_exists( 'Jet_Elements_Ext_Section' ) ) {
 			$obj->add_control(
 				'jet_parallax_layout_list',
 				array(
-					'type'    => Elementor\Controls_Manager::REPEATER,
+					'label'   => '<b>' . esc_html__( 'Layouts', 'jet-elements' ) . '</b>',
+					'type'    => 'jet-repeater',
 					'fields'  => $repeater->get_controls(),
 					'default' => array(
 						array(

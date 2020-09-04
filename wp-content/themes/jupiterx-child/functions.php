@@ -8,72 +8,146 @@ require_once( get_template_directory() . '/lib/init.php' );
  *
  * Add theme style and script to Jupiter X assets files.
  */
+
+/*YE editted===========================================*/
+
+
+function yith_add_loop_wishlist(){
+	alert("sorry :-(");
+    echo do_shortcode( '[yith_wcwl_add_to_wishlist]' );
+} 
+add_action( 'woocommerce_shop_loop_item' , 'yith_add_loop_wishlist', 15  );
+
+
+function php_execute($html){
+	if(strpos($html,"<"."?php")!==false){ ob_start(); eval("?".">".$html);
+		$html=ob_get_contents();
+		ob_end_clean();
+		}
+	return $html;
+}
+add_filter('widget_text','php_execute',100);
+
+
+
+add_action('wp_login_failed', 'redirect_login_failed');
+	function redirect_login_failed() {
+	    wp_redirect(get_bloginfo('url') . '/login-failed' );
+}
+
+
+function check_user($atts, $content = null) {
+     
+    if($atts['for_not_logged_in'] == "yes") {
+        //check that the user is logged in
+        if ( is_user_logged_in() ){
+            //user IS logged in so HIDE the content
+            return;
+        }
+        else {
+            //user IS NOT logged in so SHOW the content
+            return $content;
+        }
+    } else {
+        //Otherwise no attributes in shortcode so default behaviour (show only to those logged in)
+        //check that the user is logged in
+        if ( is_user_logged_in() ){
+            //user IS logged in so SHOW the content
+            return $content;
+        }
+        else {
+            //user IS NOT logged in so HIDE the content
+            return;
+        }
+    }   
+}
+ 
+//add a shortcode which calls the above function
+add_shortcode('loggedin', 'check_user' );
+
+/*YE editted===========================================*/
+
+
+function mytheme_add_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
 jupiterx_add_smart_action( 'wp_enqueue_scripts', 'jupiterx_child_enqueue_scripts', 8 );
+
+
 
 function jupiterx_child_enqueue_scripts() {
 
 	// Add the theme style as a fragment to have access to all the variables.
 	jupiterx_compiler_add_fragment( 'jupiterx', get_stylesheet_directory_uri() . '/assets/less/style.less', 'less' );
 
-	// Add the theme script.
-	wp_enqueue_script('jupiterx-child', get_stylesheet_directory_uri() . '/assets/js/script.js', [ 'jquery' ], '', true );
-}
-
-/**
- * Example 1
- *
- * Modify markups and attributes.
- */
-// jupiterx_add_smart_action( 'wp', 'jupiterx_setup_document' );
-
-function jupiterx_setup_document() {
-
-	// Header
-	jupiterx_add_attribute( 'jupiterx_header', 'class', 'jupiterx-child-header' );
-
-	// Breadcrumb
-	jupiterx_remove_action( 'jupiterx_breadcrumb' );
-
-	// Post image
-	jupiterx_modify_action_hook( 'jupiterx_post_image', 'jupiterx_post_header_before_markup' );
-
-	// Post read more
-	jupiterx_replace_attribute( 'jupiterx_post_more_link', 'class' , 'btn-outline-secondary', 'btn-danger' );
-
-	// Post related
-	jupiterx_modify_action_priority( 'jupiterx_post_related', 11 );
+	// Add the theme script as a fragment.
+	jupiterx_compiler_add_fragment( 'jupiterx', get_stylesheet_directory_uri() . '/assets/js/script.js', 'js' );
 
 }
 
 /**
- * Example 2
- *
- * Modify the sub footer credit text.
+ * Search Product(s) By SKU Woocommerce Product ADMIN
  */
-// jupiterx_add_smart_action( 'jupiterx_subfooter_credit_text_output', 'jupiterx_child_modify_subfooter_credit' );
+function m_request_query( $query_vars ) {
 
-function jupiterx_child_modify_subfooter_credit() { ?>
+	global $typenow;
+	global $wpdb;
+	global $pagenow;
 
-	<a href="https//jupiterx.com" target="_blank">Jupiter X Child</a> theme for <a href="http://wordpress.org" target="_blank">WordPress</a>
+	if ( 'product' === $typenow && isset( $_GET['s'] ) && 'edit.php' === $pagenow ) {
+		$search_term  = esc_sql( sanitize_text_field( $_GET['s'] ) );
+    // Split the search term by comma.
+		$search_terms = explode( ',', $search_term );
+    // If there are more terms make sure we also search for the whole thing, maybe it's not a list of terms.
+		if ( count( $search_terms ) > 1 ) {
+			$search_terms[] = $search_term;
+		}
+    // Cleanup the array manually to avoid issues with quote escaping.
+		array_walk( $search_terms, 'trim' );
+		array_walk( $search_terms, 'esc_sql' );
+		$meta_key               = '_sku';
+		$post_types             = array( 'product', 'product_variation' );
+		$query                  = "SELECT DISTINCT posts.ID as product_id, posts.post_parent as parent_id FROM {$wpdb->posts} posts LEFT JOIN {$wpdb->postmeta} AS postmeta ON posts.ID = postmeta.post_id WHERE postmeta.meta_key = '{$meta_key}' AND postmeta.meta_value IN  ('" . implode( "','", $search_terms ) . "') AND posts.post_type IN ('" . implode( "','", $post_types ) . "') ORDER BY posts.post_parent ASC, posts.post_title ASC";
+		$search_results         = $wpdb->get_results( $query );
+		$product_ids            = wp_parse_id_list( array_merge( wp_list_pluck( $search_results, 'product_id' ), wp_list_pluck( $search_results, 'parent_id' ) ) );
+		$query_vars['post__in'] = array_merge( $product_ids, $query_vars['post__in'] );
+	}
 
-<?php }
+	return $query_vars;
+}
+
+add_filter( 'request', 'm_request_query', 20 );
+
+// Hook in
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+     $fields['billing']['billing_phone']['label'] = 'æºå¸¯ç•ªå·';
+	 $fields['billing']['billing_email']['label'] = 'ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹';
+	 $fields['order']['order_comments']['label'] = 'ãã®ä»–ãŠå•ã„åˆã‚ã›';
+	 
+     return $fields;
+}
 
 // Hook in
 add_filter( 'woocommerce_default_address_fields' , 'custom_override_default_address_fields' );
 
 // Our hooked in function - $address_fields is passed via the filter!
 function custom_override_default_address_fields( $address_fields ) {
-     $address_fields['first_name']['label'] = 'ªªÙ£îñ(àó)';
-        $address_fields['last_name']['label'] = 'ªªÙ£îñ(Ù£)';
-        $address_fields['company']['label'] = 'ªªÙ£îñ(«««Ê)';
+     $address_fields['first_name']['label'] = 'ãŠåå‰(å§“)';
+        $address_fields['last_name']['label'] = 'ãŠåå‰(å)';
+        $address_fields['company']['label'] = 'ãŠåå‰(ã‚«ãƒŠ)';
 		$address_fields['company']['required'] = true;
-		$address_fields['country']['label'] = 'ÏÐÊ«';
-        $address_fields['address_1']['label'] = 'ñ¬á¶1';
-		$address_fields['address_1']['placeholder'] = 'Ô´Ô³Ý¤?, ã¼?ïëõ½';
-        $address_fields['address_2']['label'] = 'ñ¬á¶2';
-		$address_fields['address_2']['placeholder'] = 'Ûãò¢, ËïÚªÙ£';
+		$address_fields['country']['label'] = 'åœ‹å®¶';
+        $address_fields['address_1']['label'] = 'ä½æ‰€1';
+		$address_fields['address_1']['placeholder'] = 'éƒ½é“åºœçœŒ, å¸‚åŒºç”ºæ‘';
+        $address_fields['address_2']['label'] = 'ä½æ‰€2';
+		$address_fields['address_2']['placeholder'] = 'ç•ªåœ°, å»ºç‰©å';
 		$address_fields['address_2']['required'] = true;
-		$address_fields['postcode']['label'] = 'éèøµÛã?';
+		$address_fields['postcode']['label'] = 'éƒµä¾¿ç•ªå·';
 		
 
      return $address_fields;
@@ -86,4 +160,94 @@ function oks_custom_remove_fields_on_edit_address($fields) {
 	   
         return $fields;
 }
+
+// KEVIN's ADDON (GA ADDON & A8)
+
+add_action( 'woocommerce_thankyou', 'bct_wc_ga_integration' );
+function bct_wc_ga_integration( $order_id ) {
+	$order = new WC_Order( $order_id );
+?>
+
+	<!--Adding Order Information to Google Analytics-->
+	<script type="text/javascript">
+	__gaTracker('require', 'ecommerce', 'ecommerce.js');
+
+	// Transaction Details
+	__gaTracker('ecommerce:addTransaction', {
+		'id': '<?php echo $order_id;?>',
+		'affiliation': '<?php echo get_option( "blogname" );?>',
+		'revenue': '<?php echo $order->get_total();?>',
+		'shipping': '<?php echo $order->get_total_shipping();?>',
+		'tax': '<?php echo $order->get_total_tax();?>',
+		'currency': '<?php echo get_woocommerce_currency();?>'
+	});
+
+	<?php
+	// Item Details
+	if ( sizeof( $order->get_items() ) > 0 ) {
+		foreach( $order->get_items() as $item ) {
+			$product_cats = get_the_terms( $item["product_id"], 'product_cat' );
+				if ($product_cats) {
+					$cat = $product_cats[0];
+				}?>
+			__gaTracker('ecommerce:addItem', {
+				'id': '<?php echo $order_id;?>',
+				'name': '<?php echo $item['name'];?>',
+				'sku': '<?php echo get_post_meta($item["product_id"], '_sku', true);?>',
+				'category': '<?php echo $cat->name;?>',
+				'price': '<?php echo $item['line_subtotal'];?>',
+				'quantity': '<?php echo $item['qty'];?>',
+				'currency': '<?php echo get_woocommerce_currency();?>'
+			});
+		<?php
+		}
+	} ?>
+	__gaTracker('ecommerce:send');
+	</script>
+	<!--End of Code for Google Analytics-->
+
+	<!--Importing JQuery-->
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.js"
+	  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	  crossorigin="anonymous"></script>
+	<!--End of Import-->
+
+	<!--Conversion JS Tag-->
+	<span id="a8sales"></span>
+	<script src="//statics.a8.net/a8sales/a8sales.js"></script>
+	<script>
+  a8sales({
+		"pid":'s00000017644001', // SeoulLife A8 ID
+		"order_number":'<?php echo $order_id ?>', // Order ID
+		"currency":'<?php echo get_woocommerce_currency(); ?>', // Order Currency
+		"items":[
+<?php
+    $counter = 0;
+		$total_price = 0;
+    foreach( $order->get_items() as $items ){
+			$productinfo = $order->get_product_from_item($items);
+	    $counter = $counter + 1;
+?>
+      {
+				"code":'<?php echo get_post_meta($items["product_id"], '_sku', true);?>',
+				"price":<?php echo $productinfo->get_regular_price()?>,
+				"quantity":<?php echo $items['qty'];?>
+			}
+<?php
+			$item_sum = $productinfo->get_regular_price() * $items['qty'];
+			$total_price = $item_sum + $total_price;
+      if ( sizeof( $order->get_items() ) > $counter ) {
+        echo ",";
+      }
+    }
+?>
+		],
+		"total_price":<?php echo $total_price;?> // Sub Total Price
+	});
+	</script>
+
+<?php
+}
+?>
 

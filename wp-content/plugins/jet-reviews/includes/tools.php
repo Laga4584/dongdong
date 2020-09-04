@@ -194,7 +194,7 @@ if ( ! class_exists( 'Jet_Reviews_Tools' ) ) {
 
 			return array(
 				'title'     => get_the_title( $post_id ),
-				'excerpt'   => get_the_excerpt( $post_id ),
+				'excerpt'   => '',
 				'image_url' => get_the_post_thumbnail_url( $post_id ),
 			);
 		}

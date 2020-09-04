@@ -178,8 +178,13 @@ class Manager {
 			return false;
 		}
 
+		$check = $verification_instance->check( $args );
+
+		if ( ! $check ) {
+			return false;
+		}
+
 		return array(
-			'check'   => $verification_instance->check( $args ),
 			'slug'    => $verification_instance->get_slug(),
 			'icon'    => $verification_instance->get_icon(),
 			'message' => $verification_instance->get_message(),

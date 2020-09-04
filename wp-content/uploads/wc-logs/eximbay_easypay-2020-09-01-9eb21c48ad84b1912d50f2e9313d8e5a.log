@@ -1,0 +1,992 @@
+09-01-2020 @ 13:23:04 - Process Payment Response : request
+09-01-2020 @ 13:23:04 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167134_200901_042303
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1530
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【MEYOU】美you メッシュポーチ or ブレスロゴ鏡
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:23:24 - Process Payment Response : return
+09-01-2020 @ 13:23:24 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167134_200901_042303
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:23:24 - Process Payment Response : finish
+09-01-2020 @ 13:23:24 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167134_200901_042303
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 13:24:50 - Process Payment Response : request
+09-01-2020 @ 13:24:50 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167134_200901_042303
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1530
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【MEYOU】美you メッシュポーチ or ブレスロゴ鏡
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:25:21 - Process Payment Response : return
+09-01-2020 @ 13:25:21 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167134_200901_042303
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:25:21 - Process Payment Response : finish
+09-01-2020 @ 13:25:21 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167134_200901_042303
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 13:26:18 - Process Payment Response : request
+09-01-2020 @ 13:26:18 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167134_200901_042303
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1530
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【MEYOU】美you メッシュポーチ or ブレスロゴ鏡
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:27:26 - Process Payment Response : return
+09-01-2020 @ 13:27:26 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167134_200901_042303
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:27:26 - Process Payment Response : finish
+09-01-2020 @ 13:27:26 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167134_200901_042303
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 13:28:52 - Process Payment Response : request
+09-01-2020 @ 13:28:52 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167134_200901_042303
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1530
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【MEYOU】美you メッシュポーチ or ブレスロゴ鏡
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:28:59 - Process Payment Response : return
+09-01-2020 @ 13:28:59 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167134_200901_042303
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:28:59 - Process Payment Response : finish
+09-01-2020 @ 13:28:59 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167134_200901_042303
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 13:49:02 - Process Payment Response : request
+09-01-2020 @ 13:49:02 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167135_200901_044902
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1400
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【スイスキン】suiskin シード トゥ トナー 250ml
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:49:06 - Process Payment Response : return
+09-01-2020 @ 13:49:06 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167135_200901_044902
+    [cur] => JPY
+    [amt] => 1400
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:49:06 - Process Payment Response : finish
+09-01-2020 @ 13:49:06 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167135_200901_044902
+    [cur] => JPY
+    [amt] => 1400
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 13:53:00 - Process Payment Response : request
+09-01-2020 @ 13:53:00 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167136_200901_045259
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 7150
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【ラ ロッシュ ポゼ】LA ROCHE POSAY ヒアルB5セラム (敏感肌集中弾力強化セラム) 30ml 외 1건
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:53:04 - Process Payment Response : return
+09-01-2020 @ 13:53:04 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167136_200901_045259
+    [cur] => JPY
+    [amt] => 7150
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:53:04 - Process Payment Response : finish
+09-01-2020 @ 13:53:04 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167136_200901_045259
+    [cur] => JPY
+    [amt] => 7150
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 13:55:49 - Process Payment Response : request
+09-01-2020 @ 13:55:49 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167137_200901_045548
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1400
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【スイスキン】suiskin シード トゥ トナー 250ml
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:55:52 - Process Payment Response : return
+09-01-2020 @ 13:55:52 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167137_200901_045548
+    [cur] => JPY
+    [amt] => 1400
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 13:55:52 - Process Payment Response : finish
+09-01-2020 @ 13:55:52 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167137_200901_045548
+    [cur] => JPY
+    [amt] => 1400
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 14:15:59 - Process Payment Response : request
+09-01-2020 @ 14:15:59 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167137_200901_045548
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1400
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【スイスキン】suiskin シード トゥ トナー 250ml
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 14:17:02 - Process Payment Response : request
+09-01-2020 @ 14:17:02 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167138_200901_051702
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 2330
+    [shop] => SEOUL LIFE
+    [buyer] => ジョンユジン
+    [email] => ato24@atoitl.com
+    [tel] => 0647033930
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【CNP ラボラトリー 】プロポリス エネルギー アンプル・ミュジェナーアンプル・グリーンプロポリスアンチオキシダント・ビタBエネルギーアンプル 15ml 4種から選べる CNP Laboratory
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 14:17:21 - Process Payment Response : return
+09-01-2020 @ 14:17:21 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167137_200901_045548
+    [cur] => JPY
+    [amt] => 1400
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 14:17:21 - Process Payment Response : finish
+09-01-2020 @ 14:17:21 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167137_200901_045548
+    [cur] => JPY
+    [amt] => 1400
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 14:32:23 - Process Payment Response : request
+09-01-2020 @ 14:32:23 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167139_200901_053223
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 2330
+    [shop] => SEOUL LIFE
+    [buyer] => 小泉彩紀
+    [email] => nobita81@unigls.co.kr
+    [tel] => 09035702841
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【エチュードハウス】2つセット ETUDE HOUSE TSシーバムコントロールパウダー オラフ, ドナルド 2種から選べる2つセット
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 14:32:27 - Process Payment Response : request
+09-01-2020 @ 14:32:27 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167140_200901_053227
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1400
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【スイスキン】suiskin シード トゥ トナー 250ml
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 14:32:50 - Process Payment Response : return
+09-01-2020 @ 14:32:50 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167140_200901_053227
+    [cur] => JPY
+    [amt] => 1400
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 14:32:50 - Process Payment Response : finish
+09-01-2020 @ 14:32:50 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167140_200901_053227
+    [cur] => JPY
+    [amt] => 1400
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 14:32:57 - Process Payment Response : return
+09-01-2020 @ 14:32:57 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167139_200901_053223
+    [cur] => JPY
+    [amt] => 2330
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 14:32:57 - Process Payment Response : finish
+09-01-2020 @ 14:32:57 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167139_200901_053223
+    [cur] => JPY
+    [amt] => 2330
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 15:13:49 - Process Payment Response : request
+09-01-2020 @ 15:13:49 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167141_200901_061349
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1530
+    [shop] => SEOUL LIFE
+    [buyer] => testtest
+    [email] => shop@codemstory.co
+    [tel] => 01000001111
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【MEYOU】美you メッシュポーチ or ブレスロゴ鏡
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 15:14:04 - Process Payment Response : return
+09-01-2020 @ 15:14:04 - Array
+(
+    [type] => return
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167141_200901_061349
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-01-2020 @ 15:14:04 - Process Payment Response : finish
+09-01-2020 @ 15:14:04 - Array
+(
+    [type] => finish
+    [ver] => 230
+    [mid] => 
+    [txntype] => PAYMENT
+    [ref] => 167141_200901_061349
+    [cur] => JPY
+    [amt] => 1530
+    [transid] => 
+    [rescode] => W106
+    [resmsg] => Please contact the manager.(invalid mid)
+    [authcode] => 
+    [resdt] => 
+    [fgkey] => 
+    [paymethod] => 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-01-2020 @ 15:14:16 - Process Payment Response : request
+09-01-2020 @ 15:14:16 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 1849705C64
+    [ref] => 167141_200901_061349
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1530
+    [shop] => SEOUL LIFE
+    [buyer] => testtest
+    [email] => shop@codemstory.co
+    [tel] => 01000001111
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【MEYOU】美you メッシュポーチ or ブレスロゴ鏡
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

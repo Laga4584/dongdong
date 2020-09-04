@@ -417,7 +417,7 @@ class License_Manager {
 					array(
 						'status'  => 'success',
 						'code'    => 'plugin_update_cheking',
-						'message' => 'Plugin Update Cheking',
+						'message' => 'Plugins Update Checked',
 						'data'    => [],
 					)
 				);
@@ -445,7 +445,7 @@ class License_Manager {
 					array(
 						'status'  => 'success',
 						'code'    => 'transient_deleted',
-						'message' => 'License Expire Check',
+						'message' => 'License Expire Checked',
 						'data'    => [],
 					)
 				);
@@ -459,7 +459,7 @@ class License_Manager {
 					array(
 						'status'  => 'success',
 						'code'    => 'transient_deleted',
-						'message' => 'License Expire Check',
+						'message' => 'Tm license modified',
 						'data'    => [],
 					)
 				);

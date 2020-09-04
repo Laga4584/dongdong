@@ -36,6 +36,10 @@
 
 	&__fold-mask {
 		overflow: hidden;
+
+		&:not(.pricing-table-unfold-state) {
+			max-height: 0;
+		}
 	}
 
 	&__fold-trigger {
@@ -56,7 +60,6 @@
 }
 
 .pricing-feature {
-	visibility: hidden;
 
 	&:not(:first-child):before {
 		content: "";
@@ -87,16 +90,6 @@
 
 	.tippy-tooltip[data-animatefill] {
 		background-color: #333;
-	}
-
-	&.fold_visible {
-		visibility: visible;
-	}
-}
-
-.pricing-table-unfold-state {
-	.pricing-feature {
-		visibility: visible;
 	}
 }
 

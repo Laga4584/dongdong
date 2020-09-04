@@ -100,16 +100,12 @@ class Manager {
 	 */
 	public function register_addons( $widgets_manager ) {
 
-		$avaliable_widgets = jet_reviews()->settings->get( 'avaliable_widgets' );
-
 		require jet_reviews()->plugin_path( 'includes/components/base/base-elementor-widget.php' );
 
 		foreach ( glob( jet_reviews()->plugin_path( 'includes/components/elementor/widgets/' ) . '*.php' ) as $file ) {
 			$slug = basename( $file, '.php' );
 
-			if ( filter_var( $avaliable_widgets[ $slug ], FILTER_VALIDATE_BOOLEAN ) || ! $avaliable_widgets ) {
-				$this->register_addon( $file, $widgets_manager );
-			}
+			$this->register_addon( $file, $widgets_manager );
 		}
 	}
 

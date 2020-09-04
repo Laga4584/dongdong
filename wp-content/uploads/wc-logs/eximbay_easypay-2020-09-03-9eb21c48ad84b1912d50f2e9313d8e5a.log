@@ -1,0 +1,732 @@
+09-03-2020 @ 11:18:04 - Process Payment Response : request
+09-03-2020 @ 11:18:04 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 167227_200903_021804
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1400
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【スイスキン】suiskin シード トゥ トナー 250ml
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 11:22:22 - Process Payment Response : status
+09-03-2020 @ 11:22:22 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903112222
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1400
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 167227_200903_021804
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8a867573887e8775888475788086887806
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => CB1A80D2EB9004A109B5CE3C20A4B47840E9B5663D81ED943A08998F165E2FE8
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 11:22:27 - Process Payment Response : return
+09-03-2020 @ 11:22:27 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903112222
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1400
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 167227_200903_021804
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8a867573887e8775888475788086887806
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => CB1A80D2EB9004A109B5CE3C20A4B47840E9B5663D81ED943A08998F165E2FE8
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 11:22:27 - Process Payment Response : finish
+09-03-2020 @ 11:22:27 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903112222
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1400
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 167227_200903_021804
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8a867573887e8775888475788086887806
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => CB1A80D2EB9004A109B5CE3C20A4B47840E9B5663D81ED943A08998F165E2FE8
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-03-2020 @ 11:29:21 - Process Payment Response : request
+09-03-2020 @ 11:29:21 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 167231_200903_022921
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 7180
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【ラ ロッシュ ポゼ】LA ROCHE POSAY ヒアルB5セラム (敏感肌集中弾力強化セラム) 30ml 외 1건
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 11:31:05 - Process Payment Response : status
+09-03-2020 @ 11:31:05 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 4685
+    [resdt] => 20200903113103
+    [cardno4] => 6512
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 7180
+    [accesscountry] => JP
+    [ref] => 167231_200903_022921
+    [paymethod] => P101
+    [dm_review] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => JONGIKLEE
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 041644
+    [fgkey] => A48433DA159B94B428F861F063441C02147446CAE5525929017DE7A115B19DC0
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 11:31:10 - Process Payment Response : return
+09-03-2020 @ 11:31:10 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 4685
+    [resdt] => 20200903113103
+    [cardno4] => 6512
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 7180
+    [accesscountry] => JP
+    [ref] => 167231_200903_022921
+    [paymethod] => P101
+    [dm_review] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => JONGIKLEE
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 041644
+    [fgkey] => A48433DA159B94B428F861F063441C02147446CAE5525929017DE7A115B19DC0
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 11:31:10 - Process Payment Response : finish
+09-03-2020 @ 11:31:10 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 4685
+    [resdt] => 20200903113103
+    [cardno4] => 6512
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 7180
+    [accesscountry] => JP
+    [ref] => 167231_200903_022921
+    [paymethod] => P101
+    [dm_review] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => JONGIKLEE
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 041644
+    [fgkey] => A48433DA159B94B428F861F063441C02147446CAE5525929017DE7A115B19DC0
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-03-2020 @ 11:44:38 - Process Payment Response : request
+09-03-2020 @ 11:44:38 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 167239_200903_024437
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1530
+    [shop] => SEOUL LIFE
+    [buyer] => 李宗翼
+    [email] => lljbi@unigls.co.kr
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【MEYOU】美you メッシュポーチ or ブレスロゴ鏡
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 11:44:50 - Process Payment Response : status
+09-03-2020 @ 11:44:50 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903114450
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1530
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 167239_200903_024437
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000003
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=808675888d75767f7e84758d887c738003
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 19D994D91B3E6F594CF812DB34F236C96B832183FA539C5BADFE3D99502AB19E
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 11:44:54 - Process Payment Response : return
+09-03-2020 @ 11:44:54 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903114450
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1530
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 167239_200903_024437
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000003
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=808675888d75767f7e84758d887c738003
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 19D994D91B3E6F594CF812DB34F236C96B832183FA539C5BADFE3D99502AB19E
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 11:44:55 - Process Payment Response : finish
+09-03-2020 @ 11:44:55 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903114450
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1530
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 167239_200903_024437
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000003
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=808675888d75767f7e84758d887c738003
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 19D994D91B3E6F594CF812DB34F236C96B832183FA539C5BADFE3D99502AB19E
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-03-2020 @ 12:52:46 - Process Payment Response : request
+09-03-2020 @ 12:52:46 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 167240_200903_035246
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 2110
+    [shop] => SEOUL LIFE
+    [buyer] => 有珍丁
+    [email] => yujin@unigls.co.kr
+    [tel] => 0647033930
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【エチュードハウス】ETUDE HOUSE ティア―アイライナー 1つ選択WH901 PK001 BE101 외 1건
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 12:53:05 - Process Payment Response : status
+09-03-2020 @ 12:53:05 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903125305
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2110
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 167240_200903_035246
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000004
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=75817e847e888775737f7e8a7b8e8b7b01
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => CC0E7308C03B92FA6DD3AB66B78C279108D8C893EC8B67FC3F945CCEF8913BCC
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 12:53:09 - Process Payment Response : return
+09-03-2020 @ 12:53:09 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903125305
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2110
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 167240_200903_035246
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000004
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=75817e847e888775737f7e8a7b8e8b7b01
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => CC0E7308C03B92FA6DD3AB66B78C279108D8C893EC8B67FC3F945CCEF8913BCC
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 12:53:10 - Process Payment Response : finish
+09-03-2020 @ 12:53:10 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903125305
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2110
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 167240_200903_035246
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000004
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=75817e847e888775737f7e8a7b8e8b7b01
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => CC0E7308C03B92FA6DD3AB66B78C279108D8C893EC8B67FC3F945CCEF8913BCC
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-03-2020 @ 13:04:58 - Process Payment Response : status
+09-03-2020 @ 13:04:58 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903130458
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1400.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 167227_200903_021804
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000001
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => C26C10596840FB94D30E0CFF437098188E5901102B2E44AC98DAD2FD040BD0C6
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-03-2020 @ 14:04:59 - Process Payment Response : status
+09-03-2020 @ 14:04:59 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200903140459
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1530.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 167239_200903_024437
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => lljbi@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200903000003
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 7E4E5C0AC680C5E907CB094AE5CD2A962923BA8FF565D932949D96829D5CE342
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

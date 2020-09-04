@@ -88,7 +88,7 @@ define( 'AS3CF_SETTINGS', serialize( array(
 
 
 /** FIX FOR MEMEORY LIMIT - JUPITER X */
-define('WP_MEMORY_LIMIT', '256M'); 
+define('WP_MEMORY_LIMIT', '1024M'); 
 
 /* That's all, stop editing! Happy publishing. */
 

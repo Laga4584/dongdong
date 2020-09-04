@@ -160,7 +160,12 @@ class Data {
 
 				$review_comments = $this->find_comments_by_review_id( $review_data['id'], $all_comments );
 
-				$review_verification_data = jet_reviews()->user_manager->get_verification_data( $verification_type );
+				$review_verification_data = jet_reviews()->user_manager->get_verification_data(
+					$verification_type,
+					array(
+						'user_id' => $user_data['id'],
+					)
+				);
 
 				$prepare_data[] = array(
 					'id'        => $review_data['id'],

@@ -7,10 +7,21 @@
 					v-html="itemData.author.avatar"
 				></div>
 				<div class="jet-reviews-user-data__info">
-					<div class="jet-reviews-user-data__name">
-						<span>{{ itemData.author.name }}</span>
-						<time class="jet-reviews-published-date" :datetime="itemData.date.raw" :title="itemData.date.raw"><span>{{ itemData.date.human_diff }}</span></time>
+					<div class="jet-reviews-user-data__info-row">
+						<div class="jet-reviews-user-data__name">
+							<span>{{ itemData.author.name }}</span>
+							<time class="jet-reviews-published-date" :datetime="itemData.date.raw" :title="itemData.date.raw"><span>{{ itemData.date.human_diff }}</span></time>
+						</div>
+						<div
+							class="jet-reviews-user-data__verification"
+							:class="[ authorVerificationData.slug ]"
+							v-if="authorVerificationData"
+						>
+							<span class="verification-icon" v-html="authorVerificationData.icon"></span>
+							<span class="verification-label" v-html="authorVerificationData.message"></span>
+						</div>
 					</div>
+
 					<div class="jet-reviews-user-data__summary-rating">
 						<component
 							:is="options.ratingLayout"
@@ -31,11 +42,13 @@
 				</div>
 			</div>
 		</div>
-		<div
-			class="jet-reviews-advanced__review-pinned-marker"
-			v-html="pinnedIcon"
-			v-if="pinnedVisible"
-		>
+		<div class="jet-reviews-advanced__review-misc">
+			<div
+				class="jet-reviews-advanced__review-pin"
+				v-html="pinnedIcon"
+				v-if="pinnedVisible"
+			>
+			</div>
 		</div>
 	</div>
 	<div
@@ -54,7 +67,7 @@
 				:after="'points-field' === options.ratingLayout ? +item.field_value : false"
 			></component>
 		</div>
-		<h2 class="jet-reviews-advanced__review-title" v-html="itemData.title"></h2>
+		<h3 class="jet-reviews-advanced__review-title" v-html="itemData.title"></h3>
 		<p class="jet-reviews-advanced__review-content" v-html="itemData.content"></p>
 	</div>
 	<div
@@ -160,7 +173,7 @@
 			class="jet-reviews-advanced__review-comments"
 			v-if="isCommentsVisible"
 		>
-			<h3 class="jet-reviews-advanced__comments-title">{{ options.labels.сommentsTitle }}</h3>
+			<h4 class="jet-reviews-advanced__comments-title">{{ options.labels.сommentsTitle }}</h4>
 			<jet-advanced-reviews-comment
 				v-for="comment in itemData.comments"
 				:key="comment.id"

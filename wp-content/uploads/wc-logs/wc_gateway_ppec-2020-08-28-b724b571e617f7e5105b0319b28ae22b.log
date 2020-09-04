@@ -1,0 +1,300 @@
+08-28-2020 @ 23:35:29 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:35:30 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:35:30Z
+    [CORRELATIONID] => 8077fe51fddf5
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:35:36 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:35:37 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:35:36Z
+    [CORRELATIONID] => 66dd752b0dc4a
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:35:38 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:35:39 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:35:39Z
+    [CORRELATIONID] => 51c7e0bdb4a9
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:35:41 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:35:41 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:35:41Z
+    [CORRELATIONID] => 9b69f302ece09
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:35:50 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:35:50 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:35:50Z
+    [CORRELATIONID] => a5559ccd202a8
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:35:51 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:35:51 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:35:51Z
+    [CORRELATIONID] => 1043b8bfdf425
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:36:13 - WC_Gateway_PPEC_IPS_Handler::maybe_received_credentials: returned back from IPS flow with parameters: Array
+(
+    [page] => wc-settings
+    [tab] => checkout
+    [section] => ppec_paypal
+    [env] => live
+    [wc_ppec_ips_admin_nonce] => 93eba1e07b
+    [merchantId] => e24bc49242798d04ae962c972d9e031d
+    [merchantPayerId] => XAMCABWTDPDSS
+    [error] => true
+    [error_message] => Response from PayPal does not contain an api_credentials property
+)
+
+08-28-2020 @ 23:36:13 - WC_Gateway_PPEC_IPS_Handler::maybe_received_credentials: returned back from IPS flow with error: Response from PayPal does not contain an api_credentials property
+08-28-2020 @ 23:36:18 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:36:18 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:36:18Z
+    [CORRELATIONID] => cc1d70ea3ade7
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:36:29 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:36:29 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:36:29Z
+    [CORRELATIONID] => 976bbdcb4914e
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:36:30 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:36:30 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:36:30Z
+    [CORRELATIONID] => b5bc5b6a491ca
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:36:31 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:36:31 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:36:31Z
+    [CORRELATIONID] => 57b05ad8564ed
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:36:33 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:36:34 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:36:34Z
+    [CORRELATIONID] => b699601ecfad3
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:36:36 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:36:36 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:36:36Z
+    [CORRELATIONID] => 19c0a00e2333d
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
+08-28-2020 @ 23:36:38 - WC_Gateway_PPEC_Client::_request: remote request to https://api-3t.paypal.com/nvp with params: Array
+(
+    [METHOD] => GetPalDetails
+    [VERSION] => 120.0
+    [USER] => 
+    [PWD] => 
+    [SIGNATURE] => 
+)
+
+08-28-2020 @ 23:36:39 - WC_Gateway_PPEC_Client::_process_response: acknowleged response body: Array
+(
+    [TIMESTAMP] => 2020-08-28T23:36:39Z
+    [CORRELATIONID] => 9cf83f48190ef
+    [ACK] => Failure
+    [VERSION] => 120.0
+    [BUILD] => 54686869
+    [L_ERRORCODE0] => 10002
+    [L_SHORTMESSAGE0] => Authentication/Authorization Failed
+    [L_LONGMESSAGE0] => You do not have permissions to make this API call
+    [L_SEVERITYCODE0] => Error
+)
+
