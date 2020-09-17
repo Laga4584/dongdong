@@ -1,4 +1,4 @@
-/*! elementor - v3.0.5 - 31-08-2020 */
+/*! elementor - v3.0.6 - 06-09-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -24279,7 +24279,10 @@ var KitBackToRouteHistory = /*#__PURE__*/function (_BaseOpenClose) {
           historyBeforeOpen.container.model.trigger('request:edit', {
             scrollIntoView: true
           });
-          $e.route(historyBeforeOpen.route);
+          $e.route(historyBeforeOpen.route, {
+            model: historyBeforeOpen.container.model,
+            view: historyBeforeOpen.container.view
+          });
         });
       }
     }
@@ -26294,7 +26297,11 @@ var _default = /*#__PURE__*/function (_BaseRegion) {
         right: ''
       });
       elementor.$previewWrapper.css(side, this.storage.size.width);
-      this.$el.resizable('destroy');
+
+      if (this.$el.resizable('instance')) {
+        this.$el.resizable('destroy');
+      }
+
       resizableOptions.handles = elementorCommon.config.isRTL ? 'e' : 'w';
 
       resizableOptions.resize = function (event, ui) {
@@ -26311,8 +26318,12 @@ var _default = /*#__PURE__*/function (_BaseRegion) {
       elementorCommon.elements.$body.removeClass('elementor-navigator-docked');
       elementor.$previewWrapper.css(elementorCommon.config.isRTL ? 'left' : 'right', '');
       this.setSize();
-      this.$el.resizable('destroy');
-      this.$el.resizable(this.getResizableOptions());
+
+      if (this.$el.resizable('instance')) {
+        this.$el.resizable('destroy');
+        this.$el.resizable(this.getResizableOptions());
+      }
+
       this.isDocked = false;
 
       if (!silent) {

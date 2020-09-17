@@ -3,7 +3,7 @@
  * Plugin Name: Jupiter X Core
  * Plugin URI: https://jupiterx.com
  * Description: Adds core functionality to the Jupiter X theme.
- * Version: 1.17.0
+ * Version: 1.17.1
  * Author: Artbees
  * Author URI: https://artbees.net
  * Text Domain: jupiterx-core

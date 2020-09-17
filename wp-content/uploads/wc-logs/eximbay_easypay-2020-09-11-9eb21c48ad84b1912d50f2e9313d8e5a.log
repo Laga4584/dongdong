@@ -1,0 +1,120 @@
+09-11-2020 @ 13:12:16 - Process Payment Response : request
+09-11-2020 @ 13:12:16 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 168009_200911_041216
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1540
+    [shop] => SEOUL LIFE
+    [buyer] => 芳賀佑菜
+    [email] => yuna02nya@gmail.com
+    [tel] => 01074489802
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【エチュードハウス】ETUDE HOUSE ダブルラスティングファンデーション SPF35/PA++ 30g 6 種 - ニュートラルバニラ
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-11-2020 @ 13:12:26 - Process Payment Response : return
+09-11-2020 @ 13:12:26 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1540
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 168009_200911_041216
+    [paymethod] => 
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yuna02nya@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => 決済がキャンセルされました. 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => XXXX
+    [param2] => 
+    [fgkey] => 1BF3248F0F33E63CE80987CCF63D33571763C6F67F34D6170530A41F94DADE46
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-11-2020 @ 13:12:26 - Process Payment Response : finish
+09-11-2020 @ 13:12:26 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1540
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 168009_200911_041216
+    [paymethod] => 
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yuna02nya@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => 決済がキャンセルされました. 
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => XXXX
+    [param2] => 
+    [fgkey] => 1BF3248F0F33E63CE80987CCF63D33571763C6F67F34D6170530A41F94DADE46
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+

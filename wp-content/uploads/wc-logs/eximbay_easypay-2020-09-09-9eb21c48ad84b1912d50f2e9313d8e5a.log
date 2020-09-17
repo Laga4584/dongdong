@@ -1,0 +1,326 @@
+09-09-2020 @ 12:24:17 - Process Payment Response : request
+09-09-2020 @ 12:24:17 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 167627_200909_032417
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 2290
+    [shop] => SEOUL LIFE
+    [buyer] => 有珍丁
+    [email] => yujin@unigls.co.kr
+    [tel] => 0647033930
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【イニスフリー】innisfree スパー火山ソンイ ポア クレイ マスク ２X 100ml 외 1건
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-09-2020 @ 12:24:31 - Process Payment Response : status
+09-09-2020 @ 12:24:31 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200909122430
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2290
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 167627_200909_032417
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200909000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=75817e847e888d75737f7e897b8d8c7801
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => DDC2503E2EA81DF142409B2890F1D993C08E814738227B12BAF89221609997EA
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-09-2020 @ 12:24:35 - Process Payment Response : return
+09-09-2020 @ 12:24:35 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200909122430
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2290
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 167627_200909_032417
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200909000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=75817e847e888d75737f7e897b8d8c7801
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => DDC2503E2EA81DF142409B2890F1D993C08E814738227B12BAF89221609997EA
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-09-2020 @ 12:24:36 - Process Payment Response : finish
+09-09-2020 @ 12:24:36 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200909122430
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2290
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 167627_200909_032417
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200909000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=75817e847e888d75737f7e897b8d8c7801
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => DDC2503E2EA81DF142409B2890F1D993C08E814738227B12BAF89221609997EA
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-09-2020 @ 16:05:25 - Process Payment Response : request
+09-09-2020 @ 16:05:25 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 167695_200909_070525
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1710
+    [shop] => SEOUL LIFE
+    [buyer] => 有珍丁
+    [email] => yujin@unigls.co.kr
+    [tel] => 0647033930
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【エチュードハウス】ETUDE HOUSE TSシーバムコントロールパウダー オラフ, ドナルド 4g 2種 - 1ドナルド 외 1건
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-09-2020 @ 16:05:38 - Process Payment Response : status
+09-09-2020 @ 16:05:38 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200909160538
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1710
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 167695_200909_070525
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200909000002
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8a867573887e8d758884757c857f877d06
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9D3B0534522DBD3CCDF6801FE38B5FCC563BAE09FB246E5DA06931D6712D8CAF
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-09-2020 @ 16:05:44 - Process Payment Response : return
+09-09-2020 @ 16:05:44 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200909160538
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1710
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 167695_200909_070525
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200909000002
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8a867573887e8d758884757c857f877d06
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9D3B0534522DBD3CCDF6801FE38B5FCC563BAE09FB246E5DA06931D6712D8CAF
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-09-2020 @ 16:05:44 - Process Payment Response : finish
+09-09-2020 @ 16:05:44 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200909160538
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1710
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 167695_200909_070525
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200909000002
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8a867573887e8d758884757c857f877d06
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => http://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9D3B0534522DBD3CCDF6801FE38B5FCC563BAE09FB246E5DA06931D6712D8CAF
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+

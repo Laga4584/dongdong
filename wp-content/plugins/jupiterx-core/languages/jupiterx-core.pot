@@ -516,16 +516,16 @@ msgstr ""
 msgid " on "
 msgstr ""
 
-#: includes/widgets/widget-posts.php:442
-msgid "1 Comment"
+#: includes/widgets/widget-posts.php:438
+msgid "No Comments"
 msgstr ""
 
 #: includes/widgets/widget-posts.php:440
 msgid " Comments"
 msgstr ""
 
-#: includes/widgets/widget-posts.php:438
-msgid "No Comments"
+#: includes/widgets/widget-posts.php:442
+msgid "1 Comment"
 msgstr ""
 
 #: includes/widgets/widget-social.php:28, includes/widgets/widget-social.php:157
@@ -836,12 +836,12 @@ msgstr ""
 msgid "Can not create media records backup file."
 msgstr ""
 
-#: includes/control-panel/includes/class-db-manager.php:227
-msgid "Invalid backup file."
-msgstr ""
-
 #: includes/control-panel/includes/class-db-manager.php:213
 msgid "There was an error unzipping the backup file."
+msgstr ""
+
+#: includes/control-panel/includes/class-db-manager.php:227
+msgid "Invalid backup file."
 msgstr ""
 
 #: includes/control-panel/includes/class-db-manager.php:234
@@ -1211,12 +1211,12 @@ msgstr ""
 msgid "Hard Crop"
 msgstr ""
 
-#: includes/control-panel/views/image-sizes.php:43
-msgid "Off"
-msgstr ""
-
 #: includes/control-panel/views/image-sizes.php:41
 msgid "On"
+msgstr ""
+
+#: includes/control-panel/views/image-sizes.php:43
+msgid "Off"
 msgstr ""
 
 #: includes/control-panel/views/image-sizes.php:46, includes/customizer/api/includes/control/class-template.php:100
@@ -1523,12 +1523,12 @@ msgstr ""
 msgid "Check if main WP directory is writable."
 msgstr ""
 
-#: includes/control-panel/views/system-status.php:233, includes/control-panel/views/system-status.php:250, includes/control-panel/views/system-status.php:267, includes/control-panel/views/system-status.php:284, includes/control-panel/views/system-status.php:301
-msgid "Make sure <code>%s</code> directory is writable."
-msgstr ""
-
 #: includes/control-panel/views/system-status.php:230, includes/control-panel/views/system-status.php:247, includes/control-panel/views/system-status.php:264, includes/control-panel/views/system-status.php:281, includes/control-panel/views/system-status.php:298
 msgid "Writable"
+msgstr ""
+
+#: includes/control-panel/views/system-status.php:233, includes/control-panel/views/system-status.php:250, includes/control-panel/views/system-status.php:267, includes/control-panel/views/system-status.php:284, includes/control-panel/views/system-status.php:301
+msgid "Make sure <code>%s</code> directory is writable."
 msgstr ""
 
 #: includes/control-panel/views/system-status.php:239
@@ -2161,16 +2161,16 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: includes/customizer/api/includes/class-templates.php:167, includes/customizer/settings/pro/popup.php:14, includes/customizer/api/includes/control/class-pro-box.php:101
-msgid "Upgrade to Jupiter X Pro"
-msgstr ""
-
 #: includes/customizer/api/includes/class-templates.php:163
 msgid "Activate Jupiter X to unlock this feature"
 msgstr ""
 
 #: includes/customizer/api/includes/class-templates.php:164, includes/customizer/api/includes/control/class-pro-box.php:97
 msgid "Activate Now"
+msgstr ""
+
+#: includes/customizer/api/includes/class-templates.php:167, includes/customizer/settings/pro/popup.php:14, includes/customizer/api/includes/control/class-pro-box.php:101
+msgid "Upgrade to Jupiter X Pro"
 msgstr ""
 
 #: includes/customizer/settings/404/popup.php:13
@@ -2953,20 +2953,20 @@ msgstr ""
 msgid "Click to Upload Image"
 msgstr ""
 
-#: includes/customizer/api/includes/control/class-pro-box.php:81
-msgid "Upgrade to unlock this feature"
-msgstr ""
-
-#: includes/customizer/api/includes/control/class-pro-box.php:82
-msgid "You can unlock more customization options."
-msgstr ""
-
 #: includes/customizer/api/includes/control/class-pro-box.php:78
 msgid "Activate Jupiter X"
 msgstr ""
 
 #: includes/customizer/api/includes/control/class-pro-box.php:79
 msgid "To unlock this feature you must activate Jupiter X"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-pro-box.php:81
+msgid "Upgrade to unlock this feature"
+msgstr ""
+
+#: includes/customizer/api/includes/control/class-pro-box.php:82
+msgid "You can unlock more customization options."
 msgstr ""
 
 #: includes/customizer/api/includes/control/class-select.php:99

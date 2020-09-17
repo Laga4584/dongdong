@@ -39,6 +39,9 @@ class JupiterX_Importer extends JupiterX_WXR_Importer {
 
 		add_action( 'wp_import_insert_term', [ $this, 'jupiterx_process_term_meta' ] );
 		add_action( 'wxr_importer.pre_process.term', [ $this, 'jupiterx_core_insert_term_id' ] );
+
+		// Elementor Post Meta Compatibility from elementor/includes/compatibility.php.
+		add_filter( 'wxr_importer.pre_process.post_meta', [ $this, 'elementor_on_wxr_importer_pre_process_post_meta' ] );
 	}
 
 	/**
@@ -169,5 +172,28 @@ class JupiterX_Importer extends JupiterX_WXR_Importer {
 		} );
 
 		return $data;
+	}
+
+	/**
+	 * Process post meta before WXR importer.
+	 *
+	 * Normalize Elementor post meta on import with the new WP_importer, We need
+	 * the `wp_slash` in order to avoid the unslashing during the `add_post_meta`.
+	 *
+	 * Fired by `wxr_importer.pre_process.post_meta` filter.
+	 *
+	 * @since 1.17.1
+	 * @access public
+	 *
+	 * @param array $post_meta Post meta.
+	 *
+	 * @return array Updated post meta.
+	 */
+	public function elementor_on_wxr_importer_pre_process_post_meta( $post_meta ) {
+		if ( '_elementor_data' === $post_meta['key'] ) {
+			$post_meta['value'] = wp_slash( $post_meta['value'] );
+		}
+
+		return $post_meta;
 	}
 }

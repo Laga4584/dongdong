@@ -161,6 +161,124 @@ function oks_custom_remove_fields_on_edit_address($fields) {
         return $fields;
 }
 
+add_filter( 'woocommerce_checkout_coupon_message', 'bbloomer_have_coupon_message');
+ 
+function bbloomer_have_coupon_message() {
+return 'ク―ポンをお持ちですか？<a href="#" class="showcoupon">ここにお持ちのク―ポンをご入力ください！</a>';
+}
+
+add_filter( 'gettext', 'woocommerce_change_coupon_field_instruction_text' );
+
+function woocommerce_change_coupon_field_instruction_text($translated) {
+$translated = str_ireplace('If you have a coupon code, please apply it below.', 'ここにお持ちのク―ポンをご入力ください', $translated);
+return $translated;
+}
+
+add_filter( 'woocommerce_cart_totals_coupon_label', 'bt_rename_coupon_label',10, 1 );
+
+function bt_rename_coupon_label( $err, $err_code=null, $something=null ){
+	$err = str_ireplace("Coupon","ク―ポン",$err);
+	return $err;
+}
+
+
+
+add_filter( 'gettext', 'my_text_strings', 20, 3 );
+
+function my_text_strings( $translated_text, $text, $domain ) {
+    switch ( $translated_text ) {
+        case 'Apply coupon' :
+            $translated_text = __( 'ク―ポン適用', 'woocommerce' );
+            break;
+			
+		case 'Coupon code' :
+            $translated_text = __( 'ク―ポンコ―ド', 'woocommerce' );
+            break;
+			
+		case 'Update cart' :
+            $translated_text = __( 'カ―ト更新', 'woocommerce' );
+            break;
+		
+		case 'Continue Shopping' :
+            $translated_text = __( 'ショッピングを続ける', 'woocommerce' );
+            break;
+			
+		case 'Proceed to checkout' :
+            $translated_text = __( '会計する', 'woocommerce' );
+            break;
+		
+		case 'Product' :
+            $translated_text = __( '商品', 'woocommerce' );
+            break;
+			
+		case 'Price' :
+            $translated_text = __( '価格', 'woocommerce' );
+            break;
+			
+		case 'Quantity' :
+            $translated_text = __( '個数', 'woocommerce' );
+            break;
+			
+		case 'Subtotal' :
+            $translated_text = __( '小計', 'woocommerce' );
+            break;
+			
+			
+		case 'Total' :
+            $translated_text = __( '総計', 'woocommerce' );
+            break;
+		
+		case 'Billing details' :
+            $translated_text = __( '決済情報', 'woocommerce' );
+            break;
+			
+		case 'Shipping details' :
+            $translated_text = __( '配送情報', 'woocommerce' );
+            break;
+			
+		case 'Add to cart' :
+            $translated_text = __( 'カートに入れる', 'woocommerce' );
+            break;
+			
+		case 'Choose an option' :
+            $translated_text = __( 'オプション選択', 'woocommerce' );
+            break;
+			
+		case 'Select options' :
+            $translated_text = __( 'オプション選択', 'woocommerce' );
+            break;
+		
+		case 'Description' :
+            $translated_text = __( '商品詳細', 'woocommerce' );
+            break;
+			
+		case 'Reviews' :
+            $translated_text = __( '購入レビュー', 'woocommerce' );
+            break;
+			
+			
+		case 'Proceed to PayPal' :
+            $translated_text = __( 'ペイパルに進む', 'woocommerce' );
+            break;
+    }
+    return $translated_text;
+}
+
+add_filter( 'woocommerce_shipping_package_name', 'custom_shipping_package_name' );
+function custom_shipping_package_name( $name ) {
+  return '配送料';
+}
+
+add_filter( 'woocommerce_cart_shipping_method_full_label', 'wc_ninja_change_flat_rate_label', 10, 2 );
+function wc_ninja_change_flat_rate_label( $label, $method ) {
+	if ( 'flat_rate' === $method->method_id && $method->cost == 0 ) {
+		$label = "定額料金";
+	}
+
+	return $label;
+}
+
+
 // KEVIN's ADDON (GA ADDON & A8)
 
 add_action( 'woocommerce_thankyou', 'bct_wc_ga_integration' );

@@ -1,0 +1,68 @@
+09-08-2020 @ 14:45:45 - Process Payment Response : request
+09-08-2020 @ 14:45:45 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 167594_200908_054545
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 7780
+    [shop] => SEOUL LIFE
+    [buyer] => stevelee
+    [email] => outlayer@naver.com
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】N.M.F アクアリング アンプルマスク 27ml 10枚+2枚プレゼント 외 2건
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-08-2020 @ 14:50:40 - Process Payment Response : request
+09-08-2020 @ 14:50:40 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => http://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 167595_200908_055039
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 7780
+    [shop] => SEOUL LIFE
+    [buyer] => stevelee
+    [email] => outlayer@naver.com
+    [tel] => 09092175199
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】N.M.F アクアリング アンプルマスク 27ml 10枚+2枚プレゼント 외 2건
+    [param1] => http://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
