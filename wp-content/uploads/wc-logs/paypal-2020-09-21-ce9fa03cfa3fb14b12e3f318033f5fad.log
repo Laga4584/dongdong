@@ -1,0 +1,51 @@
+2020-09-21T03:36:59+00:00 INFO Generating payment form for order 169553. Notify URL: https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+2020-09-21T03:36:59+00:00 INFO PayPal Request Args for order 169553: Array
+(
+    [cmd] => _cart
+    [business] => hedihedi@ddpac.co.kr
+    [no_note] => 1
+    [currency_code] => JPY
+    [charset] => utf-8
+    [rm] => 2
+    [upload] => 1
+    [return] => https://www.seoulperlife.com/checkout/order-received/169553/?key=wc_order_eM4U8MV1weZnv&utm_nooverride=1
+    [cancel_return] => https://www.seoulperlife.com/cart/?cancel_order=true&order=wc_order_eM4U8MV1weZnv&order_id=169553&redirect&_wpnonce=e8c02512cd
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => sale
+    [invoice] => SL-169553
+    [custom] => {"order_id":169553,"order_key":"wc_order_eM4U8MV1weZnv"}
+    [notify_url] => https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [address_override] => 0
+    [no_shipping] => 0
+    [tax_cart] => 0
+    [item_name_1] => 【イニスフリー】innisfree グリーンティーシードセラム 80mL
+    [quantity_1] => 1
+    [amount_1] => 1503
+    [item_number_1] => UNI0572,1,
+    [item_name_2] => 【グーダル】goodal 済州島の青みかんセラム 50ml
+    [quantity_2] => 1
+    [amount_2] => 1782
+    [item_number_2] => UNI0023,1,
+    [item_name_3] => 【ミジャンセン】 MISEENSCENE パーフェクトセラム スーパーリッチ 80ml
+    [quantity_3] => 1
+    [amount_3] => 738
+    [item_number_3] => UNI0173,1,
+    [item_name_4] => 【メディヒール】MEDIHEALビタライトビーム マスク EX 24ml 10枚
+    [quantity_4] => 1
+    [amount_4] => 657
+    [item_number_4] => ma2289,1,
+    [bn] => WooThemes_Cart
+)
+
