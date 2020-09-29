@@ -59,7 +59,7 @@ class Jet_Smart_Filters_Search_Widget extends Jet_Smart_Filters_Base_Widget {
 				'label'   => __( 'Select filter', 'jet-smart-filters' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => '',
-				'options' => $this->get_widget_filters(),
+				'options' => $this->get_widget_filters( true ),
 			)
 		);
 

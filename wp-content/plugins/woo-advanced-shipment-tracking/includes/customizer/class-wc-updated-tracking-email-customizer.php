@@ -276,8 +276,7 @@ class wcast_updated_tracking_customizer_email {
 	 * @access public
 	 * @return void
 	 */
-	public function set_up_preview() {
-		
+	public function set_up_preview() {		
 		// Make sure this is own preview request.
 		if ( ! wcast_updated_tracking_customizer_email::is_own_preview_request() ) {
 			return;

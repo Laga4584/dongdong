@@ -3,7 +3,7 @@
  * Plugin Name: JetSmartFilters
  * Plugin URI:  https://crocoblock.com/plugins/jetsmartfilters/
  * Description: Adds easy-to-use AJAX filters to the pages built with Elementor which contain the dynamic listings.
- * Version:     2.0.0
+ * Version:     2.0.1
  * Author:      Crocoblock
  * Author URI:  https://crocoblock.com/
  * Text Domain: jet-smart-filters
@@ -48,7 +48,7 @@ if ( ! class_exists( 'Jet_Smart_Filters' ) ) {
 		 *
 		 * @var string
 		 */
-		private $version = '2.0.0';
+		private $version = '2.0.1';
 
 		/**
 		 * Holder for base plugin path
@@ -101,6 +101,8 @@ if ( ! class_exists( 'Jet_Smart_Filters' ) ) {
 			add_action( 'init', array( $this, 'lang' ), -999 );
 			// Load files.
 			add_action( 'init', array( $this, 'init' ), -999 );
+			// Jet Dashboard Init
+			add_action( 'init', array( $this, 'jet_dashboard_init' ), -999 );
 
 			// Set that filters are used for editors
 			add_action( 'elementor/preview/init', array( $this, 'set_filters_used' ) );
@@ -135,6 +137,8 @@ if ( ! class_exists( 'Jet_Smart_Filters' ) ) {
 					$this->plugin_path( 'framework/interface-builder/cherry-x-interface-builder.php' ),
 					$this->plugin_path( 'framework/post-meta/cherry-x-post-meta.php' ),
 					$this->plugin_path( 'framework/term-meta/cherry-x-term-meta.php' ),
+					$this->plugin_path( 'framework/vue-ui/cherry-x-vue-ui.php' ),
+					$this->plugin_path( 'framework/jet-dashboard/jet-dashboard.php' )
 				)
 			);
 
@@ -227,6 +231,43 @@ if ( ! class_exists( 'Jet_Smart_Filters' ) ) {
 		 */
 		public function set_filters_used() {
 			$this->filters_not_used = false;
+		}
+
+		/**
+		 * Init the JetDashboard module
+		 *
+		 * @return void
+		 */
+		public function jet_dashboard_init() {
+
+			if ( is_admin() ) {
+
+				$jet_dashboard_module_data = $this->framework->get_included_module_data( 'jet-dashboard.php' );
+
+				$jet_dashboard = \Jet_Dashboard\Dashboard::get_instance();
+
+				$jet_dashboard->init( array(
+					'path'           => $jet_dashboard_module_data['path'],
+					'url'            => $jet_dashboard_module_data['url'],
+					'cx_ui_instance' => array( $this, 'jet_dashboard_ui_instance_init' ),
+					'plugin_data'    => array(
+						'slug'    => 'jet-smart-filters',
+						'file'    => 'jet-smart-filters/jet-smart-filters.php',
+						'version' => $this->get_version(),
+					),
+				) );
+			}
+		}
+
+		/**
+		 * Get Vue UI Instance for JetDashboard module
+		 *
+		 * @return CX_Vue_UI
+		 */
+		public function jet_dashboard_ui_instance_init() {
+			$cx_ui_module_data = $this->framework->get_included_module_data( 'cherry-x-vue-ui.php' );
+
+			return new CX_Vue_UI( $cx_ui_module_data );
 		}
 
 		/**

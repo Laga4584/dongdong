@@ -698,6 +698,17 @@ function remove_time_from_date( $datetime ) {
 		                   value='<?php echo $settings['format_html_row_images_height'] ?>' min="0">
 	            </div>
 
+                <div class="pdf_two_col_block">
+                    <input type=hidden name="settings[format_html_images_add_link]" value="0">
+                    <input type=checkbox name="settings[format_html_images_add_link]"
+                           value="1" <?php if ( @$settings['format_html_images_add_link'] ) {
+		                echo 'checked';
+	                } ?> > <?php _e( 'Add links to images', 'woo-order-export-lite' ) ?>
+                </div>
+
+                <div class="pdf_two_col_block">
+                </div>
+
 		<br/>
 		<div>
 

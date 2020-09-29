@@ -681,15 +681,15 @@ if ( ! class_exists( 'Jet_Smart_Filters_Query_Manager' ) ) {
 			$before = explode( '/', $before );
 
 			$after_query = array(
-				'year'  => isset( $after[2] ) ? $after[2] : false,
-				'month' => isset( $after[0] ) ? $after[0] : false,
-				'day'   => isset( $after[1] ) ? $after[1] : false,
+				'year'  => isset( $after[0] ) ? $after[0] : false,
+				'month' => isset( $after[1] ) ? $after[1] : false,
+				'day'   => isset( $after[2] ) ? $after[2] : false,
 			);
 
 			$before_query = array(
-				'year'  => isset( $before[2] ) ? $before[2] : false,
-				'month' => isset( $before[0] ) ? $before[0] : false,
-				'day'   => isset( $before[1] ) ? $before[1] : false,
+				'year'  => isset( $before[0] ) ? $before[0] : false,
+				'month' => isset( $before[1] ) ? $before[1] : false,
+				'day'   => isset( $before[2] ) ? $before[2] : false,
 			);
 
 			$after_query   = array_filter( $after_query );

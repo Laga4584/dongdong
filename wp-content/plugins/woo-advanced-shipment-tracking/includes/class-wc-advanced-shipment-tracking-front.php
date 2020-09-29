@@ -184,7 +184,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 			$tracking_provider = $results->provider_name;
 			$custom_provider_name = $results->custom_provider_name;
 			$custom_thumb_id = $results->custom_thumb_id;
-			
+						
 			/*** Update in 2.7.9
 			* Date - 20/01/2020
 			* Remove api call code after three month - get_tracking_info
@@ -250,7 +250,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<p class="shipment_heading"><?php 				
 				echo sprintf(__("Shipment - %s (out of %s)", 'woo-advanced-shipment-tracking'), $num , $total_trackings); ?></p>
 				<?php } 
-				echo $this->tracking_page_header($order_id,$tracking_provider,$custom_provider_name, $custom_thumb_id,  $tracking_number,$tracker);
+				echo $this->tracking_page_header($order_id,$tracking_provider,$custom_provider_name, $custom_thumb_id,  $tracking_number,$tracker, $item);
 				
 				if($tracker->ep_status == 'pending_trackship' || $tracker->ep_status == 'INVALID_TRACKING_NUM' || $tracker->ep_status == 'carrier_unsupported' || $tracker->ep_status == 'invalid_user_key' || $tracker->ep_status == 'wrong_shipping_provider' || $tracker->ep_status == 'deleted' || $tracker->ep_status == 'pending'){
 				} elseif(isset($tracker->ep_status)){
@@ -267,7 +267,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<?php if($total_trackings > 1 ){ ?>
 					<p class="shipment_heading"><?php echo sprintf(__("Shipment - %s (out of %s)", 'woo-advanced-shipment-tracking'), $num , $total_trackings); ?></p>
 				<?php } 			
-			echo $tracking_header = $this->tracking_page_header($order_id,$tracking_provider,$custom_provider_name, $custom_thumb_id,$tracking_number,$tracker); 			
+			echo $tracking_header = $this->tracking_page_header($order_id,$tracking_provider,$custom_provider_name, $custom_thumb_id,$tracking_number,$tracker,$item); 			
 			if($tracker->ep_status == 'pending_trackship' || $tracker->ep_status == 'INVALID_TRACKING_NUM' || $tracker->ep_status == 'carrier_unsupported' || $tracker->ep_status == 'invalid_user_key' || $tracker->ep_status == 'wrong_shipping_provider' || $tracker->ep_status == 'deleted' || $tracker->ep_status == 'pending'){
 			} elseif(isset($tracker->ep_status)){
 				echo $this->layout2_progress_bar($tracker);
@@ -503,7 +503,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<p class="shipment_heading"><?php 				
 				echo sprintf(__("Shipment - %s (out of %s)", 'woo-advanced-shipment-tracking'), $num , $total_trackings); ?></p>
 				<?php } 
-				echo $this->tracking_page_header($order_id,$tracking_provider,$custom_provider_name, $custom_thumb_id,$tracking_number,$tracker);
+				echo $this->tracking_page_header($order_id,$tracking_provider,$custom_provider_name, $custom_thumb_id,$tracking_number,$tracker,$item);
 				
 				if($tracker->ep_status == 'pending_trackship' || $tracker->ep_status == 'INVALID_TRACKING_NUM' || $tracker->ep_status == 'carrier_unsupported' || $tracker->ep_status == 'invalid_user_key' || $tracker->ep_status == 'wrong_shipping_provider' || $tracker->ep_status == 'deleted' || $tracker->ep_status == 'pending'){
 				} elseif(isset($tracker->ep_status)){
@@ -520,7 +520,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<?php if($total_trackings > 1 ){ ?>
 					<p class="shipment_heading"><?php echo sprintf(__("Shipment - %s (out of %s)", 'woo-advanced-shipment-tracking'), $num , $total_trackings); ?></p>
 				<?php } 			
-			echo $tracking_header = $this->tracking_page_header($order_id,$tracking_provider,$custom_provider_name, $custom_thumb_id,$tracking_number,$tracker); 			
+			echo $tracking_header = $this->tracking_page_header($order_id,$tracking_provider,$custom_provider_name, $custom_thumb_id,$tracking_number,$tracker,$item); 			
 			if($tracker->ep_status == 'pending_trackship' || $tracker->ep_status == 'INVALID_TRACKING_NUM' || $tracker->ep_status == 'carrier_unsupported' || $tracker->ep_status == 'invalid_user_key' || $tracker->ep_status == 'wrong_shipping_provider' || $tracker->ep_status == 'deleted' || $tracker->ep_status == 'pending'){
 			} elseif(isset($tracker->ep_status)){
 				echo $this->layout2_progress_bar($tracker);
@@ -553,12 +553,22 @@ class WC_Advanced_Shipment_Tracking_Front {
 		exit; 
 	}
 	
-	public function tracking_page_header($order_id,$tracking_provider,$custom_provider_name = NULL, $custom_thumb_id = 0,$tracking_number,$tracker){
+	public function tracking_page_header($order_id,$tracking_provider,$custom_provider_name = NULL, $custom_thumb_id = 0,$tracking_number,$tracker,$item){
 		
 		if($tracker->est_delivery_date){	
 			$unixTimestamp = strtotime($tracker->est_delivery_date);				
 			$day = date("l", $unixTimestamp);
 		}
+		
+		$ast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
+		
+		$wc_ast_link_to_shipping_provider = get_option('wc_ast_link_to_shipping_provider');
+		
+		$tracking_number_url = '';
+		
+		if($wc_ast_link_to_shipping_provider == 1){
+			$tracking_number_url = $this->get_tracking_number_url( $order_id, $tracking_provider, $tracking_number, $item );	
+		}		
 		
 		$hide_tracking_provider_image = get_option('wc_ast_hide_tracking_provider_image');
 		$upload_dir   = wp_upload_dir();	
@@ -580,7 +590,6 @@ class WC_Advanced_Shipment_Tracking_Front {
 			$provider_name = $tracking_provider;	
 		}		 
 		
-		$ast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
 		$order_id = $ast->get_custom_order_number($order_id);		
 		?>		
 		<div class="tracking-header tracking-desktop-header">
@@ -588,7 +597,12 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<span class="tracking-number"><?php _e( 'Order', 'woocommerce' ); ?>: <strong>#<?php echo apply_filters( 'ast_order_number_filter', $order_id); ?></strong></span><br>
 				<span class="tracking-number"><span class="header_tracking_provider">
 					<?php echo apply_filters( 'ast_provider_title', esc_html( $provider_name )); ?>:</span> 
-					<strong><?php echo $tracking_number; ?></strong>
+					<?php if($wc_ast_link_to_shipping_provider == 1 && $tracking_number_url != ''){ ?>
+						<a href="<?php echo $tracking_number_url; ?>" target="blank"><strong><?php echo $tracking_number; ?></strong></a>	
+					<?php } else{ ?>
+						<strong><?php echo $tracking_number; ?></strong>	
+					<?php } ?>
+					
 				</span>					
 				<h1 class="shipment_status_heading <?php if($tracker->ep_status == "delivered" || $tracker->ep_status == "available_for_pickup") { echo 'text-success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure") { echo 'text-warning'; } else{ echo 'text-secondary'; } ?>">
 					<?php echo apply_filters("trackship_status_filter",$tracker->ep_status);?>
@@ -615,7 +629,13 @@ class WC_Advanced_Shipment_Tracking_Front {
 					<img class="provider_image" src="<?php echo $src; ?>">
 				</div>
 				<div class="header_top_right">						
-					<span class="tracking-number"><span class="header_tracking_provider"><?php echo apply_filters( 'ast_provider_title', esc_html( $provider_name )); ?>:</span> <strong><?php echo $tracking_number; ?></strong></span><br>
+					<span class="tracking-number"><span class="header_tracking_provider"><?php echo apply_filters( 'ast_provider_title', esc_html( $provider_name )); ?>:</span> 
+						<?php if($wc_ast_link_to_shipping_provider == 1 && $tracking_number_url != ''){ ?>
+							<a href="<?php echo $tracking_number_url; ?>" target="blank"><strong><?php echo $tracking_number; ?></strong></a>	
+						<?php } else{ ?>
+							<strong><?php echo $tracking_number; ?></strong>	
+						<?php } ?>
+					</span><br>
 					<span class="tracking-number"><?php _e( 'Order', 'woocommerce' ); ?>: <strong>#<?php echo apply_filters( 'ast_order_number_filter', $order_id); ?></strong></span>
 				</div>
 			</div>
@@ -635,6 +655,81 @@ class WC_Advanced_Shipment_Tracking_Front {
 			</div>
 		</div>
 	<?php }
+	
+	public function get_tracking_number_url( $order_id, $tracking_provider, $tracking_number, $item ){
+		
+		if ( version_compare( WC_VERSION, '3.0', '<' ) ) {
+			$postcode = get_post_meta( $order_id, '_shipping_postcode', true );
+		} else {
+			$order    = new WC_Order( $order_id );
+			$postcode = $order->get_shipping_postcode();
+		}
+
+		if ( empty( $postcode ) ) {
+			$postcode = get_post_meta( $order_id, '_shipping_postcode', true );
+		}
+		
+		$ast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
+		$link_format = '';
+		foreach ( $ast->get_providers() as $provider => $format ) {		
+			if (  $format['provider_name']  === $tracking_provider ) {
+				$link_format = $format['provider_url'];				
+				break;
+			}			
+		}
+		
+		if($link_format){
+			$searchVal = array("%number%", str_replace(' ', '', "%2 $ s") );
+			$tracking_number = str_replace(' ', '', $tracking_number);
+			$replaceVal = array( $tracking_number, urlencode( $postcode ) );
+			$link_format = str_replace($searchVal, $replaceVal, $link_format); 
+			
+			if(isset($item['tracking_product_code'])){
+				$searchnumber2 = array("%number2%", str_replace(' ', '', "%2 $ s") );
+				$tracking_product_code = str_replace(' ', '', $item['tracking_product_code']);					
+				$link_format = str_replace($searchnumber2, $tracking_product_code, $link_format); 						
+			}
+			
+			if($order->get_shipping_country() != null){
+				$shipping_country = $order->get_shipping_country();	
+			} else{
+				$shipping_country = $order->get_billing_country();	
+			}								
+			
+			if($shipping_country){												
+				
+				if($tracking_provider == 'JP Post' && $shipping_country != 'JP'){
+					$local_en = '&locale=en';
+					$link_format = $link_format.$local_en;
+				}						
+				
+				if($tracking_provider == 'DHL eCommerce'){
+					$link_format = str_replace('us-en', strtolower($shipping_country).'-en', $link_format); 	
+				}
+				
+				if($tracking_provider == 'DHL Freight'){
+					$link_format = str_replace('global-en', strtolower($shipping_country).'-en', $link_format);
+				}
+			}
+			
+			if($order->get_shipping_postcode() != null){
+				$shipping_postal_code = $order->get_shipping_postcode();	
+			} else{
+				$shipping_postal_code = $order->get_billing_postcode();
+			}	
+			
+			$shipping_country = str_replace(' ', '', $shipping_country);					
+			$link_format = str_replace("%country_code%", $shipping_country, $link_format);
+													
+			if($tracking_provider == 'APC Overnight'){	
+				$shipping_postal_code = str_replace(' ', '+', $shipping_postal_code);
+			} else{
+				$shipping_postal_code = str_replace(' ', '', $shipping_postal_code);
+			}
+			$link_format = str_replace("%postal_code%", $shipping_postal_code, $link_format);
+		}
+		return $link_format;
+	}
 	
 	public function layout1_progress_bar($tracker){
 		if($tracker->ep_status == "unknown"){ $state0_class = 'unknown'; } else{ $state0_class = 'pre_transit'; }		
@@ -1153,6 +1248,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 		$wc_ast_api_key = get_option('wc_ast_api_key');	
 		$primary_color = get_option('wc_ast_select_primary_color');	
 		$border_color = get_option('wc_ast_select_border_color');
+		$wc_ast_link_to_shipping_provider = get_option('wc_ast_link_to_shipping_provider');
 		$hide_tracking_provider_image = get_option('wc_ast_hide_tracking_provider_image');
 		$hide_tracking_events = get_option('wc_ast_hide_tracking_events');
 		$tracking_page_layout = get_option('wc_ast_select_tracking_page_layout','t_layout_1');	

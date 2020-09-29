@@ -71,10 +71,12 @@ const filtersUI = {
 				$dateRangeTo = $dateRangeTo || $container.find(filtersUI.dateRange.toSelector)
 			} = props,
 				weekStart = getNesting(JetSmartFilterSettings, 'misc', 'week_start') || 1,
-				texts = getNesting(JetSmartFilterSettings, 'datePickerData');
+				texts = getNesting(JetSmartFilterSettings, 'datePickerData'),
+				dateFormat = $dateRangeInput.data('date-format') || 'mm/dd/yy';
 
 			const from = $dateRangeFrom.datepicker({
 				defaultDate: '+1w',
+				dateFormat,
 				closeText: texts.closeText,
 				prevText: texts.prevText,
 				nextText: texts.nextText,
@@ -94,20 +96,21 @@ const filtersUI = {
 					}
 				}
 			}).on('change', () => {
-				const fromVal = $dateRangeFrom.val(),
-					toVal = $dateRangeTo.val();
+				const fromDate = parseDate($dateRangeFrom.val()),
+					toDate = parseDate($dateRangeTo.val());
 
-				if (fromVal || toVal) {
-					$dateRangeInput.val(fromVal + ':' + toVal);
+				if (fromDate.value || toDate.value) {
+					$dateRangeInput.val(fromDate.value + ':' + toDate.value);
 				} else {
 					$dateRangeInput.val('');
 				}
 
-				to.datepicker('option', 'minDate', getDate(fromVal));
+				to.datepicker('option', 'minDate', fromDate.date);
 			});
 
 			const to = $dateRangeTo.datepicker({
 				defaultDate: '+1w',
+				dateFormat,
 				closeText: texts.closeText,
 				prevText: texts.prevText,
 				nextText: texts.nextText,
@@ -127,17 +130,31 @@ const filtersUI = {
 					}
 				}
 			}).on('change', () => {
-				const fromVal = $dateRangeFrom.val(),
-					toVal = $dateRangeTo.val();
+				const fromDate = parseDate($dateRangeFrom.val()),
+					toDate = parseDate($dateRangeTo.val());
 
-				if (fromVal || toVal) {
-					$dateRangeInput.val(fromVal + ':' + toVal);
+				if (fromDate.value || toDate.value) {
+					$dateRangeInput.val(fromDate.value + ':' + toDate.value);
 				} else {
 					$dateRangeInput.val('');
 				}
 
-				from.datepicker('option', 'maxDate', getDate(toVal));
+				from.datepicker('option', 'maxDate', toDate.date);
 			});
+
+			function parseDate(dateString) {
+				const output = {
+					date: new Date(dateString),
+					value: ''
+				}
+
+				if (output.date.getTime())
+					output.value = output.date.getFullYear()
+						+ '/' + (output.date.getMonth() + 1)
+						+ '/' + output.date.getDate();
+
+				return output;
+			}
 
 			function getDate(dateString) {
 				const dateFormat = 'mm/dd/yy';

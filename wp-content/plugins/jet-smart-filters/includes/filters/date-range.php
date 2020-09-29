@@ -66,6 +66,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Date_Range_Filter' ) ) {
 			$query_type   = get_post_meta( $filter_id, '_date_source', true );
 			$query_var    = get_post_meta( $filter_id, '_query_var', true );
 			$filter_label = get_post_meta( $filter_id, '_filter_label', true );
+			$date_format  = get_post_meta( $filter_id, '_date_format', true );
 			$from         = get_post_meta( $filter_id, '_date_from_placeholder', true );
 			$to           = get_post_meta( $filter_id, '_date_to_placeholder', true );
 
@@ -83,6 +84,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Date_Range_Filter' ) ) {
 				'button_icon'          => $button_icon,
 				'button_icon_position' => $button_icon_position,
 				'filter_label'         => $filter_label,
+				'date_format'          => $date_format,
 				'from_placeholder'     => $from,
 				'to_placeholder'       => $to,
 			);

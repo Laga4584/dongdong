@@ -8,7 +8,7 @@ import {
 export default class ActiveItems {
 	activeItemsСollection = {};
 
-	constructor ($activeItems, props = {}) {
+	constructor($activeItems, props = {}) {
 		const {
 			separateMultiple = false,
 			templateName = false,
@@ -260,6 +260,16 @@ export default class ActiveItems {
 			return false;
 
 		return getNesting(JetSmartFilterSettings, 'templates', this.templateName);
+	}
+
+	get containerElement() {
+		if (!this.$activeItemsContainer)
+			return false;
+
+		if (!this.$activeItemsContainer.length)
+			return false;
+
+		return this.$activeItemsContainer.get(0);
 	}
 
 	// Additional methods

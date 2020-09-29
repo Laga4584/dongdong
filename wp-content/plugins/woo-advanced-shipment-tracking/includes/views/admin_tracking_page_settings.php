@@ -18,7 +18,7 @@
 							<input type="checkbox" id="wc_ast_use_tracking_page" name="wc_ast_use_tracking_page" class="mdl-switch__input" <?php if(get_option('wc_ast_use_tracking_page') == 1){ echo 'checked'; } ?> value="1"/>
 						</label>
 					</span>		
-					<label><?php _e( 'Enable a tracking page on your store', 'woo-advanced-shipment-tracking' ); ?></label>	
+					<label class="setting_ul_checkbox_label"><?php _e( 'Enable a tracking page on your store', 'woo-advanced-shipment-tracking' ); ?></label>	
 				</li>
 				<li class="hide_if_disable">
 					<label><?php _e( 'Select Tracking Page', 'woo-advanced-shipment-tracking' ); ?></label>						
@@ -33,7 +33,7 @@
 					<fieldset style="margin-top: 10px;<?php if(get_option('wc_ast_trackship_page_id') != 'other'){ echo 'display:none;'; }?>" class="trackship_other_page_fieldset">
 						<input type="text" name="wc_ast_trackship_other_page" style="width: 100%;" value="<?php echo get_option('wc_ast_trackship_other_page'); ?>">
 					</fieldset>
-					<span class="tracking_page_desc"><?php _e( 'Note - If you select a different page than the Shipment Tracking page, add the [wcast-track-order] shortcode to the selected page content.', 'woo-advanced-shipment-tracking' ); ?> <a href="https://www.zorem.com/docs/woocommerce-advanced-shipment-tracking/integration/" target="blank"><?php _e( 'more info', 'woo-advanced-shipment-tracking' ); ?></a></span>
+					<p class="tracking_page_desc"><?php _e( 'Note - If you select a different page than the Shipment Tracking page, add the [wcast-track-order] shortcode to the selected page content.', 'woo-advanced-shipment-tracking' ); ?> <a href="https://www.zorem.com/docs/woocommerce-advanced-shipment-tracking/integration/" target="blank"><?php _e( 'more info', 'woo-advanced-shipment-tracking' ); ?></a></p>
 				</li>
 				<li class="hide_if_disable tracking_page_table tracking-layout-table">
 					<label><?php _e( 'Tracking Page Layout', 'woo-advanced-shipment-tracking' ); ?></label></br>
@@ -66,6 +66,11 @@
 						</ul>
 					</div>
 					<div class="tracking_layout_options_div">
+						<label>
+							<input type="hidden" name="wc_ast_link_to_shipping_provider" value="0"/>
+							<input type="checkbox" name="wc_ast_link_to_shipping_provider" value="1" id="wc_ast_link_to_shipping_provider" <?php if(get_option('wc_ast_link_to_shipping_provider') == 1){ echo 'checked'; } ?>>
+							<?php _e( 'Add a link to the Shipping provider page', 'woo-advanced-shipment-tracking' ); ?>
+						</label>
 						<label>
 							<input type="hidden" name="wc_ast_hide_tracking_provider_image" value="0"/>
 							<input type="checkbox" name="wc_ast_hide_tracking_provider_image" value="1" id="wc_ast_hide_tracking_provider_image" <?php if(get_option('wc_ast_hide_tracking_provider_image') == 1){ echo 'checked'; } ?>>

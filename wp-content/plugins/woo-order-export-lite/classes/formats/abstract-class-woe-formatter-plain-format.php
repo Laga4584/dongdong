@@ -553,8 +553,16 @@ abstract class WOE_Formatter_Plain_Format extends WOE_Formatter {
 			$_SESSION['woe_summary_customers'][ $key ]['summary_report_total_tax_amount'] += wc_round_tax_total( $order->get_total_tax() );
 		}
 
-		if( isset( $_SESSION['woe_summary_customers'][ $key ]['summary_report_total_fee_amount'] ) ) {
-			$_SESSION['woe_summary_customers'][ $key ]['summary_report_total_fee_amount'] += wc_round_tax_total( $order->get_total_fees() );
+		if ( isset( $_SESSION['woe_summary_customers'][ $key ]['summary_report_total_fee_amount'] ) ) {
+			$fees = 0;
+
+			if ( method_exists( $order, 'get_total_fees' ) ) {
+				$fees = $order->get_total_fees();
+			} else if ( method_exists( $order, 'calculate_fees' ) ) {
+				$fees = $order->calculate_fees();
+			}
+
+			$_SESSION['woe_summary_customers'][ $key ]['summary_report_total_fee_amount'] += wc_round_tax_total( $fees );
 		}
 
 		do_action( "woe_summary_customers_add_item", $key, $order, $row );
@@ -582,7 +590,7 @@ abstract class WOE_Formatter_Plain_Format extends WOE_Formatter {
 		return $this->duplicate_settings;
 	}
 
-	protected function make_img_html_from_path( $path, $width = null, $height = null ) {
+	protected function make_img_html_from_path( $path, $width = null, $height = null, $clickable = false ) {
 		$uploads_dir = wp_upload_dir();
 
 		if ( $this->mode === 'preview' ) {
@@ -609,6 +617,10 @@ abstract class WOE_Formatter_Plain_Format extends WOE_Formatter {
 			$html .= " $name=" . '"' . $value . '"';
 		}
 		$html .= ' />';
+
+		if ( $clickable ) {
+			$html = "<a href='$src'>$html</a>";
+		}
 
 		return $html;
 	}

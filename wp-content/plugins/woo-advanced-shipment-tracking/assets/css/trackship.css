@@ -304,6 +304,7 @@
 }
 .trackship_admin_layout .get_shipment_status_tool table.form-table{
 	border: 1px solid #e0e0e0;
+	background: #fff;
 }
 .get_shipment_status_tool_description{
 	border-bottom: 1px solid #eee;
@@ -369,11 +370,8 @@ select#wc_ast_trackship_page_id {
     margin-left: 25px;
 }
 .tracking_page_desc {
-    font-size: 12px;
-    display: inline-block;
-    width: 50%;
+    font-size: 12px;    
     vertical-align: middle;
-    margin-left: 25px;
 }
 .select_t_layout_section {
     display: inline-block;
@@ -522,14 +520,37 @@ ul.wcast-shipment-status-list {
 .ast-shipment-status .icon-invalid_user_key:before{	
     background-image: url(icons/invalid-user-key-v4.png);    
 }
+.trackship_admin_layout .mdl-switch{
+	border: 1px solid #ccc;
+    border-radius: 14px;
+	width: 36px;
+    height: 18px;
+}
+.trackship_admin_layout .mdl-switch__track{
+	left: 1px;
+    top: 1px;
+    height: 14px;
+    width: 32px;
+    right: 1px;
+}
 .trackship_admin_layout .mdl-switch.is-checked .mdl-switch__track {
-	background: #E0F0E4 !important;
+	background: rgb(89 200 137 / 0.4) !important;
 }
 .trackship_admin_layout .mdl-switch__ripple-container .mdl-ripple {
 	background: #59c889 !important;
 }
+.trackship_admin_layout .mdl-switch .mdl-switch__thumb{
+	left: 3px;
+    top: 2px;
+    height: 12px;
+    width: 12px;
+}
 .trackship_admin_layout .mdl-switch.is-checked .mdl-switch__thumb {
 	background: #59c889 !important;
+	left: 20px;
+	top: 1px;
+    height: 12px;
+    width: 12px;
 }
 .trackship_dropdown{
 	position: relative;
@@ -668,6 +689,12 @@ ul.wcast-shipment-status-list {
 .shipment-status-email-table td:last-child {
     text-align: right;
 }
+.shipment-status-email-table tr.disable{
+	opacity: 0.7;
+}
+.shipment-status-email-table tr.disable td:last-child {
+    pointer-events: none;
+}
 .trackship_admin_layout label.tab_label{
 	color:#3c4858;
 }
@@ -695,6 +722,28 @@ ul.wcast-shipment-status-list {
     color: #3c4858;
     font-weight: 500;
 	font-size: 18px;
+}
+.woocommerce table.form-table .shipment-status-label.woocommerce-help-tip{
+	font-size: 14px;
+	padding: 0 1em;
+	line-height: 2.2em;
+	margin: -.25em 0;
+	width: auto;
+    height: auto;
+}
+.woocommerce table.form-table .shipment-status-label.woocommerce-help-tip:after{
+	content: "";
+}
+.woocommerce_page_trackship-for-woocommerce #tiptip_content {
+    background: #59c889;
+    padding: 15px;
+    font-size: 12px;
+}
+.woocommerce_page_trackship-for-woocommerce #tiptip_holder.tip_top #tiptip_arrow_inner {
+    border-top-color: #59c889;	
+}
+.woocommerce_page_trackship-for-woocommerce #tiptip_holder.tip_bottom #tiptip_arrow_inner {
+    border-bottom-color: #59c889;	
 }
 
 

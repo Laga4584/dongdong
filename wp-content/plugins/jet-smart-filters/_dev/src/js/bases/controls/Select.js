@@ -8,6 +8,9 @@ export default class SelectControl extends Filter {
 
 		this.processData();
 		this.initEvent();
+
+		// reset the select when returning to the page
+		this.resetSelectOnInitialization();
 	}
 
 	addFilterChangeEvent() {
@@ -39,6 +42,20 @@ export default class SelectControl extends Filter {
 		this.$selected.prop(this.isSelect ? 'selected' : 'checked', false);
 	}
 
+	resetSelectOnInitialization() {
+		if (!this.isSelect)
+			return;
+
+		$(document).ready(function () {
+			if (this.filterGroup.currentQuery[this.queryKey])
+				return;
+
+			setTimeout(() => {
+				this.$select.prop('selectedIndex', 0);
+			});
+		}.bind(this));
+	}
+
 	get activeValue() {
 		const $item = this.getItemByValue(this.data);
 
@@ -50,7 +67,6 @@ export default class SelectControl extends Filter {
 		return this.isSelect ?
 			this.$select.find(':checked') :
 			this.$select.filter(':checked');
-
 	}
 
 	get isSelect() {

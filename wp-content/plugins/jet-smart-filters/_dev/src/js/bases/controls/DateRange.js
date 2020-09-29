@@ -66,6 +66,6 @@ export default class DateRangeControl extends Filter {
 	}
 
 	get activeValue() {
-		return this.dataValue.replace(/^:/, '∞ — ').replace(/:$/, ' — ∞').replace(':', ' — ');
+		return (this.$dateRangeFrom.val() + ':' + this.$dateRangeTo.val()).replace(/^:/, '∞ — ').replace(/:$/, ' — ∞').replace(':', ' — ');
 	}
 }

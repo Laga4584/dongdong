@@ -176,7 +176,13 @@ if ( ! class_exists( 'Jet_Woo_Builder_Post_Type' ) ) {
 				);
 			}
 
-			wp_redirect( Elementor\Utils::get_edit_link( $template_id ) );
+			if ( version_compare( ELEMENTOR_VERSION, '2.6.0', '<' ) ) {
+				$redirect = Elementor\Utils::get_edit_link( $template_id );
+			} else {
+				$redirect = Elementor\Plugin::$instance->documents->get( $template_id )->get_edit_url();
+			}
+
+			wp_redirect( $redirect );
 			die();
 
 		}

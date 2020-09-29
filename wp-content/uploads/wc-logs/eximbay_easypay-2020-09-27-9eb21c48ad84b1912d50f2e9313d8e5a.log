@@ -1,0 +1,445 @@
+09-27-2020 @ 18:05:30 - Process Payment Response : status
+09-27-2020 @ 18:05:30 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200927180529
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 5436.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 170769_200926_114259
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => minomushi09@docomo.ne.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200926000002
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 435C7390D7392604E265E6E93B94244A23A08416A6034A27EBA791B668EF32EE
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-27-2020 @ 22:50:26 - Process Payment Response : request
+09-27-2020 @ 22:50:26 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 170772_200927_015025
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 4666
+    [shop] => SEOUL LIFE
+    [buyer] => 真由子宮田
+    [email] => mocomayu.1207@gmail.com
+    [tel] => 08077382952
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【クリオ】CLIO プリズムエアアイパレット#002 ピンクアディクト 외 2건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-27-2020 @ 22:50:40 - Process Payment Response : status
+09-27-2020 @ 22:50:40 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200927225039
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4666
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 170772_200927_015025
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => mocomayu.1207@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200927000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8a86757388808b75888476768185867d06
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 8974E4827C447F33039584CDCA3D0D7A270FA134FE1F52AB89E0A535025677D3
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-27-2020 @ 22:50:45 - Process Payment Response : return
+09-27-2020 @ 22:50:45 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200927225039
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4666
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 170772_200927_015025
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => mocomayu.1207@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200927000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8a86757388808b75888476768185867d06
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 8974E4827C447F33039584CDCA3D0D7A270FA134FE1F52AB89E0A535025677D3
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-27-2020 @ 22:50:46 - Process Payment Response : finish
+09-27-2020 @ 22:50:46 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200927225039
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4666
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 170772_200927_015025
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => mocomayu.1207@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200927000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8a86757388808b75888476768185867d06
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 8974E4827C447F33039584CDCA3D0D7A270FA134FE1F52AB89E0A535025677D3
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-27-2020 @ 23:05:25 - Process Payment Response : request
+09-27-2020 @ 23:05:25 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 170773_200927_020525
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 4797
+    [shop] => SEOUL LIFE
+    [buyer] => 都筑栞
+    [email] => suda173@icloud.com
+    [tel] => 08072385739
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【イニスフリー】innisfree パウダー ノーセバム ミネラルパウダー 5g 외 3건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-27-2020 @ 23:08:28 - Process Payment Response : status
+09-27-2020 @ 23:08:28 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 4216
+    [resdt] => 20200927230827
+    [cardno4] => 1002
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4797
+    [accesscountry] => JP
+    [ref] => 170773_200927_020525
+    [paymethod] => P101
+    [dm_review] => 
+    [email] => suda173@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200927000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => TSUZUKISHIORI
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 096409
+    [fgkey] => 0227435D4381C376A4F160DA62E90EE7140E037EE92496C2921D7A201E5AC24C
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-27-2020 @ 23:08:34 - Process Payment Response : return
+09-27-2020 @ 23:08:34 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 4216
+    [resdt] => 20200927230827
+    [cardno4] => 1002
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4797
+    [accesscountry] => JP
+    [ref] => 170773_200927_020525
+    [paymethod] => P101
+    [dm_review] => 
+    [email] => suda173@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200927000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => TSUZUKISHIORI
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 096409
+    [fgkey] => 0227435D4381C376A4F160DA62E90EE7140E037EE92496C2921D7A201E5AC24C
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-27-2020 @ 23:08:34 - Process Payment Response : finish
+09-27-2020 @ 23:08:34 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 4216
+    [resdt] => 20200927230827
+    [cardno4] => 1002
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4797
+    [accesscountry] => JP
+    [ref] => 170773_200927_020525
+    [paymethod] => P101
+    [dm_review] => 
+    [email] => suda173@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200927000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => TSUZUKISHIORI
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 096409
+    [fgkey] => 0227435D4381C376A4F160DA62E90EE7140E037EE92496C2921D7A201E5AC24C
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+09-27-2020 @ 23:16:33 - Process Payment Response : return
+09-27-2020 @ 23:16:33 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 4216
+    [resdt] => 20200927230827
+    [cardno4] => 1002
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4797
+    [accesscountry] => JP
+    [ref] => 170773_200927_020525
+    [paymethod] => P101
+    [dm_review] => 
+    [email] => suda173@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200927000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => TSUZUKISHIORI
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 096409
+    [fgkey] => 0227435D4381C376A4F160DA62E90EE7140E037EE92496C2921D7A201E5AC24C
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-27-2020 @ 23:16:33 - Process Payment Response : finish
+09-27-2020 @ 23:16:33 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 4216
+    [resdt] => 20200927230827
+    [cardno4] => 1002
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4797
+    [accesscountry] => JP
+    [ref] => 170773_200927_020525
+    [paymethod] => P101
+    [dm_review] => 
+    [email] => suda173@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200927000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => TSUZUKISHIORI
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 096409
+    [fgkey] => 0227435D4381C376A4F160DA62E90EE7140E037EE92496C2921D7A201E5AC24C
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+

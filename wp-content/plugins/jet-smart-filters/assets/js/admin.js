@@ -266,6 +266,12 @@
 				JetSmartFiltersAdmin.initColorImageOptions();
 			}
 
+			if (isHierarchical) {
+				
+			} else {
+
+			}
+
 		}
 
 	};

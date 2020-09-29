@@ -290,6 +290,8 @@ class WC_Order_Export_Order_Fields {
 			$row[$field] = ( isset( $this->user->roles[0] ) && isset( $roles[ $this->user->roles[0] ] ) ) ? $roles[ $this->user->roles[0] ]['name'] : ""; // take first role Name
 		} elseif ( $field == 'customer_total_orders' ) {
 			$row[$field] = ( isset( $this->user->ID ) ) ? wc_get_customer_order_count( $this->user->ID ) : 0;
+		} elseif ( $field == 'customer_total_spent' ) {
+			$row[$field] = ( isset( $this->user->ID ) ) ? wc_get_customer_total_spent( $this->user->ID ) : 0;
 		} elseif ( $field == 'customer_first_order_date' ) {
 			$first_order = WC_Order_Export_Data_Extractor::get_customer_order( $this->user, $this->order_meta, 'first' );
 			$row[$field] = $first_order ? ( $first_order->get_date_created() ? gmdate( 'Y-m-d H:i:s',

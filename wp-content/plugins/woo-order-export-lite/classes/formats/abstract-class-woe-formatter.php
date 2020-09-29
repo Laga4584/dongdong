@@ -228,6 +228,10 @@ abstract class WOE_Formatter {
 	}
 	
 	//for plain formats only 
-	public function adjust_duplicated_fields_settings( $order_ids ){
+	public function adjust_duplicated_fields_settings( $order_ids, $make_mode = '', $settings = array() ){
+	}
+
+	public function get_duplicate_settings() {
+		return array();
 	}
 }

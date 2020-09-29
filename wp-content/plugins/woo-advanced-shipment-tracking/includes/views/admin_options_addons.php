@@ -62,12 +62,18 @@ $pro_plugins = array(
 		'image' => 'sms-woo-icon.png',
 	),
 	2 => array(
+		'title' => 'Advanced Order Status Manager',
+		'description' => 'The Advanced Order Status Manager allows store owners to manage the WooCommerce orders statuses, create, edit, and delete custom Custom Order Statuses and integrate them into the WooCommerce orders flow.',
+		'url' => 'https://www.zorem.com/products/advanced-order-status-manager/',
+		'image' => 'AOSM-banner.png',
+	),
+	3 => array(
 		'title' => 'Country Based Restriction Pro',
 		'description' => 'The country-based restrictions plugin by zorem works by the WooCommerce Geolocation or the shipping country added by the customer and allows you to restrict products on your store to sell or not to sell to specific countries.',
 		'url' => 'https://www.zorem.com/products/country-based-restriction-pro/',
 		'image' => 'cbr-banner.png',
 	),
-	3 => array(
+	4 => array(
 		'title' => 'Sales Report Email Pro',
 		'description' => 'The Sales Report Email Pro will help know how well your store is performing and how your products are selling by sending you a daily, weekly, or monthly sales report by email, directly from your WooCommerce store.',
 		'url' => 'https://www.zorem.com/products/sales-report-email-for-woocommerce/',

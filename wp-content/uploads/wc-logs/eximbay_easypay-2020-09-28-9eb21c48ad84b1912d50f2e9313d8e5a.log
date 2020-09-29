@@ -1,0 +1,77 @@
+09-28-2020 @ 14:31:03 - Process Payment Response : request
+09-28-2020 @ 14:31:03 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 170812_200928_053103
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 3430
+    [shop] => SEOUL LIFE
+    [buyer] => 민지박
+    [email] => minji000225@gmail.com
+    [tel] => 01032648487
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【イニスフリー】innisfree グリーンティー クフォームクレンジング  150ml 외 2건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-28-2020 @ 19:06:13 - Process Payment Response : status
+09-28-2020 @ 19:06:13 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200928190613
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4666.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 170772_200927_015025
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => mocomayu.1207@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200927000001
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 219C3F2A6ACBE3DBD802D9B177C00BF8E865E8060C557C5603A3005165509FA9
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

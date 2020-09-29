@@ -661,8 +661,16 @@ class Jet_Smart_Filters_Base_Widget extends Widget_Base {
 	/**
 	 * Returns apropriate filters list for widget
 	 */
-	public function get_widget_filters() {
-		return jet_smart_filters()->data->get_filters_by_type( $this->get_widget_fiter_type() );
+	public function get_widget_filters( $empty_option = false ) {
+
+		$filters_by_type = jet_smart_filters()->data->get_filters_by_type( $this->get_widget_fiter_type() );
+
+		if ( $empty_option ) {
+			return array( '0' => esc_html__( 'Select...', 'jet-smart-filters' ) ) + $filters_by_type;
+		} else {
+			return $filters_by_type;
+		}
+
 	}
 
 	/**

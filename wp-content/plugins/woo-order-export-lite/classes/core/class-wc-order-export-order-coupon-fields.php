@@ -38,6 +38,10 @@ class WC_Order_Export_Order_Coupon_Fields {
 			return $this->item->get_name();
 		} elseif ( $field == 'discount_amount_plus_tax' ) {
 			return $this->item->get_discount() + $this->item->get_discount_tax();
+		} elseif ( $field == 'discount_amount' ) {
+			return $this->item->get_discount();
+		} elseif ( $field == 'discount_amount_tax' ) {
+			return $this->item->get_discount_tax();
 		} elseif ( $field == 'excerpt' ) {
 			$post          = get_page_by_title( $this->item->get_name(), OBJECT, 'shop_' . $this->item->get_type() );
 			return $post ? $post->post_excerpt : '';

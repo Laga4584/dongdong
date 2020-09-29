@@ -190,15 +190,7 @@ class WC_Advanced_Shipment_Tracking_Late_Shipments {
 		foreach($email_to as $email){												
 			$email_heading = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_email_heading',$wcast_late_shipments_settings->defaults['wcast_late_shipments_email_heading']);			
 			
-			$email_content = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_email_content',$wcast_late_shipments_settings->defaults['wcast_late_shipments_email_content']);			
-			
-			$wcast_show_tracking_details = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_show_tracking_details','');
-			
-			$wcast_show_order_details = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_show_order_details','');			
-			
-			$wcast_show_billing_address = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_show_billing_address','');
-			
-			$wcast_show_shipping_address = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_show_shipping_address','');			
+			$email_content = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_email_content',$wcast_late_shipments_settings->defaults['wcast_late_shipments_email_content']);										
 			
 			$sent_to_admin = false;
 			$plain_text = false;
@@ -222,65 +214,19 @@ class WC_Advanced_Shipment_Tracking_Late_Shipments {
 			
 			$email_heading = wc_trackship_email_manager()->email_heading($email_heading,$order_id,$order);
 			
+			ob_start();
 			
+			$local_template	= get_stylesheet_directory().'/woocommerce/emails/tracking-info.php';
 			
-			if($wcast_show_tracking_details == 1){	
-				
-				ob_start();
-				$local_template	= get_stylesheet_directory().'/woocommerce/emails/tracking-info.php';
-				
-				if ( file_exists( $local_template ) && is_writable( $local_template )){
-					wc_get_template( 'emails/tracking-info.php', array( 'tracking_items' => $tracking_items, 'order_id'=> $order_id ), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
-				} else{
-					wc_get_template( 'emails/tracking-info.php', array( 
-						'tracking_items' => $tracking_items,
-						'order_id' => $order_id,						
-					), 'woocommerce-advanced-shipment-tracking/', wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/' );
-				}
-				$email_content .= ob_get_clean();
-			}					
-						
-			if($wcast_show_order_details == 1){
-				
-				ob_start();
-				wc_get_template(
-					'emails/wcast-email-order-details.php', array(
-					'order'         => $order,
-					'sent_to_admin' => $sent_to_admin,
-					'plain_text'    => $plain_text,
-					'email'         => '',
-					),
-					'woocommerce-advanced-shipment-tracking/', 
-					wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/'
-				);	
-				$email_content .= ob_get_clean();	
+			if ( file_exists( $local_template ) && is_writable( $local_template )){
+				wc_get_template( 'emails/tracking-info.php', array( 'tracking_items' => $tracking_items, 'order_id'=> $order_id ), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
+			} else{
+				wc_get_template( 'emails/tracking-info.php', array( 
+					'tracking_items' => $tracking_items,
+					'order_id' => $order_id,						
+				), 'woocommerce-advanced-shipment-tracking/', wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/' );
 			}
-			
-			if($wcast_show_billing_address == 1){
-				ob_start();
-				wc_get_template(
-					'emails/wcast-billing-email-addresses.php', array(
-						'order'         => $order,
-						'sent_to_admin' => $sent_to_admin,
-					),
-					'woocommerce-advanced-shipment-tracking/', 
-					wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/'
-				);	
-				$email_content .= ob_get_clean();	
-			}
-			
-			if($wcast_show_shipping_address == 1){
-				ob_start();
-				wc_get_template(
-					'emails/wcast-shipping-email-addresses.php', array(
-						'order'         => $order,
-						'sent_to_admin' => $sent_to_admin,
-					),
-					'woocommerce-advanced-shipment-tracking/', 
-					wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/'
-				);	
-				$email_content .= ob_get_clean();	
-			}
+			$email_content .= ob_get_clean();									
 							
 			// create a new email
 			$email = new WC_Email();

@@ -384,6 +384,12 @@ class WC_Advanced_Shipment_Tracking_Install {
 				}		
 				update_option( 'wc_advanced_shipment_tracking', '3.16');		
 			}
+			
+			if(version_compare(get_option( 'wc_advanced_shipment_tracking' ),'3.17', '<') ){
+				$data_array = array('processing' => 1,'completed' => 1,'partial-shipped' => 1);				
+				update_option( 'wc_ast_show_orders_actions', $data_array );	
+				update_option( 'wc_advanced_shipment_tracking', '3.17');					
+			}
 		}
 	}
 	

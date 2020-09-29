@@ -2,6 +2,13 @@
 
 # ChangeLog
 
+## 2.0.1
+* ADD: jet-dashboard
+* ADD: date format for date-range filter
+* ADD: ajax content hooks for epro-products widget
+* FIX: clearing select filter when returning to the filter page
+* FIX: minor bugs
+
 ## 2.0.0
 * ADD: added filter blocks for gutenberg
 * FIX: ignoring a hidden filter in a general query

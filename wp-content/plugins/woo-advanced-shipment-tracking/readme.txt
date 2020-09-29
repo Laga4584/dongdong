@@ -2,7 +2,7 @@
 Contributors: zorem
 Tags: WooCommerce, delivery, shipping, shipment tracking, tracking
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 7.0
 Stable tag: 4.0.1
 License: GPLv2 
@@ -115,6 +115,16 @@ If you use external shipping services that work with the WooCommerce REST API to
 3. Select default shipping provider from setting page and add tracking number in order page.
 
 == Changelog ==
+
+= 3.1.1 =
+* Enhancement - Added a option in AST general settings for select On which Order status to display Add Tracking icon in the Order Actions menu.
+* Enhancement - Uppdated Late Shipments Customizer
+* Enhancement - Updated design of tools
+* Enhancement - Updated toggle design
+* Enhancement - Updated Shipping Providers List
+* Enhancement - TrackShip - Added a option to set shipping provider tracking page link in TrackShip tracking page 
+* Dev -Added compatibility with Advanced Order Status Manager plugin
+* Fix - Fixed issue with TrackShip Dashboard widget
 
 = 3.1 =
 * Enhancement - Add API Name column to the shipping providers. User can use use API name for the providers lookup when adding tracking information through REST API

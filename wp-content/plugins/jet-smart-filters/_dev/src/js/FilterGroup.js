@@ -383,7 +383,7 @@ export default class FilterGroup {
 		const query = {};
 
 		this.filters.forEach(filter => {
-			if (!filter.enabled)
+			if (filter.disabled)
 				return;
 
 			const data = filter.data,
@@ -443,7 +443,7 @@ export default class FilterGroup {
 
 	get activeItems() {
 		return this.filters.filter(filter => {
-			return filter.data && filter.reset && filter.enabled && !this.activeItemsExceptions.includes(filter.name);
+			return filter.data && filter.reset && !filter.disabled && !this.activeItemsExceptions.includes(filter.name);
 		});
 	}
 
@@ -461,14 +461,4 @@ export default class FilterGroup {
 
 		return isNotEmpty(hierarchyFilters) ? hierarchyFilters : false;
 	}
-
-	// backup methods
-	/* checkStorage() {
-		let storageData = storage.get(this.providerKey, true);
-		if (!storageData || !isObject(storageData))
-			return;
-		storageData = Object.assign(this.currentQuery, storageData);
-		this.ajaxRequest(storageData);
-		this.setFiltersData(storageData);
-	} */
 }

@@ -3,7 +3,7 @@
  * Plugin Name: JetWooBuilder For Elementor
  * Plugin URI:  https://crocoblock.com/plugins/jetwoobuilder/
  * Description: Your perfect asset in creating WooCommerce page templates using loads of special widgets & stylish page layouts
- * Version:     1.6.5
+ * Version:     1.6.6
  * Author:      Crocoblock
  * Author URI:  https://crocoblock.com/
  * Text Domain: jet-woo-builder
@@ -41,7 +41,7 @@ if ( ! class_exists( 'Jet_Woo_Builder' ) ) {
 		 *
 		 * @var string
 		 */
-		private $version = '1.6.5';
+		private $version = '1.6.6';
 
 		/**
 		 * Holder for base plugin URL

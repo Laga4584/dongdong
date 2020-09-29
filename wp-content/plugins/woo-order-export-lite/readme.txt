@@ -5,7 +5,7 @@ Tags: woocommerce,export,order,xls,csv,xml,woo export lite,export orders,orders 
 Requires PHP: 5.4.0
 Requires at least: 4.7
 Tested up to: 5.5
-Stable tag: 3.1.5
+Stable tag: 3.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,14 @@ Yes, you can email a request to aprokaev@gmail.com. We intensively develop this 
 
 == Changelog ==
 
+= 3.1.6 - 2020-09-21 =
+* New product fields "Item Cost (inc. tax)", "Stock Status", "Stock Quantity", "Non variation attributes"
+* New customer field "Customer Total Spent"
+* Added option "Add links to images" (HTML format)
+* Fixed bug - duplicates were shown in "Summary by products" mode
+* Fixed bug - field "Coupon Discount Amount" was empty
+* Fixed bug - fatal PHP error "Call to undefined method get_duplicate_settings()"
+ 
 = 3.1.5 - 2020-08-24 =
 * Compatible with PHP 7.4
 * Added option "Format output" (XML format)

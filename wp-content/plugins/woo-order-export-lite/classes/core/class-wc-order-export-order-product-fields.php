@@ -181,6 +181,8 @@ class WC_Order_Export_Order_Product_Fields {
 			$field_value = $this->item_id;
 		} elseif ( $field == 'item_price' ) {
 			$field_value = $this->order->get_item_total( $this->item, false, true ); // YES we have to calc item price
+		} elseif ( $field == 'item_price_inc_tax' ) {
+			$field_value = $this->order->get_item_total( $this->item, true, true ); // YES we have to calc item price
 		} elseif ( $field == 'item_price_before_discount' ) {
 			$field_value = $this->order->get_item_subtotal( $this->item );
 		} elseif ( $field == 'discount_amount' ) {
@@ -249,6 +251,22 @@ class WC_Order_Export_Order_Product_Fields {
 			$field_value = is_array( $images_src ) ? current( $images_src ) : '';
 		} elseif ( $field == 'full_category_names' ) {
 			$field_value = self::get_product_category_full( $this->product_id );
+		} elseif ( $field == 'non_variation_product_attributes' ) {
+			$attributes = array();
+			if ( $this->product ) {
+				foreach ( $this->product->get_attributes() as $attribute ) {
+					/** @var WC_Product_Attribute $attribute */
+					if ( $attribute instanceof WC_Product_Attribute && ! $attribute->get_variation() ) {
+						if ( $attribute->get_taxonomy() ) {
+							$attributes[] = $attribute->get_name() . " - " . join( ",", array_column( $attribute->get_terms(), 'name' ) );
+						} else {
+							$attributes[] = $attribute->get_name() . " - " . join( ",", $attribute->get_options() );
+						}
+					}
+				}
+			}
+
+			$field_value = join( PHP_EOL, $attributes );
 		} elseif ( isset( $this->static_vals[ $field ] ) ) {
 			$field_value = $this->static_vals[ $field ];
 		} elseif ( isset( $this->item_meta[ $field ] ) ) {    //meta from order

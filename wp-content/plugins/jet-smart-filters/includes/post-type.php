@@ -302,6 +302,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Post_Type' ) ) {
 					'conditions' => array(
 						'_filter_type' => array( 'checkboxes', 'select', 'radio', 'color-image' ),
 						'_data_source' => 'taxonomies',
+						'_is_hierarchical' => array( false ),
 					),
 				),
 				'_only_child' => array(
@@ -311,6 +312,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Post_Type' ) ) {
 					'conditions' => array(
 						'_filter_type' => array( 'checkboxes', 'select', 'radio', 'color-image' ),
 						'_data_source' => 'taxonomies',
+						'_is_hierarchical' => array( false ),
 					),
 				),
 				'_group_by_parent' => array(
@@ -491,6 +493,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Post_Type' ) ) {
 					'element'     => 'control',
 					'conditions'  => array(
 						'_filter_type' => 'select',
+						'_is_hierarchical' => array( false )
 					),
 				),
 				'_s_placeholder' => array(
@@ -522,6 +525,17 @@ if ( ! class_exists( 'Jet_Smart_Filters_Post_Type' ) ) {
 					),
 					'conditions' => array(
 						'_filter_type' => 'search',
+					),
+				),
+				'_date_format' => array(
+					'title'       => __( 'Date Format', 'jet-smart-filters' ),
+					'description' => '<a href="https://api.jqueryui.com/datepicker/#utility-formatDate">' . __( 'Datepicker date formats', 'jet-smart-filters' ) . '</a>',
+					'type'        => 'text',
+					'placeholder' => 'mm/dd/yy',
+					'value'       => 'mm/dd/yy',
+					'element'     => 'control',
+					'conditions'  => array(
+						'_filter_type' => 'date-range',
 					),
 				),
 				'_date_from_placeholder' => array(
@@ -639,6 +653,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Post_Type' ) ) {
 					'conditions' => array(
 						'_filter_type' => array( 'checkboxes', 'select', 'radio' ),
 						'_data_source' => array( 'taxonomies', 'posts' ),
+						'_is_hierarchical' => array( false ),
 					),
 				),
 				'_data_exclude_include' => array(
@@ -652,7 +667,8 @@ if ( ! class_exists( 'Jet_Smart_Filters_Post_Type' ) ) {
 					'conditions' => array(
 						'_filter_type' => array( 'checkboxes', 'select', 'radio' ),
 						'_data_source' => array( 'taxonomies', 'posts' ),
-						'_use_exclude_include' => array( 'exclude', 'include' )
+						'_use_exclude_include' => array( 'exclude', 'include' ),
+						'_is_hierarchical' => array( false ),
 					),
 				),
 			) );

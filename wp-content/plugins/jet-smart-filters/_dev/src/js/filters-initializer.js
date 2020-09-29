@@ -136,7 +136,6 @@ function findFilters(container = $('html')) {
 function createAdditionalFilter(additionalProvider, additionalQueryId, filter) {
 	return {
 		isAdditional: true,
-		enabled: true,
 		name: filter.name,
 		provider: additionalProvider,
 		queryId: additionalQueryId,

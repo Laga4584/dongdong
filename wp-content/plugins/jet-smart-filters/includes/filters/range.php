@@ -107,8 +107,8 @@ if ( ! class_exists( 'Jet_Smart_Filters_Range_Filter' ) ) {
 
 			return array(
 				'options'              => false,
-				'min'                  => intval( $min ),
-				'max'                  => intval( $max ),
+				'min'                  => $min,
+				'max'                  => $max,
 				'step'                 => $step,
 				'format'               => $format,
 				'query_type'           => $query_type,

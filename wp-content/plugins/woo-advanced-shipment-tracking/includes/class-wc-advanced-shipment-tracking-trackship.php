@@ -143,6 +143,7 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 		
 		wp_register_style( 'trackship_styles',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/trackship.css', array(), wc_advanced_shipment_tracking()->version );
 		
+		wp_register_style( 'woocommerce_admin_styles', WC()->plugin_url() . '/assets/css/admin.css', array(), WC_VERSION );		
 		
 		wp_register_script( 'jquery-tiptip', WC()->plugin_url() . '/assets/js/jquery-tiptip/jquery.tipTip.min.js', array( 'jquery' ), WC_VERSION, true );
 		wp_register_script( 'jquery-blockui', WC()->plugin_url() . '/assets/js/jquery-blockui/jquery.blockUI' . $suffix . '.js', array( 'jquery' ), '2.70', true );
@@ -167,7 +168,8 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_style( 'material-css' );
 		wp_enqueue_style( 'shipment_tracking_styles',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/admin.css', array(), wc_advanced_shipment_tracking()->version );
-		wp_enqueue_style( 'trackship_styles' );			
+		wp_enqueue_style( 'trackship_styles' );		
+		wp_enqueue_style( 'woocommerce_admin_styles' );		
 		
 		wp_enqueue_script( 'jquery-tiptip' );
 		wp_enqueue_script( 'jquery-blockui' );
@@ -335,6 +337,12 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 				'title'		=> __( 'Select content border color for tracking page', 'woo-advanced-shipment-tracking' ),				
 				'class'		=> 'color_field',
 				'show' => $show_trackship_field,				
+			),
+			'wc_ast_link_to_shipping_provider' => array(
+				'type'		=> 'checkbox',
+				'title'		=> __( 'Add a link to the Shipping provider page', 'woo-advanced-shipment-tracking' ),				
+				'show' => $show_trackship_field,
+				'class'     => '',
 			),
 			'wc_ast_hide_tracking_provider_image' => array(
 				'type'		=> 'checkbox',
@@ -1179,7 +1187,7 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 			if( $delivered_enabled ){
 				$order = wc_get_order( $order_id );
 				$order_status  = $order->get_status();
-				if($order_status == 'completed'){
+				if( $order_status == 'completed' || $order_status == 'updated-tracking' ){
 					$order->update_status('delivered');
 				}
 			}
@@ -1211,6 +1219,8 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 		wp_enqueue_script( 'amcharts', wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/js/amcharts/amcharts.js' );
 		wp_enqueue_script( 'amcharts-light-theme', wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/js/amcharts/light.js' );
 		wp_enqueue_script( 'amcharts-serial', wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/js/amcharts/serial.js' );		
+		
+		wp_enqueue_style( 'shipment_tracking_styles',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/admin.css', array(), wc_advanced_shipment_tracking()->version );
 		
 		wp_add_dashboard_widget( 'trackship_dashboard_widget', 'Tracking Analytics <small>(last 30 days)</small>', array( $this, 'dashboard_widget_function') );
 	}

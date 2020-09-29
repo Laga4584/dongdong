@@ -658,15 +658,39 @@ input#wc_ast_api_key {
 	padding-left: 24px;
 }
 
-.mdl-switch.is-checked .mdl-switch__track {
+.zorem_admin_layout .mdl-switch{
+	border: 1px solid #ccc;
+    border-radius: 14px;
+	width: 36px;
+    height: 18px;
+}
+.zorem_admin_layout .mdl-switch__track{
+	left: 1px;
+    top: 1px;
+    height: 14px;
+    width: 32px;
+    right: 1px;
+}
+.zorem_admin_layout .mdl-switch.is-checked .mdl-switch__track {
 	background: #74C2E1 !important;
 }
-.mdl-switch__ripple-container .mdl-ripple {
+.zorem_admin_layout .mdl-switch__ripple-container .mdl-ripple {
 	background: #005B9A !important;
 }
-.mdl-switch.is-checked .mdl-switch__thumb {
-	background: #005B9A !important;
+.zorem_admin_layout .mdl-switch .mdl-switch__thumb{
+	left: 3px;
+    top: 2px;
+    height: 12px;
+    width: 12px;
 }
+.zorem_admin_layout .mdl-switch.is-checked .mdl-switch__thumb {
+	background: #005B9A !important;
+	left: 20px;
+	top: 1px;
+    height: 12px;
+    width: 12px;
+}
+
 span.email_status_span i {
 	vertical-align: middle;	
 	cursor:default;
@@ -1046,7 +1070,7 @@ ul.wcast-tracking-number-list, ul.wcast-shipment-status-list {
 	padding: 10px 5px 0px 10px;
 }
 table.wp-list-table img.provider-thumb{
-	margin: 1px 10px 1px 0px;
+	margin: 1px 0 1px 0;
 }
 .provider-thumb{
     height: 35px;    
@@ -1135,8 +1159,9 @@ span.provider_name {
    float: right;
 }
 #search_provider{
-	width: 264px;        
-	min-width: 280px;
+	width: 200px;        
+	min-width: 200px;
+	font-size: 12px;
     border: 1px solid #ccc;
 	border-radius: 3px;
     padding: 0 0 0 30px;
@@ -1630,8 +1655,8 @@ p.delivered_message {
 	margin-top: 0;
 	margin-bottom: 0;
 }
-.settings_ul .checkbox_span label{
-	width: 45px;
+.settings_ul .setting_ul_checkbox_label{
+	margin-left: 10px;
 }
 .settings_ul li{
 	padding: 15px 0;
@@ -2216,14 +2241,14 @@ table.provder_table td{
 	border-bottom: 1px solid #eee;
 	padding: 5px 10px;	
 }
+table.provder_table td:first-child{
+	width: 30px;
+}
 table.provder_table th.provider_actions_th{
 	text-align:right;
 }
 table.provder_table td:nth-last-child(2){
 	text-align:right;
-}
-table.provder_table td:last-child .mdl-switch{
-	width: 80%;
 }
 table.provder_table .provider_actions_btn{
     border: 1px solid #ccc;

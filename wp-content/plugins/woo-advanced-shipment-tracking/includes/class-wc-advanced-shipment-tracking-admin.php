@@ -330,8 +330,13 @@ class WC_Advanced_Shipment_Tracking_Admin {
 						<input id="tab4" type="radio" name="tabs" class="tab_input" data-tab="bulk-upload" data-label="<?php _e('CSV Import', 'woocommerce'); ?>" <?php if(isset($_GET['tab']) && $_GET['tab'] == 'bulk-upload'){ echo 'checked'; } ?>>
 						<label for="tab4" class="tab_label"><?php _e('CSV Import', 'woo-advanced-shipment-tracking'); ?></label>
 						
-						<input id="tab_osm" type="radio" name="tabs" class="tab_input" data-tab="order-status-manager" data-label="<?php _e('Order Status Manager', 'woocommerce'); ?>" <?php if(isset($_GET['tab']) && $_GET['tab'] == 'order-status-manager'){ echo 'checked'; } ?>>
-						<label for="tab_osm" class="tab_label"><?php _e('Order Status Manager', 'woo-advanced-shipment-tracking'); ?></label>
+						<?php if(class_exists('Advanced_Order_Status_Manager')){ ?>
+							<a class="menu_trackship_link" href="<?php echo esc_url( admin_url( '/admin.php?page=advanced_order_status_manager' ) ); ?>"><?php _e('Order Status Manager', 'woo-advanced-shipment-tracking'); ?></a>	
+						<?php } else{ ?>
+							<input id="tab_osm" type="radio" name="tabs" class="tab_input" data-tab="order-status-manager" data-label="<?php _e('Order Status Manager', 'woocommerce'); ?>" <?php if(isset($_GET['tab']) && $_GET['tab'] == 'order-status-manager'){ echo 'checked'; } ?>>
+							<label for="tab_osm" class="tab_label"><?php _e('Order Status Manager', 'woo-advanced-shipment-tracking'); ?></label>
+						<?php } ?>
+						
 						
 						<?php if($wc_ast_api_key){ ?>
 						<a class="menu_trackship_link" href="<?php echo esc_url( admin_url( '/admin.php?page=trackship-for-woocommerce' ) ); ?>">TrackShip</a>
@@ -626,7 +631,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 								<input type="checkbox" id="<?php echo $id?>" name="<?php echo $id?>" class="mdl-switch__input" <?php echo $checked ?> value="1"/>
 							</label>
 						</span>
-						<label for=""><?php echo $array['title']?>
+						<label class="setting_ul_checkbox_label"><?php echo $array['title']?>
 						<?php if( isset($array['tooltip']) ){?>
 							<span class="woocommerce-help-tip tipTip" title="<?php echo $array['tooltip']?>"></span>
 						<?php } ?>
@@ -634,7 +639,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 					</li>	
 				<?php } if( $array['type'] == 'radio' ){ ?>
 					<li class="settings_radio_li">
-						<label for=""><strong><?php echo $array['title']?></strong></label>	
+						<label><strong><?php echo $array['title']?></strong></label>	
 						<?php foreach((array)$array['options'] as $key => $val ){
 							$selected = '';									
 							if( get_option($id,$array['default']) == (string)$key )$selected = 'checked'; ?>
@@ -661,7 +666,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 										$checked="";
 									}?>
 							<span class="multiple_checkbox">
-								<label class="" for="<?php echo $key?>">
+								<label class="" for="">
 									<input type="hidden" name="<?php echo $id?>[<?php echo $key?>]" value="0"/>
 									<input type="checkbox" id="<?php echo $key?>" name="<?php echo $id?>[<?php echo $key?>]" class=""  <?php echo $checked; ?> value="1"/>											
 									<span class="multiple_label"><?php echo $val['status']; ?></span>
@@ -685,7 +690,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 								</div>
 							<?php } ?>
 							<span class="multiple_checkbox">
-								<label class="" for="<?php echo $key?>">	
+								<label class="" for="">	
 									<input type="hidden" name="<?php echo $id?>[<?php echo $key?>]" value="0"/>
 									<input type="checkbox" id="<?php echo $key?>" name="<?php echo $id?>[<?php echo $key?>]" class=""  <?php echo $checked; ?> value="1"/>
 									<span class="multiple_label"><?php echo $val['status']; ?></span>
@@ -850,7 +855,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 		if($wc_ast_status_shipped == 1){
 			$completed_order_label = __( 'Shipped', 'woo-advanced-shipment-tracking' );	
 			$mark_as_shipped_label = __( 'Default "mark as <span class="shipped_label">shipped</span>"', 'woo-advanced-shipment-tracking' );	
-			$mark_as_shipped_tooltip = __( "This means that the 'mark as <span class='shipped_label'>shipped</span>' will be selected by default when adding tracking info to orders.", 'woo-advanced-shipment-tracking' );				
+			$mark_as_shipped_tooltip = __( "This means that the 'mark as <span class='shipped_label'>shipped</span>' will be selected by default when adding tracking info to orders.", 'woo-advanced-shipment-tracking' );
 		} else{
 			$completed_order_label = __( 'Completed', 'woocommerce' );
 			$mark_as_shipped_label = __( 'Default "mark as <span class="shipped_label">completed</span>"', 'woo-advanced-shipment-tracking' );
@@ -905,6 +910,10 @@ class WC_Advanced_Shipment_Tracking_Admin {
 				'status' => __( 'Failed', 'woocommerce' ),
 				'type' => 'default',
 			),
+			"on-hold" => array(
+				'status' => __( 'On Hold', 'woocommerce' ),
+				'type' => 'default',
+			),
 			"completed" => array(
 				'status' => $completed_order_label,
 				'type' => 'default',
@@ -914,7 +923,37 @@ class WC_Advanced_Shipment_Tracking_Admin {
 				'type' => 'default',
 			),			
 		);
-		$order_status_array = array_merge($order_status,$custom_order_status);						
+		
+		$actions_order_status = array( 
+			"cancelled" => array(
+				'status' => __( 'Cancelled', 'woocommerce' ),
+				'type' => 'default',
+			),		
+			"refunded" => array(
+				'status' => __( 'Refunded', 'woocommerce' ),
+				'type' => 'default',
+			),
+			"processing" => array(
+				'status' => __( 'Processing', 'woocommerce' ),
+				'type' => 'default',
+			),	
+			"failed" => array(
+				'status' => __( 'Failed', 'woocommerce' ),
+				'type' => 'default',
+			),
+			"on-hold" => array(
+				'status' => __( 'On Hold', 'woocommerce' ),
+				'type' => 'default',
+			),
+			"completed" => array(
+				'status' => $completed_order_label,
+				'type' => 'default',
+			),					
+		);
+		
+		$order_status_array = array_merge($order_status,$custom_order_status);	
+
+		$action_order_status_array = array_merge($actions_order_status,$custom_order_status);			
 		
 		if ( is_plugin_active( 'woocommerce-pdf-invoices-packing-slips/woocommerce-pdf-invoices-packingslips.php' ) ) {
 			$show_invoice_field = true;
@@ -959,7 +998,14 @@ class WC_Advanced_Shipment_Tracking_Admin {
 				'options'   => $order_status_array,					
 				'show'		=> true,
 				'class'     => '',
-			),			
+			),
+			'wc_ast_show_orders_actions' => array(
+				'type'		=> 'multiple_checkbox',
+				'title'		=> __( 'On which Order status to display Add Tracking icon in the Order Actions menu?', 'woo-advanced-shipment-tracking' ),
+				'options'   => $action_order_status_array,					
+				'show'		=> true,
+				'class'     => '',
+			),	
 			'enable_tpi_by_default' => array(
 				'type'		=> 'checkbox',
 				'title'		=> __( 'Enable the Tracking Per Item option by default', 'woo-advanced-shipment-tracking' ),				
@@ -1466,8 +1512,13 @@ class WC_Advanced_Shipment_Tracking_Admin {
 				);
 			}	
 		}			
-		
-		if ( !$order->has_status( array( 'pickup','ready-pickup','on-hold','completed','delivered','cancelled','failed' ) ) ) {			
+		$wc_ast_show_orders_actions = get_option( 'wc_ast_show_orders_actions' );
+		$order_array = array();
+		foreach($wc_ast_show_orders_actions as $order_status => $value){
+			if($value == 1)array_push($order_array, $order_status);			
+		}
+		//print_r($order_array);exit;
+		if ( $order->has_status( $order_array ) ) {			
 			$actions['add_tracking'] = array(
 				'url'       => "#".$order->get_id(),
 				'name'      => __( 'Add Tracking', 'woo-advanced-shipment-tracking' ),
@@ -1549,9 +1600,9 @@ class WC_Advanced_Shipment_Tracking_Admin {
 			<table class="wp-list-table widefat posts provder_table provder_table_desktop" id="shipping-provider-table">
 				<thead>
 					<tr>						
-						<th style="min-width: 260px;"><?php _e( 'Shipping Providers', 'woo-advanced-shipment-tracking'); ?></th>
-						<th style="min-width: 150px;"><?php _e( 'Display Name', 'woo-advanced-shipment-tracking'); ?><span class="woocommerce-help-tip tipTip" title="<?php _e( 'The custom name will display in the tracking info section on the customer order emails, my-account, shipment tracking page and shipment status emails.', 'woo-advanced-shipment-tracking' ); ?>"></span></th>
-						<th style="min-width: 150px;"><?php _e( 'API Name', 'woo-advanced-shipment-tracking'); ?></th>
+						<th colspan="2" style="width: 200px;"><?php _e( 'Shipping Providers', 'woo-advanced-shipment-tracking'); ?></th>
+						<th style="width: 200px;"><?php _e( 'Display Name', 'woo-advanced-shipment-tracking'); ?><span class="woocommerce-help-tip tipTip" title="<?php _e( 'The custom name will display in the tracking info section on the customer order emails, my-account, shipment tracking page and shipment status emails.', 'woo-advanced-shipment-tracking' ); ?>"></span></th>
+						<th style="width: 200px;"><?php _e( 'API Name', 'woo-advanced-shipment-tracking'); ?></th>
 						<th><?php _e( 'Country', 'woo-advanced-shipment-tracking'); ?></th>						
 						<th><?php _e( 'Default', 'woo-advanced-shipment-tracking'); ?></th>
 						<th><?php _e( 'TrackShip', 'woo-advanced-shipment-tracking'); ?></th>
@@ -1587,8 +1638,11 @@ class WC_Advanced_Shipment_Tracking_Admin {
 									<img class="provider-thumb" src="<?php echo wc_advanced_shipment_tracking()->plugin_dir_url()?>assets/images/icon-default.png">
 								<?php } ?>
 								<?php } ?>																					
-									<span class="provider_name"><?php echo $d_s_p->provider_name; ?></span>								
+																
 							</td>
+							<td>
+								<span class="provider_name"><?php echo $d_s_p->provider_name; ?></span>								
+							</td>	
 							<td><span class="provider_name"><?php echo $d_s_p->custom_provider_name; ?></span></td>
 							<td><?php echo $d_s_p->api_provider_name; ?></td>
 							<td><span class="provider_country"><?php

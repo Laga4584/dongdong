@@ -14,7 +14,7 @@ add_action( 'admin_head','apbct_admin_set_cookie_for_anti_bot' );
 
 function apbct_admin_set_cookie_for_anti_bot(){
 	global $apbct;
-	echo '<script>document.cookie = "apbct_antibot=' . md5( $apbct->api_key . \Cleantalk\ApbctWP\Helper::ip__get(array('real'), true ) ) . '; path=/; expires=0; samesite=lax";</script>';
+	echo '<script>document.cookie = "apbct_antibot=' . hash( 'sha256', $apbct->api_key . $apbct->data['salt'] ) . '; path=/; expires=0; samesite=lax";</script>';
 }
 
 function apbct_add_buttons_to_comments_and_users( $unused_argument ) {
@@ -24,11 +24,9 @@ function apbct_add_buttons_to_comments_and_users( $unused_argument ) {
 
     if( 'users' == $current_screen->base ) {
         $button_url__check = $current_screen->base . '.php?page=ct_check_users';
-	    $button_url__results = $current_screen->base . '.php?page=ct_check_users_total';
         $button_description = 'users';
     } elseif ( 'edit-comments' == $current_screen->base ) {
         $button_url__check = $current_screen->base . '.php?page=ct_check_spam';
-	    $button_url__results = $current_screen->base . '.php?page=ct_check_spam_total';
         $button_description = 'comments';
     } else {
         return;
@@ -38,10 +36,6 @@ function apbct_add_buttons_to_comments_and_users( $unused_argument ) {
     <a href="' . $button_url__check . '" class="button" style="margin:1px 0 0 0; display: inline-block;">
         <img src="' . $apbct->logo__small__colored . '" alt="Cleantalk Antispam logo"  height="" style="width: 17px; vertical-align: text-bottom;" />
         ' . sprintf(__( 'Find spam %s', 'cleantalk-spam-protect'), $button_description ) . '
-    </a>
-    <a href="' . $button_url__results . '" class="button" style="margin:1px 0 0 0; display: inline-block;">
-        <img src="' . $apbct->logo__small__colored . '" alt="Cleantalk Antispam logo"  height="" style="width: 17px; vertical-align: text-bottom;" />
-        ' . sprintf(__( 'View spam %s', 'cleantalk-spam-protect'), $button_description ) . '
     </a>
     <a href="https://cleantalk.org/my/show_requests?service_id=' . $apbct->data['service_id'] . '&int=week" target="_blank" class="button" style="margin:1px 0 0 0; display: inline-block;">
         <img src="' . $apbct->logo__small__colored . '" alt="Cleantalk Antispam logo"  height="" style="width: 17px; vertical-align: text-bottom;" />

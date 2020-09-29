@@ -3,7 +3,7 @@ import ActiveItems from 'bases/ActiveItems';
 export default class ActiveTags extends ActiveItems {
 	name = 'active-tags';
 
-	constructor ($activeTags) {
+	constructor($activeTags) {
 		const props = {
 			separateMultiple: true,
 			templateName: 'active_tag',

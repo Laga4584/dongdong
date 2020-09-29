@@ -61,8 +61,8 @@ class WC_Advanced_Shipment_Tracking_Admin_notice {
 		add_action( 'admin_init', array( 'PAnD', 'init' ) );
 				
 		add_action( 'admin_notices', array( $this, 'admin_notice_for_addon' ) );
-		add_action( 'admin_notices', array( $this, 'admin_notice_after_update' ) );		
-		add_action('admin_init', array( $this, 'ast_plugin_notice_ignore' ) );
+		//add_action( 'admin_notices', array( $this, 'admin_notice_after_update' ) );		
+		//add_action('admin_init', array( $this, 'ast_plugin_notice_ignore' ) );
 		add_action( 'admin_notices', array( $this, 'admin_notice_for_sync_providers' ) );				
 		
 		if(!$wc_ast_api_key){			
@@ -70,7 +70,7 @@ class WC_Advanced_Shipment_Tracking_Admin_notice {
 		}
 		
 		if ( is_plugin_active( 'woocommerce-pdf-invoices-packing-slips/woocommerce-pdf-invoices-packingslips.php' ) ) {
-			add_action( 'admin_notices', array( $this, 'admin_notice_for_invoices_plugin' ) );
+			//add_action( 'admin_notices', array( $this, 'admin_notice_for_invoices_plugin' ) );
 		}
 	}		
 
@@ -346,8 +346,7 @@ class WC_Advanced_Shipment_Tracking_Admin_notice {
 		
 		if ( get_option('ast_review_notice_ignore') ) return;
 		
-		$current_url = home_url().$_SERVER['REQUEST_URI'];
-		$dismissable_url = add_query_arg( 'ast-review-ignore-notice', 'true', $current_url );
+		$dismissable_url = esc_url(  add_query_arg( 'ast-review-ignore-notice', 'true' ) );
 		?>		
 		<style>		
 		.wp-core-ui .notice.ast-dismissable-notice{

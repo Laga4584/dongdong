@@ -64,8 +64,8 @@ class Jet_Smart_Filters_Date_Range_Widget extends Jet_Smart_Filters_Base_Widget 
 			array(
 				'label'   => __( 'Select filter', 'jet-smart-filters' ),
 				'type'    => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => $this->get_widget_filters(),
+				'default' => '0',
+				'options' => $this->get_widget_filters( true ),
 			)
 		);
 

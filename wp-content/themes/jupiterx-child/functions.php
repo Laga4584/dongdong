@@ -260,8 +260,58 @@ function my_text_strings( $translated_text, $text, $domain ) {
 		case 'Proceed to PayPal' :
             $translated_text = __( 'ペイパルに進む', 'woocommerce' );
             break;
+		
+		case 'First name' :
+            $translated_text = __( '名前', 'woocommerce' );
+            break;
+		
+		case 'Last name' :
+            $translated_text = __( '姓', 'woocommerce' );
+            break;
+		
+		case 'Display name' :
+            $translated_text = __( 'ニックネーム', 'woocommerce' );
+            break;
+			
+		case 'This will be how your name will be displayed in the account section and in reviews' :
+            $translated_text = __( 'ニックネームは、お客様のアカウントやレビューに一緒に表示されます。', 'woocommerce' );
+            break;
+			
+		case 'Email address' :
+            $translated_text = __( 'メールアドレス', 'woocommerce' );
+            break;
+		
+		case 'Password change' :
+            $translated_text = __( 'パスワード変更', 'woocommerce' );
+            break;
+		case 'Current password (leave blank to leave unchanged)' :
+            $translated_text = __( '現在パスワード（変更を希望しない場合、空白のままにしておいてください。）', 'woocommerce' );
+            break;
+		case 'New password (leave blank to leave unchanged)' :
+            $translated_text = __( '新パスワード（変更を希望しない場合、空白のままにしておいてください。）', 'woocommerce' );
+            break;
+		case 'Confirm new password' :
+            $translated_text = __( '新パスワード確認', 'woocommerce' );
+            break;
+		case 'Save changes' :
+            $translated_text = __( '変更事項保存', 'woocommerce' );
+            break;
+		case 'Please enter your current password.' :
+            $translated_text = __( 'お客様の現在のパスワードを入力してください。', 'woocommerce' );
+            break;
+			
+		case 'is a required field.' :
+            $translated_text = __( 'は必須項目です。', 'woocommerce' );
+            break;
     }
     return $translated_text;
+}
+
+
+add_filter('wpmenucart_viewcarttext', 'wpmenucart_view_cart_text' );
+function wpmenucart_view_cart_text ( $text ) {
+    $text = 'カートをご確認ください :)';
+    return $text;
 }
 
 add_filter( 'woocommerce_shipping_package_name', 'custom_shipping_package_name' );

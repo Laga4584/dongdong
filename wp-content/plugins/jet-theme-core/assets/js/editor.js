@@ -874,15 +874,14 @@
 
 			var addJetTemplate = '<div class="elementor-add-section-area-button add-jet-template">' + JetThemeCoreData.libraryButton + '</div>';
 
-			setTimeout( function() {
+			window.elementor.on( 'document:loaded', function() {
 				var $addNewSection = window.elementor.$previewContents.find( '.elementor-add-new-section' ),
 					$addJetTemplate;
 
 				if ( $addNewSection.length && JetThemeCoreData.libraryButton ) {
 					$addJetTemplate = $( addJetTemplate ).prependTo( $addNewSection );
 				}
-			}, 100 );
-
+			} );
 
 			window.elementor.$previewContents.on(
 				'click.addJetTemplate',

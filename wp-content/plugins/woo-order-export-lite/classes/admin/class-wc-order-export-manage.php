@@ -327,6 +327,7 @@ class WC_Order_Export_Manage {
 			'format_html_table_row_background_color'	 => '#FFFFFF',
 			'format_html_row_images_width'              => 100,
 			'format_html_row_images_height'             => 100,
+			'format_html_images_add_link'             => 0,
 			'format_html_custom_css'			 => $settings['default_html_css'],
 
 			'all_products_from_order'      => 1,

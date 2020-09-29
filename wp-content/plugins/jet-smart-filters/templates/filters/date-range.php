@@ -9,6 +9,7 @@ $current     = $this->get_current_filter_value( $args );
 $from        = '';
 $to          = '';
 
+$date_format      = isset( $args['date_format'] ) ? $args['date_format'] : '';
 $from_placeholder = isset( $args['from_placeholder'] ) ? $args['from_placeholder'] : '';
 $to_placeholder   = isset( $args['to_placeholder'] ) ? $args['to_placeholder'] : '';
 
@@ -56,6 +57,7 @@ $hide_button = isset( $args['hide_button'] ) ? $args['hide_button'] : false;
 		autocomplete="off"
 		name="<?php echo $query_var; ?>"
 		value="<?php echo $current; ?>"
+		data-date-format="<?php echo $date_format; ?>"
 	>
 	<?php if ( ! $hide_button ) : ?>
 	<button

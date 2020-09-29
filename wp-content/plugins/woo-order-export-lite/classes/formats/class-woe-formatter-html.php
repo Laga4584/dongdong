@@ -79,6 +79,9 @@ class WOE_Formatter_Html extends WOE_Formatter_Plain_Format {
 
 	public function output( $rec ) {
 		$rows = parent::output( $rec );
+
+		$images_add_link = $this->mode != 'preview' ? wc_string_to_bool( $this->settings['images_add_link'] ) : false;
+
 		foreach ( $rows as $row ) {
 			$this->prepare_array( $row );
 			if ( $this->has_output_filter ) {
@@ -94,7 +97,8 @@ class WOE_Formatter_Html extends WOE_Formatter_Plain_Format {
 					$html = $this->make_img_html_from_path(
 						$cell,
 						$this->settings['row_images_width'],
-						$this->settings['row_images_height']
+						$this->settings['row_images_height'],
+						$images_add_link
 					);
 					$cell = $html ? $html : "";
 				}

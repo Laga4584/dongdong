@@ -1,5 +1,8 @@
 # ChangeLog
 
+## [1.6.6](https://github.com/ZemezLab/jet-woo-builder/archive/1.6.6.zip)
+* Fixed: Critical error while create Elementor templates.
+
 ## [1.6.5](https://github.com/ZemezLab/jet-woo-builder/archive/1.6.5.zip)
 * Added: Better RTL compatibility;
 * Added: Full width single product Template Type;

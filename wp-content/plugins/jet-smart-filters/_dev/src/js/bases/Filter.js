@@ -1,4 +1,8 @@
 import eventBus from 'includes/event-bus';
+import {
+	getNesting
+} from 'includes/utility';
+
 
 export default class Filter {
 	dataValue = false;
@@ -120,12 +124,22 @@ export default class Filter {
 		return key
 	}
 
-	get enabled() {
-		return this.$filter.is(':visible');
-	}
-
 	get copy() {
 		return Object.assign(Object.create(Object.getPrototypeOf(this)), this);
+	}
+
+	get containerElement() {
+		if (!this.$container)
+			return false;
+
+		if (!this.$container.length)
+			return false;
+
+		return this.$container.get(0);
+	}
+
+	get filterGroup() {
+		return getNesting(JetSmartFilters, 'filterGroups', this.provider + '/' + this.queryId);
 	}
 
 	// abstract methods

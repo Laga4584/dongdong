@@ -1,0 +1,82 @@
+2020-09-22T08:29:33+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:29:46+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:30:05+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:30:19+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:30:42+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:31:36+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:31:53+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:32:36+00:00 CRITICAL syntax error, unexpected 'woocommerce' (T_STRING), expecting ')' in /var/www/html/wordpress/wp-content/plugins/woocommerce/templates/myaccount/form-edit-account.php on line 27
+
+2020-09-22T08:33:04+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:33:09+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:33:12+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:33:36+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:33:37+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:33:48+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:34:04+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:34:07+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:34:09+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:34:52+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:35:17+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:35:57+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:36:22+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:36:49+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:36:53+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:37:08+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:37:12+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:37:49+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:37:53+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:41:05+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:41:18+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:41:18+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:41:53+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:43:04+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:43:47+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:44:14+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:49:28+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:53:41+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T08:56:53+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T09:03:20+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T09:03:30+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T09:10:08+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+
+2020-09-22T09:10:11+00:00 CRITICAL require(): Failed opening required '/var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/woocommerce/content-product.php' (include_path='.:/usr/share/php') in /var/www/html/wordpress/wp-includes/template.php on line 732
+

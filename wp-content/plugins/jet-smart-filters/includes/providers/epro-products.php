@@ -211,6 +211,8 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_EPro_Products' ) ) {
 				'widgetType' => $this->widget_name(),
 			);
 
+			do_action( 'jet-smart-filters/providers/epro-products/before-ajax-content' );
+
 			add_filter( 'woocommerce_shortcode_products_query', array( $this, 'add_query_args' ), 10, 2 );
 			add_action( 'woocommerce_shortcode_before_products_loop', array( $this, 'store_props' ) );
 
@@ -229,6 +231,8 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_EPro_Products' ) ) {
 			} else {
 				echo '<div class="elementor-widget-container"></div>';
 			}
+
+			do_action( 'jet-smart-filters/providers/epro-products/after-ajax-content' );
 
 		}
 

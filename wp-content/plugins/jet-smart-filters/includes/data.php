@@ -188,7 +188,9 @@ if ( ! class_exists( 'Jet_Smart_Filters_Data' ) ) {
 		public function content_providers() {
 
 			$providers = jet_smart_filters()->providers->get_providers();
-			$result    = array();
+			$result    = array(
+				'' => esc_html__( 'Select...', 'jet-smart-filters' ),
+			);
 
 			foreach ( $providers as $provider_id => $provider ) {
 				$result[ $provider_id ] = $provider->get_name();

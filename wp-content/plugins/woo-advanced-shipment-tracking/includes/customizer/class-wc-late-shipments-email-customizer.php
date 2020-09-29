@@ -125,7 +125,7 @@ class wcast_late_shipments_customizer_email {
 		$customizer_defaults = array(			
 			'wcast_late_shipments_email_subject' => __( 'Late shipment for order #{order_number}', 'woo-advanced-shipment-tracking' ),
 			'wcast_late_shipments_email_heading' => __( 'Late shipment', 'woo-advanced-shipment-tracking' ),
-			'wcast_late_shipments_email_content' => __( 'This shipment exceeded {shipment_length} days.', 'woo-advanced-shipment-tracking' ),				
+			'wcast_late_shipments_email_content' => __( 'This order was shipped {shipment_length} days ago, the shipment status is {shipment_status} and its est. delivery date is {est_delivery_date}.', 'woo-advanced-shipment-tracking' ),				
 			'wcast_enable_late_shipments_admin_email'  => '',
 			'wcast_late_shipments_days' => '7',
 			'wcast_late_shipments_email_to'  => '{admin_email}',
@@ -164,6 +164,24 @@ class wcast_late_shipments_customizer_email {
 			)
 		) );
 		
+		// Display Shipment Provider image/thumbnail
+		$wp_customize->add_setting( 'late_shipments_email_settings[wcast_enable_late_shipments_admin_email]',
+			array(
+				'default' => $this->defaults['wcast_enable_late_shipments_admin_email'],
+				'transport' => 'postMessage',
+				'type' => 'option',
+				'sanitize_callback' => ''
+			)
+		);
+		$wp_customize->add_control( 'late_shipments_email_settings[wcast_enable_late_shipments_admin_email]',
+			array(
+				'label' => __( 'Enable Late Shipments admin email', 'woo-advanced-shipment-tracking' ),
+				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
+				'section' => 'admin_late_shipments_email',
+				'type' => 'checkbox'
+			)
+		);		
+		
 		$wp_customize->add_setting( 'wcast_late_shipments_email_preview_order_id',
 			array(
 				'default' => 'mockup',
@@ -182,25 +200,7 @@ class wcast_late_shipments_customizer_email {
 				),
 				'choices' => wcast_customizer()->get_order_ids(),
 			)
-		) );		
-		
-		// Display Shipment Provider image/thumbnail
-		$wp_customize->add_setting( 'late_shipments_email_settings[wcast_enable_late_shipments_admin_email]',
-			array(
-				'default' => $this->defaults['wcast_enable_late_shipments_admin_email'],
-				'transport' => 'postMessage',
-				'type' => 'option',
-				'sanitize_callback' => ''
-			)
-		);
-		$wp_customize->add_control( 'late_shipments_email_settings[wcast_enable_late_shipments_admin_email]',
-			array(
-				'label' => __( 'Enable Late Shipments admin email', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
-				'section' => 'admin_late_shipments_email',
-				'type' => 'checkbox'
-			)
-		);
+		) );						
 			
 		// Header Text		
 		$wp_customize->add_setting( 'late_shipments_email_settings[wcast_late_shipments_days]',
@@ -286,76 +286,7 @@ class wcast_late_shipments_customizer_email {
 					'placeholder' => __( $this->defaults['wcast_late_shipments_email_heading'], 'woo-advanced-shipment-tracking' ),
 				),
 			)
-		);
-		// Display Shipment Provider image/thumbnail
-		$wp_customize->add_setting( 'late_shipments_email_settings[wcast_late_shipments_show_tracking_details]',
-			array(
-				'default' => $this->defaults['wcast_late_shipments_show_tracking_details'],
-				'transport' => 'refresh',
-				'type' => 'option',
-				'sanitize_callback' => ''
-			)
-		);
-		$wp_customize->add_control( 'late_shipments_email_settings[wcast_late_shipments_show_tracking_details]',
-			array(
-				'label' => __( 'Show tracking details', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
-				'section' => 'admin_late_shipments_email',
-				'type' => 'checkbox'
-			)
-		);
-		// Display Shipment Provider image/thumbnail
-		$wp_customize->add_setting( 'late_shipments_email_settings[wcast_late_shipments_show_order_details]',
-			array(
-				'default' => $this->defaults['wcast_late_shipments_show_order_details'],
-				'transport' => 'refresh',
-				'type' => 'option',
-				'sanitize_callback' => ''
-			)
-		);
-		$wp_customize->add_control( 'late_shipments_email_settings[wcast_late_shipments_show_order_details]',
-			array(
-				'label' => __( 'Show order details', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
-				'section' => 'admin_late_shipments_email',
-				'type' => 'checkbox'
-			)
-		);
-		// Display Shipment Provider image/thumbnail
-		$wp_customize->add_setting( 'late_shipments_email_settings[wcast_late_shipments_show_billing_address]',
-			array(
-				'default' => $this->defaults['wcast_late_shipments_show_billing_address'],
-				'transport' => 'refresh',
-				'type' => 'option',
-				'sanitize_callback' => ''
-			)
-		);
-		$wp_customize->add_control( 'late_shipments_email_settings[wcast_late_shipments_show_billing_address]',
-			array(
-				'label' => __( 'Show billing address', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
-				'section' => 'admin_late_shipments_email',
-				'type' => 'checkbox'
-			)
-		);
-		
-		// Display Shipment Provider image/thumbnail
-		$wp_customize->add_setting( 'late_shipments_email_settings[wcast_late_shipments_show_shipping_address]',
-			array(
-				'default' => $this->defaults['wcast_late_shipments_show_shipping_address'],
-				'transport' => 'refresh',
-				'type' => 'option',
-				'sanitize_callback' => ''
-			)
-		);
-		$wp_customize->add_control( 'late_shipments_email_settings[wcast_late_shipments_show_shipping_address]',
-			array(
-				'label' => __( 'Show shipping address', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
-				'section' => 'admin_late_shipments_email',
-				'type' => 'checkbox'
-			)
-		);
+		);		
 		
 		// Test of TinyMCE control
 		$wp_customize->add_setting( 'late_shipments_email_settings[wcast_late_shipments_email_content]',
@@ -390,7 +321,7 @@ class wcast_late_shipments_customizer_email {
 		$wp_customize->add_control( new WP_Customize_codeinfoblock_Control( $wp_customize, 'late_shipments_email_settings[wcast_late_shipments_email_code_block]',
 			array(
 				'label' => __( 'Available variables:', 'woo-advanced-shipment-tracking' ),
-				'description' => '<code>{site_title}<br>{admin_email}<br>{customer_first_name}<br>{customer_last_name}<br>{customer_company_name}<br>{customer_username}<br>{order_number}<br>{shipment_length}<br>{est_delivery_date}</code>',
+				'description' => '<code>{site_title}<br>{admin_email}<br>{customer_first_name}<br>{customer_last_name}<br>{customer_company_name}<br>{customer_username}<br>{order_number}<br>{shipment_length}<br>{shipment_status}<br>{est_delivery_date}</code>',
 				'section' => 'admin_late_shipments_email',				
 			)
 		) );
@@ -420,25 +351,14 @@ class wcast_late_shipments_customizer_email {
 		$emails         = $wc_emails->get_emails();		
 		$preview_id     = get_theme_mod('wcast_late_shipments_email_preview_order_id');
 				
-		$email_heading     = get_theme_mod('wcast_late_shipments_email_heading',$this->defaults['wcast_late_shipments_email_heading']);
-		
-		if($email_heading == ''){
-			$email_heading = $this->defaults['wcast_late_shipments_email_heading'];
-		}
+		$ast = new WC_Advanced_Shipment_Tracking_Actions;	
+		$email_heading = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_email_heading',$this->defaults['wcast_late_shipments_email_heading']);	
 		
 		$email_heading = str_replace( '{site_title}', $this->get_blogname(), $email_heading );
 		$email_heading =  str_replace( '{order_number}', $preview_id, $email_heading );
 		
-		$email_content     = get_theme_mod('wcast_late_shipments_email_content',$this->defaults['wcast_late_shipments_email_content']);
-		
-		if($email_content == ''){
-			$email_content = $this->defaults['wcast_late_shipments_email_content'];
-		}
-		
-		$wcast_show_tracking_details     = get_theme_mod('wcast_late_shipments_show_tracking_details');
-		$wcast_show_order_details     = get_theme_mod('wcast_late_shipments_show_order_details');	
-		$wcast_show_billing_address = get_theme_mod('wcast_late_shipments_show_billing_address');
-		$wcast_show_shipping_address = get_theme_mod('wcast_late_shipments_show_shipping_address');		
+		$email_content = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_email_content',$this->defaults['wcast_late_shipments_email_content']);					
+				
 		$sent_to_admin = false;
 		$plain_text = false;
 		$email = '';
@@ -467,62 +387,20 @@ class wcast_late_shipments_customizer_email {
 		$message = wc_trackship_email_manager()->email_content($email_content,$preview_id,$order);
 		$message = $this->email_content($message,$preview_id,$order);
 		
-		if($wcast_show_tracking_details == 1){			
-			ob_start();
-			$local_template	= get_stylesheet_directory().'/woocommerce/emails/tracking-info.php';
-			
-			if ( file_exists( $local_template ) && is_writable( $local_template )){
-				wc_get_template( 'emails/tracking-info.php', array( 'tracking_items' => $wast->get_tracking_items( $preview_id, true ), 'order_id'=> $preview_id ), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
-			} else{
-				wc_get_template( 'emails/tracking-info.php', array( 
-					'tracking_items' => $wast->get_tracking_items( $preview_id, true ),
-					'order_id' => $preview_id,				
-				), 'woocommerce-advanced-shipment-tracking/', wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/' );
-			}
-			
-			$message .= ob_get_clean();			
+		ob_start();
+		$local_template	= get_stylesheet_directory().'/woocommerce/emails/tracking-info.php';
+		
+		if ( file_exists( $local_template ) && is_writable( $local_template )){
+			wc_get_template( 'emails/tracking-info.php', array( 'tracking_items' => $wast->get_tracking_items( $preview_id, true ), 'order_id'=> $preview_id ), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
+		} else{
+			wc_get_template( 'emails/tracking-info.php', array( 
+				'tracking_items' => $wast->get_tracking_items( $preview_id, true ),
+				'order_id' => $preview_id,				
+			), 'woocommerce-advanced-shipment-tracking/', wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/' );
 		}
 		
-		if($wcast_show_order_details == 1){			
-			ob_start();
-			wc_get_template(
-				'emails/wcast-email-order-details.php', array(
-				'order'         => $order,
-				'sent_to_admin' => $sent_to_admin,
-				'plain_text'    => $plain_text,
-				'email'         => $email,
-				),
-				'woocommerce-advanced-shipment-tracking/', 
-				wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/'
-			);	
-			$message .= ob_get_clean();	
-		}
-		
-		if($wcast_show_billing_address == 1){
-			ob_start();
-			wc_get_template(
-				'emails/wcast-billing-email-addresses.php', array(
-					'order'         => $order,
-					'sent_to_admin' => $sent_to_admin,
-				),
-				'woocommerce-advanced-shipment-tracking/', 
-				wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/'
-			);	
-			$message .= ob_get_clean();	
-		}
-		
-		if($wcast_show_shipping_address == 1){
-			ob_start();
-			wc_get_template(
-				'emails/wcast-shipping-email-addresses.php', array(
-					'order'         => $order,
-					'sent_to_admin' => $sent_to_admin,
-				),
-				'woocommerce-advanced-shipment-tracking/', 
-				wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/'
-			);	
-			$message .= ob_get_clean();	
-		}	
+		$message .= ob_get_clean();			
+						
 		// create a new email
 		$email = new WC_Email();
 		$email->id = 'WC_Delivered_email';		
@@ -534,7 +412,9 @@ class wcast_late_shipments_customizer_email {
 	 * code for format email content 
 	 */
 	public function email_content($message, $order_id, $order){	
-		$shipment_length = get_theme_mod('wcast_late_shipments_days');	
+		
+		$ast = new WC_Advanced_Shipment_Tracking_Actions;	
+		$shipment_length = $ast->get_option_value_from_array('late_shipments_email_settings','wcast_late_shipments_days',$this->defaults['wcast_late_shipments_days']);	
 		$message = str_replace( '{shipment_length}', $shipment_length, $message );		
 		return $message;
 	}
