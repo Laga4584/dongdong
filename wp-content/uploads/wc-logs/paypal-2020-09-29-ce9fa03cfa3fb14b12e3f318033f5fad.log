@@ -1,0 +1,40 @@
+2020-09-29T07:31:24+00:00 INFO Generating payment form for order 170910. Notify URL: https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+2020-09-29T07:31:24+00:00 INFO PayPal Request Args for order 170910: Array
+(
+    [cmd] => _cart
+    [business] => hedihedi@ddpac.co.kr
+    [no_note] => 1
+    [currency_code] => JPY
+    [charset] => utf-8
+    [rm] => 2
+    [upload] => 1
+    [return] => https://www.seoulperlife.com/checkout/order-received/170910/?key=wc_order_GBDIUmpN1CxSb&utm_nooverride=1
+    [cancel_return] => https://www.seoulperlife.com/cart/?cancel_order=true&order=wc_order_GBDIUmpN1CxSb&order_id=170910&redirect&_wpnonce=e89254a473
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => sale
+    [invoice] => SL-170910
+    [custom] => {"order_id":170910,"order_key":"wc_order_GBDIUmpN1CxSb"}
+    [notify_url] => https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [address_override] => 0
+    [no_shipping] => 0
+    [tax_cart] => 0
+    [shipping_1] => 550
+    [item_name_1] => 【メディヒール】MEDIHEAL Teatree ティーツリーケアソリューション2ステップマスク REX 5枚
+    [quantity_1] => 1
+    [amount_1] => 680
+    [item_number_1] => UNI0592,1,
+    [bn] => WooThemes_Cart
+)
+
