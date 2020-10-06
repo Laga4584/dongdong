@@ -221,6 +221,7 @@ class Mailchimp extends Action_Base {
 	 * @param object $ajax_handler Ajax handler instance.
 	 * @SuppressWarnings(PHPMD.CyclomaticComplexity)
 	 * @SuppressWarnings(PHPMD.NPathComplexity)
+	 * @SuppressWarnings(PHPMD.UnusedLocalVariable)
 	 */
 	public static function run( $ajax_handler ) {
 		$api_key        = get_option( 'elementor_raven_mailchimp_api_key' );

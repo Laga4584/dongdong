@@ -4,7 +4,7 @@ Donate link: http://www.codemshop.com/
 Tags: 워드프레스 결제, 우커머스 결제, 정기결제, 이니시스, 카카오페이
 Requires at least: 4.6.0
 Tested up to: 5.4.2
-Stable tag: 2.1.12
+Stable tag: 2.1.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,9 @@ PGALL 결제 플러그인 하나로 다양한 결제 대행사의 PG 를 이용�
 Not yet.
 
 == Changelog ==
+
+= 2.1.14 =
+[LG유플러스] 부분취소 지원
 
 = 2.1.12 =
 [LG유플러스] 결제완료 페이지 및 내계정 - 주문상세 페이지에 영수증 확인 버튼 표시

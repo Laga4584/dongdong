@@ -212,7 +212,8 @@ class Ajax_Handler {
 		$form_fields = $this->form['settings']['fields'];
 
 		foreach ( $form_fields as $field ) {
-			$class_name = 'Raven\Modules\Forms\Fields\\' . ucfirst( $field['type'] );
+			$field['type'] = empty( $field['type'] ) ? 'text' : $field['type'];
+			$class_name    = 'Raven\Modules\Forms\Fields\\' . ucfirst( $field['type'] );
 
 			$class_name::validate_required( $this, $field );
 			$class_name::validate( $this, $field );

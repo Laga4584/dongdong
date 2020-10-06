@@ -1,0 +1,38 @@
+2020-10-05T05:01:24+00:00 INFO Generating payment form for order 171004. Notify URL: https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+2020-10-05T05:01:24+00:00 INFO PayPal Request Args for order 171004: Array
+(
+    [cmd] => _cart
+    [business] => hedihedi@ddpac.co.kr
+    [no_note] => 1
+    [currency_code] => JPY
+    [charset] => utf-8
+    [rm] => 2
+    [upload] => 1
+    [return] => https://www.seoulperlife.com/checkout/order-received/171004/?key=wc_order_36uoORCqfZRRO&utm_nooverride=1
+    [cancel_return] => https://www.seoulperlife.com/cart/?cancel_order=true&order=wc_order_36uoORCqfZRRO&order_id=171004&redirect&_wpnonce=bda70751a9
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => sale
+    [invoice] => SL-171004
+    [custom] => {"order_id":171004,"order_key":"wc_order_36uoORCqfZRRO"}
+    [notify_url] => https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [address_override] => 0
+    [no_shipping] => 0
+    [item_name_1] => 【イニスフリー】innisfree グリーンティー クフォームクレンジング  150ml x 1, 【メディヒール】MEDIHEAL N.M.F アクアリング アンプルマスク 27ml 10枚+2枚プレゼント x 1, 【ミジャンセン】MISEEN...
+    [quantity_1] => 1
+    [amount_1] => 4890
+    [item_number_1] => 171004
+    [bn] => WooThemes_Cart
+)
+

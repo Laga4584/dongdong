@@ -1,0 +1,163 @@
+09-30-2020 @ 23:46:30 - Process Payment Response : request
+09-30-2020 @ 23:46:30 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 170961_200930_024630
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 9162
+    [shop] => SEOUL LIFE
+    [buyer] => さくら佐藤
+    [email] => satosakura9955@gmail.com
+    [tel] => 08065995234
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【クリオ】CLIO プロアイパレット#002ブラウンシュー 외 10건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-30-2020 @ 23:46:55 - Process Payment Response : status
+09-30-2020 @ 23:46:55 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200930234654
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 9162
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 170961_200930_024630
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => satosakura9955@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200930000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=81808475918775737f7e86768f8a7e7402
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => E16C03D6E68E53A20FF9AD727DB66DE6F25401A4FA9B7F481DD09FDE7B4410A5
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-30-2020 @ 23:47:01 - Process Payment Response : return
+09-30-2020 @ 23:47:01 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200930234654
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 9162
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 170961_200930_024630
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => satosakura9955@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200930000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=81808475918775737f7e86768f8a7e7402
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => E16C03D6E68E53A20FF9AD727DB66DE6F25401A4FA9B7F481DD09FDE7B4410A5
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+09-30-2020 @ 23:47:02 - Process Payment Response : finish
+09-30-2020 @ 23:47:02 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200930234654
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 9162
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 170961_200930_024630
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => satosakura9955@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200930000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=81808475918775737f7e86768f8a7e7402
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => E16C03D6E68E53A20FF9AD727DB66DE6F25401A4FA9B7F481DD09FDE7B4410A5
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+

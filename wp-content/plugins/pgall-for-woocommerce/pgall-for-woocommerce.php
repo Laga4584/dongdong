@@ -4,7 +4,7 @@
 Plugin Name: PGALL 워드프레스 결제
 Plugin URI: 
 Description: 쇼핑몰 운영자를 위해 만들어진 우커머스 결제 시스템으로, 일반, 간편, 정기결제를 지원하며, 통계, 리뷰, 심플페이 등을 제공합니다.
-Version: 2.1.13
+Version: 2.1.14
 Author: CodeMShop
 Author URI: www.codemshop.com
 License: GPLv2 or later
@@ -27,7 +27,7 @@ if ( ! class_exists( 'PGALL_For_WooCommerce' ) ) {
 
 		private static $_instance = null;
 		protected $slug;
-		protected $version = '2.1.13';
+		protected $version = '2.1.14';
 		protected $plugin_url;
 		protected $plugin_path;
 		protected $refund_order = null;

@@ -66,7 +66,7 @@ msgstr ""
 msgid "Google API Key"
 msgstr ""
 
-#: includes/plugin.php:918, includes/modules/forms/actions/mailchimp.php:413
+#: includes/plugin.php:918, includes/modules/forms/actions/mailchimp.php:414
 msgid "API Key"
 msgstr ""
 
@@ -617,7 +617,7 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: includes/modules/forms/module.php:73, includes/modules/forms/actions/mailchimp.php:43, includes/modules/forms/actions/mailchimp.php:409
+#: includes/modules/forms/module.php:73, includes/modules/forms/actions/mailchimp.php:43, includes/modules/forms/actions/mailchimp.php:410
 msgid "MailChimp"
 msgstr ""
 
@@ -1763,24 +1763,24 @@ msgstr ""
 msgid "Mailchimp Field"
 msgstr ""
 
-#: includes/modules/forms/actions/mailchimp.php:263
+#: includes/modules/forms/actions/mailchimp.php:264
 msgid "MailChimp list ID is missing."
 msgstr ""
 
-#: includes/modules/forms/actions/mailchimp.php:270
+#: includes/modules/forms/actions/mailchimp.php:271
 msgid "MailChimp Email Field ID is missing."
 msgstr ""
 
-#: includes/modules/forms/actions/mailchimp.php:290
+#: includes/modules/forms/actions/mailchimp.php:291
 msgid "MailChimp Audience ID is not valid."
 msgstr ""
 
-#: includes/modules/forms/actions/mailchimp.php:372
+#: includes/modules/forms/actions/mailchimp.php:373
 msgid "Mailchimp Audience ID is missing."
 msgstr ""
 
 #. translators: %s: MailChimp knowledge base URL
-#: includes/modules/forms/actions/mailchimp.php:417
+#: includes/modules/forms/actions/mailchimp.php:418
 msgid "To integrate with our forms you need an <a href=\"%s\" target=\"_blank\">API key</a>."
 msgstr ""
 

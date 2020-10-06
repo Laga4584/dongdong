@@ -238,3 +238,46 @@
     [_wpnonce] => 
 )
 
+09-29-2020 @ 23:05:27 - Process Payment Response : status
+09-29-2020 @ 23:05:27 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20200929230527
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 5031.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 170770_200926_012526
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => sakura.apple1026@au.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320200926000003
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 4D2DB4CB795823FCAEA3990DB961C994D8A33AB65EF427D19B57D90C2672F0A8
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
