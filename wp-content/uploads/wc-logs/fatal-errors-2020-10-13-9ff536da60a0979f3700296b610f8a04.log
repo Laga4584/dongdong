@@ -1,0 +1,23 @@
+2020-10-13T09:52:32+00:00 CRITICAL Uncaught Error: Class 'FacebookPixelPlugin\Core\FacebookWordpressPixelInjection' not found in /var/www/html/wordpress/wp-content/plugins/official-facebook-pixel/facebook-for-wordpress.php:69
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): FacebookPixelPlugin\FacebookForWordpress->registerPixelInjection()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#3 /var/www/html/wordpress/wp-settings.php(546): do_action()
+#4 /var/www/html/wordpress/wp-config.php(121): require_once('/var/www/html/w...')
+#5 /var/www/html/wordpress/wp-load.php(37): require_once('/var/www/html/w...')
+#6 /var/www/html/wordpress/wp-cron.php(44): require_once('/var/www/html/w...')
+#7 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/official-facebook-pixel/facebook-for-wordpress.php on line 69
+
+2020-10-13T09:52:33+00:00 CRITICAL Uncaught Error: Class 'Elementor_AWS_Widget' not found in /var/www/html/wordpress/wp-content/plugins/advanced-woo-search/includes/modules/elementor-widget/class-elementor-aws-init.php:51
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): AWS_Elementor_Init->register_elementor_widgets()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#3 /var/www/html/wordpress/wp-content/plugins/elementor/includes/managers/widgets.php(99): do_action()
+#4 /var/www/html/wordpress/wp-content/plugins/elementor/includes/managers/widgets.php(235): Elementor\Widgets_Manager->init_widgets()
+#5 /var/www/html/wordpress/wp-content/plugins/elementor/includes/elements/column.php(1032): Elementor\Widgets_Manager->get_widget_types()
+#6 /var/www/html/wordpress/wp-content/plugins/elementor/includes/base/element-base.php(916): Elementor\Element_Column->_get_default_child_type()
+#7 /var/www/html/wordpress/ in /var/www/html/wordpress/wp-content/plugins/advanced-woo-search/includes/modules/elementor-widget/class-elementor-aws-init.php on line 51
+
