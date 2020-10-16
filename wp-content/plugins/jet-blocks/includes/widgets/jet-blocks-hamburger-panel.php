@@ -69,7 +69,8 @@ class Jet_Blocks_Hamburger_Panel extends Jet_Blocks_Base {
 			array(
 				'label'       => esc_html__( 'Icon', 'jet-blocks' ),
 				'type'        => Controls_Manager::ICON,
-				'label_block' => true,
+				'label_block' => false,
+				'skin'        => 'inline',
 				'file'        => '',
 				'default'     => 'fa fa-align-justify',
 				'fa5_default' => array(
@@ -84,7 +85,8 @@ class Jet_Blocks_Hamburger_Panel extends Jet_Blocks_Base {
 			array(
 				'label'       => esc_html__( 'Active Icon', 'jet-blocks' ),
 				'type'        => Controls_Manager::ICON,
-				'label_block' => true,
+				'label_block' => false,
+				'skin'        => 'inline',
 				'file'        => '',
 				'default'     => 'fa fa-close',
 				'fa5_default' => array(
@@ -99,7 +101,8 @@ class Jet_Blocks_Hamburger_Panel extends Jet_Blocks_Base {
 			array(
 				'label'       => esc_html__( 'Close Icon', 'jet-blocks' ),
 				'type'        => Controls_Manager::ICON,
-				'label_block' => true,
+				'label_block' => false,
+				'skin'        => 'inline',
 				'file'        => '',
 				'default'     => 'fa fa-close',
 				'fa5_default' => array(
@@ -143,42 +146,13 @@ class Jet_Blocks_Hamburger_Panel extends Jet_Blocks_Base {
 			)
 		);
 
-		$templates = jet_blocks()->elementor()->templates_manager->get_source( 'local' )->get_items();
-
-		if ( empty( $templates ) ) {
-
-			$this->add_control(
-				'no_templates',
-				array(
-					'label' => false,
-					'type'  => Controls_Manager::RAW_HTML,
-					'raw'   => $this->empty_templates_message(),
-				)
-			);
-
-			return;
-		}
-
-		$options = [
-			'0' => '— ' . esc_html__( 'Select', 'jet-blocks' ) . ' —',
-		];
-
-		$types = [];
-
-		foreach ( $templates as $template ) {
-			$options[ $template['template_id'] ] = $template['title'] . ' (' . $template['type'] . ')';
-			$types[ $template['template_id'] ] = $template['type'];
-		}
-
 		$this->add_control(
 			'panel_template_id',
 			array(
 				'label'       => esc_html__( 'Choose Template', 'jet-blocks' ),
-				'type'        => Controls_Manager::SELECT,
-				'default'     => '0',
-				'options'     => $options,
-				'types'       => $types,
 				'label_block' => 'true',
+				'type'        => 'jet-query',
+				'query_type'  => 'elementor_templates',
 			)
 		);
 
@@ -710,7 +684,7 @@ class Jet_Blocks_Hamburger_Panel extends Jet_Blocks_Base {
 					<?php
 						echo $close_button_html;
 
-						if ( '0' !== $template_id ) {
+						if ( ! empty( $template_id ) ) {
 							$link = add_query_arg(
 								array(
 									'elementor' => '',
@@ -719,7 +693,7 @@ class Jet_Blocks_Hamburger_Panel extends Jet_Blocks_Base {
 							);
 
 							if ( jet_blocks_integration()->in_elementor() ) {
-								echo sprintf( '<div class="jet-blocks__edit-cover" data-template-edit-link="%s"><i class="fa fa-pencil"></i><span>%s</span></div>', $link, esc_html__( 'Edit Template', 'jet-blocks' ) );
+								echo sprintf( '<div class="jet-blocks__edit-cover" data-template-edit-link="%s"><i class="eicon-edit"></i><span>%s</span></div>', $link, esc_html__( 'Edit Template', 'jet-blocks' ) );
 							}
 						}
 
@@ -727,7 +701,7 @@ class Jet_Blocks_Hamburger_Panel extends Jet_Blocks_Base {
 					<div class="jet-hamburger-panel__content"><?php
 						$content_html = '';
 
-						if ( '0' !== $template_id ) {
+						if ( ! empty( $template_id ) ) {
 							$content_html .= jet_blocks()->elementor()->frontend->get_builder_content_for_display( $template_id );
 						} else {
 							$content_html = $this->no_templates_message();

@@ -52,6 +52,16 @@ if ( ! class_exists( 'Jet_Blocks_Integration' ) ) {
 			add_action( 'elementor/editor/after_enqueue_styles', array( $this, 'font_styles' ) );
 			add_action( 'elementor/preview/enqueue_styles',      array( $this, 'font_styles' ) );
 
+			// Init Jet Elementor Extension module
+			$ext_module_data = jet_blocks()->module_loader->get_included_module_data( 'jet-elementor-extension.php' );
+
+			Jet_Elementor_Extension\Module::get_instance(
+				array(
+					'path' => $ext_module_data['path'],
+					'url'  => $ext_module_data['url'],
+				)
+			);
+
 		}
 
 		/**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Main dashboard template
+ * Main dashboard template. Note: Legacy template
  */
 ?><div id="jet-blocks-settings-page">
 	<div class="jet-blocks-settings-page">

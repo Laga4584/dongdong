@@ -4,6 +4,12 @@ Enjoy the easy-to-use widgets made for enriching headers & footers with content.
 
 # ChangeLog
 
+## [1.2.5](https://github.com/ZemezLab/jet-blocks/releases/tag/1.2.5) - 12.10.2020
+* Update: JetDashboard Module to v2.0.0
+* Update: minor improvements in the Breadcrumbs widget
+* Added: getting a list of templates in controls through ajax
+* Added: start elements animation handlers on opening the Hamburger panel
+
 ## [1.2.4](https://github.com/ZemezLab/jet-blocks/releases/tag/1.2.4) - 17.07.2020
 * Update: JetDashboard Module to v1.0.16
 * Fixed: prevent Rest API error notice

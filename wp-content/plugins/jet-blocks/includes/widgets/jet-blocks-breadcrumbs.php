@@ -245,7 +245,7 @@ class Jet_Blocks_Breadcrumbs extends Jet_Blocks_Base {
 				'separator'       => 'before',
 				'raw'             => sprintf(
 					esc_html__( 'Additional settings are available in the %s', 'jet-blocks' ),
-					'<a target="_blank" href="' . jet_blocks_settings()->get_settings_page_link() . '">' . esc_html__( 'Settings page', 'jet-blocks' ) . '</a>'
+					'<a target="_blank" href="' . jet_blocks_settings()->get_settings_page_link( 'breadcrumbs' ) . '">' . esc_html__( 'Settings page', 'jet-blocks' ) . '</a>'
 				),
 			)
 		);

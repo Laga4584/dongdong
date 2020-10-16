@@ -1,0 +1,369 @@
+10-14-2020 @ 14:16:38 - Process Payment Response : request
+10-14-2020 @ 14:16:38 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 171734_201014_051637
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 550
+    [shop] => SEOUL LIFE
+    [buyer] => 岸田和香奈
+    [email] => tt6re.srnh@gmail.com
+    [tel] => 09097844340
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【ロムアンド】rom&nd グラスティング ウォータ ティント 6種 - ローズスプラッシュ 외 2건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-14-2020 @ 14:16:52 - Process Payment Response : status
+10-14-2020 @ 14:16:52 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201014141652
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 550
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171734_201014_051637
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => tt6re.srnh@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201014000002
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=778a8476738082847588847b7c7f7e8905
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9F71D80D8C18C5456003F13732B266B30A5287BFC99DD1C1017C2AEB5625E48A
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-14-2020 @ 14:16:57 - Process Payment Response : return
+10-14-2020 @ 14:16:57 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201014141652
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 550
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171734_201014_051637
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => tt6re.srnh@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201014000002
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=778a8476738082847588847b7c7f7e8905
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9F71D80D8C18C5456003F13732B266B30A5287BFC99DD1C1017C2AEB5625E48A
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-14-2020 @ 14:16:58 - Process Payment Response : finish
+10-14-2020 @ 14:16:58 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201014141652
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 550
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171734_201014_051637
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => tt6re.srnh@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201014000002
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=778a8476738082847588847b7c7f7e8905
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9F71D80D8C18C5456003F13732B266B30A5287BFC99DD1C1017C2AEB5625E48A
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+10-14-2020 @ 14:37:46 - Process Payment Response : request
+10-14-2020 @ 14:37:46 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 171735_201014_053745
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 4580
+    [shop] => SEOUL LIFE
+    [buyer] => 悠大渕
+    [email] => hacchan0411@yahoo.co.jp
+    [tel] => 09045590970
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【チャアンドパク】CNP Laboratory アンチポア ブラックヘッド クリア キット 10回分(1剤、2剤 各10枚) 외 3건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-14-2020 @ 14:38:02 - Process Payment Response : status
+10-14-2020 @ 14:38:02 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201014143802
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4580
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171735_201014_053745
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => hacchan0411@yahoo.co.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201014000003
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=81808476888579737f7e847c898a757502
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 8F73BA5A1B719140D6D31F769005F099D9F4F097735F2C6903BD647265A8EDF2
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-14-2020 @ 14:38:08 - Process Payment Response : return
+10-14-2020 @ 14:38:08 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201014143802
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4580
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171735_201014_053745
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => hacchan0411@yahoo.co.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201014000003
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=81808476888579737f7e847c898a757502
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 8F73BA5A1B719140D6D31F769005F099D9F4F097735F2C6903BD647265A8EDF2
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-14-2020 @ 14:38:09 - Process Payment Response : finish
+10-14-2020 @ 14:38:09 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201014143802
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4580
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171735_201014_053745
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => hacchan0411@yahoo.co.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201014000003
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=81808476888579737f7e847c898a757502
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 8F73BA5A1B719140D6D31F769005F099D9F4F097735F2C6903BD647265A8EDF2
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+10-14-2020 @ 20:05:14 - Process Payment Response : status
+10-14-2020 @ 20:05:14 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201014200513
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 550.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171734_201014_051637
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => tt6re.srnh@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201014000002
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 50EFA615B44087C7AEA7BC354AB07B486AB0CC42A680600251F1782C295BA4A5
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

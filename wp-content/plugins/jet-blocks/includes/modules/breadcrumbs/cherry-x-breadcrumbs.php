@@ -2,7 +2,7 @@
 /**
  * Module to build and show breadcrumbs
  *
- * Version: 1.0.2
+ * Version: 1.0.3
  *
  * @author     Cherry Team <support@cherryframework.com>, Justin Tadlock <justin@justintadlock.com>
  * @copyright  Copyright (c) 2008 - 2014, Justin Tadlock
@@ -911,6 +911,11 @@ if ( ! class_exists( 'CX_Breadcrumbs' ) ) {
 				if ( ! empty( $post_type_object->rewrite ) && $post_type_object->rewrite['with_front'] ) {
 					$this->add_rewrite_front_items();
 				}
+
+				/* Get parent pages by path if they exist. */
+				if ( isset( $post_type_object->rewrite['slug'] ) && $post_type_object->rewrite['slug'] ) {
+					$this->add_path_parents( $post_type_object->rewrite['slug'] );
+				}
 			}
 
 			$label = post_type_archive_title( '', false );
@@ -1307,6 +1312,11 @@ if ( ! class_exists( 'CX_Breadcrumbs' ) ) {
 				// Add post type specific items
 				if ( isset( $post_type_object->rewrite['with_front'] ) && $post_type_object->rewrite['with_front'] ) {
 					$this->add_rewrite_front_items();
+				}
+
+				/* Get parent pages by path if they exist. */
+				if ( isset( $post_type_object->rewrite['slug'] ) && $post_type_object->rewrite['slug'] ) {
+					$this->add_path_parents( $post_type_object->rewrite['slug'] );
 				}
 			}
 

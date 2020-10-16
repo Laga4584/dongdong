@@ -459,6 +459,7 @@
 							$panel.addClass( 'open-state' );
 						}, 10 );
 						$html.addClass( 'jet-hamburger-panel-visible' );
+						JetBlocks.initAnimationsHandlers( $inner );
 					} else {
 						$panel.removeClass( 'open-state' );
 						$html.removeClass( 'jet-hamburger-panel-visible' );
@@ -471,6 +472,7 @@
 					if ( ! $panel.hasClass( 'open-state' ) ) {
 						$panel.addClass( 'open-state' );
 						$html.addClass( 'jet-hamburger-panel-visible' );
+						JetBlocks.initAnimationsHandlers( $inner );
 					} else {
 						$panel.removeClass( 'open-state' );
 						$html.removeClass( 'jet-hamburger-panel-visible' );
@@ -483,6 +485,7 @@
 				if ( ! $panel.hasClass( 'open-state' ) ) {
 					$panel.addClass( 'open-state' );
 					$html.addClass( 'jet-hamburger-panel-visible' );
+					JetBlocks.initAnimationsHandlers( $inner );
 				} else {
 					$panel.removeClass( 'open-state' );
 					$html.removeClass( 'jet-hamburger-panel-visible' );
@@ -509,6 +512,19 @@
 				event.stopPropagation();
 			} );
 
+		},
+
+		initAnimationsHandlers: function( $selector ) {
+			$selector.find( '[data-element_type]' ).each( function() {
+				var $this       = $( this ),
+					elementType = $this.data( 'element_type' );
+
+				if ( !elementType ) {
+					return;
+				}
+
+				window.elementorFrontend.hooks.doAction( 'frontend/element_ready/global', $this, $ );
+			} );
 		},
 
 		searchPopupSwitch: function( event ) {
