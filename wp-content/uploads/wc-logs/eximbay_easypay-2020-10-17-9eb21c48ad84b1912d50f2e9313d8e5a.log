@@ -1,0 +1,163 @@
+10-17-2020 @ 22:08:12 - Process Payment Response : request
+10-17-2020 @ 22:08:12 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 171958_201017_010811
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 5156
+    [shop] => SEOUL LIFE
+    [buyer] => 細居香帆
+    [email] => kahoo-97gal@ezweb.ne.jp
+    [tel] => 0564283376
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【フロムネイチャー】FROMNATURE ガラクトミセス含有 AGE インテンストリートメントエッセンス150ml 외 2건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-17-2020 @ 22:09:53 - Process Payment Response : status
+10-17-2020 @ 22:09:53 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201017220952
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 5156
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171958_201017_010811
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => kahoo-97gal@ezweb.ne.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201017000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/smt/index.aspx?odrno=75817e8575898b75737f7f877e8c8b7a01
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 5E2B73C47325281243A4D9D1CA497766417286A930717C9AEDA53710EC166FCB
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-17-2020 @ 22:09:59 - Process Payment Response : return
+10-17-2020 @ 22:09:59 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201017220952
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 5156
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171958_201017_010811
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => kahoo-97gal@ezweb.ne.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201017000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/smt/index.aspx?odrno=75817e8575898b75737f7f877e8c8b7a01
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 5E2B73C47325281243A4D9D1CA497766417286A930717C9AEDA53710EC166FCB
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-17-2020 @ 22:09:59 - Process Payment Response : finish
+10-17-2020 @ 22:09:59 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201017220952
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 5156
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171958_201017_010811
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => kahoo-97gal@ezweb.ne.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201017000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/smt/index.aspx?odrno=75817e8575898b75737f7f877e8c8b7a01
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 5E2B73C47325281243A4D9D1CA497766417286A930717C9AEDA53710EC166FCB
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+

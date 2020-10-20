@@ -1,0 +1,326 @@
+10-16-2020 @ 16:06:34 - Process Payment Response : request
+10-16-2020 @ 16:06:34 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 171871_201016_070633
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 4020
+    [shop] => SEOUL LIFE
+    [buyer] => 齋藤充生
+    [email] => usagitoneko4@gmail.com
+    [tel] => 08043735200
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【ドクタージャルト】 Dr.Jart+ シカペアクリーム 2世代  50ml - シカペアクリーム-1個 외 1건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-16-2020 @ 16:06:53 - Process Payment Response : return
+10-16-2020 @ 16:06:53 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4020
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171871_201016_070633
+    [paymethod] => 
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => usagitoneko4@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => 決済がキャンセルされました. 
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => XXXX
+    [param2] => 
+    [fgkey] => 6ED188C474FA7F22C08C90A81DC7C8D30A0608C1AB474944A560B9C3229E72F3
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-16-2020 @ 16:06:53 - Process Payment Response : finish
+10-16-2020 @ 16:06:53 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4020
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171871_201016_070633
+    [paymethod] => 
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => usagitoneko4@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => 決済がキャンセルされました. 
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => XXXX
+    [param2] => 
+    [fgkey] => 6ED188C474FA7F22C08C90A81DC7C8D30A0608C1AB474944A560B9C3229E72F3
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+10-16-2020 @ 16:14:46 - Process Payment Response : request
+10-16-2020 @ 16:14:46 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 171876_201016_071445
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 160
+    [shop] => SEOUL LIFE
+    [buyer] => 齋藤充生
+    [email] => usagitoneko4@gmail.com
+    [tel] => 08043735200
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【ドクタージャルト】 Dr.Jart+ シカペアクリーム 2世代  50ml - シカペアクリーム-1個 외 1건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-16-2020 @ 16:15:06 - Process Payment Response : status
+10-16-2020 @ 16:15:06 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201016161506
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 160
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171876_201016_071445
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => usagitoneko4@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201016000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=867788857574857e8475898b7b76858004
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 22E641D1533AE63118B9F3F7308E79451CFBE5E2A2116E0DED4D83BB24DEB35B
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-16-2020 @ 16:15:11 - Process Payment Response : return
+10-16-2020 @ 16:15:11 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201016161506
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 160
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171876_201016_071445
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => usagitoneko4@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201016000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=867788857574857e8475898b7b76858004
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 22E641D1533AE63118B9F3F7308E79451CFBE5E2A2116E0DED4D83BB24DEB35B
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-16-2020 @ 16:15:12 - Process Payment Response : finish
+10-16-2020 @ 16:15:12 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201016161506
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 160
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171876_201016_071445
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => usagitoneko4@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201016000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=867788857574857e8475898b7b76858004
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 22E641D1533AE63118B9F3F7308E79451CFBE5E2A2116E0DED4D83BB24DEB35B
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+10-16-2020 @ 21:05:40 - Process Payment Response : status
+10-16-2020 @ 21:05:40 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201016210539
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 160.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171876_201016_071445
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => usagitoneko4@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201016000001
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9B3433E6140B31D4A2E696D67A726C1EC8742E740C7365D1E68D5E83232ECCA1
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

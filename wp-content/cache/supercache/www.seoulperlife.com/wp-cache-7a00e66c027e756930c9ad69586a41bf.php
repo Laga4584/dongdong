@@ -478,7 +478,7 @@ div.ivole-all-reviews-shortcode ol.commentlist li .comment-text {
     width: 50%;
 	}
 }		</style>
-		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head><body data-rsssl=1 class="home page-template page-template-elementor_header_footer page page-id-771 wp-custom-logo no-js theme-jupiterx woocommerce-no-js jet-mobile-menu-active elementor-default elementor-template-full-width elementor-kit-8 elementor-page elementor-page-771 elementor-page-1881 jupiterx-header-sticky" itemscope="itemscope" itemtype="http://schema.org/WebPage"><a class="jupiterx-a11y jupiterx-a11y-skip-navigation-link" href="#jupiterx-primary">Skip to content</a><div class="jupiterx-site"><header class="jupiterx-header" data-jupiterx-settings="{&quot;breakpoint&quot;:&quot;767.98&quot;,&quot;behavior&quot;:&quot;sticky&quot;,&quot;offset&quot;:&quot;500&quot;}" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">		<div data-elementor-type="header" data-elementor-id="835" class="elementor elementor-835 elementor-location-header" data-elementor-settings="[]">
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head><body data-rsssl=1 class="home page-template page-template-elementor_header_footer page page-id-771 wp-custom-logo no-js theme-jupiterx woocommerce-no-js jet-desktop-menu-active elementor-default elementor-template-full-width elementor-kit-8 elementor-page elementor-page-771 elementor-page-1881 jupiterx-header-sticky" itemscope="itemscope" itemtype="http://schema.org/WebPage"><a class="jupiterx-a11y jupiterx-a11y-skip-navigation-link" href="#jupiterx-primary">Skip to content</a><div class="jupiterx-site"><header class="jupiterx-header" data-jupiterx-settings="{&quot;breakpoint&quot;:&quot;767.98&quot;,&quot;behavior&quot;:&quot;sticky&quot;,&quot;offset&quot;:&quot;500&quot;}" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">		<div data-elementor-type="header" data-elementor-id="835" class="elementor elementor-835 elementor-location-header" data-elementor-settings="[]">
 		<div class="elementor-section-wrap">
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-d78a442 elementor-section-full_width elementor-hidden-tablet elementor-hidden-phone elementor-section-height-default elementor-section-height-default" data-id="d78a442" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-no">
@@ -620,7 +620,232 @@ div.ivole-all-reviews-shortcode ol.commentlist li .comment-text {
 							<div class="elementor-widget-wrap">
 						<div class="elementor-element elementor-element-93f1264 elementor-widget elementor-widget-jet-mega-menu" data-id="93f1264" data-element_type="widget" data-widget_type="jet-mega-menu.default">
 				<div class="elementor-widget-container">
-			<div id="jet-mobile-menu-5f8eeaa2126af" class="jet-mobile-menu jet-mobile-menu-single" data-menu-id="18" data-menu-options='{"menuUniqId":"5f8eeaa2126af","menuId":"18","mobileMenuId":"","menuLocation":false,"menuLayout":"slide-out","togglePosition":"default","menuPosition":"right","headerTemplate":"0","beforeTemplate":"0","afterTemplate":"0","toggleClosedIcon":"<i class=\"fas fa-bars\"><\/i>","toggleOpenedIcon":"<i class=\"fas fa-times\"><\/i>","closeIcon":"<i class=\"fas fa-times\"><\/i>","backIcon":"<i class=\"fas fa-angle-left\"><\/i>","dropdownIcon":"<i class=\"fas fa-angle-right\"><\/i>","dropdownOpenedIcon":"<i class=\"fas fa-angle-down\"><\/i>","useBreadcrumb":true,"breadcrumbIcon":"<i class=\"fas fa-angle-right\"><\/i>","toggleText":"","toggleLoader":true,"backText":"","itemIconVisible":"true","itemBadgeVisible":"true","itemDescVisible":"false","subTrigger":"item","subOpenLayout":"slide-in","closeAfterNavigate":false}'><mobile-menu :menu-options="menuOptions"></mobile-menu></div>		</div>
+			<div class="menu-main-header-01-container"><div class="jet-menu-container"><div class="jet-menu-inner"><ul class="jet-menu  jet-menu--animation-type-fade "><li id="jet-menu-item-839" class="jet-menu-item jet-menu-item-type-custom jet-menu-item-object-custom jet-has-roll-up jet-mega-menu-item jet-regular-item jet-menu-item-has-children jet-menu-item-839"><a href="#" class="top-level-link"><div class="jet-menu-item-wrapper"><div class="jet-menu-title">すべて</div><i class="jet-dropdown-arrow fa fa-angle-down"></i></div></a><div class="jet-sub-mega-menu" data-template-id="1958">		<div data-elementor-type="wp-post" data-elementor-id="1958" class="elementor elementor-1958" data-elementor-settings="[]">
+						<div class="elementor-inner">
+							<div class="elementor-section-wrap">
+							<section class="elementor-section elementor-top-section elementor-element elementor-element-4329502 elementor-section-content-top elementor-section-full_width elementor-section-height-min-height elementor-section-height-default elementor-section-items-middle" data-id="4329502" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-a9fc849" data-id="a9fc849" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-66e64d5 elementor-widget elementor-widget-heading" data-id="66e64d5" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">カテゴリー</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-86f9738 elementor-widget-divider--separator-type-pattern elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="86f9738" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#039;http://www.w3.org/2000/svg&#039; preserveAspectRatio=&#039;none&#039; overflow=&#039;visible&#039; height=&#039;100%&#039; viewBox=&#039;0 0 20 16&#039; fill=&#039;none&#039; stroke=&#039;black&#039; stroke-width=&#039;5&#039; stroke-linecap=&#039;square&#039; stroke-miterlimit=&#039;10&#039;%3E%3Cg transform=&#039;translate(-12.000000, 0)&#039;%3E%3Cpath d=&#039;M28,0L10,18&#039;/%3E%3Cpath d=&#039;M18,0L0,18&#039;/%3E%3Cpath d=&#039;M48,0L30,18&#039;/%3E%3Cpath d=&#039;M38,0L20,18&#039;/%3E%3C/g%3E%3C/svg%3E&quot;);">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-fe277a2 elementor-align-left elementor-list-item-link-inline elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="fe277a2" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+					<a href="/skincare-a">					<span class="elementor-icon-list-text">スキンケア</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/cleansing">					<span class="elementor-icon-list-text">クレンジング</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/maskpack">					<span class="elementor-icon-list-text">マスクパック</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/base">					<span class="elementor-icon-list-text">ベースメイク</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/eye">					<span class="elementor-icon-list-text">アイメイク</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/lip">					<span class="elementor-icon-list-text">リップ</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/sunscreen">					<span class="elementor-icon-list-text">日焼け止め</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/cuticle-pore">					<span class="elementor-icon-list-text">角質ケア/毛穴ケア</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/hair-body-hand">					<span class="elementor-icon-list-text">ヘアー・ボディ</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/etc-a">					<span class="elementor-icon-list-text">その他</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6dd70f2" data-id="6dd70f2" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7bddf6b elementor-widget elementor-widget-heading" data-id="7bddf6b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">肌悩み</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-73d17cf elementor-widget-divider--separator-type-pattern elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="73d17cf" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#039;http://www.w3.org/2000/svg&#039; preserveAspectRatio=&#039;none&#039; overflow=&#039;visible&#039; height=&#039;100%&#039; viewBox=&#039;0 0 20 16&#039; fill=&#039;none&#039; stroke=&#039;black&#039; stroke-width=&#039;5&#039; stroke-linecap=&#039;square&#039; stroke-miterlimit=&#039;10&#039;%3E%3Cg transform=&#039;translate(-12.000000, 0)&#039;%3E%3Cpath d=&#039;M28,0L10,18&#039;/%3E%3Cpath d=&#039;M18,0L0,18&#039;/%3E%3Cpath d=&#039;M48,0L30,18&#039;/%3E%3Cpath d=&#039;M38,0L20,18&#039;/%3E%3C/g%3E%3C/svg%3E&quot;);">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-34c462f elementor-align-left elementor-list-item-link-inline elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="34c462f" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+					<a href="/recovery">					<span class="elementor-icon-list-text">回復/鎮静</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/moisture">					<span class="elementor-icon-list-text">保湿/水分</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/sensitive-a">					<span class="elementor-icon-list-text">敏感性</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/lightening">					<span class="elementor-icon-list-text">明るい肌/ツヤ</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/anti-aging">					<span class="elementor-icon-list-text">アンチエイジング</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/nourishing">					<span class="elementor-icon-list-text">栄養</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/elasticity-a">					<span class="elementor-icon-list-text">肌弾力</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/pore-a">					<span class="elementor-icon-list-text">毛穴ケア</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-b9dbb73" data-id="b9dbb73" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-867522f elementor-widget elementor-widget-heading" data-id="867522f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">ブランド</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-f1f77b0 elementor-widget-divider--separator-type-pattern elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="f1f77b0" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#039;http://www.w3.org/2000/svg&#039; preserveAspectRatio=&#039;none&#039; overflow=&#039;visible&#039; height=&#039;100%&#039; viewBox=&#039;0 0 20 16&#039; fill=&#039;none&#039; stroke=&#039;black&#039; stroke-width=&#039;5&#039; stroke-linecap=&#039;square&#039; stroke-miterlimit=&#039;10&#039;%3E%3Cg transform=&#039;translate(-12.000000, 0)&#039;%3E%3Cpath d=&#039;M28,0L10,18&#039;/%3E%3Cpath d=&#039;M18,0L0,18&#039;/%3E%3Cpath d=&#039;M48,0L30,18&#039;/%3E%3Cpath d=&#039;M38,0L20,18&#039;/%3E%3C/g%3E%3C/svg%3E&quot;);">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-ee0f2c5 elementor-align-left elementor-list-item-link-inline elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="ee0f2c5" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+					<a href="/product-tag/innisfree">					<span class="elementor-icon-list-text">Innisfree</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/dr-jart">					<span class="elementor-icon-list-text">DR.JART+</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/cnp">					<span class="elementor-icon-list-text">CNP</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/mediheal">					<span class="elementor-icon-list-text">MEDIHEAL</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/goodal">					<span class="elementor-icon-list-text">goodal</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/clio">					<span class="elementor-icon-list-text">CLIO</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/etudehouse">					<span class="elementor-icon-list-text">ETUDE HOUSE</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/fromnature">					<span class="elementor-icon-list-text">FROM NATURE</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/missha">					<span class="elementor-icon-list-text">MISSHA</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/miseenscene">					<span class="elementor-icon-list-text">miseenscene</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/ryo">					<span class="elementor-icon-list-text">RYO</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+					<a href="/product-tag/cell-fusion-c">					<span class="elementor-icon-list-text">Cell Fusion C</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-ebb36e6" data-id="ebb36e6" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1323606 elementor--h-position-center elementor--v-position-middle elementor-widget elementor-widget-slides" data-id="1323606" data-element_type="widget" data-settings="{&quot;navigation&quot;:&quot;none&quot;,&quot;autoplay_speed&quot;:2000,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;infinite&quot;:&quot;yes&quot;,&quot;transition&quot;:&quot;slide&quot;,&quot;transition_speed&quot;:500}" data-widget_type="slides.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-swiper">
+			<div class="elementor-slides-wrapper elementor-main-swiper swiper-container" dir="ltr" data-animation="fadeInUp">
+				<div class="swiper-wrapper elementor-slides">
+					<div class="elementor-repeater-item-dffc80f swiper-slide"><div class="swiper-slide-bg"></div><div class="swiper-slide-inner" ><div class="swiper-slide-contents"></div></div></div><div class="elementor-repeater-item-257c3a7 swiper-slide"><div class="swiper-slide-bg"></div><div class="swiper-slide-inner" ><div class="swiper-slide-contents"></div></div></div><div class="elementor-repeater-item-f436af0 swiper-slide"><div class="swiper-slide-bg"></div><div class="swiper-slide-inner" ><div class="swiper-slide-contents"></div></div></div>				</div>
+																					</div>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+						</div>
+					</div>
+		</div></li>
+<li id="jet-menu-item-166255" class="jet-menu-item jet-menu-item-type-custom jet-menu-item-object-custom jet-has-roll-up jet-simple-menu-item jet-regular-item jet-menu-item-166255"><a href="/skincare-a" class="top-level-link"><div class="jet-menu-item-wrapper"><div class="jet-menu-title">カテゴリー</div></div></a></li>
+<li id="jet-menu-item-166355" class="jet-menu-item jet-menu-item-type-custom jet-menu-item-object-custom jet-has-roll-up jet-simple-menu-item jet-regular-item jet-menu-item-166355"><a href="/recovery" class="top-level-link"><div class="jet-menu-item-wrapper"><div class="jet-menu-title">肌悩み</div></div></a></li>
+<li id="jet-menu-item-1962" class="jet-menu-item jet-menu-item-type-custom jet-menu-item-object-custom jet-has-roll-up jet-simple-menu-item jet-regular-item jet-menu-item-1962"><a href="/brand" class="top-level-link"><div class="jet-menu-item-wrapper"><div class="jet-menu-title">ブランド</div></div></a></li>
+<li id="jet-menu-item-1963" class="jet-menu-item jet-menu-item-type-custom jet-menu-item-object-custom jet-has-roll-up jet-simple-menu-item jet-regular-item jet-menu-item-1963"><a href="/seoul-select" class="top-level-link"><div class="jet-menu-item-wrapper"><div class="jet-menu-title">ソウルセレクト</div></div></a></li>
+</ul></div></div></div>		</div>
 				</div>
 						</div>
 					</div>
@@ -2827,6 +3052,7 @@ div.ivole-all-reviews-shortcode ol.commentlist li .comment-text {
 <link rel='stylesheet' id='wp_reward_footable_css-css'  href='https://www.seoulperlife.com/wp-content/plugins/rewardsystem/assets/css/footable.core.css?ver=25.5' type='text/css' media='all' />
 <link rel='stylesheet' id='wp_reward_bootstrap_css-css'  href='https://www.seoulperlife.com/wp-content/plugins/rewardsystem/assets/css/bootstrap.css?ver=25.5' type='text/css' media='all' />
 <link rel='stylesheet' id='select2-css'  href='https://www.seoulperlife.com/wp-content/plugins/woocommerce/assets/css/select2.css?ver=4.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-1958-css'  href='https://www.seoulperlife.com/wp-content/uploads/elementor/css/post-1958.css?ver=1602824115' type='text/css' media='all' />
 <link rel='stylesheet' id='elementor-post-167015-css'  href='https://www.seoulperlife.com/wp-content/uploads/elementor/css/post-167015.css?ver=1602824115' type='text/css' media='all' />
 <link rel='stylesheet' id='elementor-post-1893-css'  href='https://www.seoulperlife.com/wp-content/uploads/elementor/css/post-1893.css?ver=1603092446' type='text/css' media='all' />
 <link rel='stylesheet' id='elementor-post-1928-css'  href='https://www.seoulperlife.com/wp-content/uploads/elementor/css/post-1928.css?ver=1602824724' type='text/css' media='all' />
@@ -2864,7 +3090,7 @@ var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax
 <script type='text/javascript' src='https://www.seoulperlife.com/wp-content/plugins/jet-menu/assets/public/js/vue.min.js?ver=2.6.11' id='jet-vue-js'></script>
 <script type='text/javascript' id='jet-menu-public-js-extra'>
 /* <![CDATA[ */
-var jetMenuPublicSettings = {"version":"2.0.5","ajaxUrl":"https:\/\/www.seoulperlife.com\/wp-admin\/admin-ajax.php","isMobile":"true","templateApiUrl":"https:\/\/www.seoulperlife.com\/wp-json\/jet-menu-api\/v1\/elementor-template","menuItemsApiUrl":"https:\/\/www.seoulperlife.com\/wp-json\/jet-menu-api\/v1\/get-menu-items","devMode":"false","menuSettings":{"jetMenuRollUp":"true","jetMenuMouseleaveDelay":"500","jetMenuMegaWidthType":"container","jetMenuMegaWidthSelector":"","jetMenuMegaOpenSubType":"hover","jetMenuMegaAjax":"false"}};
+var jetMenuPublicSettings = {"version":"2.0.5","ajaxUrl":"https:\/\/www.seoulperlife.com\/wp-admin\/admin-ajax.php","isMobile":"false","templateApiUrl":"https:\/\/www.seoulperlife.com\/wp-json\/jet-menu-api\/v1\/elementor-template","menuItemsApiUrl":"https:\/\/www.seoulperlife.com\/wp-json\/jet-menu-api\/v1\/get-menu-items","devMode":"false","menuSettings":{"jetMenuRollUp":"true","jetMenuMouseleaveDelay":"500","jetMenuMegaWidthType":"container","jetMenuMegaWidthSelector":"","jetMenuMegaOpenSubType":"hover","jetMenuMegaAjax":"false"}};
 var CxCollectedCSS = {"type":"text\/css","title":"cx-collected-dynamic-style","css":".jet-menu-item-839 > a .jet-menu-icon:before {font-size:30px !important;; }.jet-menu-item-839 > a .jet-menu-icon svg {width:30px !important;; }.jet-menu-item-839 > .jet-mobile-menu__item-inner > a .jet-menu-icon:before {font-size:30px !important;; }.jet-menu-item-839 > .jet-mobile-menu__item-inner > a .jet-menu-icon svg {width:30px !important;; }.jet-menu-item-839 > .jet-sub-mega-menu {width:1280px !important;; }.jet-menu-item-839 > .jet-custom-nav__mega-sub {width:600px !important;; }.jet-menu .jet-menu-item .top-level-link {font-size:12px; font-family:M PLUS Rounded 1c, sans-serif; font-weight:500; text-transform:uppercase; line-height:1em; background-color:rgba(255,255,255,0); color:rgba(26,26,26,1); }.jet-menu .jet-menu-item-desc.top-level-desc {font-size:11px; font-family:Ma Shan Zheng, handwriting; font-weight:200; text-transform:none; line-height:1.05em; }.jet-menu {background-color:#ffffff; }.jet-menu ul.jet-sub-menu {background-color:#ffffff; min-width:250px; }.jet-menu .jet-menu-item .top-level-link .jet-menu-icon {align-self:center; color:rgba(141,141,141,1); }.jet-menu  {justify-content:flex-end !important; }.jet-menu .jet-menu-item .jet-menu-item-desc.top-level-desc {color:rgba(141,141,141,1); }.jet-menu .jet-menu-item .top-level-link .jet-dropdown-arrow {color:rgba(141,141,141,1); }.jet-menu > .jet-menu-item:first-child > .top-level-link {border-top-left-radius:px; border-bottom-left-radius:px; }.jet-mobile-menu-single .jet-menu-icon {-webkit-align-self:center; align-self:center; }.jet-mobile-menu-single .jet-menu-badge {-webkit-align-self:flex-start; align-self:flex-start; }"};
 /* ]]> */
 </script>
@@ -2899,7 +3125,7 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script type='text/javascript' src='https://www.seoulperlife.com/wp-content/plugins/jet-blocks/assets/js/jet-blocks.min.js?ver=1.2.5' id='jet-blocks-js'></script>
 <script type='text/javascript' id='jet-elements-js-extra'>
 /* <![CDATA[ */
-var jetElements = {"ajaxUrl":"https:\/\/www.seoulperlife.com\/wp-admin\/admin-ajax.php","isMobile":"true","templateApiUrl":"https:\/\/www.seoulperlife.com\/wp-json\/jet-elements-api\/v1\/elementor-template","devMode":"false","messages":{"invalidMail":"Please specify a valid e-mail"}};
+var jetElements = {"ajaxUrl":"https:\/\/www.seoulperlife.com\/wp-admin\/admin-ajax.php","isMobile":"false","templateApiUrl":"https:\/\/www.seoulperlife.com\/wp-json\/jet-elements-api\/v1\/elementor-template","devMode":"false","messages":{"invalidMail":"Please specify a valid e-mail"}};
 /* ]]> */
 </script>
 <script type='text/javascript' src='https://www.seoulperlife.com/wp-content/plugins/jet-elements/assets/js/jet-elements.min.js?ver=2.3.3' id='jet-elements-js'></script>
@@ -2913,7 +3139,7 @@ var jetPopupData = {"elements_data":{"sections":[],"columns":[],"widgets":[]},"v
 <script type='text/javascript' src='https://www.seoulperlife.com/wp-content/plugins/jet-popup/assets/js/jet-popup-frontend.min.js?ver=1.4.0' id='jet-popup-frontend-js'></script>
 <script type='text/javascript' id='jet-tabs-frontend-js-extra'>
 /* <![CDATA[ */
-var JetTabsSettings = {"ajaxurl":"https:\/\/www.seoulperlife.com\/wp-admin\/admin-ajax.php","isMobile":"true","templateApiUrl":"https:\/\/www.seoulperlife.com\/wp-json\/jet-tabs-api\/v1\/elementor-template","devMode":"false"};
+var JetTabsSettings = {"ajaxurl":"https:\/\/www.seoulperlife.com\/wp-admin\/admin-ajax.php","isMobile":"false","templateApiUrl":"https:\/\/www.seoulperlife.com\/wp-json\/jet-tabs-api\/v1\/elementor-template","devMode":"false"};
 /* ]]> */
 </script>
 <script type='text/javascript' src='https://www.seoulperlife.com/wp-content/plugins/jet-tabs/assets/js/jet-tabs-frontend.min.js?ver=2.1.7' id='jet-tabs-frontend-js'></script>
@@ -3010,5 +3236,5 @@ var ravenFormsTranslations = {"validation":{"required":"Please fill in this fiel
                 observer.observe(b, config);
             }
         }, false);</script><script data-no-minify="1" async src="https://www.seoulperlife.com/wp-content/plugins/rocket-lazy-load/assets/js/16.1/lazyload.min.js"></script></body></html>
-<!-- Dynamic page generated in 3.107 seconds. -->
-<!-- Cached page generated by WP-Super-Cache on 2020-10-20 22:48:19 -->
+<!-- Dynamic page generated in 2.201 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2020-10-20 22:41:43 -->
