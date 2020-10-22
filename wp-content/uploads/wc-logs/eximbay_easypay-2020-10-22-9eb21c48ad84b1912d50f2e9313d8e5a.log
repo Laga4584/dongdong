@@ -1,0 +1,157 @@
+10-22-2020 @ 11:14:21 - Process Payment Response : request
+10-22-2020 @ 11:14:21 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172137_201022_021421
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 6090
+    [shop] => SEOUL LIFE
+    [buyer] => 怜奈田川
+    [email] => rena19971008@gmail.com
+    [tel] => 09081023432
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【エチュードハウス】ETUDE HOUSE プレイカラーアイズ #ピーチファーム 외 6건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-22-2020 @ 11:16:27 - Process Payment Response : status
+10-22-2020 @ 11:16:27 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 5210
+    [resdt] => 20201022111626
+    [cardno4] => 6531
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 6090
+    [accesscountry] => JP
+    [ref] => 172137_201022_021421
+    [paymethod] => P102
+    [dm_review] => 
+    [email] => rena19971008@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201022000001
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => RENATAGWA
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 111627
+    [fgkey] => 1D187970E5B3BB46FD31A0FD08B16800CA5CBF51115314F9B106320A7CB05F60
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-22-2020 @ 11:16:33 - Process Payment Response : return
+10-22-2020 @ 11:16:33 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 5210
+    [resdt] => 20201022111626
+    [cardno4] => 6531
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 6090
+    [accesscountry] => JP
+    [ref] => 172137_201022_021421
+    [paymethod] => P102
+    [dm_review] => 
+    [email] => rena19971008@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201022000001
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => RENATAGWA
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 111627
+    [fgkey] => 1D187970E5B3BB46FD31A0FD08B16800CA5CBF51115314F9B106320A7CB05F60
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-22-2020 @ 11:16:34 - Process Payment Response : finish
+10-22-2020 @ 11:16:34 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 5210
+    [resdt] => 20201022111626
+    [cardno4] => 6531
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 6090
+    [accesscountry] => JP
+    [ref] => 172137_201022_021421
+    [paymethod] => P102
+    [dm_review] => 
+    [email] => rena19971008@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201022000001
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => RENATAGWA
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 111627
+    [fgkey] => 1D187970E5B3BB46FD31A0FD08B16800CA5CBF51115314F9B106320A7CB05F60
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+

@@ -1,0 +1,206 @@
+10-21-2020 @ 16:53:10 - Process Payment Response : request
+10-21-2020 @ 16:53:10 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172093_201021_075309
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 6980
+    [shop] => SEOUL LIFE
+    [buyer] => 有珍丁
+    [email] => yujin@unigls.co.kr
+    [tel] => 0647033930
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【ダナハン】danahan 酵茸（ヒョヨン） ３種セット 化粧水・乳液
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-21-2020 @ 16:53:31 - Process Payment Response : status
+10-21-2020 @ 16:53:31 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201021165331
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 6980
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 172093_201021_075309
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201021000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=81808476888676737f7e85769185767602
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => FC2978E9B553ABA1FE16C80157ADDEC2957C0350552984E0B4AA4BEE779CEA79
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-21-2020 @ 16:53:38 - Process Payment Response : return
+10-21-2020 @ 16:53:38 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201021165331
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 6980
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 172093_201021_075309
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201021000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=81808476888676737f7e85769185767602
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => FC2978E9B553ABA1FE16C80157ADDEC2957C0350552984E0B4AA4BEE779CEA79
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-21-2020 @ 16:53:40 - Process Payment Response : finish
+10-21-2020 @ 16:53:40 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201021165331
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 6980
+    [shipTo_state] => 
+    [accesscountry] => KR
+    [ref] => 172093_201021_075309
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yujin@unigls.co.kr
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201021000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=81808476888676737f7e85769185767602
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => FC2978E9B553ABA1FE16C80157ADDEC2957C0350552984E0B4AA4BEE779CEA79
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+10-21-2020 @ 22:05:25 - Process Payment Response : status
+10-21-2020 @ 22:05:25 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201021220525
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 9600.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 171959_201018_104356
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yuki.ond54.love@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201018000001
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 88EC26F846E7E0567BFDB4E69D19E36BB09E657047AE5BCD28988192AF587DEB
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
