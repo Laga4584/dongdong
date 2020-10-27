@@ -1,0 +1,34 @@
+<wpml-config>
+	<admin-texts>
+	   	<key name="woocommerce_addtocart_min_qty_err_msg"/>
+		<key name="woocommerce_addtocart_max_qty_err_msg"/>
+		<key name="woocommerce_addtocart_max_oitems_err_msg"/>
+		<key name="woocommerce_cartpage_min_oqty_err_msg"/>
+		<key name="woocommerce_cartpage_max_oqty_err_msg"/>
+		<key name="woocommerce_cartpage_min_ovalue_err_msg"/>
+		<key name="woocommerce_cartpage_max_ovalue_err_msg"/>
+		<key name="woocommerce_cartpage_min_oitems_err_msg"/>
+		<key name="woocommerce_cartpage_max_oitems_err_msg"/>
+		<key name="woocommerce_cartpage_min_qty_err_msg"/>
+		<key name="woocommerce_cartpage_max_qty_err_msg"/>
+		<key name="woocommerce_cartpage_group_of_err_msg"/>
+		<key name="woocommerce_cat_rule_min_qty_err_msg"/>
+		<key name="woocommerce_cat_rule_max_qty_err_msg"/>
+		<key name="woocommerce_cat_rule_group_of_err_msg"/>
+    </admin-texts>
+	<custom-fields>
+		<custom-field action="copy">minimum_allowed_quantity</custom-field>		
+		<custom-field action="copy">maximum_allowed_quantity</custom-field>
+		<custom-field action="copy">group_of_quantity</custom-field>
+		<custom-field action="copy">minmax_do_not_count</custom-field>
+		<custom-field action="copy">minmax_cart_exclude</custom-field>
+		<custom-field action="copy">minmax_category_group_of_exclude</custom-field>		
+		<custom-field action="copy">min_max_rules</custom-field>
+		<custom-field action="copy">variation_minimum_allowed_quantity</custom-field>
+		<custom-field action="copy">variation_maximum_allowed_quantity</custom-field>
+		<custom-field action="copy">variation_group_of_quantity</custom-field>
+		<custom-field action="copy">variation_minmax_do_not_count</custom-field>
+		<custom-field action="copy">variation_minmax_cart_exclude</custom-field>
+		<custom-field action="copy">variation_minmax_category_group_of_exclude</custom-field>		
+	</custom-fields>	
+</wpml-config>

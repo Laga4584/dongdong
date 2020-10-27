@@ -1,0 +1,179 @@
+10-27-2020 @ 09:04:30 - Process Payment Response : status
+10-27-2020 @ 09:04:30 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201027090429
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 7685.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172415_201026_082926
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => irit10714@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201026000001
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9B3008939AA4D2506321C18C0318B72419F93010D6591B0029964E28F412C0ED
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-27-2020 @ 11:57:13 - Process Payment Response : request
+10-27-2020 @ 11:57:13 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172425_201027_025713
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 1930
+    [shop] => SEOUL LIFE
+    [buyer] => StellaMiyamoto
+    [email] => seoullife@ddpac.co.kr
+    [tel] => 01039807539
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【オピュ】APIEU果実パンッ ティント 12種 - cr01 외 1건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-27-2020 @ 11:57:54 - Process Payment Response : request
+10-27-2020 @ 11:57:54 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172426_201027_025754
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 2620
+    [shop] => SEOUL LIFE
+    [buyer] => StellaMiyamoto
+    [email] => seoullife@ddpac.co.kr
+    [tel] => 01039807539
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【オピュ】APIEU果実パンッ ティント 12種 - cr01 외 1건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-27-2020 @ 11:58:09 - Process Payment Response : request
+10-27-2020 @ 11:58:09 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172426_201027_025754
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 2620
+    [shop] => SEOUL LIFE
+    [buyer] => StellaMiyamoto
+    [email] => seoullife@ddpac.co.kr
+    [tel] => 01039807539
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【オピュ】APIEU果実パンッ ティント 12種 - cr01 외 1건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-27-2020 @ 11:58:12 - Process Payment Response : request
+10-27-2020 @ 11:58:12 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172426_201027_025754
+    [ostype] => P
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 2620
+    [shop] => SEOUL LIFE
+    [buyer] => StellaMiyamoto
+    [email] => seoullife@ddpac.co.kr
+    [tel] => 01039807539
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【オピュ】APIEU果実パンッ ティント 12種 - cr01 외 1건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

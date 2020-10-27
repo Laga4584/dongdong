@@ -1,0 +1,78 @@
+2020-10-23T07:11:00+00:00 CRITICAL Uncaught Error: Call to undefined function gt_set_post_view() in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php:71
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(134): require()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_loop_template()
+#2 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#4 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/content.php(40): do_action()
+#5 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(79): require_once('/var/www/html/w...')
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_content_template()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wo in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php on line 71
+
+2020-10-23T07:11:02+00:00 CRITICAL Uncaught Error: Call to undefined function gt_set_post_view() in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php:71
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(134): require()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_loop_template()
+#2 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#4 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/content.php(40): do_action()
+#5 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(79): require_once('/var/www/html/w...')
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_content_template()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wo in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php on line 71
+
+2020-10-23T07:11:15+00:00 CRITICAL Uncaught Error: Call to undefined function gt_set_post_view() in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php:71
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(134): require()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_loop_template()
+#2 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#4 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/content.php(40): do_action()
+#5 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(79): require_once('/var/www/html/w...')
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_content_template()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wo in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php on line 71
+
+2020-10-23T07:16:12+00:00 CRITICAL Uncaught Error: Call to undefined function gt_set_post_view() in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php:66
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(134): require()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_loop_template()
+#2 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#4 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/content.php(40): do_action()
+#5 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(79): require_once('/var/www/html/w...')
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_content_template()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wo in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php on line 66
+
+2020-10-23T07:19:52+00:00 CRITICAL Uncaught Error: Call to undefined function gt_set_post_view() in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php:55
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(134): require()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_loop_template()
+#2 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#4 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/content.php(40): do_action()
+#5 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(79): require_once('/var/www/html/w...')
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_content_template()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wo in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php on line 55
+
+2020-10-23T07:22:16+00:00 CRITICAL Uncaught Error: Call to undefined function gt_set_post_view() in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php:32
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(134): require()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_loop_template()
+#2 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#4 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/content.php(40): do_action()
+#5 /var/www/html/wordpress/wp-content/themes/jupiterx/lib/render/template-parts.php(79): require_once('/var/www/html/w...')
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): jupiterx_content_template()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wo in /var/www/html/wordpress/wp-content/themes/jupiterx/lib/templates/structure/loop.php on line 32
+

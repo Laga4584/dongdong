@@ -1,0 +1,206 @@
+10-25-2020 @ 16:56:45 - Process Payment Response : request
+10-25-2020 @ 16:56:45 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172258_201025_075644
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 3730
+    [shop] => SEOUL LIFE
+    [buyer] => 井口琳咲子
+    [email] => irit10714@gmail.com
+    [tel] => 07075315283
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【エチュードハウス】ETUDE HOUSE プレイカラーアイズミニ ハーシー - オレオ 외 4건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-25-2020 @ 16:56:58 - Process Payment Response : status
+10-25-2020 @ 16:56:58 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201025165657
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 3730
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172258_201025_075644
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => irit10714@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201025000002
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8180847688867a737f7e847c8e8c7a7702
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9480BBC1DCF7651E6C9F70358BF3E27508A59E101E2938CD48CBDB5993E1EEE9
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-25-2020 @ 16:57:04 - Process Payment Response : return
+10-25-2020 @ 16:57:04 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201025165657
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 3730
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172258_201025_075644
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => irit10714@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201025000002
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8180847688867a737f7e847c8e8c7a7702
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9480BBC1DCF7651E6C9F70358BF3E27508A59E101E2938CD48CBDB5993E1EEE9
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-25-2020 @ 16:57:05 - Process Payment Response : finish
+10-25-2020 @ 16:57:05 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201025165657
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 3730
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172258_201025_075644
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => irit10714@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201025000002
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=8180847688867a737f7e847c8e8c7a7702
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 9480BBC1DCF7651E6C9F70358BF3E27508A59E101E2938CD48CBDB5993E1EEE9
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+10-25-2020 @ 19:06:13 - Process Payment Response : status
+10-25-2020 @ 19:06:13 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201025190608
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1850.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172218_201023_101327
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => northkokosy@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201023000005
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => C912C710CB66DFA720A87D78460BC27929B964E57F9D1CA0592C117D7C68D5AD
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+

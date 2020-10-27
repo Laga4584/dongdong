@@ -1,11 +1,4 @@
 
-# BEGIN rlrssslReallySimpleSSL rsssl_version[3.3.5]
-<IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-</IfModule>
-# END rlrssslReallySimpleSSL
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.
@@ -18,9 +11,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-
 # END WordPress
-
 # CORS ERROR FIX - KEVIN
 <ifmodule mod_headers.c="">
    SetEnvIf Origin "^(.*\.domain\.com)$" ORIGIN_SUB_DOMAIN=$1

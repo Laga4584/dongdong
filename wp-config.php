@@ -45,17 +45,13 @@ define( 'DB_USER', 'admin' );
 define( 'DB_PASSWORD', 'a56095609' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'unigls-db.cluster-ckav56uokaxp.ap-northeast-2.rds.amazonaws.com:3306' );
+define( 'DB_HOST', 'unigls-db-3.ckav56uokaxp.ap-northeast-2.rds.amazonaws.com:3306' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
-
-/** REDIS  **/
-define( 'WP_REDIS_HOST','wordpress.ssjrjl.0001.apn2.cache.amazonaws.com:6379' );
-
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -97,7 +93,13 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+// Enable Debug logging to the /wp-content/debug.log file
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+
+// Disable display of errors and warnings
+define( 'WP_DEBUG_DISPLAY', false );
+@ini_set( 'display_errors', 0 );
 
 /** WP MEDIA OFFLOAD AWS IAM ROLE  */
 define( 'AS3CF_SETTINGS', serialize( array(
@@ -120,4 +122,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
 
-define( 'WC_TEMPLATE_DEBUG_MODE', false );
+/* define( 'WC_TEMPLATE_DEBUG_MODE', false ); */

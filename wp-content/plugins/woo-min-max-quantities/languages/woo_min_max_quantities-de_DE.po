@@ -1,0 +1,370 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-25 18:53+0000\n"
+"PO-Revision-Date: 2018-02-16 14:03+0100\n"
+"Last-Translator: Thomas Bunte <thomas@bunte-tk.de>\n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: woo-min-max-quantities.php:115
+msgid "Settings"
+msgstr "Eigenschaften"
+
+#: woo-min-max-quantities.php:116
+msgid "Docs"
+msgstr "Dokumentation"
+
+#: includes/class-woo-min-max-qunatities-public.php:245
+msgid "excludes "
+msgstr "ausgeschlossen"
+
+#: includes/class-woo-min-max-qunatities-public.php:253
+msgid ""
+"The minimum allowed order quantity is %s - please add more items to your cart"
+msgstr ""
+"Die minimal zulässige Bestellmenge ist %s - bitte fügen Sie weitere Artikel "
+"zu Ihrem Warenkorb hinzu."
+
+#: includes/class-woo-min-max-qunatities-public.php:263
+msgid ""
+"The maximum allowed order quantity is %s - please remove some items from "
+"your cart."
+msgstr ""
+"Die maximal zulässige Bestellmenge ist %s - bitte entfernen Sie einige "
+"Artikel aus Ihrem Warenkorb."
+
+#: includes/class-woo-min-max-qunatities-public.php:272
+msgid ""
+"The minimum allowed order value is %s - please add more items to your cart"
+msgstr ""
+"Der minimal zulässige Bestellwert ist %s - bitte fügen Sie weitere Artikel "
+"zu Ihrem Warenkorb hinzu"
+
+#: includes/class-woo-min-max-qunatities-public.php:279
+msgid ""
+"The maximum allowed order value is %s - please remove some items from your "
+"cart."
+msgstr ""
+"Der maximal zulässige Auftragswert ist %s - bitte entfernen Sie einige "
+"Artikel aus Ihrem Warenkorb."
+
+#: includes/class-woo-min-max-qunatities-public.php:293
+msgid ""
+"Group of items in the <strong>%s</strong> category should not more then %d. "
+"Please remove some quantity to continue."
+msgstr ""
+"Gruppe von Elementen in der Kategorie <strong>%s </strong> sollte nicht mehr "
+"als %d sein. Bitte entfernen Sie etwas, um fortzufahren."
+
+#: includes/class-woo-min-max-qunatities-public.php:318
+msgid ""
+"Items in the <strong>%s</strong> category (<em>%s</em>) must be bought in "
+"groups of %d. Please add another %d to continue."
+msgstr ""
+"Produkte in der Kategorie <strong>%s </strong> (<em>%s </em>) müssen in "
+"Gruppen von %d gekauft werden. Bitte fügen Sie weitere %d hinzu, um "
+"fortzufahren."
+
+#: includes/class-woo-min-max-qunatities-public.php:329
+msgid "The minimum allowed items is %s - please add more items to your cart"
+msgstr ""
+"Die minimal zulässige Artikelmenge sind% s - bitte fügen Sie weitere Artikel "
+"zu Ihrem Warenkorb hinzu."
+
+#: includes/class-woo-min-max-qunatities-public.php:334
+msgid ""
+"The maximum allowed items is %s - please remove some items from your cart"
+msgstr ""
+"Die maximal zulässige Artikelmenge sind %s - bitte entfernen Sie einige "
+"Artikel aus Ihrem Warenkorb."
+
+#: includes/class-woo-min-max-qunatities-public.php:357
+msgid ""
+"The minimum allowed quantity for %s is %s - please increase the quantity in "
+"your cart."
+msgstr ""
+"Die minimal zulässige Anzahl für %s ist %s - bitte erhöhen Sie die Menge in "
+"Ihrem Warenkorb."
+
+#: includes/class-woo-min-max-qunatities-public.php:361
+msgid ""
+"The maximum allowed quantity for %s is %s - please decrease the quantity in "
+"your cart."
+msgstr ""
+"Die maximal zulässige Anzahl für %s ist %s - bitte verringern Sie die Menge "
+"in Ihrem Warenkorb."
+
+#: includes/class-woo-min-max-qunatities-public.php:367
+msgid ""
+"%s must be bought in groups of %d. Please add or decrease another %d to "
+"continue."
+msgstr ""
+"%s muss in Gruppen von %d gekauft werden. Bitte addieren oder verringern Sie "
+"weitere %d, um fortzufahren."
+
+#: includes/class-woo-min-max-qunatities-public.php:662
+msgid ""
+"The maximum allowed quantity for %s is %d (you currently have %s in your "
+"cart)."
+msgstr ""
+"Die maximal zulässige Menge für %s ist %d (Sie haben derzeit %s in Ihrem "
+"Warenkorb)."
+
+#: includes/class-woo-min-max-qunatities-public.php:679
+msgid ""
+"The minimum allowed quantity for %s is %d (you currently have %s in your "
+"cart)."
+msgstr ""
+"Die minimal zulässige Menge für %s ist %d (Sie haben derzeit %s in Ihrem "
+"Warenkorb)."
+
+#: includes/class-woo-min-max-qunatities-public.php:691
+msgid "The maximum allowed items is %d (you currently have %s in your cart)."
+msgstr ""
+"Die maximal zulässigen Elemente sind %d (Sie haben derzeit %s in Ihrem "
+"Warenkorb)."
+
+#: includes/class-woo-min-max-qunatities-public.php:778
+msgid "Available on backorder"
+msgstr "Verfügbar auf Bestellung"
+
+#: includes/class-woo-min-max-qunatities-public.php:783
+msgid "Out of stock"
+msgstr "Nicht auf Lager"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:32
+msgid "Minimun/Maximum Quantities"
+msgstr "Mindest- / Höchstmengen"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:38
+msgid "Minimum order quantity"
+msgstr "Mindestbestellmenge"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:39
+msgid "The minimum allowed quantity of items in an order."
+msgstr "Die minimal zulässige Menge an Artikeln in einer Bestellung."
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:45
+msgid "Maximum order quantity"
+msgstr "Maximale Bestellmenge"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:46
+msgid "The maximum allowed quantity of items in an order."
+msgstr "Die maximal zulässige Menge der Artikel in einer Bestellung."
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:57
+msgid "Minimun/Maximum Order Value"
+msgstr "Minimaler / Maximaler Bestellwert"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:63
+msgid "Minimum order value"
+msgstr "Mindestbestellwert"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:64
+msgid "The minimum allowed value of items in an order."
+msgstr "Der minimal zulässige Artikel-Wert in einer Bestellung."
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:70
+msgid "Maximum order value"
+msgstr "Maximaler Bestellwert"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:71
+msgid "The maximum allowed value of items in an order."
+msgstr "Der maximal zulässige Wert der Artikel in einer Bestellung."
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:82
+msgid "Minimun/Maximum Order Items"
+msgstr "Minimum / Maximum Bestellmenge"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:88
+msgid "Minimum order Items"
+msgstr "Mindestbestellanzahl"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:89
+msgid "The minimum allowed number of items in an order."
+msgstr "Die minimale Anzahl der Artikel in einer Bestellung."
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:95
+msgid "Maximum order Items"
+msgstr "Maximale Bestellanzahl"
+
+#: includes/admin/class-woo-min-max-qunatities-admin-settings-tabs.php:96
+msgid "The maximum allowed number of items in an order."
+msgstr "Die maximal zulässige Anzahl der Artikel in einer Bestellung."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:32
+#: includes/admin/class-woo-min-max-qunatities-admin.php:292
+#: includes/admin/class-woo-min-max-qunatities-admin.php:317
+msgid "Minimum quantity"
+msgstr "Mindestmenge"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:32
+msgid ""
+"Enter a quantity to prevent the user buying this product if they have fewer "
+"than the allowed quantity in their cart"
+msgstr ""
+"Erhöhen Sie die Anzahl, um zu verhindern, dass der Benutzer die "
+"Mindestbestellmenge im Warenkorb nicht erreicht ."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:34
+#: includes/admin/class-woo-min-max-qunatities-admin.php:297
+#: includes/admin/class-woo-min-max-qunatities-admin.php:321
+msgid "Maximum quantity"
+msgstr "Maximale Menge"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:34
+msgid ""
+"Enter a quantity to prevent the user buying this product if they have more "
+"than the allowed quantity in their cart"
+msgstr ""
+"Verringern Sie die Artikelanzahl um zu verhindern, dass der Benutzer die "
+"maximale Menge im Warenkorb überschreitet."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:36
+#: includes/admin/class-woo-min-max-qunatities-admin.php:302
+#: includes/admin/class-woo-min-max-qunatities-admin.php:326
+msgid "Group of (Step)..."
+msgstr "Gruppe von (Schritt) ..."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:36
+msgid ""
+"Enter a quantity to only allow this product to be purchased in groups of X"
+msgstr ""
+"Verändern Sie die Produktanzahl, um dieses Produkt nur in Gruppen von X zu "
+"kaufen."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:38
+#: includes/admin/class-woo-min-max-qunatities-admin.php:307
+#: includes/admin/class-woo-min-max-qunatities-admin.php:331
+msgid "Order rules: Do not count"
+msgstr "Bestellregeln: Nicht nutzen"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:38
+#: includes/admin/class-woo-min-max-qunatities-admin.php:307
+#: includes/admin/class-woo-min-max-qunatities-admin.php:331
+msgid ""
+"Don't count this product against your minimum order quantity/value rules."
+msgstr ""
+"Zählen Sie dieses Produkt nicht in den Mindestbestellmengen / Wertregeln."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:40
+#: includes/admin/class-woo-min-max-qunatities-admin.php:309
+#: includes/admin/class-woo-min-max-qunatities-admin.php:333
+msgid "Order rules: Exclude"
+msgstr "Bestellregeln: nicht anwenden"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:40
+#: includes/admin/class-woo-min-max-qunatities-admin.php:309
+#: includes/admin/class-woo-min-max-qunatities-admin.php:333
+msgid ""
+"Exclude this product from minimum order quantity/value rules. If this is the "
+"only item in the cart, rules will not apply."
+msgstr ""
+"Dieses Produkt aus den Mindestbestellmengen / Wertregeln ausschließen. Wenn "
+"dies der einzige Artikel im Einkaufswagen ist, gelten die Regeln nicht."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:42
+msgid "Category rules: Exclude"
+msgstr "Kategorieregeln: nicht anwenden"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:42
+#: includes/admin/class-woo-min-max-qunatities-admin.php:311
+#: includes/admin/class-woo-min-max-qunatities-admin.php:335
+msgid ""
+"Exclude this product from category group-of-quantity rules. This product "
+"will not be counted towards category groups."
+msgstr ""
+"Dieses Produkt von den Kategorie-Mengenregeln ausschließen. Dieses Produkt "
+"wird nicht auf Kategoriegruppen aufaddiert."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:246
+#: includes/admin/class-woo-min-max-qunatities-admin.php:251
+msgid "Min/Max Rules"
+msgstr "Min / Max Regeln"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:246
+#: includes/admin/class-woo-min-max-qunatities-admin.php:251
+msgid "Enable this option to override min/max settings at variation level"
+msgstr ""
+"Aktivieren Sie diese Option, um die Min / Max-Regeln für Variaten zu "
+"überschreiben"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:311
+#: includes/admin/class-woo-min-max-qunatities-admin.php:335
+msgid "Category group-of rules: Exclude"
+msgstr "Kategorie Gruppenregeln:  nicht anwenden"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:356
+#: includes/admin/class-woo-min-max-qunatities-admin.php:386
+msgid "Group of..."
+msgstr "Gruppe von ..."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:358
+#: includes/admin/class-woo-min-max-qunatities-admin.php:389
+msgid ""
+"Enter a quantity to only allow products in this category to be purchased in "
+"groups of X"
+msgstr ""
+"Produkte in dieser Kategorie können nur in Gruppen von X gekauft werden"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:361
+#: includes/admin/class-woo-min-max-qunatities-admin.php:393
+msgid "Group of Maximum..."
+msgstr "Gruppe von (maximal) ..."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:363
+msgid ""
+"Enter a maximum allowable quantity to only allow products in this category "
+"to be purchased"
+msgstr ""
+"Geben Sie eine maximal zulässige Menge ein, damit nur Produkte dieser "
+"Kategorie gekauft werden können"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:396
+msgid ""
+"Enter a maximum allowable quantity of products in this category to be "
+"purchased"
+msgstr ""
+"Geben Sie eine maximal zulässige Anzahl von Produkten in dieser Kategorie "
+"ein, die gekauft werden können"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:439
+msgid "Purchasable in..."
+msgstr "Kaufbar in ..."
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:467
+msgid "Groups of min:"
+msgstr "Gruppen von min:"
+
+#: includes/admin/class-woo-min-max-qunatities-admin.php:469
+msgid "%sGroups of max:"
+msgstr "%s Gruppen von max:"
+
+#. Name of the plugin
+msgid "WooCommerce - Minimum/Maximum Quantities"
+msgstr "WooCommerce - Mindest- / Höchstmengen"
+
+#. Description of the plugin
+msgid ""
+"Lets you define minimum/maximum allowed quantities for products, variations "
+"and orders. Also you can define minumum/maximum order value."
+msgstr ""
+"Ermöglicht es Ihnen, minimale bzw. maximale zulässige Mengen für Produkte, "
+"Variationen und Bestellungen zu definieren. Sie können auch einen Mindest/"
+"Höchstbestellwert definieren"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "http://wpeliteplugins.com"
+msgstr "http://wpeliteplugins.com"
+
+#. Author of the plugin
+msgid "WPElitePlugins"
+msgstr "WPElitePlugins"
