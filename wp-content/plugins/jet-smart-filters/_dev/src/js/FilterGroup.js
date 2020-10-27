@@ -17,7 +17,7 @@ export default class FilterGroup {
 	urlPrefix = 'jet-smart-filters';
 	activeItemsExceptions = ['sorting', 'pagination'];
 
-	constructor(provider, queryId, filters, queryData = false) {
+	constructor (provider, queryId, filters, queryData = false) {
 		this.provider = provider;
 		this.queryId = queryId;
 		this.filters = filters;
@@ -266,7 +266,7 @@ export default class FilterGroup {
 
 	setFiltersData(data = this.currentQuery) {
 		this.filters.forEach(filter => {
-			if (filter.isHierarchy && data['hc[]'])
+			if (filter.isHierarchy && data['hc'])
 				return;
 
 			const key = filter.queryKey,
@@ -318,16 +318,25 @@ export default class FilterGroup {
 	updateHash() {
 		let hashHasBeenChanged = false;
 
+		this.currentHashQuery = {};
 		this.filters.forEach(filter => {
 			if (filter.isMixed || filter.isReload) {
-				hashHasBeenChanged = true;
-				this.addToHash(filter);
+				const data = filter.data,
+					key = filter.queryKey;
+
+				if (data) {
+					this.currentHashQuery[key] = data;
+
+					if (filter.isHierarchy && filter.hierarchicalСhain)
+						this.currentHashQuery['hc'] = filter.hierarchicalСhain;
+
+					hashHasBeenChanged = true;
+				}
 			}
 		});
 
-		if (hashHasBeenChanged) {
+		if (hashHasBeenChanged)
 			this.updateHashInAddressBar();
-		}
 	}
 
 	updateHashInAddressBar() {
@@ -338,19 +347,6 @@ export default class FilterGroup {
 		}
 
 		history.replaceState(null, null, urlHash);
-	}
-
-	addToHash(filter) {
-		const data = filter.data,
-			key = filter.queryKey;
-
-		if (data) {
-			this.currentHashQuery[key] = data;
-		} else {
-			if (this.currentHashQuery.hasOwnProperty(key)) {
-				delete this.currentHashQuery[key];
-			}
-		}
 	}
 
 	// module initialization
@@ -394,13 +390,10 @@ export default class FilterGroup {
 
 			if (query[key] && filter.mergeSameQueryKeys) {
 				query[key] = mergeData(query[key], data, 'operator_AND');
-			} else if (query[key] && filter.isHierarchy) {
-				if (!query['hc'])
-					query['hc'] = [query[key]];
-				query['hc'].push(data);
-
-				query[key] = data;
 			} else {
+				if (filter.isHierarchy && filter.hierarchicalСhain)
+					query['hc'] = filter.hierarchicalСhain;
+
 				query[key] = data;
 			}
 		});

@@ -71,7 +71,7 @@ if( method_exists( $product, 'get_id' ) ) {
 				$nonce = wp_create_nonce( "cr_product_reviews_" . $cr_product_id );
 				if ( $cr_get_reviews['reviews_count'] > CR_Ajax_Reviews::get_per_page() ) :
 			?>
-				<button id="cr-show-more-reviews-id" type="button" data-nonce="<?php echo $nonce; ?>" data-page="1"><?php echo __( 'Show more', IVOLE_TEXT_DOMAIN ); ?></button>
+				<button id="cr-show-more-reviews-id" type="button" data-nonce="<?php echo $nonce; ?>" data-page="1"><?php echo __( 'Show more', 'customer-reviews-woocommerce' ); ?></button>
 				<span id="cr-show-more-review-spinner" style="display:none;"></span>
 			<?php
 				endif;
@@ -91,7 +91,7 @@ if( method_exists( $product, 'get_id' ) ) {
 					if( $no_comments_yet ) {
 						$cr_submit_button = '</a><input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />';
 					} else {
-						$cr_submit_button = '<a href="' . esc_url( get_permalink( $cr_product_id ) ) . '#tab-reviews" id="cr-ajax-reviews-cancel">' . __( 'Cancel', IVOLE_TEXT_DOMAIN ) . '</a><input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />';
+						$cr_submit_button = '<a href="' . esc_url( get_permalink( $cr_product_id ) ) . '#tab-reviews" id="cr-ajax-reviews-cancel">' . __( 'Cancel', 'customer-reviews-woocommerce' ) . '</a><input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />';
 					}
 
 					$comment_form = array(
@@ -144,7 +144,7 @@ if( method_exists( $product, 'get_id' ) ) {
 						/* translators: %s opening and closing link tags respectively */
 						$comment_form['must_log_in'] = '<p class="must-log-in">' . sprintf( esc_html__( 'You must be %1$slogged in%2$s to post a review.', 'woocommerce' ), '<a href="' . esc_url( $account_page_url ) . '">', '</a>' ) . '</p>';
 						if( !$no_comments_yet ) {
-							$comment_form['must_log_in'] .= '<p><a href="' . esc_url( get_permalink( $cr_product_id ) ) . '#tab-reviews" id="cr-ajax-reviews-cancel">' . __( 'Cancel', IVOLE_TEXT_DOMAIN ) . '</a></p>';
+							$comment_form['must_log_in'] .= '<p><a href="' . esc_url( get_permalink( $cr_product_id ) ) . '#tab-reviews" id="cr-ajax-reviews-cancel">' . __( 'Cancel', 'customer-reviews-woocommerce' ) . '</a></p>';
 						}
 					}
 
@@ -168,7 +168,7 @@ if( method_exists( $product, 'get_id' ) ) {
 		<?php else : ?>
 			<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?></p>
 			<?php if( !$no_comments_yet ) : ?>
-				<p><a href="<?php echo esc_url( get_permalink( $cr_product_id ) ) . '#tab-reviews'; ?>" id="cr-ajax-reviews-cancel"><?php echo __( 'Cancel', IVOLE_TEXT_DOMAIN ); ?></a></p>
+				<p><a href="<?php echo esc_url( get_permalink( $cr_product_id ) ) . '#tab-reviews'; ?>" id="cr-ajax-reviews-cancel"><?php echo __( 'Cancel', 'customer-reviews-woocommerce' ); ?></a></p>
 			<?php endif; ?>
 		<?php endif; ?>
 	</div>

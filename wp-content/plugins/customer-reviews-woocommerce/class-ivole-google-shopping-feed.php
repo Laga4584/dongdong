@@ -376,6 +376,10 @@ class Ivole_Google_Shopping_Feed {
 			$_review->post_id = $review->comment_post_ID;
 			$_review->rating  = get_comment_meta( $review->comment_ID, 'rating', true );
 			$_review->date    = date( 'c', strtotime( $review->comment_date ) );
+			//Google's requirement for Z instead of +00:00
+			if( '+00:00' === substr( $_review->date, -6 ) ) {
+				$_review->date = substr( $_review->date, 0, -6 ) . 'Z';
+			}
 			if( 'yes' === get_option( 'ivole_google_encode_special_chars', 'no' ) ) {
 				$_review->content = mb_convert_encoding( htmlspecialchars( $review->comment_content, ENT_XML1, 'UTF-8' ), 'HTML-ENTITIES' );
 				//$_review->content = mb_convert_encoding( esc_html( $review->comment_content ), 'HTML-ENTITIES' );

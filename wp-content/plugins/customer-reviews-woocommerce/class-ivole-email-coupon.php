@@ -189,7 +189,7 @@ class Ivole_Email_Coupon {
 					'order' => array( 'id' => strval( $order_id ),
 				 		'date' => $order_date,
 						'currency' => $order_currency,
-					 	'items' => Ivole_Email::get_order_items2( $order ) ),
+					 	'items' => Ivole_Email::get_order_items2( $order, $order_currency ) ),
 					'discount' => array('type' => $discount_type,
 						'amount' => $discount_amount,
 						'code' => $coupon_code ),

@@ -48,17 +48,22 @@ class Ivole_Review_Extensions_Settings {
         $this->init_settings();
 
         // make sure that there the maximum number of attached images is larger than zero
-				if( !empty( $_POST ) && isset( $_POST['ivole_attach_image_quantity'] ) ) {
-					if( $_POST['ivole_attach_image_quantity'] <= 0 ) {
-						$_POST['ivole_attach_image_quantity'] = 1;
-					}
-				}
-				// make sure that there the maximum size of attached image is larger than zero
-				if( !empty( $_POST ) && isset( $_POST['ivole_attach_image_size'] ) ) {
-					if( $_POST['ivole_attach_image_size'] <= 0 ) {
-						$_POST['ivole_attach_image_size'] = 1;
-					}
-				}
+        if( !empty( $_POST ) && isset( $_POST['ivole_attach_image_quantity'] ) ) {
+            if( $_POST['ivole_attach_image_quantity'] <= 0 ) {
+                $_POST['ivole_attach_image_quantity'] = 1;
+            }
+        }
+        // make sure that there the maximum size of attached image is larger than zero
+        if( !empty( $_POST ) && isset( $_POST['ivole_attach_image_size'] ) ) {
+            if( $_POST['ivole_attach_image_size'] <= 0 ) {
+                $_POST['ivole_attach_image_size'] = 1;
+            }
+        }
+
+        //removing spaces
+        if( !empty( $_POST ) && isset( $_POST['ivole_verified_owner'] ) ) {
+            $_POST['ivole_verified_owner'] = trim($_POST['ivole_verified_owner']);
+        }
 
         WC_Admin_Settings::save_fields( $this->settings );
     }
@@ -214,6 +219,14 @@ and this leads to two lightboxes shown after clicking on an image attached to a 
                 'id'      => 'ivole_reviews_nobranding',
                 'default' => 'yes',
                 'type'    => 'checkbox'
+            ),
+            array(
+                'title'    => __( 'Verified Owner', IVOLE_TEXT_DOMAIN ),
+                'type'     => 'text',
+                'desc'     => __( 'Replace the standard ‘verified owner’ label that WooCommerce adds to customer reviews with a custom one. If this field is blank, the standard WooCommerce label will be used.', IVOLE_TEXT_DOMAIN ),
+                'default'  => '',
+                'id'       => 'ivole_verified_owner',
+                'desc_tip' => true
             ),
             array(
                 'type' => 'sectionend',

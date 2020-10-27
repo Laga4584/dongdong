@@ -109,6 +109,9 @@ class Ivole_Email {
 	 * Trigger version 2.
 	 */
 	public function trigger2( $order_id, $to = null, $schedule = false ) {
+		if ( ! Ivole::is_curl_installed() ) {
+				return array( 100, __( 'Error: cURL library is missing on the server.', IVOLE_TEXT_DOMAIN ) );
+		}
 		$this->find['customer-first-name']  = '{customer_first_name}';
 		$this->find['customer-name'] = '{customer_name}';
 		$this->find['order-id'] = '{order_id}';
@@ -331,7 +334,7 @@ class Ivole_Email {
 			 		'date' => $order_date,
 					'currency' => $order_currency,
 					'country' => $shipping_country,
-				 	'items' => Ivole_Email::get_order_items2( $order ) ),
+				 	'items' => Ivole_Email::get_order_items2( $order, $order_currency ) ),
 				'callback' => array( //'url' => get_option( 'home' ) . '/wp-json/ivole/v1/review',
 					'url' => $callback_url,
 					'key' => $secret_key ),
@@ -552,7 +555,7 @@ class Ivole_Email {
 		return $temp;
 	}
 
-	public static function get_order_items2( $order ) {
+	public static function get_order_items2( $order, $currency = '' ) {
 		// read options
 		$enabled_for = get_option( 'ivole_enable_for', 'all' );
 		$enabled_categories = get_option( 'ivole_enabled_categories', array() );
@@ -625,6 +628,29 @@ class Ivole_Email {
 					$wpml_current_language = get_post_meta( $order->get_id(), 'wpml_language', true );
 					$translated_product_id = apply_filters( 'translate_object_id', $item['product_id'], 'product', true, $wpml_current_language );
 					$q_name = get_the_title( $translated_product_id );
+					// WPML Multi-currency
+					if ( $currency ) {
+						$price_per_item_changed = false;
+						if( get_post_meta( $item['product_id'], '_wcml_custom_prices_status', true ) ) {
+							$price_per_item_currency = get_post_meta( $item['product_id'], '_price_' . strtoupper( $currency ), true );
+							if( $price_per_item_currency ) {
+								$price_per_item = floatval( $price_per_item_currency );
+								$price_per_item_changed = true;
+							}
+						} else {
+							if( has_filter( 'wcml_raw_price_amount' ) ) {
+								$price_per_item = apply_filters( 'wcml_raw_price_amount', floatval( $prod_temp->get_price() ), $currency );
+								$price_per_item_changed = true;
+							}
+						}
+						if( $price_per_item_changed ) {
+							if( $inc_tax ) {
+								$price_per_item = floatval( wc_get_price_including_tax( $prod_temp, array( 'qty' => 1, 'price' => $price_per_item ) ) );
+							} else {
+								$price_per_item = floatval( wc_get_price_excluding_tax( $prod_temp, array( 'qty' => 1, 'price' => $price_per_item ) ) );
+							}
+						}
+					}
 				}
 
 				// Polylang integration

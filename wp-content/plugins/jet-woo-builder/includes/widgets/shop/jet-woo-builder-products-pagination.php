@@ -31,7 +31,7 @@ class Jet_Woo_Builder_Products_Pagination extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-29';
+		return 'jet-woo-builder-icon-shop-pagination';
 	}
 
 	public function get_script_depends() {
@@ -61,8 +61,9 @@ class Jet_Woo_Builder_Products_Pagination extends Jet_Woo_Builder_Base {
 		$this->add_control(
 			'info_notice',
 			array(
-				'type' => Controls_Manager::RAW_HTML,
-				'raw'  => esc_html__( 'Works only with main Query object.', 'jet-woo-builder' )
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => esc_html__( 'Works only with main Query object.', 'jet-woo-builder' ),
+				'content_classes' => 'elementor-descriptor elementor-panel-alert elementor-panel-alert-info',
 			)
 		);
 		$this->add_control(
@@ -346,17 +347,6 @@ class Jet_Woo_Builder_Products_Pagination extends Jet_Woo_Builder_Base {
 		);
 		$this->end_controls_tab();
 		$this->end_controls_tabs();
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			array(
-				'name'     => 'items_typography',
-				'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
-				'selector' => '{{WRAPPER}} .jet-woo-builder-shop-pagination .page-numbers',
-				'exclude'  => array(
-					'text_decoration'
-				)
-			)
-		);
 		$this->add_responsive_control(
 			'items_min_width',
 			array(
@@ -376,6 +366,18 @@ class Jet_Woo_Builder_Products_Pagination extends Jet_Woo_Builder_Base {
 				'selectors'  => array(
 					'{{WRAPPER}} .jet-woo-builder-shop-pagination .page-numbers' => 'min-width: {{SIZE}}{{UNIT}};',
 				),
+				'separator'  => 'before',
+			)
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'items_typography',
+				'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
+				'selector' => '{{WRAPPER}} .jet-woo-builder-shop-pagination .page-numbers',
+				'exclude'  => array(
+					'text_decoration'
+				)
 			)
 		);
 		$this->add_responsive_control(
@@ -535,6 +537,7 @@ class Jet_Woo_Builder_Products_Pagination extends Jet_Woo_Builder_Base {
 				'selectors'  => array(
 					'{{WRAPPER}} .jet-woo-builder-shop-pagination a.page-numbers .jet-woo-builder-shop-pagination__arrow' => 'font-size: {{SIZE}}{{UNIT}};',
 				),
+				'separator'  => 'before',
 			)
 		);
 		$this->add_responsive_control(
@@ -780,6 +783,7 @@ class Jet_Woo_Builder_Products_Pagination extends Jet_Woo_Builder_Base {
 					'{{WRAPPER}} .jet-woo-builder-shop-pagination .page-numbers.prev' => 'min-width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .jet-woo-builder-shop-pagination .page-numbers.next' => 'min-width: {{SIZE}}{{UNIT}};',
 				),
+				'separator'  => 'before',
 			)
 		);
 		$this->add_responsive_control(

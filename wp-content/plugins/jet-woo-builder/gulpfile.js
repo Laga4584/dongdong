@@ -83,6 +83,51 @@ gulp.task('css-editor', () => {
 		.pipe(notify('Compile Sass Done!'));
 });
 
+gulp.task('css-template-styles', () => {
+	return gulp.src('./assets/scss/template-styles.scss')
+		.pipe(
+			plumber( {
+				errorHandler: function ( error ) {
+					console.log('=================ERROR=================');
+					console.log(error.message);
+					this.emit( 'end' );
+				}
+			})
+		)
+		.pipe(sass( sassSettings ))
+		.pipe(autoprefixer({
+			browsers: ['last 10 versions'],
+			cascade: false
+		}))
+
+		.pipe(rename('template-styles.css'))
+		.pipe(gulp.dest('./assets/css/'))
+		.pipe(notify('Compile Sass Done!'));
+});
+
+//css-icons
+gulp.task( 'css-icons', () => {
+	return gulp.src( './assets/scss/jet-woo-builder-icons.scss' )
+		.pipe(
+			plumber( {
+				errorHandler: function( error ) {
+					console.log( '=================ERROR=================' );
+					console.log( error.message );
+					this.emit( 'end' );
+				}
+			} )
+		)
+		.pipe( sass( sassSettings ) )
+		.pipe( autoprefixer( {
+			browsers: ['last 10 versions'],
+			cascade:  false
+		} ) )
+
+		.pipe( rename( 'jet-woo-builder-icons.css' ) )
+		.pipe( gulp.dest( './assets/css/' ) )
+		.pipe( notify( 'Compile Sass Done!' ) );
+} );
+
 // Minify JS
 gulp.task( 'frontend-js-minify', function() {
 	return gulp.src( './assets/js/jet-woo-builder.js' )
@@ -102,10 +147,32 @@ gulp.task( 'admin-js-minify', function() {
 
 //watch
 gulp.task('watch', () => {
-	gulp.watch( './assets/scss/**', gulp.series( ...[ 'css-frontend', 'css-admin', 'css-editor' ] ) );
+	gulp.watch( './assets/scss/**', gulp.series( ...[ 'css-frontend', 'css-admin', 'css-editor', 'css-template-styles', 'css-icons' ] ) );
 
 	gulp.watch( './assets/js/jet-woo-builder-admin.js', gulp.series( 'frontend-js-minify' ) );
 	gulp.watch( './assets/js/jet-woo-builder-admin.js', gulp.series( 'admin-js-minify' ) );
 });
 
-
+gulp.task( 'checktextdomain', () => {
+	return gulp.src( ['**/*.php', '!cherry-framework/**/*.php'] )
+		.pipe( checktextdomain( {
+			text_domain: 'jet-woo-builder',
+			keywords:    [
+				'__:1,2d',
+				'_e:1,2d',
+				'_x:1,2c,3d',
+				'esc_html__:1,2d',
+				'esc_html_e:1,2d',
+				'esc_html_x:1,2c,3d',
+				'esc_attr__:1,2d',
+				'esc_attr_e:1,2d',
+				'esc_attr_x:1,2c,3d',
+				'_ex:1,2c,3d',
+				'_n:1,2,4d',
+				'_nx:1,2,4c,5d',
+				'_n_noop:1,2,3d',
+				'_nx_noop:1,2,3c,4d',
+				'translate_nooped_plural:1,2c,3d'
+			]
+		} ) );
+} );

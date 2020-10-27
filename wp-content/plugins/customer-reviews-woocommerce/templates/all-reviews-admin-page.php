@@ -4,7 +4,7 @@
     if ( $post_id ) {
         /* translators: %s: link to post */
         printf(
-            __( 'Reviews for &#8220;%s&#8221;', IVOLE_TEXT_DOMAIN ),
+            __( 'Reviews for &#8220;%s&#8221;', 'customer-reviews-woocommerce' ),
             sprintf(
                 '<a href="%1$s">%2$s</a>',
                 get_edit_post_link( $post_id ),
@@ -12,7 +12,7 @@
             )
         );
     } else {
-        _e( 'All Reviews', IVOLE_TEXT_DOMAIN );
+        _e( 'All Reviews', 'customer-reviews-woocommerce' );
     }
     ?>
     </h1>
@@ -22,7 +22,7 @@
         echo '<span class="subtitle">';
         /* translators: %s: search keywords */
         printf(
-            __( 'Search results for &#8220;%s&#8221;', IVOLE_TEXT_DOMAIN ),
+            __( 'Search results for &#8220;%s&#8221;', 'customer-reviews-woocommerce' ),
             wp_html_excerpt( esc_html( wp_unslash( $_REQUEST['s'] ) ), 50, '&hellip;' )
         );
         echo '</span>';
@@ -38,10 +38,10 @@
 
         switch ( $error ) {
             case 1:
-                $error_msg = __( 'Invalid Review ID.', IVOLE_TEXT_DOMAIN );
+                $error_msg = __( 'Invalid Review ID.', 'customer-reviews-woocommerce' );
                 break;
             case 2:
-                $error_msg = __( 'Sorry, you are not allowed to edit reviews for this product.', IVOLE_TEXT_DOMAIN );
+                $error_msg = __( 'Sorry, you are not allowed to edit reviews for this product.', 'customer-reviews-woocommerce' );
                 break;
         }
 
@@ -95,13 +95,13 @@
             if ( $same > 0 && $comment = get_comment( $same ) ) {
                 switch ( $comment->comment_approved ) {
                     case '1':
-                        $messages[] = __( 'This review is already approved.' ) . ' <a href="' . esc_url( admin_url( "comment.php?action=editcomment&c=$same" ) ) . '">' . __( 'Edit Review', IVOLE_TEXT_DOMAIN ) . '</a>';
+                        $messages[] = __( 'This review is already approved.' ) . ' <a href="' . esc_url( admin_url( "comment.php?action=editcomment&c=$same" ) ) . '">' . __( 'Edit Review', 'customer-reviews-woocommerce' ) . '</a>';
                         break;
                     case 'trash':
                         $messages[] = __( 'This review is already in the Trash.' ) . ' <a href="' . esc_url( admin_url( 'admin.php?page=ivole-reviews&comment_status=trash' ) ) . '"> ' . __( 'View Trash' ) . '</a>';
                         break;
                     case 'spam':
-                        $messages[] = __( 'This review is already marked as spam.' ) . ' <a href="' . esc_url( admin_url( "comment.php?action=editcomment&c=$same" ) ) . '">' . __( 'Edit Review', IVOLE_TEXT_DOMAIN ) . '</a>';
+                        $messages[] = __( 'This review is already marked as spam.' ) . ' <a href="' . esc_url( admin_url( "comment.php?action=editcomment&c=$same" ) ) . '">' . __( 'Edit Review', 'customer-reviews-woocommerce' ) . '</a>';
                         break;
                 }
             }
@@ -114,7 +114,7 @@
     <?php $list_table->views(); ?>
 
     <form id="comments-form" method="get">
-        <?php $list_table->search_box( __( 'Search Reviews', IVOLE_TEXT_DOMAIN ), 'comment' ); ?>
+        <?php $list_table->search_box( __( 'Search Reviews', 'customer-reviews-woocommerce' ), 'comment' ); ?>
         <input type="hidden" name="post_type" value="product" />
         <input type="hidden" name="page" value="ivole-reviews" />
         <?php if ( $post_id ) : ?>

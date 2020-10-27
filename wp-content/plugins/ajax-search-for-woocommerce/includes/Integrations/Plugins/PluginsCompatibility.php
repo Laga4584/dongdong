@@ -15,10 +15,12 @@ class PluginsCompatibility {
 	 */
 	private function loadCompatibilities() {
 
-		$direcories = glob( DGWT_WCAS_DIR . 'includes/Integrations/Plugins/*', GLOB_ONLYDIR );
+		$directories = glob( DGWT_WCAS_DIR . 'includes/Integrations/Plugins/*', GLOB_ONLYDIR );
 
-		if ( ! empty( $direcories ) && is_array( $direcories ) ) {
-			foreach ( $direcories as $dir ) {
+		$directories = apply_filters('dgwt/wcas/plugins_compatibility/directories', $directories);
+
+		if ( ! empty( $directories ) && is_array( $directories ) ) {
+			foreach ( $directories as $dir ) {
 				$name     = str_replace( DGWT_WCAS_DIR . 'includes/Integrations/Plugins/', '', $dir );
 				$filename = $name . '.php';
 

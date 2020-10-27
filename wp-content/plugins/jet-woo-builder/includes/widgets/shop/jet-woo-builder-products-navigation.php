@@ -31,7 +31,7 @@ class Jet_Woo_Builder_Products_Navigation extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-28';
+		return 'jet-woo-builder-icon-shop-navigation';
 	}
 
 	public function get_script_depends() {
@@ -61,8 +61,9 @@ class Jet_Woo_Builder_Products_Navigation extends Jet_Woo_Builder_Base {
 		$this->add_control(
 			'info_notice',
 			array(
-				'type' => Controls_Manager::RAW_HTML,
-				'raw'  => esc_html__( 'Works only with main Query object.', 'jet-woo-builder' )
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => esc_html__( 'Works only with main Query object.', 'jet-woo-builder' ),
+				'content_classes' => 'elementor-descriptor elementor-panel-alert elementor-panel-alert-info',
 			)
 		);
 		$this->add_control(

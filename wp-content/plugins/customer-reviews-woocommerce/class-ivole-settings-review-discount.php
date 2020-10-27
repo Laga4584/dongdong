@@ -66,6 +66,14 @@ class Ivole_Review_Discount_Settings {
 
     public function save() {
         $this->init_settings();
+
+        if( ! empty( $_POST ) && isset( $_POST['ivole_email_body_coupon'] ) ) {
+		    if( empty( preg_replace( '#\s#isUu', '', html_entity_decode( $_POST['ivole_email_body_coupon'] ) ) ) ) {
+			    WC_Admin_Settings::add_error( __( '\'Email Body\' field cannot be empty', IVOLE_TEXT_DOMAIN ) );
+			    $_POST['ivole_email_body_coupon'] = get_option( 'ivole_email_body_coupon' );
+		    }
+	    }
+
         WC_Admin_Settings::save_fields( $this->settings );
     }
 

@@ -32,7 +32,7 @@ class Jet_Woo_Taxonomy_Tiles extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-18';
+		return 'jet-woo-builder-icon-taxonomy-tiles';
 	}
 
 	public function get_jet_help_url() {
@@ -387,7 +387,7 @@ class Jet_Woo_Taxonomy_Tiles extends Jet_Woo_Builder_Base {
 		$this->add_control(
 			'title_html_tag',
 			array(
-				'label'     => esc_html__( 'Title HTML Tag', 'jet-cw' ),
+				'label'     => esc_html__( 'Title HTML Tag', 'jet-woo-builder' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'h5',
 				'options'   => jet_woo_builder_tools()->get_available_title_html_tags(),

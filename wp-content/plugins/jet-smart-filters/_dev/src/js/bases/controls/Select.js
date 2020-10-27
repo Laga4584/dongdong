@@ -47,7 +47,7 @@ export default class SelectControl extends Filter {
 			return;
 
 		$(document).ready(function () {
-			if (this.filterGroup.currentQuery[this.queryKey])
+			if (this.filterGroup && this.filterGroup.currentQuery && this.filterGroup.currentQuery[this.queryKey])
 				return;
 
 			setTimeout(() => {

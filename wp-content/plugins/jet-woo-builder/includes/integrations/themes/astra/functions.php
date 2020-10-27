@@ -1,9 +1,14 @@
 <?php
 /**
- * Avada integration
+ * Astra integration
  */
 
 add_action( 'jet-smart-filters/providers/woocommerce-archive/before-ajax-content', 'jet_woo_astra_compatibility', 1 );
+
+if ( 'yes' === jet_woo_builder_shop_settings()->get( 'custom_checkout_page' ) ) {
+	add_filter( 'astra_woo_shop_product_structure_override', 'jet_woo_astra_structure_override', 1 );
+}
+
 
 function jet_woo_astra_compatibility(){
 
@@ -20,4 +25,10 @@ function jet_woo_astra_compatibility(){
 		remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
 	}
 
+}
+
+function jet_woo_astra_structure_override( $override ) {
+	$override = true;
+
+	return $override;
 }

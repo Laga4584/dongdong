@@ -33,8 +33,9 @@ class Module extends Module_Base {
 			'content_position',
 			[
 				'selectors' => [
-					'{{WRAPPER}}.elementor-column .elementor-column-wrap' => 'align-items: {{VALUE}}',
-					'{{WRAPPER}}.elementor-column .elementor-column-wrap .elementor-widget-wrap' => 'align-items: {{VALUE}}',
+					'{{WRAPPER}}.elementor-column .elementor-column-wrap' => 'align-items: {{VALUE}}', // Elementor 2.
+					'{{WRAPPER}}.elementor-column .elementor-column-wrap .elementor-widget-wrap' => 'align-items: {{VALUE}}', // Elementor 2.
+					'{{WRAPPER}}.elementor-column .elementor-widget-wrap' => 'align-items: {{VALUE}}', // Elementor 3.
 				],
 			]
 		);

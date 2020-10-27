@@ -633,8 +633,9 @@ if ( ! class_exists( 'Jet_Smart_Filters_Post_Type' ) ) {
 					'title'   => __( 'Get min/max dynamically', 'jet-smart-filters' ),
 					'type'    => 'select',
 					'options' => apply_filters( 'jet-smart-filters/range/source-callbacks', array(
-						0                              => __( 'Select...', 'jet-smart-filters' ),
-						'jet_smart_filters_woo_prices' => __( 'WooCommerce min/max prices', 'jet-smart-filters' ),
+						0                               => __( 'Select...', 'jet-smart-filters' ),
+						'jet_smart_filters_woo_prices'  => __( 'WooCommerce min/max prices', 'jet-smart-filters' ),
+						'jet_smart_filters_meta_values' => __( 'Get from query meta key', 'jet-smart-filters' ),
 					) ),
 					'element' => 'control',
 					'conditions' => array(

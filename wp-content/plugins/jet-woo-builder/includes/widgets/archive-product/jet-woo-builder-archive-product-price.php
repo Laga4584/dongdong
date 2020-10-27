@@ -26,7 +26,7 @@ class Jet_Woo_Builder_Archive_Product_Price extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-7';
+		return 'jet-woo-builder-icon-price';
 	}
 
 	public function get_help_url() {

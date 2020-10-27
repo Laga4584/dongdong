@@ -10,9 +10,10 @@ require_once(ABSPATH . 'wp-admin/includes/image.php');
 
 if ( ! class_exists( 'Ivole_Reviews' ) ) :
 
-	require_once('class-ivole-email.php');
-	require_once('class-cr-custom-questions.php');
-	require_once('class-ivole-trust-badge.php');
+	require_once( 'class-ivole-email.php' );
+	require_once( 'class-cr-custom-questions.php' );
+	require_once( 'class-ivole-trust-badge.php' );
+	require_once( 'class-cr-floating-trust-badge.php' );
 
 	class Ivole_Reviews {
 
@@ -90,6 +91,9 @@ if ( ! class_exists( 'Ivole_Reviews' ) ) :
 				} elseif ( ( version_compare( WC()->version, "2.5", ">=" ) ) ) {
 					add_action( 'woocommerce_review_before_comment_text', array( $this, 'display_verified_badge' ), 10 );
 				}
+			}
+			if( 'yes' === $this->ivole_reviews_verified && 'yes' === get_option( 'ivole_trust_badge_floating', 'no' ) && ! is_admin() ) {
+				new CR_Floating_Trust_Badge();
 			}
 			add_action( 'woocommerce_review_before_comment_text', array( $this, 'display_custom_questions' ), 11 );
 			add_action( 'woocommerce_review_meta', array( $this, 'cusrev_review_meta' ), 9, 1 );

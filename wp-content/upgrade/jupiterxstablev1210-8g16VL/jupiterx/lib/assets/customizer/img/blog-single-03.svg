@@ -1,0 +1,40 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="90px" height="90px" viewBox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F8F8F8;}
+	.st1{fill:#BFBFBF;}
+	.st2{fill:#989898;}
+	.st3{fill:#B9B2EE;}
+	.st4{fill:#948EEA;}
+	.st5{fill:#D3D0F9;}
+</style>
+<g>
+	<path class="st0" d="M86.1,90H3.9C1.7,90,0,88.3,0,86.1V3.9C0,1.7,1.7,0,3.9,0h82.3C88.3,0,90,1.7,90,3.9v82.3
+		C90,88.3,88.3,90,86.1,90z"/>
+	<g>
+		<rect x="30.7" y="53.2" class="st1" width="33.6" height="2"/>
+		<rect x="30.7" y="57.2" class="st1" width="33.6" height="2"/>
+		<rect x="30.7" y="61.2" class="st1" width="33.6" height="2"/>
+		<rect x="30.7" y="65.2" class="st1" width="33.6" height="2"/>
+		<rect x="30.7" y="69.2" class="st1" width="33.6" height="2"/>
+		<rect x="30.7" y="73.2" class="st1" width="33.6" height="2"/>
+		<rect x="30.7" y="77.2" class="st1" width="21.9" height="2"/>
+	</g>
+	<g>
+		<rect x="30.7" y="38.6" class="st2" width="44.3" height="4"/>
+		<rect x="30.7" y="44.6" class="st2" width="19.4" height="4"/>
+	</g>
+	<g>
+		<rect x="12.6" y="38.9" class="st2" width="11" height="1.3"/>
+		<rect x="12.6" y="42.5" class="st2" width="11" height="1.3"/>
+		<rect x="12.6" y="46.2" class="st2" width="11" height="1.3"/>
+		<rect x="12.6" y="49.8" class="st2" width="11" height="1.3"/>
+	</g>
+	<g>
+		<path class="st3" d="M75.7,34H14.3c-0.7,0-1.3-0.4-1.3-1V6c0-0.6,0.6-1,1.3-1h61.4C76.4,5,77,5.4,77,6v27C77,33.6,76.4,34,75.7,34
+			z"/>
+		<path class="st4" d="M46.6,23.9l-6.9-5.4L13,30.4V33c0,0.6,0.6,1,1.3,1h61.4c0.7,0,1.3-0.4,1.3-1V9.2L46.6,23.9z"/>
+		<circle class="st5" cx="21.5" cy="13" r="3"/>
+	</g>
+</g>
+</svg>

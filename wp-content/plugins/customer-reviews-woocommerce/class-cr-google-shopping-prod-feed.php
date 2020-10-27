@@ -177,6 +177,20 @@ class CR_Google_Shopping_Prod_Feed {
 			$xml_writer->text( $review->price );
 			$xml_writer->endElement();
 
+			// <unit_​​pricing_​​measure>
+            if( $review->unit_pricing_measure ) {
+                $xml_writer->startElement( 'g:unit_pricing_measure' );
+                $xml_writer->text( $review->unit_pricing_measure );
+                $xml_writer->endElement();
+            }
+
+            // <unit_pricing_base_measure>
+            if( $review->unit_pricing_base_measure ) {
+                $xml_writer->startElement( 'g:unit_pricing_base_measure' );
+                $xml_writer->text( $review->unit_pricing_base_measure );
+                $xml_writer->endElement();
+            }
+
 			// <gtin>
 			if( $review->gtin ) {
 				$xml_writer->startElement( 'g:gtin' );
@@ -337,6 +351,16 @@ class CR_Google_Shopping_Prod_Feed {
 			}
 			$_product->availability = $product->is_in_stock() ? 'in stock' : 'out of stock';
 			$_product->price = $product->get_price() . ' ' . get_woocommerce_currency();
+
+            $_product->unit_pricing_measure = '';
+            $unit_product = CR_Google_Shopping_Prod_Feed::get_field( 'meta__unit_product', $product );
+            $unit = CR_Google_Shopping_Prod_Feed::get_field( 'meta__unit', $product );
+            if(!empty($unit_product)) $_product->unit_pricing_measure = $unit_product." ".$unit;
+
+            $_product->unit_pricing_base_measure = '';
+            $unit_base = CR_Google_Shopping_Prod_Feed::get_field( 'meta__unit_base', $product );
+            if(!empty($unit_base)) $_product->unit_pricing_base_measure = $unit_base." ".$unit;
+
 			$_product->gtin = '';
 			if( is_array( $identifiers ) && isset( $identifiers['gtin'] ) ) {
 				$_product->gtin = CR_Google_Shopping_Prod_Feed::get_field( $identifiers['gtin'], $product );

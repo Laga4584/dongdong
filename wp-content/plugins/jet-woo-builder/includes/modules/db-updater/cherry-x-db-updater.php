@@ -80,9 +80,9 @@ if ( ! class_exists( 'CX_Db_Updater' ) ) {
 			add_action( 'admin_init',    array( $this, 'do_update' ) );
 
 			$this->messages = array(
-				'error'   => esc_html__( 'Module DB Updater init error in %s - version and slug is required arguments', 'cherry-x-framework' ),
-				'update'  => esc_html__( 'We need to update your database to the latest version.', 'cherry-x-framework' ),
-				'updated' => esc_html__( 'Update complete, thank you for updating to the latest version!', 'cherry-x-framework' ),
+				'error'   => esc_html__( 'Module DB Updater init error in %s - version and slug is required arguments', 'jet-woo-builder' ),
+				'update'  => esc_html__( 'We need to update your database to the latest version.', 'jet-woo-builder' ),
+				'updated' => esc_html__( 'Update complete, thank you for updating to the latest version!', 'jet-woo-builder' ),
 			);
 
 		}
@@ -277,7 +277,7 @@ if ( ! class_exists( 'CX_Db_Updater' ) ) {
 		private function notice_submit( $slug = '' ) {
 
 			$format = '<a href="%1s" class="button button-primary">%2$s</a>';
-			$label  = esc_html__( 'Start Update', 'cherry-x-framework' );
+			$label  = esc_html__( 'Start Update', 'jet-woo-builder' );
 			$url    = add_query_arg(
 				array(
 					'cherry_x_db_update' => true,
@@ -314,7 +314,7 @@ if ( ! class_exists( 'CX_Db_Updater' ) ) {
 			$name = str_replace( '-', ' ', $slug );
 			$name = ucwords( $name );
 
-			printf( '<strong>%1$s %2$s</strong> &#8211; ', $name, esc_html__( 'Data Update', 'cherry-x-framework' ) );
+			printf( '<strong>%1$s %2$s</strong> &#8211; ', $name, esc_html__( 'Data Update', 'jet-woo-builder' ) );
 		}
 
 		/**

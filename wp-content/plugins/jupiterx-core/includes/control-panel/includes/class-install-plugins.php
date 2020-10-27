@@ -106,7 +106,7 @@ class JupiterX_Control_Panel_Install_Plugins {
 			}
 		}
 
-		return $plugins_list;
+		return apply_filters( 'jupiterx_cp_plugins', $plugins_list );
 	}
 
 	/**

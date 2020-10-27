@@ -26,7 +26,7 @@ class Jet_Woo_Builder_Archive_Add_To_Cart extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-1';
+		return 'jet-woo-builder-icon-add-to-cart';
 	}
 
 	public function get_jet_help_url() {
@@ -208,7 +208,7 @@ class Jet_Woo_Builder_Archive_Add_To_Cart extends Jet_Woo_Builder_Base {
 				'label'     => esc_html__( 'Text Color', 'jet-woo-builder' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} ' . $css_scheme['button'] . '.disabled' => 'color: {{VALUE}};',
+					'{{WRAPPER}} ' . $css_scheme['button'] . '.added' => 'color: {{VALUE}};',
 				),
 			)
 		);
@@ -219,7 +219,7 @@ class Jet_Woo_Builder_Archive_Add_To_Cart extends Jet_Woo_Builder_Base {
 				'label'     => esc_html__( 'Background Color', 'jet-woo-builder' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} ' . $css_scheme['button'] . '.disabled' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} ' . $css_scheme['button'] . '.added' => 'background-color: {{VALUE}};',
 				),
 			)
 		);

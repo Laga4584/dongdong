@@ -173,6 +173,70 @@ if ( ! class_exists( 'Jet_Woo_Builder_Settings' ) ) {
 				$default_shop_product_active_widgets[ $slug ] = 'true';
 			}
 
+			$cart_available_widgets = [];
+			$default_cart_active_widgets = [];
+
+			foreach ( glob( jet_woo_builder()->plugin_path( 'includes/widgets/cart/' ) . '*.php' ) as $file ) {
+				$data = get_file_data( $file, array( 'class'=>'Class', 'name' => 'Name', 'slug'=>'Slug' ) );
+
+				$slug = basename( $file, '.php' );
+
+				$cart_available_widgets[] = array(
+					'label' => $data['name'],
+					'value' => $slug,
+				);
+
+				$default_cart_active_widgets[ $slug ] = 'true';
+			}
+
+			$checkout_available_widgets = [];
+			$default_checkout_active_widgets = [];
+
+			foreach ( glob( jet_woo_builder()->plugin_path( 'includes/widgets/checkout/' ) . '*.php' ) as $file ) {
+				$data = get_file_data( $file, array( 'class'=>'Class', 'name' => 'Name', 'slug'=>'Slug' ) );
+
+				$slug = basename( $file, '.php' );
+
+				$checkout_available_widgets[] = array(
+					'label' => $data['name'],
+					'value' => $slug,
+				);
+
+				$default_checkout_active_widgets[ $slug ] = 'true';
+			}
+
+			$thankyou_available_widgets = [];
+			$default_thankyou_active_widgets = [];
+
+			foreach ( glob( jet_woo_builder()->plugin_path( 'includes/widgets/thankyou/' ) . '*.php' ) as $file ) {
+				$data = get_file_data( $file, array( 'class'=>'Class', 'name' => 'Name', 'slug'=>'Slug' ) );
+
+				$slug = basename( $file, '.php' );
+
+				$thankyou_available_widgets[] = array(
+					'label' => $data['name'],
+					'value' => $slug,
+				);
+
+				$default_thankyou_active_widgets[ $slug ] = 'true';
+			}
+
+			$myaccount_available_widgets = [];
+			$default_myaccount_active_widgets = [];
+
+			foreach ( glob( jet_woo_builder()->plugin_path( 'includes/widgets/myaccount/' ) . '*.php' ) as $file ) {
+				$data = get_file_data( $file, array( 'class'=>'Class', 'name' => 'Name', 'slug'=>'Slug' ) );
+
+				$slug = basename( $file, '.php' );
+
+				$myaccount_available_widgets[] = array(
+					'label' => $data['name'],
+					'value' => $slug,
+				);
+
+				$default_myaccount_active_widgets[ $slug ] = 'true';
+			}
+
 			$product_thumb_effect_options = array(
 				array(
 					'label' => esc_html__( 'Slide Left', 'jet-woo-builder' ),
@@ -229,12 +293,31 @@ if ( ! class_exists( 'Jet_Woo_Builder_Settings' ) ) {
 						'value'   => $this->get( 'shop_product_available_widgets', $default_shop_product_active_widgets ),
 						'options' => $shop_product_available_widgets,
 					),
+					'cart_available_widgets' => array(
+						'value'   => $this->get( 'cart_available_widgets', $default_cart_active_widgets ),
+						'options' => $cart_available_widgets,
+					),
+					'checkout_available_widgets' => array(
+						'value'   => $this->get( 'checkout_available_widgets', $default_checkout_active_widgets ),
+						'options' => $checkout_available_widgets,
+					),
+					'thankyou_available_widgets' => array(
+						'value'   => $this->get( 'thankyou_available_widgets', $default_thankyou_active_widgets ),
+						'options' => $thankyou_available_widgets,
+					),
+					'myaccount_available_widgets' => array(
+						'value'   => $this->get( 'myaccount_available_widgets', $default_myaccount_active_widgets ),
+						'options' => $myaccount_available_widgets,
+					),
 					'enable_product_thumb_effect' => array(
 						'value' => $this->get( 'enable_product_thumb_effect' ),
 					),
 					'product_thumb_effect' => array(
 						'value'   => $this->get( 'product_thumb_effect', 'slide-left' ),
 						'options' => $product_thumb_effect_options,
+					),
+					'enable_custom_templates_styles' => array(
+						'value' => $this->get( 'enable_custom_templates_styles' ),
 					),
 				),
 			);

@@ -81,6 +81,13 @@ class Ivole {
 			}
 		}
 	}
-}
 
-?>
+	/**
+	 * Check installation cURL php extension
+	 * @return bool
+	 */
+	public static function is_curl_installed()
+	{
+		return in_array  ('curl', get_loaded_extensions() );
+	}
+}

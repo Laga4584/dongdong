@@ -1,4 +1,10 @@
 jQuery(document).ready(function($) {
+  // Initial resize all items in [cusrev_reviews_grid]
+  resizeAllGridItems();
+  // Resize all items in [cusrev_reviews_grid] on window resize
+  jQuery(window).resize(function () {
+    resizeAllGridItems();
+  });
   //enable attachment of images to comments
   jQuery('form#commentform').attr( "enctype", "multipart/form-data" ).attr( "encoding", "multipart/form-data" );
   //prevent review submission if captcha is not solved
@@ -327,29 +333,51 @@ jQuery(document).ready(function($) {
       $this.parent().append('<div style="color: #cd2653;text-align: center;display: block;">'+response.responseText+'</div>');
     });
   });
+  jQuery('#cr_floatingtrustbadge_front').click(function(){
+    if( !jQuery(this).hasClass( 'cr-floatingbadge-big' ) ) {
+      jQuery(this).find('img.cr_floatingtrustbadge_small').hide();
+      jQuery(this).find('a.cr_floatingtrustbadge_big').css( 'display', 'block' );
+      jQuery(this).find('div.cr-floatingbadge-close').css( 'display', 'block' );
+      jQuery(this).addClass( 'cr-floatingbadge-big' );
+      //update colors
+      var crcolors = jQuery(this).data('crcolors');
+      if (typeof crcolors !== 'undefined') {
+        jQuery(this).css( 'border-color', crcolors['big']['border'] );
+        jQuery(this).find('div.cr-floatingbadge-background-top').css( 'background-color', crcolors['big']['top'] );
+        jQuery(this).find('div.cr-floatingbadge-background-middle').css( 'background-color', crcolors['big']['middle'] );
+        jQuery(this).find('div.cr-floatingbadge-background-bottom').css( 'background-color', crcolors['big']['bottom'] );
+        jQuery(this).find('div.cr-floatingbadge-background-bottom').css( 'border-color', crcolors['big']['border'] );
+      }
+    }
+  });
+  jQuery('#cr_floatingtrustbadge_front .cr-floatingbadge-close').click(function(event){
+    jQuery(this).closest('#cr_floatingtrustbadge_front').find('a.cr_floatingtrustbadge_big').hide();
+    jQuery(this).closest('#cr_floatingtrustbadge_front').find('img.cr_floatingtrustbadge_small').css( 'display', 'block' );
+    jQuery(this).hide();
+    jQuery(this).closest('#cr_floatingtrustbadge_front').removeClass( 'cr-floatingbadge-big' );
+    //update colors
+    var crcolors = jQuery(this).closest('#cr_floatingtrustbadge_front').data('crcolors');
+    if (typeof crcolors !== 'undefined') {
+      jQuery(this).closest('#cr_floatingtrustbadge_front').css( 'border-color', crcolors['small']['border'] );
+      jQuery(this).closest('#cr_floatingtrustbadge_front').find('div.cr-floatingbadge-background-top').css( 'background-color', crcolors['small']['top'] );
+      jQuery(this).closest('#cr_floatingtrustbadge_front').find('div.cr-floatingbadge-background-middle').css( 'background-color', crcolors['small']['middle'] );
+      jQuery(this).closest('#cr_floatingtrustbadge_front').find('div.cr-floatingbadge-background-bottom').css( 'background-color', crcolors['small']['bottom'] );
+      jQuery(this).closest('#cr_floatingtrustbadge_front').find('div.cr-floatingbadge-background-bottom').css( 'border-color', crcolors['small']['border'] );
+    }
+    event.stopPropagation();
+  });
 });
 
-function resizeGridItem(item){
-    grid = jQuery(item).parents(".ivole-reviews-grid-inner")[0];
-    rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-    rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-    rowSpan = Math.ceil((item.querySelector('.ivole-review-card-content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-    //add margin
-    rowSpan += 5;
-    item.style.gridRowEnd = "span "+rowSpan;
-}
-
 function resizeAllGridItems(){
-    allItems = document.getElementsByClassName("ivole-review-card");
-    for(x=0;x<allItems.length;x++){
-        resizeGridItem(allItems[x]);
-    }
+    jQuery('.ivole-reviews-grid-inner > .ivole-review-card').each(function() {
+      let $parent = jQuery( this ).parent();
+      if($parent.width() < 600 && !$parent.hasClass("cr-single-column")){
+        $parent.addClass("cr-single-column");
+      }
+      let rowHeight = parseInt( $parent.css('grid-auto-rows') );
+      let rowGap = parseInt( $parent.css('grid-row-gap') );
+      let rowSpan = Math.ceil( ( jQuery( this ).find('.ivole-review-card-content').height() + rowGap ) / ( rowHeight + rowGap ) );
+      rowSpan += 5;
+      jQuery( this ).css( 'gridRowEnd', 'span ' + rowSpan );
+    });
 }
-
-function resizeInstance(instance){
-    item = instance.elements[0];
-    resizeGridItem(item);
-}
-
-window.onload = resizeAllGridItems();
-window.addEventListener("resize", resizeAllGridItems);

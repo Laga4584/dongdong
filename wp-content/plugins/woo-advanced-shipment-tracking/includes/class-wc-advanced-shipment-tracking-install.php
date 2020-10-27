@@ -93,14 +93,31 @@ class WC_Advanced_Shipment_Tracking_Install {
 			$this->update_shipping_providers();
 			
 			update_option( 'wc_advanced_shipment_tracking', '3.14');	
-		}			
+		}
+		
+		$wc_ast_default_mark_shipped = get_option('wc_ast_default_mark_shipped');
+		if($wc_ast_default_mark_shipped == ''){
+			update_option('wc_ast_default_mark_shipped',1);
+		}
+		
+		$wc_ast_unclude_tracking_info = get_option('wc_ast_unclude_tracking_info');
+		if(empty($wc_ast_unclude_tracking_info)){	
+			$data_array = array('completed' => 1);
+			update_option( 'wc_ast_unclude_tracking_info', $data_array );	
+		}
+
+		$wc_ast_show_orders_actions = get_option('wc_ast_show_orders_actions');
+		if(empty($wc_ast_show_orders_actions)){	
+			$data_array = array('processing' => 1,'completed' => 1);
+			update_option( 'wc_ast_show_orders_actions', $data_array );	
+		}		
 	}		
 	
 	/*
 	* database update
 	*/
 	public function update_database_check(){					
-		if ( is_admin() ){						
+		if ( is_admin() ){					
 			
 			if(version_compare(get_option( 'wc_advanced_shipment_tracking' ),'1.2', '<') ){							
 				global $wpdb;
@@ -389,7 +406,7 @@ class WC_Advanced_Shipment_Tracking_Install {
 				$data_array = array('processing' => 1,'completed' => 1,'partial-shipped' => 1);				
 				update_option( 'wc_ast_show_orders_actions', $data_array );	
 				update_option( 'wc_advanced_shipment_tracking', '3.17');					
-			}
+			}						
 		}
 	}
 	

@@ -94,6 +94,13 @@ class Sober {
 		if ( $this->canReplaceSearch() ) {
 			$this->applyCSS();
 
+			add_filter( 'dgwt/wcas/form/magnifier_ico', function ( $html, $class ) {
+				if ( $class === 'dgwt-wcas-ico-magnifier-handler' ) {
+					$html = '<svg class="dgwt-wcas-ico-magnifier-handler" viewBox="0 0 20 20" id="search"><circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="8.35" cy="8.35" r="6.5"></circle><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M12.945 12.945l5.205 5.205"></path></svg>';
+				}
+				return $html;
+			}, 10, 2 );
+
 			require_once DGWT_WCAS_DIR . 'partials/themes/sober.php';
 		}
 	}

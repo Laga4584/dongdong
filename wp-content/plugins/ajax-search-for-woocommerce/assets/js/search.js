@@ -289,7 +289,7 @@
             .replace(/&lt;sup/g, '<sup')
             .replace(/&lt;\/sup/g, '</sup')
             .replace(/sup&gt;/g, 'sup>')
-            .replace(/&lt;(\/?(strong|b))&gt;/g, '<$1>');
+            .replace(/&lt;(\/?(strong|b|br))&gt;/g, '<$1>');
 
     }
 
@@ -404,7 +404,7 @@
 				var that = utils.getActiveInstance();
 				that.hide();
 				that.clear(false);
-				$(this).removeClass(that.options.closeTrigger);
+				that.hideCloseButton();
 				$(this).closest('.' + that.options.searchFormClass).find('.' + that.options.searchInputClass).val('').focus();
 			});
 
@@ -490,12 +490,22 @@
                 }
             });
 
+            var alreadyClicked = false;
             // Redirect to the new URL after click a suggestions
             $(document).on('click.autocomplete', suggestionSelector, function () {
-                var that = utils.getActiveInstance();
-				that.actionTriggerSource = 'click';
-                that.select($(this).data('index'));
+            	if(!alreadyClicked) {
+					var that = utils.getActiveInstance();
+					that.actionTriggerSource = 'click';
+					alreadyClicked = true;
+					that.select($(this).data('index'));
+				}
             });
+            // Support for touchpads
+			$(document).on('mousedown.autocomplete', suggestionSelector, function (e) {
+				if(typeof e.which === 'number' && e.which === 1) {
+					$(e.target)[0].click();
+				}
+			});
 
             // Clear timeout - onBlur usage
             $(document).on('click.autocomplete', '.' + that.options.containerClass, function () {
@@ -731,7 +741,7 @@
                 var $searchForm = that.getFormWrapper();
                 $searchForm.removeClass('dgwt-wcas-processing');
                 that.preloader('hide', 'form', 'dgwt-wcas-inner-preloader');
-                that.preloader('show', 'form', options.closeTrigger);
+                that.showCloseButton();
             };
 
             this.options = options;
@@ -1123,7 +1133,7 @@
             }
 
             if (query.length < options.minChars) {
-                $('.' + that.options.closeTrigger).removeClass(that.options.closeTrigger);
+                that.hideCloseButton();
                 that.hide();
             } else {
                 that.getSuggestions(query);
@@ -1653,11 +1663,7 @@
 
 			if (typeof clear == 'boolean' && clear) {
 
-				$formWrapper.find('.' + that.options.searchInputClass).val('');
-				var $close = $formWrapper.find('.' + that.options.closeTrigger);
-				if ($close.length) {
-					$close.removeClass(that.options.closeTrigger);
-				}
+				that.hideCloseButton();
 
 				that.currentValue = '';
 				that.suggestions = [];
@@ -2091,8 +2097,12 @@
             if (detailsBox !== true) {
                 if (action === 'hide') {
                     container.removeClass(cssClass);
+					container.html('');
                 } else {
                     container.addClass(cssClass);
+                    if(typeof dgwt_wcas.preloader_icon == 'string'){
+						container.html(dgwt_wcas.preloader_icon);
+					}
                 }
                 return;
             }
@@ -2274,10 +2284,14 @@
                 onSelectCallback = that.options.onSelect,
                 suggestion = that.suggestions[index];
 
-			if ((typeof suggestion.type != 'undefined' && suggestion.type === 'more_products')
-				|| (that.actionTriggerSource === 'enter' && that.latestActivateSource != 'key')) {
-				that.el.closest('form').trigger('submit');
-				return;
+			if (typeof suggestion.type != 'undefined') {
+				if (
+					suggestion.type === 'more_products'
+					|| (that.actionTriggerSource === 'enter' && that.latestActivateSource != 'key' && suggestion.type != 'product_variation')
+				) {
+					that.el.closest('form').trigger('submit');
+					return;
+				}
 			}
 
             that.currentValue = that.getValue(suggestion.value);
@@ -2341,10 +2355,15 @@
             $('html').addClass('dgwt-wcas-overlay-mobile-on');
             html += '<div class="js-dgwt-wcas-overlay-mobile dgwt-wcas-overlay-mobile">';
             html += '<div class="dgwt-wcas-om-bar js-dgwt-wcas-om-bar">';
-            html += '<span class="dgwt-wcas-om-return js-dgwt-wcas-om-return">';
-            html += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" color="#FFF">';
-            html += '<path fill="#FFF" d="M14 6.125H3.351l4.891-4.891L7 0 0 7l7 7 1.234-1.234L3.35 7.875H14z" fill-rule="evenodd"></path>';
-            html += '</svg>';
+            html += '<span class="dgwt-wcas-om-return js-dgwt-wcas-om-return">'
+			if (typeof dgwt_wcas.back_icon == 'string') {
+				html += dgwt_wcas.back_icon;
+			} else {
+				/* TODO Remove it soon */
+				html += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" color="#FFF">';
+				html += '<path fill="#FFF" d="M14 6.125H3.351l4.891-4.891L7 0 0 7l7 7 1.234-1.234L3.35 7.875H14z" fill-rule="evenodd"></path>';
+				html += '</svg>';
+			}
             html += '</span>';
             html += '</div>';
             html += '</div>';
@@ -2404,6 +2423,24 @@
 
             that.overlayMobileState = 'off';
         },
+		showCloseButton: function(){
+			var that = this,
+				iconBody = typeof dgwt_wcas.close_icon != 'undefined' ? dgwt_wcas.close_icon : '',
+				$actionsEl = that.getFormWrapper().find('.' + that.options.preloaderClass);
+
+			$actionsEl.addClass(that.options.closeTrigger);
+			$actionsEl.html(iconBody);
+
+		},
+		hideCloseButton: function () {
+			var that = this,
+				$btn = that.getFormWrapper().find('.' + that.options.closeTrigger);
+
+			if ($btn.length) {
+				$btn.removeClass(that.options.closeTrigger);
+				$btn.html('');
+			}
+		},
         elementOrParentIsFixed: function ($element) {
 
             var $checkElements = $element.add($element.parents());

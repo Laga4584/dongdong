@@ -47,7 +47,7 @@ class Filters {
 	 */
 	private function excludeHidenProducts() {
 		add_filter( 'dgwt/wcas/tnt/search_results/ids', function ( $ids ) {
-			if ( is_array( $this->visible_products ) ) {
+			if ( !empty($this->visible_products) && is_array( $this->visible_products ) ) {
 				$ids = array_intersect( $ids, $this->visible_products );
 			}
 

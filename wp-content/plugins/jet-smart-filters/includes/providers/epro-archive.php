@@ -149,13 +149,29 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_EPro_Archive' ) ) {
 		 */
 		public function store_default_query( $query ) {
 
-			jet_smart_filters()->query->store_provider_default_query( $this->get_id(), array(
-				'post_type'         => ! empty( $query['post_type'] ) ? $query['post_type'] : 'post',
-				'tax_query'         => ! empty( $query['tax_query'] ) ? $query['tax_query'] : array(),
+			$default_query = array(
 				'paged'             => ! empty( $query['paged'] ) ? $query['paged'] : 1,
 				'posts_per_page'    => ! empty( $query['posts_per_page'] ) ? $query['posts_per_page'] : 10,
-				'category_name'     => ! empty( $query['category_name'] ) ? $query['category_name'] : '',
-			) );
+			);
+
+			if ( ! empty( $query['post_type'] ) ) {
+				$default_query['post_type'] = $query['post_type'];
+			}
+
+			if ( ! empty( $query['category_name'] ) ) {
+				$default_query['category_name'] = $query['category_name'];
+			}
+
+			if ( ! empty( $query['tag'] ) ) {
+				$default_query['tag'] = $query['tag'];
+			}
+
+			if ( ! empty( $query['taxonomy'] ) && ! empty( $query['term'] ) ) {
+				$default_query['taxonomy'] = $query['taxonomy'];
+				$default_query['term'] = $query['term'];
+			}
+
+			jet_smart_filters()->query->store_provider_default_query( $this->get_id(), $default_query );
 
 			$query['jet_smart_filters'] = jet_smart_filters()->query->encode_provider_data( $this->get_id() );
 

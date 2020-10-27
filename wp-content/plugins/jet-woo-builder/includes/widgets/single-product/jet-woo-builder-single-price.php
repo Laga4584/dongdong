@@ -32,7 +32,7 @@ class Jet_Woo_Builder_Single_Price extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-7';
+		return 'jet-woo-builder-icon-price';
 	}
 
 	public function get_jet_help_url() {

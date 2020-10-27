@@ -198,12 +198,14 @@ class Nav_Menu extends Base_Widget {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'layout',
 			[
 				'label' => __( 'Layout', 'raven' ),
 				'type' => 'select',
 				'default' => 'horizontal',
+				'tablet_default' => 'horizontal',
+				'mobile_default' => 'horizontal',
 				'options' => [
 					'horizontal' => __( 'Horizontal', 'raven' ),
 					'vertical' => __( 'Vertical', 'raven' ),
@@ -318,6 +320,7 @@ class Nav_Menu extends Base_Widget {
 				'type' => 'select',
 				'default' => 'mobile',
 				'options' => [
+					'' => __( 'None', 'raven' ),
 					'desktop' => __( 'Desktop & Laptop', 'raven' ),
 					'tablet' => __( 'Tablet', 'raven' ),
 					'mobile' => __( 'Mobile', 'raven' ),
@@ -2247,6 +2250,8 @@ class Nav_Menu extends Base_Widget {
 		$this->add_render_attribute( 'menu', 'class', [
 			'raven-nav-menu-main',
 			'raven-nav-menu-' . $settings['layout'],
+			'raven-nav-menu-tablet-' . $settings['layout_tablet'],
+			'raven-nav-menu-mobile-' . $settings['layout_mobile'],
 		] );
 
 		if ( 'yes' === $settings['logo'] ) {

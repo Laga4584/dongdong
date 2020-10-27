@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * 1. WooCommerce Brands 1.6.9 by WooCommerce
  * 2. YITH WooCommerce Brands Add-on 1.3.3 by YITH
  * 3. Perfect WooCommerce Brands 1.8.3 by Alberto de Vera Sevilla
+ * 4. Martfury Addons 2.2.2 by drfuri.com
  */
 class Brands {
 	/**

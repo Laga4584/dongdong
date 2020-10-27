@@ -3,7 +3,7 @@ Contributors: ivole
 Tags: woocommerce, review plugin, review reminder, customer reviews, review for discount
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 3.127
+Stable tag: 3.130
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -230,6 +230,18 @@ If you would like to change how reviews are sorted on product pages, it is possi
 
 == Changelog ==
 
+= 3.130 =
+* New feature: compatibility with WPML Multi-currency
+* New feature: a new (compact) version of trust badges
+* Bug fixes and minor improvements
+= 3.129 =
+* New feature: support of 'unit_​​pricing_​​measure' and 'unit_​​pricing_​​base_​​measure' attributes in XML product feed for Google Shopping
+* New feature: an option to customize the default WooCommerce 'verified owner' label on reviews
+* New feature: an option to choose placement of a floating trust badge on a page (left or right)
+* Bug fixes and minor improvements
+= 3.128 =
+* New feature: a floating trust badge
+* Bug fixes and minor improvements
 = 3.127 =
 * Bug fixes and minor improvements
 = 3.126 =

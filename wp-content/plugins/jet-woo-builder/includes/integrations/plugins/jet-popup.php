@@ -627,16 +627,16 @@ if ( ! class_exists( 'Jet_Woo_Builder_Popup_Package' ) ) {
 					'default'   => 'center',
 					'options'   => array(
 						'flex-start' => array(
-							'title' => esc_html__( 'Left', 'jet-woo-builder' ),
-							'icon'  => 'fa fa-align-left',
+							'title' => esc_html__( 'Start', 'jet-woo-builder' ),
+							'icon'  => ! is_rtl() ? 'eicon-h-align-left' : 'eicon-h-align-right',
 						),
 						'center'     => array(
 							'title' => esc_html__( 'Center', 'jet-woo-builder' ),
 							'icon'  => 'fa fa-align-center',
 						),
 						'flex-end'   => array(
-							'title' => esc_html__( 'Right', 'jet-woo-builder' ),
-							'icon'  => 'fa fa-align-right',
+							'title' => esc_html__( 'End', 'jet-woo-builder' ),
+							'icon'  => ! is_rtl() ? 'eicon-h-align-right' : 'eicon-h-align-left',
 						),
 					),
 					'selectors' => array(

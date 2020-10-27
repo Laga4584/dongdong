@@ -6,7 +6,7 @@ export default class SelectHierarchical {
 
 	filters = [];
 
-	constructor($container) {
+	constructor ($container) {
 		const $filters = $container.find('.jet-select');
 
 		$filters.each(index => {
@@ -18,6 +18,11 @@ export default class SelectHierarchical {
 			filter.depth = index;
 
 			this.filters.push(filter);
+
+			// overwrite processData method
+			filter.processData = () => {
+				this.hierarchicalFilterProcessData(filter);
+			}
 		});
 
 		this.isHierarchy = true;
@@ -25,6 +30,7 @@ export default class SelectHierarchical {
 		this.lastFilter = this.filters[this.filters.length - 1];
 		this.filterId = this.lastFilter.filterId;
 		this.isReloadType = this.lastFilter.isReloadType;
+		this.isSingleTaxonomy = this.filters.every(filter => { return filter.queryKey === this.filters[0].queryKey });
 
 		// if reload type
 		if (this.isReloadType) {
@@ -58,6 +64,25 @@ export default class SelectHierarchical {
 			if (filters[this.filterId])
 				this.updateHierarchyLevels(filters[this.filterId]);
 		});
+	}
+
+	hierarchicalFilterProcessData(filter) {
+		filter.dataValue = filter.$selected.val();
+
+		// get hierarchical chain if same taxonomies
+		if (this.isSingleTaxonomy && filter.depth) {
+			const hierarchicalСhain = [];
+
+			this.filters.forEach(currentFilter => {
+				currentFilter.hierarchicalСhain = false;
+			});
+
+			for (let index = 0; index < filter.depth; index++)
+				hierarchicalСhain.push(this.filters[index].data);
+
+			if (hierarchicalСhain.length)
+				filter.hierarchicalСhain = hierarchicalСhain.join();
+		}
 	}
 
 	getNextHierarchyLevels(filter) {

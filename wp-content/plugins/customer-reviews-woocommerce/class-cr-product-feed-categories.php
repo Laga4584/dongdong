@@ -69,7 +69,7 @@ class CR_Categories_Product_Feed {
     }
 
     public function register_tab( $tabs ) {
-        $tabs[$this->tab] = __( 'Categories', IVOLE_TEXT_DOMAIN );
+        $tabs[$this->tab] = __( 'Categories', 'customer-reviews-woocommerce' );
         return $tabs;
     }
 
@@ -121,10 +121,10 @@ class CR_Categories_Product_Feed {
     protected function init_settings() {
       $this->settings = array(
         array(
-            'title' => __( 'Product Categories', IVOLE_TEXT_DOMAIN ),
+            'title' => __( 'Product Categories', 'customer-reviews-woocommerce' ),
             'type'  => 'title',
             'desc'  => __( 'Specify mapping of WooCommerce product categories to Google Shopping product categories. The full list of Google Shopping product categories can be found <a href="' .
-              plugins_url( $this->google_categories_path, __FILE__ ) . '" target="_blank">here</a><img src="' . untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/img/external-link.png' .'" class="cr-product-feed-categories-ext-icon">.', IVOLE_TEXT_DOMAIN ),
+              plugins_url( $this->google_categories_path, __FILE__ ) . '" target="_blank">here</a><img src="' . untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/img/external-link.png' .'" class="cr-product-feed-categories-ext-icon">.', 'customer-reviews-woocommerce' ),
             'id'    => 'cr_categories'
         ),
         array(
@@ -184,26 +184,26 @@ class CR_Categories_Product_Feed {
             		<tr>
             			<th class="cr-product-feed-categories-th">
                     <?php
-                    esc_html_e( 'Product Category', IVOLE_TEXT_DOMAIN );
-                    echo Ivole_Admin::ivole_wc_help_tip( __( 'Product category in WooCommerce', IVOLE_TEXT_DOMAIN ) );
+                    esc_html_e( 'Product Category', 'customer-reviews-woocommerce' );
+                    echo Ivole_Admin::ivole_wc_help_tip( __( 'Product category in WooCommerce', 'customer-reviews-woocommerce' ) );
                     ?>
                   </th>
             			<th class="cr-product-feed-categories-th" style="width:150px;">
                     <?php
-                    esc_html_e( 'Product Count', IVOLE_TEXT_DOMAIN );
-                    echo Ivole_Admin::ivole_wc_help_tip( __( 'Number of products in a category', IVOLE_TEXT_DOMAIN ) );
+                    esc_html_e( 'Product Count', 'customer-reviews-woocommerce' );
+                    echo Ivole_Admin::ivole_wc_help_tip( __( 'Number of products in a category', 'customer-reviews-woocommerce' ) );
                     ?>
                   </th>
             			<th class="cr-product-feed-categories-th" style="width:100px;">
                     <?php
-                    esc_html_e( 'Exclude', IVOLE_TEXT_DOMAIN );
-                    echo Ivole_Admin::ivole_wc_help_tip( __( 'Exclude a category of products from the Product Feed', IVOLE_TEXT_DOMAIN ) );
+                    esc_html_e( 'Exclude', 'customer-reviews-woocommerce' );
+                    echo Ivole_Admin::ivole_wc_help_tip( __( 'Exclude a category of products from the Product Feed', 'customer-reviews-woocommerce' ) );
                     ?>
                   </th>
             			<th class="cr-product-feed-categories-th" style="width:300px;">
                     <?php
-                    esc_html_e( 'Google Shopping Category', IVOLE_TEXT_DOMAIN );
-                    echo Ivole_Admin::ivole_wc_help_tip( __( 'Product category from Google Shopping product taxonomy', IVOLE_TEXT_DOMAIN ) );
+                    esc_html_e( 'Google Shopping Category', 'customer-reviews-woocommerce' );
+                    echo Ivole_Admin::ivole_wc_help_tip( __( 'Product category from Google Shopping product taxonomy', 'customer-reviews-woocommerce' ) );
                     ?>
                   </th>
             		</tr>
@@ -229,7 +229,7 @@ class CR_Categories_Product_Feed {
     		<?php
       } else {
         echo '<div style="background:#FF4136;padding:10px;20px;font-weight:bold;margin-top:30px;margin-bottom:30px;">';
-        _e( 'No product categories found', IVOLE_TEXT_DOMAIN );
+        _e( 'No product categories found', 'customer-reviews-woocommerce' );
         echo '</div>';
       }
   	}

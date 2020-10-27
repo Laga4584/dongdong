@@ -162,8 +162,13 @@ if ( ! class_exists( 'Jet_Smart_Filters_Hierarchy' ) ) {
 				$args['filter_label']    = ! empty( $level['label'] ) ? $level['label'] : '';
 				$args['show_label']      = ! empty( $this->args['show_label'] ) ? $this->args['show_label'] : '';
 				$args['display_options'] = ! empty( $this->args['display_options'] ) ? $this->args['display_options'] : array();
+
 				if ( ! empty( $_REQUEST['hc'] ) ) {
-					$args['current_value'] = ! empty( $_REQUEST['hc'][$level['depth']] ) ? $_REQUEST['hc'][$level['depth']] : '';
+					$hierarchical_chain = explode( ',', $_REQUEST['hc'] );
+
+					if ( ! empty( $hierarchical_chain[$level['depth']] ) ) {
+						$args['current_value'] = $hierarchical_chain[$level['depth']];
+					}
 				}
 
 				if ( false === $this->depth ) {

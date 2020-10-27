@@ -84,6 +84,7 @@ class Search
                     10,
                     2
                 );
+                $this->BasicAuthBypass();
             }
         
         } );
@@ -310,6 +311,8 @@ class Search
             '.',
             ''
         ) . ' sec';
+        $output['engine'] = 'free';
+        $output['v'] = DGWT_WCAS_VERSION;
         echo  json_encode( apply_filters( 'dgwt/wcas/search_results/output', $output ) ) ;
         die;
     }
@@ -771,23 +774,23 @@ class Search
     /**
      * Prepare suggestions based on groups
      *
-     * @return void
+     * @return array
      */
     public function convertGroupsToSuggestions()
     {
-        $this->suggestions = array();
+        $suggestions = array();
         $totalHeadlines = 0;
         foreach ( $this->groups as $key => $group ) {
             
             if ( !empty($group['results']) ) {
                 
                 if ( $this->showHeadings ) {
-                    $this->suggestions[] = $this->headlineBody( $key );
+                    $suggestions[] = $this->headlineBody( $key );
                     $totalHeadlines++;
                 }
                 
                 foreach ( $group['results'] as $result ) {
-                    $this->suggestions[] = $result;
+                    $suggestions[] = $result;
                 }
             }
         
@@ -797,10 +800,10 @@ class Search
         if ( $totalHeadlines === 1 ) {
             $i = 0;
             $unset = false;
-            foreach ( $this->suggestions as $key => $suggestion ) {
+            foreach ( $suggestions as $key => $suggestion ) {
                 
                 if ( !empty($suggestion['type']) && $suggestion['type'] === 'headline' && $suggestion['value'] === 'product' ) {
-                    unset( $this->suggestions[$i] );
+                    unset( $suggestions[$i] );
                     $unset = true;
                     break;
                 }
@@ -808,11 +811,11 @@ class Search
                 $i++;
             }
             if ( $unset ) {
-                $this->suggestions = array_values( $this->suggestions );
+                $suggestions = array_values( $suggestions );
             }
         }
         
-        return $this->suggestions;
+        return $suggestions;
     }
     
     /**
@@ -852,6 +855,29 @@ class Search
             return $this->postsIDsBuffer;
         }
         return $postsIDs;
+    }
+    
+    /**
+     * Basic Auth bypass when retrieving search results from a native engine.
+     *
+     * @return void
+     */
+    public function BasicAuthBypass()
+    {
+        $authorization = Helpers::getBasicAuthHeader();
+        if ( $authorization ) {
+            add_filter(
+                'http_request_args',
+                function ( $r, $url ) {
+                if ( strpos( $url, \WC_AJAX::get_endpoint( DGWT_WCAS_SEARCH_ACTION ) ) !== false ) {
+                    $r['headers']['Authorization'] = Helpers::getBasicAuthHeader();
+                }
+                return $r;
+            },
+                10,
+                2
+            );
+        }
     }
 
 }

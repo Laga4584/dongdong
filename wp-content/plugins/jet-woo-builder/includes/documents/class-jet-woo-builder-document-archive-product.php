@@ -24,6 +24,10 @@ class Jet_Woo_Builder_Archive_Document_Product extends Jet_Woo_Builder_Document_
 		return __( 'Jet Woo Archive Template', 'jet-woo-builder' );
 	}
 
+	public function get_css_wrapper_selector() {
+		return '.jet-woo-builder-layout-' . $this->get_main_id();
+	}
+
 	/**
 	 * @since 2.0.0
 	 * @access protected
@@ -86,8 +90,8 @@ class Jet_Woo_Builder_Archive_Document_Product extends Jet_Woo_Builder_Document_
 					'unit' => 'px',
 				),
 				'selectors'  => array(
-					'.woocommerce {{WRAPPER}} ' . '.products.jet-woo-builder-products--columns .product:not(.product-category)' => 'padding-left: calc({{SIZE}}{{UNIT}}/2); padding-right: calc({{SIZE}}{{UNIT}}/2);',
-					'.woocommerce {{WRAPPER}} ' . '.products.jet-woo-builder-products--columns'                                 => 'margin-left: calc(-{{SIZE}}{{UNIT}}/2); margin-right: calc(-{{SIZE}}{{UNIT}}/2);',
+					'.woocommerce {{WRAPPER}}' . '.products.jet-woo-builder-products--columns .product:not(.product-category)' => 'padding-left: calc({{SIZE}}{{UNIT}}/2); padding-right: calc({{SIZE}}{{UNIT}}/2);',
+					'.woocommerce {{WRAPPER}}' . '.products.jet-woo-builder-products--columns'                                 => 'margin-left: calc(-{{SIZE}}{{UNIT}}/2); margin-right: calc(-{{SIZE}}{{UNIT}}/2);',
 				),
 				'condition'  => array(
 					'use_custom_template_columns' => 'yes'
@@ -114,7 +118,7 @@ class Jet_Woo_Builder_Archive_Document_Product extends Jet_Woo_Builder_Document_
 					'unit' => 'px',
 				),
 				'selectors'  => array(
-					'.woocommerce {{WRAPPER}} ' . '.products.jet-woo-builder-products--columns .product:not(.product-category)' => 'margin-bottom: {{SIZE}}{{UNIT}}!important;',
+					'.woocommerce {{WRAPPER}}' . '.products.jet-woo-builder-products--columns .product:not(.product-category)' => 'margin-bottom: {{SIZE}}{{UNIT}}!important;',
 				),
 				'condition'  => array(
 					'use_custom_template_columns' => 'yes'

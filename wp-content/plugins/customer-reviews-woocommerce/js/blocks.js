@@ -69,6 +69,10 @@
 												{
 													label: __( 'Wide', 'customer-reviews-woocommerce' ),
 													value: 'wide'
+												},
+												{
+													label: __( 'Compact', 'customer-reviews-woocommerce' ),
+													value: 'compact'
 												}
 											],
 											onChange: function( size ) {
@@ -443,7 +447,8 @@
 
 				if (jQuery(".ivole-reviews-grid").length) {
 
-					blockLoaded = true;
+					if(jQuery('.is-selected[data-type="ivole/cusrev-reviews-grid"] .ivole-reviews-grid').length) blockLoaded = true;
+					if(jQuery('[data-type="ivole/cusrev-reviews-grid"]').length === jQuery('[data-type="ivole/cusrev-reviews-grid"] .ivole-reviews-grid').length) blockLoaded = true;
 
 					if (typeof resizeAllGridItems === "function") {
 						resizeAllGridItems();

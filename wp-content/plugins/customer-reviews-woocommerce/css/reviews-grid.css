@@ -16,7 +16,9 @@
     grid-template-columns: repeat(auto-fill, minmax(32%,1fr));
     grid-auto-rows: 0;
 }
-
+.ivole-reviews-grid-inner.cr-single-column{
+    grid-template-columns: repeat(auto-fill, minmax(99%,1fr));
+}
 .cr-reviews-slider{
 	padding: 15px 0px;
 	opacity: 0;
@@ -293,15 +295,14 @@ img.ivole-verified-badge-ext-icon {
     -webkit-tap-highlight-color: transparent;
 }
 
-.slick-list
+.cr-reviews-slider .slick-list
 {
     position: relative;
-
     display: block;
     overflow: hidden;
-
     margin: 0;
     padding: 0;
+		opacity: 1;
 }
 .slick-list:focus
 {
@@ -514,15 +515,23 @@ img.ivole-verified-badge-ext-icon {
 .cr-reviews-slider .slick-dots li
 {
     position: relative;
-
     display: inline-block;
-
     width: 20px;
     height: 20px;
     margin: 0 5px;
     padding: 0;
-
     cursor: pointer;
+}
+#reviews.cr-reviews-ajax-reviews div.cr-ajax-reviews-cus-images-modal div.cr-ajax-reviews-cus-images-slider-nav .slick-dots li
+{
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+		background-color: #f4f4f4;
 }
 .cr-reviews-slider .slick-dots li button
 {

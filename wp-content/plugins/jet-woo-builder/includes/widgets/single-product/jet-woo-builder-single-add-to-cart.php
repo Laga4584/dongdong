@@ -32,7 +32,7 @@ class Jet_Woo_Builder_Single_Add_To_Cart extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-1';
+		return 'jet-woo-builder-icon-add-to-cart';
 	}
 
 	public function get_script_depends() {
@@ -1214,7 +1214,7 @@ class Jet_Woo_Builder_Single_Add_To_Cart extends Jet_Woo_Builder_Base {
 
 		$open_wrap    = '';
 		$close_wrap   = '';
-		$popup_enable = filter_var( $settings['jet_woo_builder_cart_popup'], FILTER_VALIDATE_BOOLEAN );
+		$popup_enable = ! empty( $settings['jet_woo_builder_cart_popup'] ) ? filter_var( $settings['jet_woo_builder_cart_popup'], FILTER_VALIDATE_BOOLEAN ) : false;
 		$popup_id     = ! empty( $settings['jet_woo_builder_cart_popup_template'] ) ? esc_attr( $settings['jet_woo_builder_cart_popup_template'] ) : '';
 
 		if ( $popup_enable ) {

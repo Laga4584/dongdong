@@ -128,16 +128,20 @@ class Kirki_Control_Base extends WP_Customize_Control {
 			'kirkiL10n',
 			array(
 				'isScriptDebug'        => ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ),
-				'noFileSelected'       => esc_attr__( 'No File Selected', 'kirki' ),
-				'remove'               => esc_attr__( 'Remove', 'kirki' ),
-				'default'              => esc_attr__( 'Default', 'kirki' ),
-				'selectFile'           => esc_attr__( 'Select File', 'kirki' ),
-				'standardFonts'        => esc_attr__( 'Standard Fonts', 'kirki' ),
-				'googleFonts'          => esc_attr__( 'Google Fonts', 'kirki' ),
-				'defaultCSSValues'     => esc_attr__( 'CSS Defaults', 'kirki' ),
-				'defaultBrowserFamily' => esc_attr__( 'Default Browser Font-Family', 'kirki' ),
+				'noFileSelected'       => esc_attr__( 'No File Selected', 'jupiterx-core' ),
+				'remove'               => esc_attr__( 'Remove', 'jupiterx-core' ),
+				'default'              => esc_attr__( 'Default', 'jupiterx-core' ),
+				'selectFile'           => esc_attr__( 'Select File', 'jupiterx-core' ),
+				'standardFonts'        => esc_attr__( 'Standard Fonts', 'jupiterx-core' ),
+				'googleFonts'          => esc_attr__( 'Google Fonts', 'jupiterx-core' ),
+				'defaultCSSValues'     => esc_attr__( 'CSS Defaults', 'jupiterx-core' ),
+				'defaultBrowserFamily' => esc_attr__( 'Default Browser Font-Family', 'jupiterx-core' ),
 			)
 		);
+
+		if ( function_exists( 'jupiterx_wpcolorpickeralpha_localize' ) ) {
+			jupiterx_wpcolorpickeralpha_localize();
+		}
 
 		$suffix = str_replace( '.min', '', $suffix );
 		// Enqueue the style.

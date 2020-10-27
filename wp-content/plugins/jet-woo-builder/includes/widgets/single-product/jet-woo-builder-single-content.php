@@ -32,7 +32,7 @@ class Jet_Woo_Builder_Single_Content extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-3';
+		return 'jet-woo-builder-icon-single-content';
 	}
 
 	public function get_script_depends() {
@@ -56,7 +56,7 @@ class Jet_Woo_Builder_Single_Content extends Jet_Woo_Builder_Base {
 		$css_scheme = apply_filters(
 			'jet-woo-builder/jet-single-content/css-scheme',
 			array(
-				'content_wrapper'            => '.jet-woo-builder .jet-single-content'
+				'content_wrapper' => '.jet-woo-builder .jet-single-content'
 			)
 		);
 

@@ -430,9 +430,15 @@ class Breadcrumbs extends Base_Widget {
 
 	private function is_yoast_breadcrumbs_enabled() {
 		$breadcrumbs_enabled = current_theme_supports( 'yoast-seo-breadcrumbs' );
+
 		if ( ! $breadcrumbs_enabled ) {
-			$options             = get_option( 'wpseo_internallinks' );
-			$breadcrumbs_enabled = true === $options['breadcrumbs-enable'];
+			$wpseo_titles = get_option( 'wpseo_titles', [] );
+
+			if ( empty( $wpseo_titles ) ) {
+				return false;
+			}
+
+			return ! empty( $wpseo_titles['breadcrumbs-enable'] );
 		}
 
 		return $breadcrumbs_enabled;

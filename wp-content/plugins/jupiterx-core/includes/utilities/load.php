@@ -12,6 +12,7 @@
  */
 add_action( 'jupiterx_after_load_api', function() {
 	jupiterx_core()->load_files( [
-		'utilities/functions',
+		'utilities/plugins',
+		'utilities/shortcodes',
 	] );
 } );

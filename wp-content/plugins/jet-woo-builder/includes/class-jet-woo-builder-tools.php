@@ -520,15 +520,15 @@ if ( ! class_exists( 'Jet_Woo_Builder_Tools' ) ) {
 		 */
 		public function get_available_title_html_tags() {
 			return array(
-				'h1'   => esc_html__( 'H1', 'jet-elements' ),
-				'h2'   => esc_html__( 'H2', 'jet-elements' ),
-				'h3'   => esc_html__( 'H3', 'jet-elements' ),
-				'h4'   => esc_html__( 'H4', 'jet-elements' ),
-				'h5'   => esc_html__( 'H5', 'jet-elements' ),
-				'h6'   => esc_html__( 'H6', 'jet-elements' ),
-				'div'  => esc_html__( 'div', 'jet-elements' ),
-				'span' => esc_html__( 'span', 'jet-elements' ),
-				'p'    => esc_html__( 'p', 'jet-elements' ),
+				'h1'   => esc_html__( 'H1', 'jet-woo-builder' ),
+				'h2'   => esc_html__( 'H2', 'jet-woo-builder' ),
+				'h3'   => esc_html__( 'H3', 'jet-woo-builder' ),
+				'h4'   => esc_html__( 'H4', 'jet-woo-builder' ),
+				'h5'   => esc_html__( 'H5', 'jet-woo-builder' ),
+				'h6'   => esc_html__( 'H6', 'jet-woo-builder' ),
+				'div'  => esc_html__( 'div', 'jet-woo-builder' ),
+				'span' => esc_html__( 'span', 'jet-woo-builder' ),
+				'p'    => esc_html__( 'p', 'jet-woo-builder' ),
 			);
 		}
 

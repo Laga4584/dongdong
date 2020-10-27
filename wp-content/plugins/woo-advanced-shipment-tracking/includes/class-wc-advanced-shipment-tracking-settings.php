@@ -113,10 +113,6 @@ class WC_Advanced_Shipment_Tracking_Settings {
 			add_filter( 'woocommerce_valid_order_statuses_for_order_again', array( $this, 'add_reorder_button_partial_shipped'), 50, 1 );
 		}				
 		
-		//filter in shipped orders
-		add_filter( 'is_order_shipped', array( $this, "check_tracking_exist" ),10,2);
-		add_filter( 'is_order_shipped', array( $this, "check_order_status" ),5,2);	
-		
 		// Hook for add admin body class in settings page
 		add_filter( 'admin_body_class', array( $this, 'ahipment_tracking_admin_body_class' ) );
 		
@@ -362,65 +358,7 @@ class WC_Advanced_Shipment_Tracking_Settings {
 			$bulk_actions['mark_completed'] = __( 'Change status to shipped', 'woo-advanced-shipment-tracking' );
 		}
 		return $bulk_actions;
-	}
-	
-	/*
-	* tracking number filter
-	* if number not found. return false
-	* if number found. return true
-	*/
-	function check_tracking_exist( $value, $order ){
-		
-		if($value == true){
-				
-			$tracking_items = $order->get_meta( '_wc_shipment_tracking_items', true );
-			if( $tracking_items ){
-				return true;
-			} else {
-				return false;
-			}
-		}
-		return $value;
 	}		
-	
-	/*
-	* If order status is "Updated Tracking" or "Completed" than retrn true else return false
-	*/
-	function check_order_status($value, $order){
-		$order_status  = $order->get_status(); 
-		
-		$all_order_status = wc_get_order_statuses();
-		
-		$default_order_status = array(
-			'wc-pending' => 'Pending payment',
-			'wc-processing' => 'Processing',
-			'wc-on-hold' => 'On hold',
-			'wc-completed' => 'Completed',
-			'wc-delivered' => 'Delivered',
-			'wc-cancelled' => 'Cancelled',
-			'wc-refunded' => 'Refunded',
-			'wc-failed' => 'Failed'			
-		);
-		
-		foreach($default_order_status as $key=>$value){
-			unset($all_order_status[$key]);
-		}
-		
-		$custom_order_status = $all_order_status;
-		
-		foreach($custom_order_status as $key=>$value){
-			unset($custom_order_status[$key]);			
-			$key = str_replace("wc-", "", $key);		
-			$custom_order_status[] = $key;
-		}
-		
-		if($order_status == 'updated-tracking' || $order_status == 'completed' || in_array($order_status, $custom_order_status)){
-			return true;
-		} else {
-			return false;
-		}
-		return $value;				
-	}
 	
 	/*
 	* Add class in admin settings page
@@ -487,67 +425,73 @@ class WC_Advanced_Shipment_Tracking_Settings {
 		?>
 		<div id="" class="trackingpopup_wrapper add_tracking_popup" style="display:none;">
 			<div class="trackingpopup_row">
-				<h3 class="popup_title"><?php _e( 'Add Tracking Number', 'woo-advanced-shipment-tracking'); ?> - #<?php echo $custom_order_number; ?></h2>
-				<form id="add_tracking_number_form" method="POST" class="add_tracking_number_form">					
-					<p class="form-field tracking_number_field">
-						<label for="tracking_number"><?php _e( 'Tracking number:', 'woo-advanced-shipment-tracking'); ?></label></br>
-						<input type="text" class="short" style="" name="tracking_number" id="tracking_number" value="" autocomplete="off"> 
-					</p>
-					<p class="form-field">
-						<label for="tracking_number"><?php _e( 'Shipping Provider:', 'woo-advanced-shipment-tracking'); ?></label></br>
-						<select class="chosen_select" id="tracking_provider" name="tracking_provider" style="width: 100%;max-width:100%;">
-							<option value=""><?php _e( 'Shipping Provider:', 'woo-advanced-shipment-tracking' ); ?></option>
-							<?php 
-								foreach($shippment_countries as $s_c){
-									if($s_c->shipping_country != 'Global'){
-										$country_name = esc_attr( $WC_Countries->countries[$s_c->shipping_country] );
-									} else{
-										$country_name = 'Global';
-									}
-									echo '<optgroup label="' . $country_name . '">';
-										$country = $s_c->shipping_country;				
-										$shippment_providers_by_country = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $woo_shippment_table_name WHERE shipping_country = %s AND display_in_order = 1",$country ) );
-										foreach ( $shippment_providers_by_country as $providers ) {											
-											$selected = ( $default_provider == esc_attr( $providers->ts_slug )  ) ? 'selected' : '';
-											echo '<option value="' . esc_attr( $providers->ts_slug ) . '" '.$selected. '>' . esc_html( $providers->provider_name ) . '</option>';
-										}
-									echo '</optgroup>';	
-								 } ?>
-						</select>
-					</p>					
-					<p class="form-field tracking_product_code_field">
-						<label for="tracking_product_code"><?php _e( 'Product Code:', 'woo-advanced-shipment-tracking'); ?></label></br>
-						<input type="text" class="short" style="" name="tracking_product_code" id="tracking_product_code" value=""> 
-					</p>
-					<p class="form-field date_shipped_field">
-						<label for="date_shipped"><?php _e( 'Date shipped:', 'woo-advanced-shipment-tracking'); ?></label></br>
-						<input type="text" class="date-picker-field" style="" name="date_shipped" id="date_shipped" value="<?php echo date_i18n( __( 'Y-m-d', 'woo-advanced-shipment-tracking' ), current_time( 'timestamp' ) ); ?>" placeholder="<?php echo date_i18n( __( 'Y-m-d', 'woo-advanced-shipment-tracking' ), time() ); ?>">						
-					</p>								
-					<?php
-					
-					do_action("ast_after_tracking_field", $order_id);
-					do_action("ast_tracking_form_between_form", $order_id);
-					
-					if($wc_ast_status_partial_shipped){ ?>
-						<fieldset class="form-field change_order_to_shipped_field">
-							<span><?php _e( 'Mark order as:', 'woo-advanced-shipment-tracking'); ?></span>
-							<ul class="wc-radios">
-								<li><label><input name="change_order_to_shipped" value="change_order_to_shipped" type="checkbox" class="select short mark_shipped_checkbox" <?php if($wc_ast_default_mark_shipped == 1){ echo 'checked'; }?>><?php _e( $shipped_label, 'woo-advanced-shipment-tracking'); ?></label></li>
-								<li><label><input name="change_order_to_shipped" value="change_order_to_partial_shipped" type="checkbox" class="select short mark_shipped_checkbox"><?php _e( 'Partial Shipped', 'woo-advanced-shipment-tracking'); ?></label></li>
-							</ul>
-						</fieldset>		
-					<?php } else{ ?>
-						<p class="form-field change_order_to_shipped_field ">
-							<label for="change_order_to_shipped"><?php echo $change_order_status_label; ?></label>
-							<input type="checkbox" class="checkbox" style="" name="change_order_to_shipped" id="change_order_to_shipped" value="yes" <?php if($wc_ast_default_mark_shipped == 1){ echo 'checked'; }?>> 
+				<div class="popup_header">
+					<h3 class="popup_title"><?php _e( 'Add Tracking - order	', 'woo-advanced-shipment-tracking'); ?> - #<?php echo $custom_order_number; ?></h2>
+					<img src="<?php echo wc_advanced_shipment_tracking()->plugin_dir_url()?>assets/images/ast-logo.png" class="poppup_header_logo">
+					<span class="dashicons dashicons-no-alt popup_close_icon"></span>
+				</div>
+				<div class="popup_body">
+					<form id="add_tracking_number_form" method="POST" class="add_tracking_number_form">					
+						<p class="form-field tracking_number_field">
+							<label for="tracking_number"><?php _e( 'Tracking number:', 'woo-advanced-shipment-tracking'); ?></label></br>
+							<input type="text" class="short" style="" name="tracking_number" id="tracking_number" value="" autocomplete="off"> 
 						</p>
-					<?php }	?>
-					<p class="" style="text-align:left;">		
-						<input type="hidden" name="action" value="add_inline_tracking_number">
-						<input type="hidden" name="order_id" id="order_id" value="<?php echo $order_id; ?>">
-						<input type="submit" name="Submit" value="<?php _e( 'Save Tracking', 'woo-advanced-shipment-tracking'); ?>" class="button-primary btn_green">        
-					</p>			
-				</form>
+						<p class="form-field">
+							<label for="tracking_number"><?php _e( 'Shipping Provider:', 'woo-advanced-shipment-tracking'); ?></label></br>
+							<select class="chosen_select" id="tracking_provider" name="tracking_provider" style="width: 100%;max-width:100%;">
+								<option value=""><?php _e( 'Shipping Provider:', 'woo-advanced-shipment-tracking' ); ?></option>
+								<?php 
+									foreach($shippment_countries as $s_c){
+										if($s_c->shipping_country != 'Global'){
+											$country_name = esc_attr( $WC_Countries->countries[$s_c->shipping_country] );
+										} else{
+											$country_name = 'Global';
+										}
+										echo '<optgroup label="' . $country_name . '">';
+											$country = $s_c->shipping_country;				
+											$shippment_providers_by_country = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $woo_shippment_table_name WHERE shipping_country = %s AND display_in_order = 1",$country ) );
+											foreach ( $shippment_providers_by_country as $providers ) {											
+												$selected = ( $default_provider == esc_attr( $providers->ts_slug )  ) ? 'selected' : '';
+												echo '<option value="' . esc_attr( $providers->ts_slug ) . '" '.$selected. '>' . esc_html( $providers->provider_name ) . '</option>';
+											}
+										echo '</optgroup>';	
+									} ?>
+							</select>
+						</p>					
+						<p class="form-field tracking_product_code_field">
+							<label for="tracking_product_code"><?php _e( 'Product Code:', 'woo-advanced-shipment-tracking'); ?></label></br>
+							<input type="text" class="short" style="" name="tracking_product_code" id="tracking_product_code" value=""> 
+						</p>
+						<p class="form-field date_shipped_field">
+							<label for="date_shipped"><?php _e( 'Date shipped:', 'woo-advanced-shipment-tracking'); ?></label></br>
+							<input type="text" class="date-picker-field" style="" name="date_shipped" id="date_shipped" value="<?php echo date_i18n( __( 'Y-m-d', 'woo-advanced-shipment-tracking' ), current_time( 'timestamp' ) ); ?>" placeholder="<?php echo date_i18n( __( 'Y-m-d', 'woo-advanced-shipment-tracking' ), time() ); ?>">						
+						</p>								
+						<?php
+						
+						do_action("ast_after_tracking_field", $order_id);
+						do_action("ast_tracking_form_between_form", $order_id);
+						
+						if($wc_ast_status_partial_shipped){ ?>
+							<fieldset class="form-field change_order_to_shipped_field">
+								<span><?php _e( 'Mark order as:', 'woo-advanced-shipment-tracking'); ?></span>
+								<ul class="wc-radios">
+									<li><label><input name="change_order_to_shipped" value="change_order_to_shipped" type="checkbox" class="select short mark_shipped_checkbox" <?php if($wc_ast_default_mark_shipped == 1){ echo 'checked'; }?>><?php _e( $shipped_label, 'woo-advanced-shipment-tracking'); ?></label></li>
+									<li><label><input name="change_order_to_shipped" value="change_order_to_partial_shipped" type="checkbox" class="select short mark_shipped_checkbox"><?php _e( 'Partial Shipped', 'woo-advanced-shipment-tracking'); ?></label></li>
+								</ul>
+							</fieldset>		
+						<?php } else{ ?>
+							<p class="form-field change_order_to_shipped_field ">
+								<label for="change_order_to_shipped"><?php echo $change_order_status_label; ?></label>
+								<input type="checkbox" class="checkbox" style="" name="change_order_to_shipped" id="change_order_to_shipped" value="yes" <?php if($wc_ast_default_mark_shipped == 1){ echo 'checked'; }?>> 
+							</p>
+						<?php }	?>
+						<p class="" style="text-align:left;">		
+							<input type="hidden" name="action" value="add_inline_tracking_number">
+							<input type="hidden" name="order_id" id="order_id" value="<?php echo $order_id; ?>">
+							<input type="submit" name="Submit" value="<?php _e( 'Save Tracking', 'woo-advanced-shipment-tracking'); ?>" class="button-primary btn_green">        
+						</p>			
+					</form>
+				</div>								
 			</div>
 			<div class="popupclose"></div>
 		</div>
@@ -689,7 +633,8 @@ class WC_Advanced_Shipment_Tracking_Settings {
 							$data_array = array(
 								'ts_slug' => $ts_slug,
 								'provider_url' => $provider_url,
-								'shipping_country' => $shipping_country,						
+								'shipping_country' => $shipping_country,
+								'trackship_supported' => $trackship_supported,								
 							);
 							$where_array = array(
 								'provider_name' => $provider_name,			

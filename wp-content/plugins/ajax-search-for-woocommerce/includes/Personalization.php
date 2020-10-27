@@ -86,8 +86,16 @@ class Personalization {
 				color: <?php echo sanitize_text_field( $text_input_color ); ?>;
 			}
 
-			.dgwt-wcas-no-submit.dgwt-wcas-search-wrapp .dgwt-wcas-ico-magnifier {
+			.dgwt-wcas-no-submit.dgwt-wcas-search-wrapp .dgwt-wcas-ico-magnifier path,
+			.dgwt-wcas-search-wrapp .dgwt-wcas-close path {
 				fill: <?php echo sanitize_text_field( $text_input_color ); ?>;
+			}
+
+			.dgwt-wcas-loader-circular-path {
+				stroke: <?php echo sanitize_text_field( $text_input_color ); ?>;
+			}
+			.dgwt-wcas-preloader {
+				opacity: 0.6;
 			}
 
 			<?php endif; ?>
@@ -190,6 +198,9 @@ class Personalization {
 			<?php if ( !empty( $preloader_url ) ): ?>
 			.dgwt-wcas-inner-preloader {
 				background-image: url('<?php echo esc_url( $preloader_url ); ?>');
+			}
+			.dgwt-wcas-inner-preloader * {
+				display: none;
 			}
 
 			<?php endif; ?>

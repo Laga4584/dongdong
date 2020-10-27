@@ -158,6 +158,30 @@ if ( ! class_exists( 'Jet_Woo_Builder_Documents' ) ) {
 					'file'  => 'includes/documents/class-jet-woo-builder-document-archive.php',
 					'class' => 'Jet_Woo_Builder_Shop_Document',
 				),
+				'cart'     => array(
+					'slug'  => jet_woo_builder_post_type()->slug() . '-cart',
+					'name'  => __( 'Cart', 'jet-woo-builder' ),
+					'file'  => 'includes/documents/class-jet-woo-builder-document-cart.php',
+					'class' => 'Jet_Woo_Builder_Cart_Document',
+				),
+				'checkout'     => array(
+					'slug'  => jet_woo_builder_post_type()->slug() . '-checkout',
+					'name'  => __( 'Checkout', 'jet-woo-builder' ),
+					'file'  => 'includes/documents/class-jet-woo-builder-document-checkout.php',
+					'class' => 'Jet_Woo_Builder_Checkout_Document',
+				),
+				'thankyou'     => array(
+					'slug'  => jet_woo_builder_post_type()->slug() . '-thankyou',
+					'name'  => __( 'Thank You', 'jet-woo-builder' ),
+					'file'  => 'includes/documents/class-jet-woo-builder-document-thankyou.php',
+					'class' => 'Jet_Woo_Builder_ThankYou_Document',
+				),
+				'myaccount'     => array(
+					'slug'  => jet_woo_builder_post_type()->slug() . '-myaccount',
+					'name'  => __( 'My Account', 'jet-woo-builder' ),
+					'file'  => 'includes/documents/class-jet-woo-builder-document-myaccount.php',
+					'class' => 'Jet_Woo_Builder_MyAccount_Document',
+				),
 			);
 
 		}

@@ -46,7 +46,7 @@ class Multilingual {
 	 * @return bool
 	 */
 	public static function isPolylang() {
-		return class_exists( 'Polylang' ) && class_exists( 'Polylang_Woocommerce' );
+		return did_action( 'pll_init' ) && ( class_exists( 'Polylang_Woocommerce' ) || defined( 'Hyyan_WPI_DIR' ) );
 	}
 
 	/**
@@ -123,6 +123,10 @@ class Multilingual {
 			} else {
 				$currentLang = pll_default_language( 'slug' );
 			}
+		}
+
+		if ( empty( $currentLang ) && ! empty( $_GET['lang'] ) && self::isLangCode( $_GET['lang'] ) ) {
+			$currentLang = $_GET['lang'];
 		}
 
 		return $currentLang;

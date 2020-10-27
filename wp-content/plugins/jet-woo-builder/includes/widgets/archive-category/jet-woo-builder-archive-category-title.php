@@ -26,7 +26,7 @@ class Jet_Woo_Builder_Archive_Category_Title extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-34';
+		return 'jet-woo-builder-icon-category-title';
 	}
 
 	public function get_help_url() {
@@ -72,7 +72,7 @@ class Jet_Woo_Builder_Archive_Category_Title extends Widget_Base {
 		$this->add_control(
 			'title_html_tag',
 			array(
-				'label'     => esc_html__( 'Title HTML Tag', 'jet-cw' ),
+				'label'     => esc_html__( 'Title HTML Tag', 'jet-woo-builder' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'h5',
 				'options'   => jet_woo_builder_tools()->get_available_title_html_tags(),
@@ -121,11 +121,12 @@ class Jet_Woo_Builder_Archive_Category_Title extends Widget_Base {
 		$this->add_control(
 			'archive_category_title_bg_normal',
 			array(
-				'label' => esc_html__( 'Background Color', 'jet-woo-builder' ),
-				'type' => Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Background Color', 'jet-woo-builder' ),
+				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} ' . $css_scheme['title'] => 'background-color: {{VALUE}}',
 				),
+				'separator' => 'after',
 			)
 		);
 
@@ -163,11 +164,12 @@ class Jet_Woo_Builder_Archive_Category_Title extends Widget_Base {
 		$this->add_control(
 			'archive_category_title_border_hover',
 			array(
-				'label' => esc_html__( 'Border Color', 'jet-woo-builder' ),
-				'type' => Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Border Color', 'jet-woo-builder' ),
+				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} ' . $css_scheme['title'] . ':hover' => 'border-color: {{VALUE}}',
 				),
+				'separator' => 'after',
 			)
 		);
 

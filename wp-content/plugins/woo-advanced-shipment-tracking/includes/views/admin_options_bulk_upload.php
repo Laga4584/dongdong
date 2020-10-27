@@ -73,24 +73,33 @@
 							<tbody>								
 								<tr valign="top" class="bulk_upload_status_heading_tr">
 									<td scope="row" class="input_file_cl bulk_upload_status_td" colspan="2">
-										<h2 style="margin-top: 0;"><?php _e('Importing', 'woocommerce'); ?><span class="spinner is-active"></span></h2>	
-										<p><?php _e('Your tracking information are now being imported...', 'woo-advanced-shipment-tracking'); ?></p>												
-									</td>
-								</tr> 
+										<h2><?php _e('Import in Progress', 'woo-advanced-shipment-tracking'); ?><span class="spinner is-active"></span></h2>	
+									</td>																
+								</tr>
+								<tr valign="top" class="bulk_upload_status_overview_tr">
+									<td scope="row" class="bulk_upload_status_overview_td csv_success_msg" colspan="2">
+										<span></span>
+									</td>																
+								</tr>
+								<tr valign="top" class="bulk_upload_status_overview_tr">
+									<td scope="row" class="bulk_upload_status_overview_td csv_fail_msg" colspan="2">
+										<span></span>
+									</td>																
+								</tr>	
 								<tr class="bulk_upload_status_tr">
 									<td scope="row" colspan="2">
 										<div id="p1" class="mdl-progress mdl-js-progress" style=""></div>
-										<h3 class="progress_title" style="display:none;"><?php _e('Upload Progress - ', 'woo-advanced-shipment-tracking'); ?>
-											<span class="progress_number"></span>
-										</h3>
-										<ol class="csv_upload_status">								
-										</ol>
+										<div class="progress2 progress-moved">
+											<div class="progress-bar2" >
+											</div>                       
+										</div> 	
+										<ul class="csv_upload_status"></ul>
 									</td>
 								</tr>
 								<tr valign="top" class="bulk_upload_status_action" style="display:none;">
 									<td>
-										<a href="javascript:void(0)" class="csv_upload_again button-primary btn_ast2 btn_large"><?php _e('Upload again', 'woo-advanced-shipment-tracking'); ?></a>
 										<a class="button-primary btn_ast2 btn_large" href="<?php echo admin_url( 'edit.php?post_type=shop_order' ); ?>"><?php _e('View Orders', 'woo-advanced-shipment-tracking'); ?></a>
+										<a href="javascript:void(0)" class="csv_upload_again button-primary btn_ast2 btn_large"><?php _e('Upload again', 'woo-advanced-shipment-tracking'); ?></a>
 									</td>	
 								</tr>
 							</tbody>				

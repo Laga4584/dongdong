@@ -120,7 +120,7 @@ class RegenerateImages {
 	/**
 	 * Check is is time to display
 	 *
-	 * @return void
+	 * @return boolean
 	 */
 	public function isTimeToDisplay() {
 

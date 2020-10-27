@@ -4,14 +4,13 @@
  * Plugin Name: Advanced Shipment Tracking for WooCommerce 
  * Plugin URI: https://www.zorem.com/products/woocommerce-advanced-shipment-tracking/ 
  * Description: Add shipment tracking information to your WooCommerce orders and provide customers with an easy way to track their orders. Shipment tracking Info will appear in customers accounts (in the order panel) and in WooCommerce order complete email. 
- * Version: 3.1.1
+ * Version: 3.1.4
  * Author: zorem
  * Author URI: https://www.zorem.com 
  * License: GPL-2.0+
  * License URI: 
- * Text Domain: woo-advanced-shipment-tracking
- * Domain Path: /lang/
- * WC tested up to: 4.5
+ * Text Domain: woo-advanced-shipment-tracking 
+ * WC tested up to: 4.6
 */
 
 
@@ -22,7 +21,7 @@ class zorem_woocommerce_advanced_shipment_tracking {
 	 *
 	 * @var string
 	 */
-	public $version = '3.1.1';
+	public $version = '3.1.4';
 	
 	/**
 	 * Initialize the main plugin function
@@ -129,13 +128,15 @@ class zorem_woocommerce_advanced_shipment_tracking {
 	*/
 	public function init(){								
 		
-		add_action( 'plugins_loaded', array( $this, 'wst_load_textdomain'));
+		add_action( 'init', array( $this, 'wst_load_textdomain'));
 		register_activation_hook( __FILE__, array( $this->install, 'woo_shippment_tracking_install' ));
 		
 		add_action( 'add_meta_boxes', array( $this->actions, 'add_meta_box' ) );		
-		add_action( 'woocommerce_view_order', array( $this->actions, 'show_tracking_info_order' ) );		
+		add_action( 'woocommerce_view_order', array( $this->actions, 'show_tracking_info_order' ) );	
+		add_filter( 'woocommerce_my_account_my_orders_actions', array( $this->actions, 'show_tracking_info_btn_orders' ), 10, 2 );		
 		
 		add_action( 'wp_ajax_wc_shipment_tracking_delete_item', array( $this->actions, 'meta_box_delete_tracking' ) );
+		add_action( 'woocommerce_process_shop_order_meta', array( $this->actions, 'save_meta_box' ),0, 2 );	
 		add_action( 'wp_ajax_wc_shipment_tracking_save_form', array( $this->actions, 'save_meta_box_ajax' ) );	
 
 		add_action( 'wp_ajax_reassign_order_status', array( $this, 'reassign_order_status' ) );			
@@ -231,7 +232,7 @@ class zorem_woocommerce_advanced_shipment_tracking {
 		
 	/*** Method load Language file ***/
 	function wst_load_textdomain() {
-		load_plugin_textdomain( 'woo-advanced-shipment-tracking', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
+		load_plugin_textdomain( 'woo-advanced-shipment-tracking', false, dirname( plugin_basename(__FILE__) ) . '/lang' );
 	}
 		
 	/**
@@ -408,7 +409,7 @@ class zorem_woocommerce_advanced_shipment_tracking {
 		$screen = get_current_screen();
 		
 		if($screen->parent_file == 'plugins.php'){
-			wp_enqueue_style( 'shipment_tracking_styles',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/admin.css', array(), wc_advanced_shipment_tracking()->version );
+			wp_enqueue_style( 'ast_styles',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/admin.css', array(), wc_advanced_shipment_tracking()->version );
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			wp_enqueue_script( 'jquery-blockui', WC()->plugin_url() . '/assets/js/jquery-blockui/jquery.blockUI' . $suffix . '.js', array( 'jquery' ), '2.70', true );
 		}
@@ -461,55 +462,64 @@ class zorem_woocommerce_advanced_shipment_tracking {
 		
 		jQuery(document).on("click",".uninstall_close",function(e){
 			jQuery('.uninstall_popup').hide();
-		});		
+		});
+
+		jQuery(document).on("click",".popup_close_icon",function(e){
+			jQuery('.uninstall_popup').hide();
+		});	
 		</script>
 		<div id="" class="popupwrapper uninstall_popup" style="display:none;">
-			<div class="popuprow" style="text-align: left;max-width: 380px;">			
-				<h3 class="popup_title">Advanced Shipment Tracking for WooCommerce</h3>
-				<form method="post" id="order_reassign_form">					
-					<?php if( $delivered_count > 0 ){ ?>
+			<div class="popuprow">
+				<div class="popup_header">
+					<h3 class="popup_title">Advanced Shipment Tracking for WooCommerce</h3>
+					<img src="<?php echo wc_advanced_shipment_tracking()->plugin_dir_url()?>assets/images/ast-logo.png" class="poppup_header_logo">
+					<span class="dashicons dashicons-no-alt popup_close_icon"></span>
+				</div>
+				<div class="popup_body">				
+					<form method="post" id="order_reassign_form">					
+						<?php if( $delivered_count > 0 ){ ?>
+							
+							<p><?php echo sprintf(__('We detected %s orders that use the Delivered order status, You can reassign these orders to a different status', 'woo-advanced-shipment-tracking'), $delivered_count); ?></p>
+							
+							<select id="reassign_delivered_order" name="reassign_delivered_order" class="reassign_select">
+								<option value=""><?php _e('Select', 'woocommerce'); ?></option>
+								<?php foreach($order_statuses as $key => $status){ ?>
+									<option value="<?php echo $key; ?>"><?php echo $status; ?></option>
+								<?php } ?>
+							</select>
 						
-						<p><?php echo sprintf(__('We detected %s orders that use the Delivered order status, You can reassign these orders to a different status', 'woo-advanced-shipment-tracking'), $delivered_count); ?></p>
+						<?php } ?>
+						<?php if( $ps_count > 0 ){ ?>
+							
+							<p><?php echo sprintf(__('We detected %s orders that use the Partially Shipped order status, You can reassign these orders to a different status', 'woo-advanced-shipment-tracking'), $ps_count); ?></p>					
+							
+							<select id="reassign_ps_order" name="reassign_ps_order" class="reassign_select">
+								<option value=""><?php _e('Select', 'woocommerce'); ?></option>
+								<?php foreach($order_statuses as $key => $status){ ?>
+									<option value="<?php echo $key; ?>"><?php echo $status; ?></option>
+								<?php } ?>
+							</select>
 						
-						<select id="reassign_delivered_order" name="reassign_delivered_order" class="reassign_select">
-							<option value=""><?php _e('Select', 'woocommerce'); ?></option>
-							<?php foreach($order_statuses as $key => $status){ ?>
-								<option value="<?php echo $key; ?>"><?php echo $status; ?></option>
-							<?php } ?>
-						</select>
-					
-					<?php } ?>
-					<?php if( $ps_count > 0 ){ ?>
+						<?php } ?>
+						<?php if( $ut_count > 0 ){ ?>
+							
+							<p><?php echo sprintf(__('We detected %s orders that use the Updated Tracking order status, You can reassign these orders to a different status', 'woo-advanced-shipment-tracking'), $ut_count); ?></p>
+							
+							<select id="reassign_ut_order" name="reassign_ut_order" class="reassign_select">
+								<option value=""><?php _e('Select', 'woocommerce'); ?></option>
+								<?php foreach($order_statuses as $key => $status){ ?>
+									<option value="<?php echo $key; ?>"><?php echo $status; ?></option>
+								<?php } ?>
+							</select>
 						
-						<p><?php echo sprintf(__('We detected %s orders that use the Partially Shipped order status, You can reassign these orders to a different status', 'woo-advanced-shipment-tracking'), $ps_count); ?></p>					
-						
-						<select id="reassign_ps_order" name="reassign_ps_order" class="reassign_select">
-							<option value=""><?php _e('Select', 'woocommerce'); ?></option>
-							<?php foreach($order_statuses as $key => $status){ ?>
-								<option value="<?php echo $key; ?>"><?php echo $status; ?></option>
-							<?php } ?>
-						</select>
-					
-					<?php } ?>
-					<?php if( $ut_count > 0 ){ ?>
-						
-						<p><?php echo sprintf(__('We detected %s orders that use the Updated Tracking order status, You can reassign these orders to a different status', 'woo-advanced-shipment-tracking'), $ut_count); ?></p>
-						
-						<select id="reassign_ut_order" name="reassign_ut_order" class="reassign_select">
-							<option value=""><?php _e('Select', 'woocommerce'); ?></option>
-							<?php foreach($order_statuses as $key => $status){ ?>
-								<option value="<?php echo $key; ?>"><?php echo $status; ?></option>
-							<?php } ?>
-						</select>
-					
-					<?php } ?>				
-					<!--p><?php echo sprintf(__('<strong>Note:</strong> - If you use the custom order status, when you deactivate the plugin, you must register the order status, otherwise these orders will not display on your orders admin. You can find more information and the code <a href="%s" target="blank">snippet</a> to use in functions.php here.', 'woo-advanced-shipment-tracking'), 'https://www.zorem.com/docs/woocommerce-advanced-shipment-tracking/plugin-settings/#code-snippets'); ?></p-->
-					<p style="text-align:left;">	
-						<input type="hidden" name="action" value="reassign_order_status">
-						<input type="button" value="Uninstall" class="uninstall_plugin button-primary btn_green">
-						<input type="button" value="Close" class="uninstall_close button-primary btn_red">				
-					</p>
-				</form>	
+						<?php } ?>
+						<p>	
+							<input type="hidden" name="action" value="reassign_order_status">
+							<input type="button" value="Uninstall" class="uninstall_plugin button-primary btn_green">
+							<input type="button" value="Close" class="uninstall_close button-primary btn_red">				
+						</p>
+					</form>	
+				</div>	
 			</div>
 			<div class="popupclose"></div>
 		</div>

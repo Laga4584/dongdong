@@ -24,13 +24,7 @@ class FacetWP
         // Search page
         add_filter(
             'facetwp_query_args',
-            array( $this, 'search_args' ),
-            10,
-            2
-        );
-        add_filter(
-            'facetwp_pre_filtered_post_ids',
-            array( $this, 'search_page' ),
+            array( $this, 'query_args' ),
             10,
             2
         );
@@ -53,40 +47,35 @@ class FacetWP
     /**
      * Prevent the default WP search from running when our plugin is enabled
      */
-    function search_args( $args, $class )
+    function query_args( $args, $class )
     {
         
         if ( $class->is_search && isset( $class->http_params['get']['dgwt_wcas'] ) ) {
             $this->search_terms = $args['s'];
-            unset( $args['s'] );
+            if ( !dgoraAsfwFs()->is_premium() ) {
+                $products_ids = Helpers::searchProducts( $this->search_terms );
+            }
+            // Set "post__in" based on our plugin results
+            
+            if ( empty($args['post__in']) ) {
+                $post_ids = $products_ids;
+            } else {
+                $post_ids = [];
+                $haystack = array_flip( $args['post__in'] );
+                foreach ( $products_ids as $post_id ) {
+                    if ( isset( $haystack[$post_id] ) ) {
+                        $post_ids[] = $post_id;
+                    }
+                }
+            }
+            
+            $args['post__in'] = ( empty($post_ids) ? [ 0 ] : $post_ids );
+            $args['orderby'] = 'post__in';
             $args['dgwt_wcas'] = $args['s'];
+            unset( $args['s'] );
         }
         
         return $args;
-    }
-    
-    /**
-     * Use our engine to retrieve matching post IDs
-     */
-    public function search_page( $post_ids, $class )
-    {
-        if ( empty($this->search_terms) ) {
-            return $post_ids;
-        }
-        if ( !dgoraAsfwFs()->is_premium() ) {
-            $products_ids = Helpers::searchProducts( $this->search_terms );
-        }
-        $intersected_ids = [];
-        // Speed up comparison
-        $post_ids = array_flip( $post_ids );
-        if ( !empty($products_ids) ) {
-            foreach ( $products_ids as $post_id ) {
-                if ( isset( $post_ids[$post_id] ) ) {
-                    $intersected_ids[] = $post_id;
-                }
-            }
-        }
-        return ( empty($intersected_ids) ? [ 0 ] : $intersected_ids );
     }
     
     /**

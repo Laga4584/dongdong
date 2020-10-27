@@ -1485,6 +1485,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Form = _module2.default.extend({
   form: null,
 
+  captchaV3Ids: [],
+
   onInit: function onInit() {
     this.form = this.$element.find('.raven-form');
 
@@ -1550,6 +1552,11 @@ var Form = _module2.default.extend({
     if (!$.isEmptyObject(response.data.admin_errors)) {
       this.showAdminErrors(response.data.admin_errors);
     }
+
+    // Reset recaptcha to initial state.
+    this.captchaV3Ids.forEach(function (id) {
+      return window.grecaptcha.reset(id);
+    });
   },
 
 
@@ -1631,6 +1638,7 @@ var Form = _module2.default.extend({
     this.form.before('\n    <div class="elementor-alert elementor-alert-info" role="alert">\n      <span class="elementor-alert-title">Following messages are visible only for admin users.</span>\n      <div class="elementor-alert-description">\n        <ul>\n          ' + errors + '\n        </ul>\n      </div>\n    </div>\n    ');
   },
   checkCaptcha: function checkCaptcha(form) {
+    var self = this;
     var captchav3 = form.find('.g-recaptcha:last');
 
     if (!captchav3.length) {
@@ -1650,10 +1658,9 @@ var Form = _module2.default.extend({
 
     var addRecaptcha = function addRecaptcha(elementRecaptcha) {
       var settings = elementRecaptcha.data(),
-          captchaIds = [],
           isV3 = settings.type === 'v3';
 
-      captchaIds.forEach(function (id) {
+      self.captchaV3Ids.forEach(function (id) {
         return grecaptcha.reset(id); // eslint-disable-line
       });
 
@@ -1665,7 +1672,7 @@ var Form = _module2.default.extend({
       if (!isV3) {
         elementRecaptcha.data('widgetId', widgetId);
       } else {
-        captchaIds.push(widgetId);
+        self.captchaV3Ids.push(widgetId);
         form.find('button[type="submit"]').on('click', function (e) {
           e.preventDefault();
           grecaptcha.ready(function () {

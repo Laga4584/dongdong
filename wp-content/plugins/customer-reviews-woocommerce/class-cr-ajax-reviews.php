@@ -232,8 +232,8 @@ if (! class_exists('CR_Ajax_Reviews')) :
               }
               if( 0 < self::$rating ) {
                 $all = CR_Ajax_Reviews::count_ratings( $_POST['productID'], 0 );
-                $filtered_comments = sprintf( esc_html( _n( 'Showing %1$d of %2$d review (%3$d star). ', 'Showing %1$d of %2$d reviews (%3$d star). ', $all, IVOLE_TEXT_DOMAIN  ) ), CR_Ajax_Reviews::count_ratings( $_POST['productID'], self::$rating ), $all, self::$rating );
-    						$all_comments = sprintf( esc_html( _n( 'See all %d review', 'See all %d reviews', $all, IVOLE_TEXT_DOMAIN  ) ), $all );
+                $filtered_comments = sprintf( esc_html( _n( 'Showing %1$d of %2$d review (%3$d star). ', 'Showing %1$d of %2$d reviews (%3$d star). ', $all, 'customer-reviews-woocommerce' ) ), CR_Ajax_Reviews::count_ratings( $_POST['productID'], self::$rating ), $all, self::$rating );
+    						$all_comments = sprintf( esc_html( _n( 'See all %d review', 'See all %d reviews', $all, 'customer-reviews-woocommerce' ) ), $all );
     						$filter_note = '<div id="cr-ajax-reviews-fil-sta"><span>' . $filtered_comments . '</span><a class="ivole-seeAllReviews" data-rating="0" href="' . esc_url( get_permalink( $_POST['productID'] ) ) . '#tab-reviews">' . $all_comments . '</a></div>';
               }
             }

@@ -40,6 +40,61 @@
   };
 
   Presets.init();
+
+  /**
+   * Navigate feedback notification bar notice.
+   *
+   * @since 1.6.0
+   */
+  $('.wunderwp-feedback-notification-bar-notice-step button').on('click', function () {
+    var $step = $(this).closest('.wunderwp-feedback-notification-bar-notice-step');
+    var step = $(this).data('step');
+
+    if (!step) {
+      $('.wunderwp-feedback-notification-bar-notice').find('.notice-dismiss').trigger('click');
+
+      return;
+    }
+
+    $step.addClass('hidden');
+
+    $step.siblings('[data-step="' + step + '"]').removeClass('hidden');
+  });
+
+  /**
+   * Dismiss feedback notification bar notice on close button click.
+   *
+   * @since 1.6.0
+   */
+  $(document).on('click', '.wunderwp-feedback-notification-bar-notice .notice-dismiss', function (event) {
+    var nonce = $(this).closest('.wunderwp-feedback-notification-bar-notice').data('nonce');
+
+    wp.ajax.post('wunderwp_dismiss_feedback_notification_bar_notice', {
+      _ajax_nonce: nonce
+    });
+  });
+
+  /**
+   * Dismiss survey notification bar notice on close button click.
+   *
+   * @since 1.6.0
+   */
+  $(document).on('click', '.wunderwp-survey-notification-bar-notice .notice-dismiss', function (event) {
+    var nonce = $(this).closest('.wunderwp-survey-notification-bar-notice').data('nonce');
+
+    wp.ajax.post('wunderwp_dismiss_survey_notification_bar_notice', {
+      _ajax_nonce: nonce
+    });
+  });
+
+  /**
+   * Dismiss survey notification bar notice on cta button click.
+   *
+   * @since 1.6.0
+   */
+  $(document).on('click', '.wunderwp-survey-notification-bar-notice-cta', function () {
+    $('.wunderwp-survey-notification-bar-notice .notice-dismiss').trigger('click');
+  });
 })(jQuery);
 
 },{}]},{},[1]);

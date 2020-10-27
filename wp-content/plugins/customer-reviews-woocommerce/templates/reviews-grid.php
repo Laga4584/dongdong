@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="rating">
 					<div class="crstar-rating"><span style="width:<?php echo ($rating / 5) * 100; ?>%;"></span></div>
 					<div class="datetime">
-						<?php printf( _x( '%s ago', '%s = human-readable time difference', IVOLE_TEXT_DOMAIN ), human_time_diff( mysql2date( 'U', $review->comment_date, true ), current_time( 'timestamp' ) ) ); ?>
+						<?php printf( _x( '%s ago', '%s = human-readable time difference', 'customer-reviews-woocommerce' ), human_time_diff( mysql2date( 'U', $review->comment_date, true ), current_time( 'timestamp' ) ) ); ?>
 					</div>
 				</div>
 				<div class="reviewer">
@@ -96,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
     <?php if ( $show_more ): ?>
     <div class="cr-show-more">
-        <button class="ivole-show-more-button" type="button"><?php echo __( 'Show more', IVOLE_TEXT_DOMAIN ); ?></button>
+        <button class="ivole-show-more-button" type="button"><?php echo __( 'Show more', 'customer-reviews-woocommerce' ); ?></button>
         <span class="ivole-show-more-spinner" style="display:none;"></span>
     </div>
     <?php endif; ?>

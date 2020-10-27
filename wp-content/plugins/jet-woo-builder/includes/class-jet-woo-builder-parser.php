@@ -31,11 +31,12 @@ if ( ! class_exists( 'Jet_Woo_Builder_Parser' ) ) {
 		/**
 		 * Returns template content by template ID
 		 *
-		 * @param  [type] $template_id [description]
+		 * @param  $template_id
+		 * @param  $with_css
 		 *
-		 * @return [type]              [description]
+		 * @return mixed
 		 */
-		public function get_template_content( $template_id ) {
+		public function get_template_content( $template_id, $with_css = false ) {
 
 			$this->set_jet_engine_object();
 
@@ -45,7 +46,7 @@ if ( ! class_exists( 'Jet_Woo_Builder_Parser' ) ) {
 			);
 
 			if ( 'elementor' === $render_method ) {
-				return $this->render_elementor_content( $template_id );
+				return $this->render_elementor_content( $template_id, $with_css );
 			}
 
 			$content = get_post_meta( $template_id, '_jet_woo_builder_content', true );
@@ -92,11 +93,12 @@ if ( ! class_exists( 'Jet_Woo_Builder_Parser' ) ) {
 		/**
 		 * Render content with usual Elementor method
 		 *
-		 * @param  [type] $template_id [description]
-		 * @return [type]              [description]
+		 * @param  $template_id
+		 * @param  $with_css
+		 * @return mixed
 		 */
-		public function render_elementor_content( $template_id ) {
-			return Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id );
+		public function render_elementor_content( $template_id, $with_css ) {
+			return Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id, $with_css );
 		}
 
 		public function parse_content( $content ) {

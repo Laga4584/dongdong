@@ -27,7 +27,7 @@ $labelSeeAll    = Helpers::getLabel( 'show_more' );
 	<div class="js-dgwt-wcas-preview-source dgwt-wcas-preview-source">
 
 		<div class="js-dgwt-wcas-search-wrapp dgwt-wcas-search-wrapp <?php echo Helpers::searchWrappClasses(); ?>" data-wcas-context="75c2">
-			<form class="dgwt-wcas-search-form" role="search" action="http://dev.damiangora.com/" method="get">
+			<form class="dgwt-wcas-search-form" role="search" action="" method="get">
 				<div class="dgwt-wcas-sf-wrapp">
 					<?php echo Helpers::getMagnifierIco(); ?>
 

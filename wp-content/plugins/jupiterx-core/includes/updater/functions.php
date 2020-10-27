@@ -19,6 +19,7 @@ add_action( 'pre_current_active_plugins', 'jupiterx_plugin_update_warning' );
  * @since 1.3.0
  *
  * @return void
+ * @SuppressWarnings(PHPMD.UnusedFormalParameter)
  */
 function jupiterx_plugin_update_warning() {
 	if ( ! function_exists( 'get_plugins' ) ) {

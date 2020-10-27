@@ -1,0 +1,23 @@
+<svg version="1.1" id="x_white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<style type="text/css">
+	#x_white .st0{fill:#FF0000;}
+	#x_white .st1{fill:#231F20;}
+	#x_white .st2{fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<circle class="st0" cx="8" cy="8" r="8"/>
+	</g>
+	<g>
+		<g>
+			<line class="st1" x1="5" y1="5" x2="11" y2="11"/>
+			<rect x="7" y="3.8" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 7.9999)" class="st2" width="2" height="8.5"/>
+		</g>
+		<g>
+			<line class="st1" x1="11" y1="5" x2="5" y2="11"/>
+			<rect x="3.8" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 7.9999)" class="st2" width="8.5" height="2"/>
+		</g>
+	</g>
+</g>
+</svg>

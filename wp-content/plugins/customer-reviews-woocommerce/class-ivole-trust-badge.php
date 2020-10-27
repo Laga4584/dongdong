@@ -25,7 +25,7 @@ if (! class_exists('Ivole_Trust_Badge')) :
             if ( isset( $shortcode_atts['type'] ) ) {
                 $type = str_replace( ' ', '', $shortcode_atts['type'] );
                 $type = strtolower( $type );
-                $allowed_types = array( 'sl', 'slp', 'sd', 'sdp', 'wl', 'wlp', 'wd', 'wdp' );
+                $allowed_types = array( 'sl', 'slp', 'sd', 'sdp', 'wl', 'wlp', 'wd', 'wdp', 'vsl', 'vsd' );
                 if( in_array( $type, $allowed_types ) ) {
                   $shortcode_atts['type'] = $type;
                 } else {
@@ -117,7 +117,7 @@ if (! class_exists('Ivole_Trust_Badge')) :
                     'attributes' => array(
                         'badge_size' => array(
                             'type' => 'string',
-                            'enum' => array( 'small', 'wide' ),
+                            'enum' => array( 'small', 'wide', 'compact' ),
                             'default' => 'small'
                         ),
                         'badge_style' => array(
@@ -158,7 +158,21 @@ if (! class_exists('Ivole_Trust_Badge')) :
                 return '';
             }
 
-            $badge_type = $block_attributes['badge_size'] === 'small' ? 's' : 'w';
+            switch( $block_attributes['badge_size'] ) {
+              case 'small':
+                $badge_type = 's';
+                break;
+              case 'wide':
+                $badge_type = 'w';
+                break;
+              case 'compact':
+                $badge_type = 'vs';
+                $block_attributes['store_rating']  = '';
+                break;
+              default:
+                $badge_type = 's';
+                break;
+            }
             $badge_type .= $block_attributes['badge_style'] === 'light' ? 'l' : 'd';
             $badge_type .= $block_attributes['store_rating'] ? 'p' : '';
 

@@ -356,6 +356,8 @@ class Ivole_Settings_Admin_Menu {
 
                 if ( is_array( $result ) && count( $result)  > 1 && 2 === $result[0] ) {
 					wp_send_json( array( 'code' => 2, 'message' => $result[1] ) );
+				} elseif( is_array( $result ) && count( $result)  > 1 && 100 === $result[0] ) {
+					wp_send_json( array( 'code' => 100, 'message' => $result[1] ) );
 				} elseif ( 0 === $result ) {
 					wp_send_json( array( 'code' => 0, 'message' => '' ) );
 				} elseif ( 1 === $result ) {
@@ -433,7 +435,9 @@ class Ivole_Settings_Admin_Menu {
     							jQuery('#ivole_test_email_status').text('Error: "Shop Name" is empty. Please enter name of your shop in the corresponding field.');
 	    					} else if (response.code === 99) {
 		    					jQuery('#ivole_test_email_status').text('Error: please enter a valid email address!');
-			    			} else {
+	    					} else if (response.code === 100) {
+		    					jQuery('#ivole_test_email_status').text('Error: cURL library is missing on the server.');
+	    					} else {
 				    			jQuery('#ivole_test_email_status').text('Error: unknown error!');
 					    	}
 					    }, 'json');

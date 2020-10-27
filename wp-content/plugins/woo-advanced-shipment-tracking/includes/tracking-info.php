@@ -23,7 +23,6 @@ function ast_insert_tracking_number($order_id, $tracking_number, $tracking_provi
 	$ast->insert_tracking_item( $order_id, $args );	
 }
 
-
 /**
  * Adds a tracking number to an order.
  *

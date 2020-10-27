@@ -103,7 +103,7 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration' ) ) {
 
 			wp_enqueue_style(
 				'jet-woo-builder-font',
-				jet_woo_builder()->plugin_url( 'assets/css/lib/jetwoobuilder-font/css/jetwoobuilder.css' ),
+				jet_woo_builder()->plugin_url( 'assets/css/jet-woo-builder-icons.css' ),
 				array(),
 				jet_woo_builder()->get_version()
 			);
@@ -311,6 +311,10 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration' ) ) {
 			$archive_available_widgets          = jet_woo_builder_settings()->get( 'archive_product_available_widgets' );
 			$archive_category_available_widgets = jet_woo_builder_settings()->get( 'archive_category_available_widgets' );
 			$shop_available_widgets             = jet_woo_builder_settings()->get( 'shop_product_available_widgets' );
+			$cart_available_widgets             = jet_woo_builder_settings()->get( 'cart_available_widgets' );
+			$checkout_available_widgets         = jet_woo_builder_settings()->get( 'checkout_available_widgets' );
+			$thankyou_available_widgets         = jet_woo_builder_settings()->get( 'thankyou_available_widgets' );
+			$myaccount_available_widgets        = jet_woo_builder_settings()->get( 'myaccount_available_widgets' );
 
 			require_once jet_woo_builder()->plugin_path( 'includes/base/class-jet-woo-builder-base.php' );
 
@@ -368,6 +372,46 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration' ) ) {
 					$slug    = basename( $file, '.php' );
 					$enabled = isset( $archive_category_available_widgets[ $slug ] ) ? $archive_category_available_widgets[ $slug ] : '';
 					if ( filter_var( $enabled, FILTER_VALIDATE_BOOLEAN ) || ! $archive_category_available_widgets ) {
+						$this->register_widget( $file, $widgets_manager );
+					}
+				}
+			}
+
+			if ( $this->is_setting_enabled( 'custom_cart_page' ) || $doc_types['cart']['slug'] === $doc_type ) {
+				foreach ( glob( jet_woo_builder()->plugin_path( 'includes/widgets/cart/' ) . '*.php' ) as $file ) {
+					$slug    = basename( $file, '.php' );
+					$enabled = isset( $cart_available_widgets[ $slug ] ) ? $cart_available_widgets[ $slug ] : '';
+					if ( filter_var( $enabled, FILTER_VALIDATE_BOOLEAN ) || ! $cart_available_widgets ) {
+						$this->register_widget( $file, $widgets_manager );
+					}
+				}
+			}
+
+			if ( $this->is_setting_enabled( 'custom_checkout_page' ) || $doc_types['checkout']['slug'] === $doc_type ) {
+				foreach ( glob( jet_woo_builder()->plugin_path( 'includes/widgets/checkout/' ) . '*.php' ) as $file ) {
+					$slug    = basename( $file, '.php' );
+					$enabled = isset( $checkout_available_widgets[ $slug ] ) ? $checkout_available_widgets[ $slug ] : '';
+					if ( filter_var( $enabled, FILTER_VALIDATE_BOOLEAN ) || ! $checkout_available_widgets ) {
+						$this->register_widget( $file, $widgets_manager );
+					}
+				}
+			}
+
+			if ( $this->is_setting_enabled( 'custom_thankyou_page' ) || $doc_types['thankyou']['slug'] === $doc_type ) {
+				foreach ( glob( jet_woo_builder()->plugin_path( 'includes/widgets/thankyou/' ) . '*.php' ) as $file ) {
+					$slug    = basename( $file, '.php' );
+					$enabled = isset( $thankyou_available_widgets[ $slug ] ) ? $thankyou_available_widgets[ $slug ] : '';
+					if ( filter_var( $enabled, FILTER_VALIDATE_BOOLEAN ) || ! $thankyou_available_widgets ) {
+						$this->register_widget( $file, $widgets_manager );
+					}
+				}
+			}
+
+			if ( $this->is_setting_enabled( 'custom_myaccount_page' ) || $doc_types['myaccount']['slug'] === $doc_type ) {
+				foreach ( glob( jet_woo_builder()->plugin_path( 'includes/widgets/myaccount/' ) . '*.php' ) as $file ) {
+					$slug    = basename( $file, '.php' );
+					$enabled = isset( $myaccount_available_widgets[ $slug ] ) ? $myaccount_available_widgets[ $slug ] : '';
+					if ( filter_var( $enabled, FILTER_VALIDATE_BOOLEAN ) || ! $myaccount_available_widgets ) {
 						$this->register_widget( $file, $widgets_manager );
 					}
 				}

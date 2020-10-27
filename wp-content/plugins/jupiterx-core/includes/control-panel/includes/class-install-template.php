@@ -237,7 +237,7 @@ if ( ! class_exists( 'JupiterX_Control_Panel_Install_Template' ) ) {
 			$partial_import = ( isset( $_POST['partial_import'] ) ? filter_var( $_POST['partial_import'], FILTER_VALIDATE_BOOLEAN ) : false );
 
 			if ( is_null( $template_name ) || is_null( $type ) ) {
-				$this->message( 'System problem at installing , please contact support', false );
+				$this->message( 'A system problem occur while installing, please contact Artbees support.', false );
 				return false;
 			}
 
@@ -657,6 +657,8 @@ if ( ! class_exists( 'JupiterX_Control_Panel_Install_Template' ) ) {
 				}
 			}
 
+			$plugins_to_install  = apply_filters( 'jupiterx_cp_template_install_required_plugins', $plugins_to_install );
+
 			if ( ! empty( $plugins_to_install ) ) {
 				$actions['install'] = [
 					'url'           => $tgmpa_url,
@@ -683,6 +685,8 @@ if ( ! class_exists( 'JupiterX_Control_Panel_Install_Template' ) ) {
 
 			$template_plugins = array_diff( $template_plugins, [ 'jupiterx-pro', 'advanced-custom-fields-pro' ] );
 			$template_plugins[] = 'advanced-custom-fields';
+
+			$template_plugins  = apply_filters( 'jupiterx_cp_template_activate_required_plugins', $template_plugins );
 
 			foreach ( $template_plugins as $slug ) {
 				if ( isset( $this->tgmpa->plugins[ $slug ] ) ) {
@@ -876,9 +880,13 @@ if ( ! class_exists( 'JupiterX_Control_Panel_Install_Template' ) ) {
 				// Time to run the import!
 				set_time_limit( 0 );
 
-				// Ensure we're not buffered.
-				wp_ob_end_flush_all();
-				flush();
+				$zlib_oc = ini_get( 'zlib.output_compression' );
+
+				if ( 1 !== intval( $zlib_oc ) ) {
+					// Ensure we're not buffered.
+					wp_ob_end_flush_all();
+					flush();
+				}
 
 				// Run import process.
 				$process = $importer->import( $file );
@@ -1084,7 +1092,7 @@ if ( ! class_exists( 'JupiterX_Control_Panel_Install_Template' ) ) {
 					}
 				}
 
-				$this->message( 'pages are configured.', true );
+				$this->message( 'Pages are configured.', true );
 
 				return true;
 			} catch ( Exception $e ) {
@@ -1170,7 +1178,10 @@ if ( ! class_exists( 'JupiterX_Control_Panel_Install_Template' ) ) {
 				// Set extra options.
 				if ( ! empty( $data['options']['extra'] ) ) {
 
-					if ( ! is_array( $data['options']['extra']['elementor_cpt_support'] ) ) {
+					if (
+						! isset( $data['options']['extra']['elementor_cpt_support'] ) ||
+						! is_array( $data['options']['extra']['elementor_cpt_support'] )
+					) {
 						$data['options']['extra']['elementor_cpt_support'] = [];
 					}
 

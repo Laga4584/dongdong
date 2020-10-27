@@ -2,7 +2,7 @@
 /**
  * Jet Dashboard Module
  *
- * Version: 1.0.14
+ * Version: 1.1.0
  */
 
 namespace Jet_Dashboard;
@@ -46,7 +46,7 @@ class Dashboard {
 	 *
 	 * @var string
 	 */
-	protected $version = '1.0.14';
+	protected $version = '1.1.0';
 
 	/**
 	 * [$dashboard_slug description]
@@ -207,8 +207,8 @@ class Dashboard {
 
 		add_submenu_page(
 			'jet-dashboard',
-			esc_html__( 'Dashboard', 'jet-tricks' ),
-			esc_html__( 'Dashboard', 'jet-tricks' ),
+			esc_html__( 'Dashboard', 'jet-woo-builder' ),
+			esc_html__( 'Dashboard', 'jet-woo-builder' ),
 			'manage_options',
 			'jet-dashboard'
 		);

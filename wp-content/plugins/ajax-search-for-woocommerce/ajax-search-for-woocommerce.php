@@ -4,13 +4,13 @@
  * Plugin Name: AJAX Search for WooCommerce
  * Plugin URI: https://ajaxsearch.pro?utm_source=wp-admin&utm_medium=referral&utm_campaign=author_uri&utm_gen=utmdc
  * Description: The most popular WooCommerce product search. Gives your users a well-designed advanced AJAX search bar with live search suggestions.
- * Version: 1.7.2
+ * Version: 1.8.0
  * Author: Damian Góra
  * Author URI: https://ajaxsearch.pro?utm_source=wp-admin&utm_medium=referral&utm_campaign=author_uri&utm_gen=utmdc
  * Text Domain: ajax-search-for-woocommerce
  * Domain Path: /languages
  * WC requires at least: 3.3
- * WC tested up to: 4.3
+ * WC tested up to: 4.6
  *
  */
 // Exit if accessed directly
@@ -83,7 +83,7 @@ if ( !class_exists( 'DGWT_WC_Ajax_Search' ) && !function_exists( 'dgoraAsfwFs' )
                     new \DgoraWcas\Admin\AdminMenu();
                     new \DgoraWcas\Admin\Promo\FeedbackNotice();
                     new \DgoraWcas\Admin\Promo\Upgrade();
-                    new \DgoraWcas\Admin\Requirements();
+                    new \DgoraWcas\Admin\Troubleshooting();
                     $regenerateImages = new \DgoraWcas\Admin\RegenerateImages();
                     $regenerateImages->init();
                 }
@@ -358,5 +358,5 @@ if ( !class_exists( 'DGWT_WC_Ajax_Search' ) && !function_exists( 'dgoraAsfwFs' )
         return DGWT_WC_Ajax_Search::getInstance();
     }
     
-    add_action( 'plugins_loaded', 'DGWT_WCAS' );
+    add_action( 'plugins_loaded', 'DGWT_WCAS', 15 );
 }

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: WooCommerce Advanced Shipment Tracking\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-01 05:43+0000\n"
-"PO-Revision-Date: 2020-09-01 12:03+0000\n"
-"Last-Translator: John\n"
+"PO-Revision-Date: 2020-09-21 07:35+0000\n"
+"Last-Translator: zorem DEV\n"
 "Language-Team: Hebrew\n"
 "Language: he_IL\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.4.3; wp-5.5"
+"X-Loco-Version: 2.4.3; wp-5.5.1"
 
 #: woocommerce-advanced-shipment-tracking.php:122
 #, php-format
@@ -444,7 +444,7 @@ msgstr "מחובר"
 
 #: includes/class-wc-advanced-shipment-tracking-admin.php:684
 msgid "Custom Order Statuses"
-msgstr ""
+msgstr "סטטוסים מותאמים אישית"
 
 #: includes/class-wc-advanced-shipment-tracking-admin.php:852
 msgid "Default \"mark as <span class=\"shipped_label\">shipped</span>\""
@@ -476,7 +476,7 @@ msgstr "שנה את השם של סטטוס ההזמנה ״הושלמה״ ל- ״�
 
 #: includes/class-wc-advanced-shipment-tracking-admin.php:947
 msgid "API Date Format"
-msgstr ""
+msgstr "פורמט תאריך API"
 
 #: includes/class-wc-advanced-shipment-tracking-admin.php:958
 msgid "On which order status email to include the shipment tracking info?"
@@ -528,7 +528,7 @@ msgstr ""
 #: includes/class-wc-advanced-shipment-tracking-admin.php:1558
 #: includes/views/admin_options_shipping_provider.php:104
 msgid "API Name"
-msgstr ""
+msgstr "שם מה -API"
 
 #: includes/class-wc-advanced-shipment-tracking-admin.php:1559
 msgid "Country"
@@ -668,13 +668,13 @@ msgstr "אפשר את TrackShip"
 
 #: includes/class-wc-advanced-shipment-tracking-trackship.php:383
 msgid "Display Shipment Status Filter on Orders admin"
-msgstr ""
+msgstr "הצג אפשרות פילטר לפי סטטוס משלוח באדמין של הזמנות"
 
 #: includes/class-wc-advanced-shipment-tracking-trackship.php:416
 msgid ""
 "Automatically set the Order Status to Delivered when the shipment is "
 "delivered "
-msgstr ""
+msgstr "שנה את סטטוס ההזמנה לנמסרה ללקוח כשהמשלוח נמסר ללקוח"
 
 #: includes/class-wc-advanced-shipment-tracking-trackship.php:417
 msgid ""

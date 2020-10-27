@@ -427,10 +427,11 @@ class wcast_intransit_customizer_email {
 		$preview_id     = get_theme_mod('wcast_intransit_email_preview_order_id');
 		$ast = new WC_Advanced_Shipment_Tracking_Actions;	
 				
-		$email_heading = $ast->get_option_value_from_array('wcast_intransit_email_settings','wcast_intransit_email_heading',$this->defaults['wcast_intransit_email_heading']);		
+		$order_id = $ast->get_custom_order_number( $preview_id );
 		
+		$email_heading = $ast->get_option_value_from_array('wcast_intransit_email_settings','wcast_intransit_email_heading',$this->defaults['wcast_intransit_email_heading']);		
 		$email_heading = str_replace( '{site_title}', $this->get_blogname(), $email_heading );
-		$email_heading =  str_replace( '{order_number}', $preview_id, $email_heading );
+		$email_heading = str_replace( '{order_number}', $order_id, $email_heading );
 		
 		$email_content = $ast->get_option_value_from_array('wcast_intransit_email_settings','wcast_intransit_email_content',$this->defaults['wcast_intransit_email_content']);				
 		
@@ -466,7 +467,7 @@ class wcast_intransit_customizer_email {
 		$email_heading = __( $email_heading, 'woo-advanced-shipment-tracking' );
 		//ob_start();
 		
-		$message = wc_trackship_email_manager()->email_content($email_content,$preview_id,$order);
+		$message = wc_trackship_email_manager()->email_content( $email_content, $preview_id, $order );
 		
 		$wcast_intransit_analytics_link = $ast->get_option_value_from_array('wcast_intransit_email_settings','wcast_intransit_analytics_link','');		
 				

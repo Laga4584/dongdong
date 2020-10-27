@@ -32,7 +32,7 @@ class Jet_Woo_Builder_Single_Upsells extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-14';
+		return 'jet-woo-builder-icon-single-upsells';
 	}
 
 	public function get_script_depends() {

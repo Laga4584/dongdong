@@ -65,6 +65,8 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 		
 		//ajax save admin trackship settings
 		add_action( 'wp_ajax_wc_ast_trackship_form_update', array( $this, 'wc_ast_trackship_form_update_callback' ) );
+		add_action( 'wp_ajax_trackship_tracking_page_form_update', array( $this, 'trackship_tracking_page_form_update_callback' ) );
+		add_action( 'wp_ajax_ts_late_shipments_email_form_update', array( $this, 'ts_late_shipments_email_form_update_callback' ) );
 		
 		$api_enabled = get_option( "wc_ast_api_enabled", 0);
 		if( $api_enabled == true ){
@@ -132,6 +134,10 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 		if( $api_enabled == true ){
 			add_action( 'wp_dashboard_setup', array( $this, 'ast_add_dashboard_widgets') );	
 		}
+		
+		//filter in shipped orders
+		add_filter( 'is_order_shipped', array( $this, "check_tracking_exist" ),10,2);
+		add_filter( 'is_order_shipped', array( $this, "check_order_status" ),5,2);	
 	}
 	
 	/**
@@ -154,8 +160,8 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 			),			
 		) );
 		
-		wp_register_style( 'material-css',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/material.css', array(), wc_advanced_shipment_tracking()->version );		
-		wp_register_script( 'material-js', wc_advanced_shipment_tracking()->plugin_dir_url().'assets/js/material.min.js', array( 'jquery' ), wc_advanced_shipment_tracking()->version );
+		//wp_register_style( 'material-css',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/material.css', array(), wc_advanced_shipment_tracking()->version );		
+		//wp_register_script( 'material-js', wc_advanced_shipment_tracking()->plugin_dir_url().'assets/js/material.min.js', array( 'jquery' ), wc_advanced_shipment_tracking()->version );
 		
 		if(!isset($_GET['page'])) {
 			return;
@@ -166,15 +172,15 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 		}		
 		
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'material-css' );
-		wp_enqueue_style( 'shipment_tracking_styles',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/admin.css', array(), wc_advanced_shipment_tracking()->version );
+		//wp_enqueue_style( 'material-css' );
+		wp_enqueue_style( 'ast_styles',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/admin.css', array(), wc_advanced_shipment_tracking()->version );
 		wp_enqueue_style( 'trackship_styles' );		
 		wp_enqueue_style( 'woocommerce_admin_styles' );		
 		
 		wp_enqueue_script( 'jquery-tiptip' );
 		wp_enqueue_script( 'jquery-blockui' );
 		wp_enqueue_script( 'wp-color-picker' );	
-		wp_enqueue_script( 'material-js' );				
+		//wp_enqueue_script( 'material-js' );				
 		wp_enqueue_script( 'trackship_script' );				
 	}
 
@@ -212,17 +218,15 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 							<li><a href="javaScript:void(0);" data-label="<?php _e('Notifications', 'woo-advanced-shipment-tracking'); ?>" data-tab="notifications" data-section="content_status_notifications"><?php _e('Notifications', 'woo-advanced-shipment-tracking'); ?></a></li>
 							<li><a href="javaScript:void(0);" data-label="<?php _e('Tools', 'woo-advanced-shipment-tracking'); ?>" data-tab="tools" data-section="content_tools"><?php _e('Tools', 'woo-advanced-shipment-tracking'); ?></a></li>
 							<li><a target="blank" href="https://trackship.info/documentation/?utm_source=wpadmin&utm_medium=ts_settings&utm_campaign=docs"><?php _e( 'Documentation', 'woo-advanced-shipment-tracking' ); ?></a></li>
-							<li><a href="https://trackship.info/my-account/?utm_source=wpadmin&utm_medium=ts_settings&utm_campaign=dashboard" target="blank"><?php _e( 'TrackShip Account', 'woo-advanced-shipment-tracking' ); ?></a></li>
+							<li><a href="https://trackship.info/my-account/?utm_source=wpadmin&utm_medium=ts_settings&utm_campaign=dashboard" target="blank">TrackShip Account</a></li>
 						</ul>	
 					</div>	
 					<?php } ?>	
 				</div>
 			</div>		
 			<?php require_once( 'views/trackship_settings.php' );?>	
-			<div id="trackship-snackbar" class="mdl-js-snackbar mdl-snackbar">
-				<div class="mdl-snackbar__text"></div>
-				<button class="mdl-snackbar__action" type="button"></button>
-			</div>		
+			
+			<div id="trackship_settings_snackbar" class="ast_snackbar"><?php _e( 'Data saved successfully.', 'woo-advanced-shipment-tracking' )?></div>	
 		</div >
 	<?php }	
 	
@@ -248,21 +252,66 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 		
 		if ( ! empty( $_POST ) && check_admin_referer( 'wc_ast_trackship_form', 'wc_ast_trackship_form_nonce' ) ) {
 			
-			$data1 = $this->get_trackship_page_data();
 			$data2 = $this->get_trackship_general_data();
 			$data3 = $this->get_trackship_automation_data();			
+			
+			foreach( $data2 as $key2 => $val2 ){
+				update_option( $key2, sanitize_text_field( $_POST[ $key2 ] ) );
+			}
+			
+			foreach( $data3 as $key3 => $val3 ){
+				update_option( $key3, sanitize_text_field( $_POST[ $key3 ] ) );
+			}				
+			
+			echo json_encode( array('success' => 'true') );die();
+		}
+	}
+	
+	/*
+	* tracking page form save
+	*/
+	public function trackship_tracking_page_form_update_callback(){
+		if ( ! empty( $_POST ) && check_admin_referer( 'trackship_tracking_page_form', 'trackship_tracking_page_form_nonce' ) ) {
+			
+			$data1 = $this->get_trackship_page_data();
 			
 			foreach( $data1 as $key1 => $val1 ){
 				update_option( $key1, sanitize_text_field( $_POST[ $key1 ] ) );
 			}
-			foreach( $data2 as $key2 => $val2 ){
-				update_option( $key2, sanitize_text_field( $_POST[ $key2 ] ) );
-			}
-			foreach( $data3 as $key3 => $val3 ){
-				update_option( $key3, sanitize_text_field( $_POST[ $key3 ] ) );
-			}				
+			
 			echo json_encode( array('success' => 'true') );die();
+		}
+	}
+	
+	/*
+	* late shipmenta form save
+	*/
+	public function ts_late_shipments_email_form_update_callback(){
+		if ( ! empty( $_POST ) && check_admin_referer( 'ts_late_shipments_email_form', 'ts_late_shipments_email_form_nonce' ) ) {
+			
+			$wcast_late_shipments_days = isset( $_POST['wcast_late_shipments_days'] ) ? $_POST['wcast_late_shipments_days'] : '';
+			$wcast_late_shipments_email_to = isset( $_POST['wcast_late_shipments_email_to'] ) ? $_POST['wcast_late_shipments_email_to'] : '';			
+			$wcast_late_shipments_email_subject = isset( $_POST['wcast_late_shipments_email_subject'] ) ? $_POST['wcast_late_shipments_email_subject'] : '';			
+			$wcast_late_shipments_email_content = isset( $_POST['wcast_late_shipments_email_content'] ) ? $_POST['wcast_late_shipments_email_content'] : '';
+			$wcast_late_shipments_trigger_alert = isset( $_POST['wcast_late_shipments_trigger_alert'] ) ? $_POST['wcast_late_shipments_trigger_alert'] : '';			
+			$wcast_late_shipments_daily_digest_time = isset( $_POST['wcast_late_shipments_daily_digest_time'] ) ? $_POST['wcast_late_shipments_daily_digest_time'] : '';
+			$wcast_enable_late_shipments_admin_email = isset( $_POST['wcast_enable_late_shipments_admin_email'] ) ? $_POST['wcast_enable_late_shipments_admin_email'] : '';
 
+			$late_shipments_email_settings = array(
+				'wcast_enable_late_shipments_admin_email' => $wcast_enable_late_shipments_admin_email,
+				'wcast_late_shipments_days' => $wcast_late_shipments_days,
+				'wcast_late_shipments_email_to' => $wcast_late_shipments_email_to,
+				'wcast_late_shipments_email_subject' => $wcast_late_shipments_email_subject,
+				'wcast_late_shipments_email_content' => $wcast_late_shipments_email_content,
+				'wcast_late_shipments_trigger_alert' => $wcast_late_shipments_trigger_alert,
+				'wcast_late_shipments_daily_digest_time' => $wcast_late_shipments_daily_digest_time,
+			);
+			
+			update_option( 'late_shipments_email_settings', $late_shipments_email_settings );
+			
+			$Late_Shipments = new WC_Advanced_Shipment_Tracking_Late_Shipments();
+			$Late_Shipments->remove_cron();
+			$Late_Shipments->setup_cron();
 		}
 	}
 
@@ -326,12 +375,6 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 				),	
 				'class'     => '',
 			),
-			'wc_ast_select_primary_color' => array(
-				'type'		=> 'color',
-				'title'		=> __( 'Select primary color for tracking page', 'woo-advanced-shipment-tracking' ),				
-				'class'		=> 'color_field',
-				'show' => $show_trackship_field,				
-			),			
 			'wc_ast_select_border_color' => array(
 				'type'		=> 'color',
 				'title'		=> __( 'Select content border color for tracking page', 'woo-advanced-shipment-tracking' ),				
@@ -621,7 +664,9 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 			$ast = new WC_Advanced_Shipment_Tracking_Actions;
 			$tracking_items = $ast->get_tracking_items( $order_id, true );
 			if($tracking_items){				
-				$shipment_status = get_post_meta( $order_id, "shipment_status", true);				
+				
+				$shipment_status = get_post_meta( $order_id, "shipment_status", true);		
+				
 				foreach ( $tracking_items as $key => $tracking_item ) { 					
 					if($shipment_status[$key]['pending_status'] == 'TrackShip balance is 0'){						
 						wp_schedule_single_event( time() + 1, 'wcast_retry_trackship_apicall', array( $order_id ) );		
@@ -651,9 +696,9 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 			$ast = new WC_Advanced_Shipment_Tracking_Actions;
 			$tracking_items = $ast->get_tracking_items( $order_id, true );
 			if($tracking_items){				
-				$shipment_status = get_post_meta( $order_id, "shipment_status", true);				
+				$shipment_status = get_post_meta( $order_id, "shipment_status", true);						
 				foreach ( $tracking_items as $key => $tracking_item ) { 					
-					if($shipment_status[$key]['pending_status'] == 'TrackShip connection issue'){						
+					if( $shipment_status[$key]['pending_status'] == 'TrackShip connection issue' ){						
 						wp_schedule_single_event( time() + 1, 'wcast_retry_trackship_apicall', array( $order_id ) );		
 					}
 				}									
@@ -909,8 +954,7 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 	
 	public function update_enable_late_shipments_email_fun(){		
 		$status_settings[$_POST['id']] = wc_clean($_POST['wcast_enable_late_shipments_email']);
-		update_option( $_POST['settings_data'], $status_settings );	
-		set_theme_mod($_POST['id'], wc_clean($_POST['wcast_enable_late_shipments_email']));
+		update_option( $_POST['settings_data'], $status_settings );			
 		exit;
 	}
 
@@ -1037,10 +1081,11 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 			
 			$ast = new WC_Advanced_Shipment_Tracking_Actions;
 			$tracking_items = $ast->get_tracking_items( $order_id, true );
+			
 			if($tracking_items){				
-				$shipment_status = get_post_meta( $order_id, "shipment_status", true);				
+				$shipment_status = get_post_meta( $order_id, "shipment_status", true);		
 				foreach ( $tracking_items as $key => $tracking_item ) { 					
-					if(isset($shipment_status[$key]['status']) && $shipment_status[$key]['status'] == 'TrackShip balance is 0'){
+					if(isset($shipment_status[$key]['pending_status']) && $shipment_status[$key]['pending_status'] == 'TrackShip balance is 0'){
 						$completed_order_with_zero_balance++;		
 					}
 				}									
@@ -1220,7 +1265,7 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 		wp_enqueue_script( 'amcharts-light-theme', wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/js/amcharts/light.js' );
 		wp_enqueue_script( 'amcharts-serial', wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/js/amcharts/serial.js' );		
 		
-		wp_enqueue_style( 'shipment_tracking_styles',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/admin.css', array(), wc_advanced_shipment_tracking()->version );
+		wp_enqueue_style( 'ast_styles',  wc_advanced_shipment_tracking()->plugin_dir_url() . 'assets/css/admin.css', array(), wc_advanced_shipment_tracking()->version );
 		
 		wp_add_dashboard_widget( 'trackship_dashboard_widget', 'Tracking Analytics <small>(last 30 days)</small>', array( $this, 'dashboard_widget_function') );
 	}
@@ -1501,5 +1546,63 @@ class WC_Advanced_Shipment_Tracking_Trackship {
 			}
 			update_option( 'wc_advanced_shipment_tracking_ts_page', '1.0');					
 		}	
+	}
+	
+	/*
+	* tracking number filter
+	* if number not found. return false
+	* if number found. return true
+	*/
+	function check_tracking_exist( $value, $order ){
+		
+		if($value == true){
+				
+			$tracking_items = $order->get_meta( '_wc_shipment_tracking_items', true );
+			if( $tracking_items ){
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return $value;
+	}		
+	
+	/*
+	* If order status is "Updated Tracking" or "Completed" than retrn true else return false
+	*/
+	function check_order_status($value, $order){
+		$order_status  = $order->get_status(); 
+		
+		$all_order_status = wc_get_order_statuses();
+		
+		$default_order_status = array(
+			'wc-pending' => 'Pending payment',
+			'wc-processing' => 'Processing',
+			'wc-on-hold' => 'On hold',
+			'wc-completed' => 'Completed',
+			'wc-delivered' => 'Delivered',
+			'wc-cancelled' => 'Cancelled',
+			'wc-refunded' => 'Refunded',
+			'wc-failed' => 'Failed'			
+		);
+		
+		foreach($default_order_status as $key=>$value){
+			unset($all_order_status[$key]);
+		}
+		
+		$custom_order_status = $all_order_status;
+		
+		foreach($custom_order_status as $key=>$value){
+			unset($custom_order_status[$key]);			
+			$key = str_replace("wc-", "", $key);		
+			$custom_order_status[] = $key;
+		}				
+		
+		if($order_status == 'updated-tracking' || $order_status == 'completed' || in_array( $order_status, $custom_order_status )){
+			return true;			
+		} else {
+			return false;
+		}
+		return $value;				
 	}
 }	

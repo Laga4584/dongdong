@@ -3,14 +3,14 @@
  * Plugin Name: JetWooBuilder For Elementor
  * Plugin URI:  https://crocoblock.com/plugins/jetwoobuilder/
  * Description: Your perfect asset in creating WooCommerce page templates using loads of special widgets & stylish page layouts
- * Version:     1.6.6
+ * Version:     1.7.0
  * Author:      Crocoblock
  * Author URI:  https://crocoblock.com/
  * Text Domain: jet-woo-builder
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /languages
- * WC tested up to: 4.2
+ * WC tested up to: 4.5
  * WC requires at least: 3.0
  */
 
@@ -41,7 +41,7 @@ if ( ! class_exists( 'Jet_Woo_Builder' ) ) {
 		 *
 		 * @var string
 		 */
-		private $version = '1.6.6';
+		private $version = '1.7.0';
 
 		/**
 		 * Holder for base plugin URL
@@ -83,6 +83,12 @@ if ( ! class_exists( 'Jet_Woo_Builder' ) ) {
 		 * @var [type]
 		 */
 		public $macros;
+
+		/**
+		 * [$ajax_handlers description]
+		 * @var null
+		 */
+		public $ajax_handlers = null;
 
 		/**
 		 * Sets up needed actions/filters for the plugin to initialize.
@@ -166,9 +172,10 @@ if ( ! class_exists( 'Jet_Woo_Builder' ) ) {
 				jet_woo_builder_shop_settings()->init();
 				jet_woo_builder_compatibility()->init();
 
-				$this->documents = new Jet_Woo_Builder_Documents();
-				$this->parser    = new Jet_Woo_Builder_Parser();
-				$this->macros    = new Jet_Woo_Builder_Macros();
+				$this->documents     = new Jet_Woo_Builder_Documents();
+				$this->parser        = new Jet_Woo_Builder_Parser();
+				$this->macros        = new Jet_Woo_Builder_Macros();
+				$this->ajax_handlers = new Jet_Woo_Builder_Ajax_Handlers();
 
 				if ( is_admin() ) {
 
@@ -200,9 +207,16 @@ if ( ! class_exists( 'Jet_Woo_Builder' ) ) {
 					'url'            => $jet_dashboard_module_data['url'],
 					'cx_ui_instance' => array( $this, 'jet_dashboard_ui_instance_init' ),
 					'plugin_data'    => array(
-						'slug'    => 'jet-woo-builder',
-						'file'    => 'jet-woo-builder/jet-woo-builder.php',
-						'version' => $this->get_version(),
+						'slug'         => 'jet-woo-builder',
+						'file'         => 'jet-woo-builder/jet-woo-builder.php',
+						'version'      => $this->get_version(),
+						'plugin_links' => array(
+							array(
+								'label'  => esc_html__( 'Settings', 'jet-woo-builder' ),
+								'url'    => add_query_arg( array( 'page' => 'jet-woo-builder-settings' ), admin_url( 'admin.php' ) ),
+								'target' => 'self',
+							),
+						),
 					),
 				) );
 			}
@@ -315,12 +329,14 @@ if ( ! class_exists( 'Jet_Woo_Builder' ) ) {
 		 * @return void
 		 */
 		public function load_files() {
+			require $this->plugin_path( 'includes/class-jet-woo-builder-ajax-handler.php' );
 			require $this->plugin_path( 'includes/class-jet-woo-builder-assets.php' );
 			require $this->plugin_path( 'includes/class-jet-woo-builder-tools.php' );
 			require $this->plugin_path( 'includes/class-jet-woo-builder-post-type.php' );
 			require $this->plugin_path( 'includes/class-jet-woo-builder-documents.php' );
 			require $this->plugin_path( 'includes/class-jet-woo-builder-parser.php' );
 			require $this->plugin_path( 'includes/class-jet-woo-builder-macros.php' );
+			require $this->plugin_path( 'includes/class-jet-woo-builder-common-controls.php' );
 
 			require $this->plugin_path( 'includes/integrations/base/class-jet-woo-builder-integration.php' );
 			require $this->plugin_path( 'includes/integrations/base/class-jet-woo-builder-integration-woocommerce.php' );

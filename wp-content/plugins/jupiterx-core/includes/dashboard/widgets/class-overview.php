@@ -238,6 +238,13 @@ class JupiterX_Overview_Widget {
 	 * @since 1.1.0
 	 */
 	private function render_content_footer() {
+		if (
+			'1' === jupiterx_get_option( 'white_label' ) &&
+			'1' !== jupiterx_get_option( 'white_label_help_links' )
+		) {
+			return;
+		}
+
 		$links = [
 			'blog' => [
 				'title'  => esc_html__( 'Blog', 'jupiterx-core' ),

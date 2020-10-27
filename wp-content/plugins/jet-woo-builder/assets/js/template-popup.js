@@ -22,7 +22,13 @@
 				value = $this.find( 'option:selected' ).val();
 
 			if ( '' !== value ) {
-				$( '.predesigned-row.template-' + value ).addClass( 'is-active' ).siblings().removeClass( 'is-active' );
+				if ( value === 'jet-woo-builder-cart' || value === 'jet-woo-builder-thankyou' || value === 'jet-woo-builder-myaccount' || value === 'jet-woo-builder-checkout' ) {
+					$( '.predesigned-row' ).removeClass( 'is-active' );
+					$( '.jet-template-popup__subheading' ).hide();
+				} else {
+					$( '.predesigned-row.template-' + value ).addClass( 'is-active' ).siblings().removeClass( 'is-active' );
+					$( '.jet-template-popup__subheading' ).show();
+				}
 			}
 		},
 

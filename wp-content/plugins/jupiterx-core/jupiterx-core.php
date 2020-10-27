@@ -3,7 +3,7 @@
  * Plugin Name: Jupiter X Core
  * Plugin URI: https://jupiterx.com
  * Description: Adds core functionality to the Jupiter X theme.
- * Version: 1.17.1
+ * Version: 1.18.2
  * Author: Artbees
  * Author URI: https://artbees.net
  * Text Domain: jupiterx-core
@@ -145,6 +145,13 @@ if ( ! class_exists( 'JupiterX_Core' ) ) {
 		 * @access protected
 		 */
 		protected function load() {
+			$this->load_files( [
+				'utilities/options',
+				'admin/class-auto-updates',
+				'extensions/class',
+				'admin/class-notices',
+			] );
+
 			add_action( 'jupiterx_init', [ $this, 'init' ], 4 );
 		}
 
@@ -154,11 +161,14 @@ if ( ! class_exists( 'JupiterX_Core' ) ) {
 		 * @since 1.0.0
 		 */
 		public function init() {
-			add_action( 'admin_menu', [ $this, 'menus' ], 15 );
 			add_action( 'admin_bar_menu', [ $this, 'extend_admin_bar_menu' ], 100 );
 			add_action( 'init', [ $this, 'redirect_page' ] );
 			add_action( 'admin_head', [ $this, 'inline_css' ] );
 			add_action( 'admin_print_footer_scripts', [ $this, 'inline_js' ] );
+
+			if ( defined( 'JUPITERX_OLD_CONTROL_PANEL' ) ) {
+				add_action( 'admin_menu', [ $this, 'menus' ], 15 );
+			}
 
 			load_plugin_textdomain( 'jupiterx-core', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
@@ -199,9 +209,13 @@ if ( ! class_exists( 'JupiterX_Core' ) ) {
 			] );
 
 			if ( is_admin() ) {
-				$this->load_files( [
-					'admin/tgmpa/tgmpa-plugin-list',
-				] );
+				if ( ! defined( 'JUPITERX_OLD_CONTROL_PANEL' ) ) {
+					$this->load_files( [
+						'admin/site-health/site-health',
+						'admin/tgmpa/tgmpa-plugin-list',
+						'control-panel-2/class',
+					] );
+				}
 
 				if ( ! class_exists( 'JupiterX_Update_Plugins' ) ) {
 					$this->load_files( [
@@ -413,6 +427,17 @@ if ( ! class_exists( 'JupiterX_Core' ) ) {
 		 */
 		public function plugin_url() {
 			return self::$plugin_url;
+		}
+
+		/**
+		 * Returns the plugin assets URL.
+		 *
+		 * @since 1.18.0
+		 *
+		 * @return string
+		 */
+		public function plugin_assets_url() {
+			return self::$plugin_assets_url;
 		}
 
 		/**

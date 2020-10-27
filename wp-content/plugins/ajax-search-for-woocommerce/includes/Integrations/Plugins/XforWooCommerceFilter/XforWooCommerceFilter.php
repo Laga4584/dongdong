@@ -22,7 +22,6 @@ class XforWooCommerceFilter
         }
         add_action( 'prdctfltr_add_inputs', array( $this, 'prdctfltr_add_inputs' ) );
         add_action( 'pre_get_posts', array( $this, 'search_products' ), 1000000 );
-        add_filter( 'prdctfltr_get_terms_args', array( $this, 'prdctfltr_get_terms_args' ) );
     }
     
     /**
@@ -71,32 +70,6 @@ class XforWooCommerceFilter
             $query->set( 'orderby', 'post__in' );
         }
     
-    }
-    
-    /**
-     * Limit the number of terms to those associated with search results
-     *
-     * @param $args
-     *
-     * @return mixed
-     */
-    public function prdctfltr_get_terms_args( $args )
-    {
-        if ( !Helpers::isProductSearchPage() && !$this->is_prdctfltr_ajax_search() ) {
-            return $args;
-        }
-        // If we are in the middle of an AJAX query, we get product ids related with custom WP_Query.
-        
-        if ( $this->is_prdctfltr_ajax_search() ) {
-            $post_ids = $this->post_ids;
-        } else {
-            $post_ids = apply_filters( 'dgwt/wcas/search_page/result_post_ids', array() );
-        }
-        
-        if ( $post_ids ) {
-            $args['object_ids'] = $post_ids;
-        }
-        return $args;
     }
     
     /**

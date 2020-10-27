@@ -2,6 +2,18 @@
 
 # ChangeLog
 
+## 2.0.3
+* ADD: JetWooBuilder 1.7.0 compatibility
+* ADD: compatibility with upcoming jet-engine listing
+* FIX: epro-archive widget for products posts
+
+## 2.0.2
+* ADD: 'Get from query meta key' callback for range filter
+* UPD: wrapper action for jet-engine provider
+* FIX: hierarchy filter with single taxonomy
+* FIX: process listing grid with nested listing grid
+* FIX: epro-archive widget default query tags and custom taxonomy
+
 ## 2.0.1
 * ADD: jet-dashboard
 * ADD: date format for date-range filter

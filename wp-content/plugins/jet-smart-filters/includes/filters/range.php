@@ -92,7 +92,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Range_Filter' ) ) {
 			$format['decimal_num']   = absint( $format['decimal_num'] );
 
 			if ( is_callable( $source_cb ) ) {
-				$data = call_user_func( $source_cb );
+				$data = call_user_func( $source_cb, array( 'key' => $query_var ) );
 				$min  = isset( $data['min'] ) ? $data['min'] : false;
 				$max  = isset( $data['max'] ) ? $this->max_value_for_current_step( $data['max'], $min, $step) : false;
 			}

@@ -36,6 +36,8 @@ jQuery(document).ready(function($) {
             jQuery( '#post-' + response.order_id ).find( '.ivole-review-reminder' ).html( response.message );
           } else if (response.code === 10) {
             jQuery( '#post-' + response.order_id ).find( '.ivole-review-reminder' ).html( response.message );
+          } else if (response.code === 100) {
+            jQuery( '#post-' + response.order_id ).find( '.ivole-review-reminder' ).html( response.message );
           } else {
             jQuery( '#post-' + response.order_id ).find( '.ivole-review-reminder' ).text( response.message );
           }

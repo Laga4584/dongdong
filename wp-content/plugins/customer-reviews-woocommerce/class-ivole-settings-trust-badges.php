@@ -6,7 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'Ivole_Trust_Badges' ) ):
 
-require_once('class-ivole-trust-badge.php');
+require_once( 'class-ivole-trust-badge.php' );
+require_once( 'class-cr-floating-trust-badge.php' );
 
 class Ivole_Trust_Badges {
 
@@ -26,10 +27,15 @@ class Ivole_Trust_Badges {
     protected $settings;
     protected $language;
 
+    protected $floating_light;
+    protected $floating_dark;
+
     public function __construct( $settings_menu ) {
         $this->settings_menu = $settings_menu;
         $this->tab = 'trust_badges';
         $this->language = Ivole_Trust_Badge::get_badge_language();
+        $this->floating_light = CR_Floating_Trust_Badge::$floating_light;
+        $this->floating_dark = CR_Floating_Trust_Badge::$floating_dark;
 
         add_action( 'woocommerce_admin_field_trust_badge', array( $this, 'show_trustbadge' ) );
         add_action( 'woocommerce_admin_field_verified_badge', array( $this, 'show_verified_badge_checkbox' ) );
@@ -155,8 +161,65 @@ class Ivole_Trust_Badges {
                 'desc_tip' => true
             ),
             array(
+                'title'    => __( 'Compact Light Badge', IVOLE_TEXT_DOMAIN ),
+                'type'     => 'trust_badge',
+                'desc'     => __( 'Shortcode and preview of the compact light trust badge.', IVOLE_TEXT_DOMAIN ),
+                'id'       => 'ivole_trust_badge_vsl',
+                'css'      => 'min-width:400px;',
+                'desc_tip' => true
+            ),
+            array(
+                'title'    => __( 'Compact Dark Badge', IVOLE_TEXT_DOMAIN ),
+                'type'     => 'trust_badge',
+                'desc'     => __( 'Shortcode and preview of the compact dark trust badge.', IVOLE_TEXT_DOMAIN ),
+                'id'       => 'ivole_trust_badge_vsd',
+                'css'      => 'min-width:400px;',
+                'desc_tip' => true
+            ),
+            array(
                 'type' => 'sectionend',
                 'id'   => 'ivole_options'
+            ),
+            array(
+                'title' => __( 'Floating Trust Badge', IVOLE_TEXT_DOMAIN ),
+                'type'  => 'title',
+                'desc'  => __( 'Settings to display a floating badge with a summary of verified reviews.', IVOLE_TEXT_DOMAIN ),
+                'id'    => 'ivole_options_floating'
+            ),
+            array(
+                'title'    => __( 'Floating Badge', IVOLE_TEXT_DOMAIN ),
+                'type'     => 'checkbox',
+                'desc'     => __( 'Enable this checkbox to display a floating trust badge on public pages of the website.', IVOLE_TEXT_DOMAIN ),
+                'id'       => 'ivole_trust_badge_floating',
+                'desc_tip' => false
+            ),
+            array(
+                'title'    => __( 'Floating Badge Style', IVOLE_TEXT_DOMAIN ),
+                'type'     => 'select',
+                'desc'     => __( 'Choose one of the styles for the floating trust badge.', IVOLE_TEXT_DOMAIN ),
+                'id'       => 'ivole_trust_badge_floating_type',
+                'desc_tip' => true,
+                'options'  => array(
+                  'light' => __( 'Light', IVOLE_TEXT_DOMAIN ),
+                  'dark'  => __( 'Dark', IVOLE_TEXT_DOMAIN )
+                ),
+                'default'  => 'light'
+            ),
+            array(
+                'title'    => __( 'Floating Badge Location', IVOLE_TEXT_DOMAIN ),
+                'type'     => 'select',
+                'desc'     => __( 'Choose one of the locations for the floating trust badge.', IVOLE_TEXT_DOMAIN ),
+                'id'       => 'ivole_trust_badge_floating_location',
+                'desc_tip' => true,
+                'options'  => array(
+                  'bottomright' => __( 'Bottom right', IVOLE_TEXT_DOMAIN ),
+                  'bottomleft'  => __( 'Bottom left', IVOLE_TEXT_DOMAIN ),
+                ),
+                'default'  => 'bottomright'
+            ),
+            array(
+                'type' => 'sectionend',
+                'id'   => 'ivole_options_floating'
             )
         );
     }
@@ -212,6 +275,14 @@ class Ivole_Trust_Badges {
           $shortcode = '[cusrev_trustbadge type="WDP" color="#003640"]';
           $suffix = 'wdp';
           break;
+        case 'ivole_trust_badge_vsl':
+          $shortcode = '[cusrev_trustbadge type="VSL" color="#FFFFFF"]';
+          $suffix = 'vsl';
+          break;
+        case 'ivole_trust_badge_vsd':
+          $shortcode = '[cusrev_trustbadge type="VSD" color="#373737"]';
+          $suffix = 'vsd';
+          break;
         default:
           $shortcode = '';
           $suffix = '';
@@ -228,7 +299,7 @@ class Ivole_Trust_Badges {
           <?php
           if( 'yes' === get_option( 'ivole_reviews_verified', 'no' ) ) :
           ?>
-          <p><a href="https://www.cusrev.com/reviews/<?php echo get_option( 'ivole_reviews_verified_page', Ivole_Email::get_blogdomain() ); ?>" rel="nofollow" target="_blank" style="display:inline-block;"><img id="ivole_trustbadge_admin" class="ivole-trustbadge-<?php echo $suffix; ?>" src="<?php echo add_query_arg( 't', time(), 'https://www.cusrev.com/badges/' . Ivole_Email::get_blogurl() . '-' . $suffix . $l_suffix . '.png' ); ?>"></a></p>
+            <p><a href="https://www.cusrev.com/reviews/<?php echo get_option( 'ivole_reviews_verified_page', Ivole_Email::get_blogdomain() ); ?>" rel="nofollow" target="_blank" style="display:inline-block;"><img id="ivole_trustbadge_admin" class="ivole-trustbadge-<?php echo $suffix; ?>" src="<?php echo add_query_arg( 't', time(), 'https://www.cusrev.com/badges/' . Ivole_Email::get_blogurl() . '-' . $suffix . $l_suffix . '.png' ); ?>"></a></p>
           <?php
           else :
             echo '<p style="color:blue;">Preview of trust badges is turned off. Please enable \'Trust Badges\' checkbox and save changes to view trust badges.</p>';
@@ -341,36 +412,197 @@ class Ivole_Trust_Badges {
     }
 
     public function output_page_javascript() {
-        if ( $this->is_this_tab() ) {
-        ?>
-            <script type="text/javascript">
-                jQuery(function($) {
-                  // Load of Review Extensions page and check if verified reviews are enabled
-				              if ( jQuery('#ivole_reviews_verified').length > 0 ) {
-                        var data = {
-                            'action': 'ivole_check_verified_reviews_ajax'
-                        };
-                        jQuery('#ivole_verified_badge_status').text('Checking settings...');
-                        jQuery('#ivole_verified_badge_status').css('visibility', 'visible');
-                        jQuery.post(ajaxurl, data, function(response) {
-                            jQuery('#ivole_reviews_verified').prop( 'checked', <?php echo 'yes' === get_option( 'ivole_reviews_verified', 'no' ) ? 'true' : 'false'; ?> );
-                            jQuery('#ivole_verified_badge_status').css( 'visibility', 'hidden' );
-                            jQuery('#ivole_reviews_verified').prop( 'disabled', false );
-                            jQuery('#ivole_reviews_verified_page').prop( 'disabled', <?php echo 'yes' === get_option( 'ivole_reviews_verified', 'no' ) ? 'false' : 'true'; ?> );
-                        });
+      if ( $this->is_this_tab() ) {
+        $floating_tbadges_pics = $this->floating_badge_preview();
+      ?>
+        <script type="text/javascript">
+            jQuery(function($) {
+              // Load of Review Extensions page and check if verified reviews are enabled
+		              if ( jQuery('#ivole_reviews_verified').length > 0 ) {
+                    var data = {
+                        'action': 'ivole_check_verified_reviews_ajax'
+                    };
+                    jQuery('#ivole_verified_badge_status').text('Checking settings...');
+                    jQuery('#ivole_verified_badge_status').css('visibility', 'visible');
+                    jQuery.post(ajaxurl, data, function(response) {
+                        jQuery('#ivole_reviews_verified').prop( 'checked', <?php echo 'yes' === get_option( 'ivole_reviews_verified', 'no' ) ? 'true' : 'false'; ?> );
+                        jQuery('#ivole_verified_badge_status').css( 'visibility', 'hidden' );
+                        jQuery('#ivole_reviews_verified').prop( 'disabled', false );
+                        jQuery('#ivole_reviews_verified_page').prop( 'disabled', <?php echo 'yes' === get_option( 'ivole_reviews_verified', 'no' ) ? 'false' : 'true'; ?> );
+                    });
 
-                        jQuery('#ivole_reviews_verified').change(function(){
-                            if( this.checked ) {
-                                jQuery('#ivole_reviews_verified_page').prop( 'disabled', false );
-                            } else {
-                                jQuery('#ivole_reviews_verified_page').prop( 'disabled', true );
-                            }
-                        });
-				              }
-                });
-            </script>
-        <?php
-        }
+                    jQuery('#ivole_reviews_verified').change(function(){
+                        if( this.checked ) {
+                            jQuery('#ivole_reviews_verified_page').prop( 'disabled', false );
+                        } else {
+                            jQuery('#ivole_reviews_verified_page').prop( 'disabled', true );
+                        }
+                    });
+                    jQuery('#cr_floatingtrustbadge_admin').click(function(){
+                      if( !jQuery(this).hasClass( 'cr-floatingbadge-big' ) ) {
+                        jQuery(this).find('img.cr_floatingtrustbadge_small').hide();
+                        jQuery(this).find('a.cr_floatingtrustbadge_big').css( 'display', 'block' );
+                        jQuery(this).find('div.cr-floatingbadge-close').css( 'display', 'block' );
+                        jQuery(this).addClass( 'cr-floatingbadge-big' );
+                        //update colors
+                        if( 'light' === jQuery('#ivole_trust_badge_floating_type').val() ) {
+                          jQuery(this).css( 'border-color', '<?php echo $this->floating_light['big']['border']; ?>' );
+                          jQuery(this).find('div.cr-floatingbadge-background-top').css( 'background-color', '<?php echo $this->floating_light['big']['top']; ?>' );
+                          jQuery(this).find('div.cr-floatingbadge-background-middle').css( 'background-color', '<?php echo $this->floating_light['big']['middle']; ?>' );
+                          jQuery(this).find('div.cr-floatingbadge-background-bottom').css( 'background-color', '<?php echo $this->floating_light['big']['bottom']; ?>' );
+                          jQuery(this).find('div.cr-floatingbadge-background-bottom').css( 'border-color', '<?php echo $this->floating_light['big']['border']; ?>' );
+                        } else {
+                          jQuery(this).css( 'border-color', '<?php echo $this->floating_dark['big']['border']; ?>' );
+                          jQuery(this).find('div.cr-floatingbadge-background-top').css( 'background-color', '<?php echo $this->floating_dark['big']['top']; ?>' );
+                          jQuery(this).find('div.cr-floatingbadge-background-middle').css( 'background-color', '<?php echo $this->floating_dark['big']['middle']; ?>' );
+                          jQuery(this).find('div.cr-floatingbadge-background-bottom').css( 'background-color', '<?php echo $this->floating_dark['big']['bottom']; ?>' );
+                          jQuery(this).find('div.cr-floatingbadge-background-bottom').css( 'border-color', '<?php echo $this->floating_dark['big']['border']; ?>' );
+                        }
+                      }
+                    });
+                    jQuery('#cr_floatingtrustbadge_admin .cr-floatingbadge-close').click(function(event){
+                      jQuery(this).closest('#cr_floatingtrustbadge_admin').find('a.cr_floatingtrustbadge_big').hide();
+                      jQuery(this).closest('#cr_floatingtrustbadge_admin').find('img.cr_floatingtrustbadge_small').css( 'display', 'block' );
+                      jQuery(this).hide();
+                      jQuery(this).closest('#cr_floatingtrustbadge_admin').removeClass( 'cr-floatingbadge-big' );
+                      //update colors
+                      if( 'light' === jQuery('#ivole_trust_badge_floating_type').val() ) {
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').css( 'border-color', '<?php echo $this->floating_light['small']['border']; ?>' );
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').find('div.cr-floatingbadge-background-top').css( 'background-color', '<?php echo $this->floating_light['small']['top']; ?>' );
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').find('div.cr-floatingbadge-background-middle').css( 'background-color', '<?php echo $this->floating_light['small']['middle']; ?>' );
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').find('div.cr-floatingbadge-background-bottom').css( 'background-color', '<?php echo $this->floating_light['small']['bottom']; ?>' );
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').find('div.cr-floatingbadge-background-bottom').css( 'border-color', '<?php echo $this->floating_light['small']['border']; ?>' );
+                      } else {
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').css( 'border-color', '<?php echo $this->floating_dark['small']['border']; ?>' );
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').find('div.cr-floatingbadge-background-top').css( 'background-color', '<?php echo $this->floating_dark['small']['top']; ?>' );
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').find('div.cr-floatingbadge-background-middle').css( 'background-color', '<?php echo $this->floating_dark['small']['middle']; ?>' );
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').find('div.cr-floatingbadge-background-bottom').css( 'background-color', '<?php echo $this->floating_dark['small']['bottom']; ?>' );
+                        jQuery(this).closest('#cr_floatingtrustbadge_admin').find('div.cr-floatingbadge-background-bottom').css( 'border-color', '<?php echo $this->floating_dark['small']['border']; ?>' );
+                      }
+                      event.stopPropagation();
+                    });
+                    jQuery('#ivole_trust_badge_floating_type').change(function(){
+                      if( 'light' === jQuery(this).val()) {
+                        if( jQuery('#cr_floatingtrustbadge_admin').hasClass( 'cr-floatingbadge-big' ) ) {
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-top').css( 'background-color', '<?php echo $this->floating_light['big']['top']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-middle').css( 'background-color', '<?php echo $this->floating_light['big']['middle']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-bottom').css( 'background-color', '<?php echo $this->floating_light['big']['bottom']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin').css( 'border-color', '<?php echo $this->floating_light['big']['border']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-bottom').css( 'border-color', '<?php echo $this->floating_light['big']['border']; ?>' );
+                        } else {
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-top').css( 'background-color', '<?php echo $this->floating_light['small']['top']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-middle').css( 'background-color', '<?php echo $this->floating_light['small']['middle']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-bottom').css( 'background-color', '<?php echo $this->floating_light['small']['bottom']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin').css( 'border-color', '<?php echo $this->floating_light['small']['border']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-bottom').css( 'border-color', '<?php echo $this->floating_light['small']['border']; ?>' );
+                        }
+                        jQuery('#cr_floatingtrustbadge_admin img.cr_floatingtrustbadge_small').attr( 'src', '<?php echo $floating_tbadges_pics['light_small']; ?>' );
+                        jQuery('#cr_floatingtrustbadge_admin a.cr_floatingtrustbadge_big img').attr( 'src', '<?php echo $floating_tbadges_pics['light_big']; ?>' );
+                      } else {
+                        if( jQuery(this).hasClass( 'cr-floatingbadge-big' ) ) {
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-top').css( 'background-color', '<?php echo $this->floating_dark['big']['top']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-middle').css( 'background-color', '<?php echo $this->floating_dark['big']['middle']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-bottom').css( 'background-color', '<?php echo $this->floating_dark['big']['bottom']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin').css( 'border-color', '<?php echo $this->floating_dark['big']['border']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-bottom').css( 'border-color', '<?php echo $this->floating_dark['big']['border']; ?>' );
+                        } else {
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-top').css( 'background-color', '<?php echo $this->floating_dark['small']['top']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-middle').css( 'background-color', '<?php echo $this->floating_dark['small']['middle']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-bottom').css( 'background-color', '<?php echo $this->floating_dark['small']['bottom']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin').css( 'border-color', '<?php echo $this->floating_dark['small']['border']; ?>' );
+                          jQuery('#cr_floatingtrustbadge_admin div.cr-floatingbadge-background-bottom').css( 'border-color', '<?php echo $this->floating_dark['small']['border']; ?>' );
+                        }
+                        jQuery('#cr_floatingtrustbadge_admin img.cr_floatingtrustbadge_small').attr( 'src', '<?php echo $floating_tbadges_pics['dark_small']; ?>' );
+                        jQuery('#cr_floatingtrustbadge_admin a.cr_floatingtrustbadge_big img').attr( 'src', '<?php echo $floating_tbadges_pics['dark_big']; ?>' );
+                      }
+                    });
+                    jQuery('#ivole_trust_badge_floating_location').change(function(){
+                      if( 'bottomleft' === jQuery(this).val()) {
+                        jQuery('#cr_floatingtrustbadge_admin').css( 'right', 'auto' );
+                        jQuery('#cr_floatingtrustbadge_admin').css( 'left', '0px' );
+                      } else {
+                        jQuery('#cr_floatingtrustbadge_admin').css( 'left', 'auto' );
+                        jQuery('#cr_floatingtrustbadge_admin').css( 'right', '0px' );
+                      }
+                    });
+		              }
+            });
+        </script>
+      <?php
+      }
+    }
+
+    public function floating_badge_preview() {
+      if( 'yes' !== get_option( 'ivole_reviews_verified', 'no' ) ) {
+        return array(
+          'light_small' => '',
+          'light_big' => '',
+          'dark_small' => '',
+          'dark_big' => ''
+        );
+      }
+
+      $l_suffix = '';
+      if( 'en' !== $this->language ) {
+        $l_suffix = '-' . $this->language;
+      }
+
+      $light_small_src = add_query_arg( 't', time(), 'https://www.cusrev.com/badges/' . Ivole_Email::get_blogurl() . '-cl' . $l_suffix . '.png' );
+      $light_big_src = add_query_arg( 't', time(), 'https://www.cusrev.com/badges/' . Ivole_Email::get_blogurl() . '-cwl' . $l_suffix . '.png' );
+      $dark_small_src = add_query_arg( 't', time(), 'https://www.cusrev.com/badges/' . Ivole_Email::get_blogurl() . '-cd' . $l_suffix . '.png' );
+      $dark_big_src = add_query_arg( 't', time(), 'https://www.cusrev.com/badges/' . Ivole_Email::get_blogurl() . '-cwd' . $l_suffix . '.png' );
+      $small_src = '';
+      $big_src = '';
+
+      $float_style = get_option( 'ivole_trust_badge_floating_type', 'light' );
+      if( 'light' === $float_style ) {
+        $small_src = $light_small_src;
+        $big_src = $light_big_src;
+        $float_colors = $this->floating_light['small'];
+      } else {
+        $small_src = $dark_small_src;
+        $big_src = $dark_big_src;
+        $float_colors = $this->floating_dark['small'];
+      }
+      $float_location = get_option( 'ivole_trust_badge_floating_location', 'bottomright' );
+      if( 'bottomleft' === $float_location ) {
+        $location_css = "left:0px;";
+      } else {
+        $location_css = "right:0px;";
+      }
+
+      ?>
+          <div id="cr_floatingtrustbadge_admin" style="border-color: <?php echo $float_colors['border']; ?>; <?php echo $location_css; ?>">
+            <div class="cr-floatingbadge-background">
+              <div class="cr-floatingbadge-background-top" style="background-color: <?php echo $float_colors['top']; ?>;"></div>
+              <div class="cr-floatingbadge-background-middle" style="background-color: <?php echo $float_colors['middle']; ?>;"></div>
+              <div class="cr-floatingbadge-background-bottom" style="background-color: <?php echo $float_colors['bottom']; ?>;"></div>
+            </div>
+            <div class="cr-floatingbadge-top">
+              <svg width="70" height="65" viewBox="0 0 70 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M34.9752 53.9001L13.3948 65L17.5124 41.4914L0 24.8173L24.2098 21.3758L34.9752 0L45.7902 21.3758L70 24.8173L52.4876 41.4914L56.6052 65L34.9752 53.9001Z" fill="#F4DB6B"></path>
+                <path d="M25.8965 38.2439C25.8965 43.1395 29.9645 47.1142 34.9752 47.1142C39.9858 47.1142 44.0538 43.1395 44.0538 38.2439H25.8965Z" fill="#E98B3E"></path>
+                <path d="M29.7163 30.7793C29.7163 32.2335 28.5257 33.3968 27.0374 33.3968C25.549 33.3968 24.3584 32.2335 24.3584 30.7793C24.3584 29.3252 25.549 28.1619 27.0374 28.1619C28.5257 28.1619 29.7163 29.3252 29.7163 30.7793Z" fill="#E98B3E"></path>
+                <path d="M45.6411 30.7793C45.6411 32.2335 44.4505 33.3968 42.9622 33.3968C41.4739 33.3968 40.2832 32.2335 40.2832 30.7793C40.2832 29.3252 41.4739 28.1619 42.9622 28.1619C44.4505 28.1619 45.6411 29.3252 45.6411 30.7793Z" fill="#E98B3E"></path>
+                <path d="M34.9752 0L24.2098 21.3758L0 24.8173L27.9305 25.5444L34.9752 0Z" fill="#F6D15A"></path>
+                <path d="M13.3945 65.0001L34.975 53.9002L56.605 65.0001L34.975 48.229L13.3945 65.0001Z" fill="#F6D15A"></path>
+              </svg>
+              <div class="cr-floatingbadge-close" style="display:none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.8,12l3.6-3.6c0.8-0.8,0.8-2,0-2.8c-0.8-0.8-2-0.8-2.8,0L12,9.2L8.4,5.6c-0.8-0.8-2-0.8-2.8,0   c-0.8,0.8-0.8,2,0,2.8L9.2,12l-3.6,3.6c-0.8,0.8-0.8,2,0,2.8C6,18.8,6.5,19,7,19s1-0.2,1.4-0.6l3.6-3.6l3.6,3.6   C16,18.8,16.5,19,17,19s1-0.2,1.4-0.6c0.8-0.8,0.8-2,0-2.8L14.8,12z" />
+                </svg>
+              </div>
+            </div>
+            <img class="cr_floatingtrustbadge_small" src="<?php echo $small_src; ?>">
+            <a class="cr_floatingtrustbadge_big" href="https://www.cusrev.com/reviews/<?php echo get_option( 'ivole_reviews_verified_page', Ivole_Email::get_blogdomain() ); ?>" rel="nofollow" target="_blank" style="display:none;"><img src="<?php echo $big_src; ?>"></a>
+          </div>
+      <?php
+      return array(
+        'light_small' => $light_small_src,
+        'light_big' => $light_big_src,
+        'dark_small' => $dark_small_src,
+        'dark_big' => $dark_big_src
+      );
     }
 }
 

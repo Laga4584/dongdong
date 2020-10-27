@@ -79,42 +79,66 @@ class ThemesCompatibility {
 				'slug' => 'shopkeeper',
 				'name' => 'Shopkeeper',
 			),
-			'the7' => array(
+			'the7'       => array(
 				'slug' => 'the7',
 				'name' => 'The7',
 			),
-			'dt-the7' => array(
+			'dt-the7'    => array(
 				'slug' => 'dt-the7',
 				'name' => 'The7',
 			),
-			'avada' => array(
+			'avada'      => array(
 				'slug' => 'avada',
 				'name' => 'Avada',
 			),
-			'shop-isle' => array(
+			'shop-isle'  => array(
 				'slug'      => 'shop-isle',
 				'className' => 'ShopIsle',
 				'name'      => 'Shop Isle',
 			),
-			'shopical' => array(
+			'shopical'   => array(
 				'slug' => 'shopical',
 				'name' => 'Shopical',
 			),
-			'ekommart' => array(
+			'ekommart'   => array(
 				'slug' => 'ekommart',
 				'name' => 'Ekommart',
 			),
-			'savoy'    => array(
+			'savoy'      => array(
 				'slug' => 'savoy',
 				'name' => 'Savoy',
 			),
-			'sober'    => array(
+			'sober'      => array(
 				'slug' => 'sober',
 				'name' => 'Sober',
 			),
-			'bridge'    => array(
+			'bridge'     => array(
 				'slug' => 'bridge',
 				'name' => 'Bridge',
+			),
+			'divi'       => array(
+				'slug' => 'divi',
+				'name' => 'Divi',
+			),
+			'block-shop' => array(
+				'slug' => 'block-shop',
+				'name' => 'BlockShop',
+			),
+			'dfd-ronneby' => array(
+				'slug' => 'dfd-ronneby',
+				'name' => 'DFDRonneby',
+			),
+			'restoration' => array(
+				'slug' => 'restoration',
+				'name' => 'Restoration',
+			),
+			'salient' => array(
+				'slug' => 'salient',
+				'name' => 'Salient',
+			),
+			'konte' => array(
+				'slug' => 'konte',
+				'name' => 'Konte',
 			),
 		);
 	}

@@ -24,7 +24,7 @@
 				variation_id = $form.find( 'input[name=variation_id]' ).val() || 0;
 
 			var data = {
-				action: 'woocommerce_ajax_add_to_cart',
+				action: 'jet_woo_builder_single_ajax_add_to_cart',
 				product_id: product_id,
 				product_sku: '',
 				quantity: product_qty,

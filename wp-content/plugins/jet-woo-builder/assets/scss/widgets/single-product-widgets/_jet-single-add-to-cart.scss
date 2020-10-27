@@ -16,6 +16,10 @@
 			vertical-align: top;
 			width: 100%;
 		}
+
+		.single_add_to_cart_button.disabled {
+			pointer-events: none;
+		}
 	}
 }
 

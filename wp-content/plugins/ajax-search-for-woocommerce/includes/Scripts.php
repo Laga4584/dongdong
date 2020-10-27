@@ -71,6 +71,9 @@ class Scripts
             'send_ga_events'               => apply_filters( 'dgwt/wcas/scripts/send_ga_events', true ),
             'enable_ga_site_search_module' => apply_filters( 'dgwt/wcas/scripts/enable_ga_site_search_module', false ),
             'magnifier_icon'               => Helpers::getMagnifierIco( '' ),
+            'close_icon'                   => Helpers::getIcon( 'close' ),
+            'back_icon'                    => Helpers::getIcon( 'arrow-left' ),
+            'preloader_icon'               => Helpers::getIcon( 'preloader' ),
             'custom_params'                => (object) apply_filters( 'dgwt/wcas/scripts/custom_params', array() ),
             'convert_html'                 => true,
         );

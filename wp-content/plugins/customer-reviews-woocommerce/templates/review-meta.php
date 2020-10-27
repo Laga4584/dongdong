@@ -40,10 +40,16 @@ if ( '0' === $comment->comment_approved ) { ?>
 		<strong class="woocommerce-review__author"><?php comment_author(); ?> </strong>
 		<?php
 		if( 'yes' === get_option( 'woocommerce_review_rating_verification_label' ) && $shop_manager ) {
-			echo '<em class="woocommerce-review__verified verified">(' . esc_attr__( 'store manager', IVOLE_TEXT_DOMAIN ) . ')</em> ';
+			echo '<em class="woocommerce-review__verified verified">(' . esc_attr__( 'store manager', 'customer-reviews-woocommerce' ) . ')</em> ';
 		} else {
 			if ( 'yes' === get_option( 'woocommerce_review_rating_verification_label' ) && $verified ) {
-				echo '<em class="woocommerce-review__verified verified">(' . esc_attr__( 'verified owner', 'woocommerce' ) . ')</em> ';
+      	$cr_verified_label = get_option( 'ivole_verified_owner', '' );
+        if( $cr_verified_label ) {
+					$cr_verified_label = esc_attr( $cr_verified_label );
+				} else {
+					$cr_verified_label = esc_attr__( 'verified owner', 'woocommerce' );
+				}
+				echo '<em class="woocommerce-review__verified verified">(' . $cr_verified_label . ')</em> ';
 			}
 		}
 

@@ -48,15 +48,18 @@ class WC_Advanced_Shipment_Tracking_Email_Manager {
 	/**
 	 * code for format email content 
 	 */
-	public function email_content($email_content, $order_id, $order){						
+	public function email_content( $email_content, $order_id, $order ){	
+	
+		$ast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
+		$order_id = $ast->get_custom_order_number( $order_id );
+		
 		$customer_email = $order->get_billing_email();
 		$first_name = $order->get_billing_first_name();
 		$last_name = $order->get_billing_last_name();
 		$company_name = $order->get_billing_company();
 		$user = $order->get_user();
-		if($user){
-			$username = $user->user_login;
-		}		
+		
+		if($user)$username = $user->user_login;			
 		
 		$email_content = str_replace( '{customer_email}', $customer_email, $email_content );
 		$email_content = str_replace( '{site_title}', $this->get_blogname(), $email_content );

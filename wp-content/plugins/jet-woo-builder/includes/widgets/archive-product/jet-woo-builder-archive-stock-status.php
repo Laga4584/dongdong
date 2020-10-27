@@ -24,7 +24,7 @@ class Jet_Woo_Builder_Archive_Stock_Status extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-25';
+		return 'jet-woo-builder-icon-archive-stock-status';
 	}
 
 	public function get_help_url() {

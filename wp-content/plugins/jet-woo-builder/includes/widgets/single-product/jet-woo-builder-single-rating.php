@@ -32,7 +32,7 @@ class Jet_Woo_Builder_Single_Rating extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-8';
+		return 'jet-woo-builder-icon-rating';
 	}
 
 	public function get_script_depends() {

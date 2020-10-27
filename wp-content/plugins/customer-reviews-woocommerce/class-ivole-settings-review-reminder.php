@@ -136,12 +136,19 @@ class Ivole_Review_Reminder_Settings {
           }
         }
 
-        if( ! empty( $_POST ) && isset( $_POST['ivole_form_body'] ) ) {
-          if( empty( $_POST['ivole_form_body'] ) ) {
-            WC_Admin_Settings::add_error( __( '\'Form Body\' field cannot be empty', IVOLE_TEXT_DOMAIN ) );
-            $_POST['ivole_form_body'] = get_option( 'ivole_form_body' );
-          }
-        }
+		if( ! empty( $_POST ) && isset( $_POST['ivole_form_body'] ) ) {
+			if( empty( preg_replace( '#\s#isUu', '', html_entity_decode( $_POST['ivole_form_body'] ) ) ) ) {
+				WC_Admin_Settings::add_error( __( '\'Form Body\' field cannot be empty', IVOLE_TEXT_DOMAIN ) );
+				$_POST['ivole_form_body'] = get_option( 'ivole_form_body' );
+			}
+		}
+
+		if( ! empty( $_POST ) && isset( $_POST['ivole_email_body'] ) ) {
+			if( empty( preg_replace( '#\s#isUu', '', html_entity_decode( $_POST['ivole_email_body'] ) ) ) ) {
+				WC_Admin_Settings::add_error( __( '\'Email Body\' field cannot be empty', IVOLE_TEXT_DOMAIN ) );
+				$_POST['ivole_email_body'] = get_option( 'ivole_email_body' );
+			}
+		}
 
         //check that a license key is entered when CR scheduler is enabled
         if( ! empty( $_POST ) && isset( $_POST['ivole_scheduler_type'] ) ) {

@@ -31,7 +31,7 @@ class Jet_Woo_Categories extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-15';
+		return 'jet-woo-builder-icon-categories-grid';
 	}
 
 	public function get_jet_help_url() {

@@ -2,9 +2,9 @@
 Contributors: damian-gora
 Tags: woocommerce search, ajax search, search by sku, product search, woocommerce
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.5
-Stable tag: 1.7.2
+Stable tag: 1.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,7 +102,7 @@ We have prepared a one-click replacement of search bar for the following themes:
 *  OceanWP
 *  Astra
 *  Avada
-*  and 13 more... See complete list of integrated themes on [our docs](https://ajaxsearch.pro/docs/integrations/?utm_source=readme&utm_medium=referral&utm_campaign=asfw&utm_content=theme-integrations).
+*  and 24 more... See complete list of integrated themes on [our docs](https://ajaxsearch.pro/docs/integrations/?utm_source=readme&utm_medium=referral&utm_campaign=asfw&utm_content=theme-integrations).
 
 
 If you want to replace your search bar in some other theme, please [contact our support team](https://ajaxsearch.pro/contact/?utm_source=readme&utm_medium=referral&utm_campaign=asfw&utm_content=contact&utm_gen=utmdc)
@@ -139,6 +139,28 @@ You can read more and compare Pro and Free features here: [feature comparison](h
 5. Search config
 
 == Changelog ==
+
+= 1.8.0, October 23, 2020 =
+* ADD: Support for Sober theme
+* ADD: Support for Divi theme
+* ADD: Support for Block Shop theme
+* ADD: Support for Enfold theme
+* ADD: Support for Restoration theme
+* ADD: Support for Salient theme
+* ADD: Support for Konte theme
+* ADD: New filter and action hooks
+* ADD: &lt;br&gt; to HTML whitelist for search suggestions
+* ADD: Allow to add search icon as menu item
+* ADD: Allow to change colors of search icon
+* CHANGE: Updated Freemius SDK to v2.4.1
+* CHANGE: Replace old close "x" icon with Material Design icons
+* FIX: Empty search results on search results page 
+* FIX: Support Touchpad click for some devices
+* FIX: Mixed Content on the plugin settings page in some cases
+* FIX: Integration with Flatsome theme
+* FIX: Broken translations via WPML String Translation
+
+
 
 = 1.7.2, July 12, 2020 =
 * ADD: Integration with FacetWP plugin

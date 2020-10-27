@@ -209,7 +209,10 @@ class Utils {
 	 */
 	public static function license_expired_check( $expire_date = false ) {
 
-		if ( '0000-00-00 00:00:00' === $expire_date || 'lifetime' === $expire_date ) {
+		if ( '0000-00-00 00:00:00' === $expire_date
+			||'1000-01-01 00:00:00' === $expire_date
+			|| 'lifetime' === $expire_date
+		) {
 			return false;
 		}
 

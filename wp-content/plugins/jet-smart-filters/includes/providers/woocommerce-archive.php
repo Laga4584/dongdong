@@ -24,14 +24,78 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_WooCommerce_Archive' ) ) {
 			if ( ! jet_smart_filters()->query->is_ajax_filter() ) {
 				add_filter( 'posts_pre_query', array( $this, 'store_archive_query' ), 0, 2 );
 				add_filter( 'woocommerce_shop_loop', array( $this, 'set_loop_props' ) );
+
+				add_action( 'elementor/widget/before_render_content', array( $this, 'store_default_settings' ), 0 );
 			}
+
+		}
+
+		/**
+		 * Save default widget settings
+		 *
+		 * @param  $widget
+		 * @return void
+		 */
+		public function store_default_settings( $widget ) {
+
+			if ( $this->widget_name() !== $widget->get_name() ) {
+				return;
+			}
+
+			$settings         = $widget->get_settings();
+			$store_settings   = $this->settings_to_store();
+			$default_settings = array();
+
+			if ( ! empty( $settings['_element_id'] ) ) {
+				$query_id = $settings['_element_id'];
+			} else {
+				$query_id = 'default';
+			}
+
+			foreach ( $store_settings as $key ) {
+				if ( $key === 'switcher_enable' ) {
+					$default_settings[ $key ] = isset( $settings[ $key ] ) ? filter_var( $settings[$key], FILTER_VALIDATE_BOOLEAN ) : '';
+				} else {
+					$default_settings[ $key ] = isset( $settings[ $key ] ) ? $settings[ $key ] : '';
+				}
+			}
+
+			$default_settings['_el_widget_id'] = $widget->get_id();
+
+			jet_smart_filters()->providers->store_provider_settings( $this->get_id(), $default_settings, $query_id );
+
+		}
+
+		/**
+		 * Returns Products loop appropriate widget name
+		 * @return string
+		 */
+		public function widget_name() {
+			return 'jet-woo-builder-products-loop';
+		}
+
+		/**
+		 * Returns settings to store list
+		 * @return array
+		 */
+		public function settings_to_store() {
+
+			return array(
+				'switcher_enable',
+				'main_layout',
+				'main_layout_switcher_label',
+				'main_layout_switcher_icon',
+				'secondary_layout',
+				'secondary_layout_switcher_label',
+				'secondary_layout_switcher_icon'
+			);
 
 		}
 
 		/**
 		 * WooCommerce loop properties to store
 		 *
-		 * @return [type] [description]
+		 * @return array
 		 */
 		public function wc_loop_props() {
 			return apply_filters( 'jet-smart-filters/providers/' . $this->get_id() . '/wc-loop-props', array(
@@ -45,7 +109,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_WooCommerce_Archive' ) ) {
 		}
 
 		/**
-		 * Set woocommerce loop properies
+		 * Set woocommerce loop properties
 		 */
 		public function set_loop_props() {
 
@@ -169,6 +233,17 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_WooCommerce_Archive' ) ) {
 
 			add_action( 'woocommerce_before_shop_loop', array( $this, 'add_loop_data' ), 0 );
 
+			$layout          = ! empty( $_COOKIE['jet_woo_builder_layout'] ) ? absint( $_COOKIE['jet_woo_builder_layout'] ) : false;
+			$settings        = jet_smart_filters()->query->get_query_settings();
+			$switcher_enable = filter_var( $settings['switcher_enable'], FILTER_VALIDATE_BOOLEAN );
+			$default_layout  = ! empty( $settings['main_layout'] ) ? absint( $settings['main_layout'] ) : false;
+
+			if ( function_exists( 'jet_woo_builder_integration_woocommerce' ) && $switcher_enable && $layout ) {
+				jet_woo_builder_integration_woocommerce()->current_template_archive = $layout;
+			} elseif ( function_exists( 'jet_woo_builder_integration_woocommerce' ) && $switcher_enable && $default_layout ) {
+				jet_woo_builder_integration_woocommerce()->current_template_archive = $default_layout;
+			}
+
 			Elementor\Jet_Woo_Builder_Products_Loop::products_loop();
 
 			remove_action( 'woocommerce_before_shop_loop', array( $this, 'add_loop_data' ), 0 );
@@ -217,7 +292,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_WooCommerce_Archive' ) ) {
 		 * @return string
 		 */
 		public function get_wrapper_selector() {
-			return '.elementor-jet-woo-builder-products-loop';
+			return '.jet-woo-products-wrapper';
 		}
 
 		/**

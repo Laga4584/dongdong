@@ -5,7 +5,7 @@ Plugin URL: https://wunderwp.com
 Tags: elementor, preset, reusable style, readymade template, premade content
 Requires at least: 4.7
 Tested up to: 5.3.2
-Stable tag: 1.5.1
+Stable tag: 1.6.0
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -90,6 +90,10 @@ A product of Artbees, the team behind the stellar Jupiter X WP theme.
 
 == Changelog ==
 
+= 1.6.0 - 2020-10-21 =
+* New: Feedback notification bar.
+* Fix: Various of cosmetic issues in Template Library modal.
+
 = 1.5.1 - 2020-02-21 =
 * Tweak: Make admin notice dismissible.
 
@@ -145,4 +149,3 @@ This release was mostly about fixing existing bugs.
 
 = 1.5.1 =
 This release was about making admin notice dismissible.
-

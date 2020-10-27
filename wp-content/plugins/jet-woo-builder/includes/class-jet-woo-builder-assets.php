@@ -21,6 +21,12 @@ if ( ! class_exists( 'Jet_Woo_Builder_Assets' ) ) {
 		private static $instance = null;
 
 		/**
+		 * Contain plugin localize data.
+		 * @var array
+		 */
+		public $localize_data = array();
+
+		/**
 		 * Constructor for the class
 		 */
 		public function init() {
@@ -34,6 +40,11 @@ if ( ! class_exists( 'Jet_Woo_Builder_Assets' ) ) {
 			), 5 );
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_assets' ) );
+
+			if ( filter_var( jet_woo_builder_settings()->get( 'enable_custom_templates_styles' ), FILTER_VALIDATE_BOOLEAN ) ) {
+				add_action( 'wp_enqueue_scripts', array( $this, 'template_styles' ) );
+				add_action( 'elementor/editor/before_enqueue_styles', array( $this, 'template_styles' ) );
+			}
 
 		}
 
@@ -93,6 +104,22 @@ if ( ! class_exists( 'Jet_Woo_Builder_Assets' ) ) {
 		}
 
 		/**
+		 * Enqueue custom templates styles
+		 *
+		 * @return void
+		 */
+		public function template_styles() {
+
+			wp_enqueue_style(
+				'jet-woo-builder-template-styles',
+				jet_woo_builder()->plugin_url( 'assets/css/template-styles.css' ),
+				array(),
+				jet_woo_builder()->get_version()
+			);
+
+		}
+
+		/**
 		 * Enqueue plugin scripts only with elementor scripts
 		 *
 		 * @return void
@@ -107,10 +134,17 @@ if ( ! class_exists( 'Jet_Woo_Builder_Assets' ) ) {
 				true
 			);
 
+			global $wp_query;
+
+			$this->localize_data = array(
+				'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
+				'products' => json_encode( $wp_query->query_vars ),
+			);
+
 			wp_localize_script(
 				'jet-woo-builder',
 				'jetWooBuilderData',
-				apply_filters( 'jet-woo-builder/frontend/localize-data', array() )
+				apply_filters( 'jet-woo-builder/frontend/localize-data', $this->localize_data )
 			);
 
 		}

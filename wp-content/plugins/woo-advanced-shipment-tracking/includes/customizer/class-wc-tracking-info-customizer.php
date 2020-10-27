@@ -1023,10 +1023,11 @@ class wcast_initialise_customizer_settings {
 
 		$order_status = 'completed';
 		
-		if($preview_id == '' || $preview_id == 'mockup') {
-			$content = '<div style="padding: 35px 40px; background-color: white;">' . __( 'To preview the tracking display, please add tracking information to at least one order and choose it in the preview order selection.', 'woo-advanced-shipment-tracking' ) . '</div>';							
-			echo $content;
-			return;
+		if($preview_id == '' || $preview_id == 'mockup') {							
+			
+			//$content = '<div style="padding: 35px 40px; background-color: white;">' . __( 'To preview the tracking display, please add tracking information to at least one order and choose it in the preview order selection.', 'woo-advanced-shipment-tracking' ) . '</div>';							
+			//echo $content;
+			//return;
 		}		
 		
 		// Reference email.
@@ -1035,8 +1036,8 @@ class wcast_initialise_customizer_settings {
 		}
 		
 		// Get an order
-		$order               = self::get_wc_order_for_preview( $order_status, $preview_id );		
-
+		$order = self::get_wc_order_for_preview( $order_status, $preview_id );		
+		
 		// Make sure gateways are running in case the email needs to input content from them.
 		WC()->payment_gateways();
 		// Make sure shipping is running in case the email needs to input content from it.
@@ -1075,8 +1076,8 @@ class wcast_initialise_customizer_settings {
 		} else {			
 
 			// Instantiate order object
-			$order = new WC_Order();
-
+			$order = new WC_Order();			
+			
 			// Other order properties
 			$order->set_props( array(
 				'id'                 => 1,
@@ -1091,7 +1092,7 @@ class wcast_initialise_customizer_settings {
 				'billing_email'      => 'sherlock@holmes.co.uk',
 				'billing_phone'      => '02079304832',
 				'date_created'       => date( 'Y-m-d H:i:s' ),
-				'total'              => 24.90,
+				'total'              => 24.90,				
 			) );
 
 			// Item #1
@@ -1110,7 +1111,7 @@ class wcast_initialise_customizer_settings {
 				'subtotal' => '14.95',
 				'sku'      => 'kwd_ex_2',
 			) );
-			$order->add_item( $order_item );
+			$order->add_item( $order_item );						
 
 			// Return mockup order
 			return $order;

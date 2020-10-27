@@ -15,7 +15,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Query_Manager' ) ) {
 	 */
 	class Jet_Smart_Filters_Query_Manager {
 
-		private $_query            = array();
+		public  $_query            = array();
 		private $_default_query    = array();
 		private $_query_settings   = array();
 		private $_props            = array();

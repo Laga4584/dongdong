@@ -390,8 +390,8 @@ class WC_Advanced_Shipment_Tracking_REST_API_Controller extends WC_REST_Controll
 
 		$order_id = (int) $request['order_id'];
 		
-		$wast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
-		$order_id = $wast->get_formated_order_id($order_id);
+		$ast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
+		$order_id = $ast->get_formated_order_id( $order_id );
 		
 		if ( ! $this->is_valid_order_id( $order_id ) ) {
 			return new WP_Error( 'woocommerce_rest_order_invalid_id', __( 'Invalid order ID.', 'woo-advanced-shipment-tracking' ), array( 'status' => 404 ) );
@@ -405,6 +405,23 @@ class WC_Advanced_Shipment_Tracking_REST_API_Controller extends WC_REST_Controll
 		$ast_admin = WC_Advanced_Shipment_Tracking_Admin::get_instance();		
 
 		$tracking_provider_name = isset($request['custom_tracking_provider']) ? $request['custom_tracking_provider'] : $request['tracking_provider'];	
+		
+		$replace_tracking = isset($request['replace_tracking']) ? $request['replace_tracking'] : 0;	
+		
+		if($replace_tracking == 1){
+			$order = wc_get_order($order_id);
+			
+			if($order){	
+				$tracking_items = $ast->get_tracking_items( $order_id );			
+				
+				if ( count( $tracking_items ) > 0 ) {
+					foreach ( $tracking_items as $key => $item ) {
+						unset( $tracking_items[ $key ] );													
+					}
+					$ast->save_tracking_items( $order_id, $tracking_items );
+				}
+			}
+		}
 		
 		$tracking_provider = $wpdb->get_var( $wpdb->prepare( "SELECT ts_slug FROM $ast_admin->table WHERE provider_name = '%s'", $tracking_provider_name ) );
 
@@ -425,30 +442,11 @@ class WC_Advanced_Shipment_Tracking_REST_API_Controller extends WC_REST_Controll
 			'source'				   => 'REST_API',
 		);				
 		
-		$args = apply_filters( 'ast_api_create_item_arg', $args );		
-
-		if(isset($request['sku']) && isset($request['qty'])){
-			
-			$tracking_items = $wast->get_tracking_items( $order_id );
-						
-			$products_list = array();
-			$product_id = wc_get_product_id_by_sku( $request['sku'] );
-			$product_data =  (object) array (							
-				'product' => $product_id,
-				'qty' => $request['qty'],
-			);	
-			array_push($products_list,$product_data);
-			
-			$product_args = array(
-				'products_list' => $products_list,				
-			);
-			$args = array_merge($args,$product_args);
-		}
+		$args = apply_filters( 'ast_api_create_item_arg', $args, $request );		
 		
-		$st                        = WC_Advanced_Shipment_Tracking_Actions::get_instance();
-		$tracking_item             = $st->add_tracking_item( $order_id, $args );		
+		$tracking_item             = $ast->add_tracking_item( $order_id, $args );		
 		$tracking_item['order_id'] = $order_id;
-		$formatted                 = $st->get_formatted_tracking_item( $order_id, $tracking_item );
+		$formatted                 = $ast->get_formatted_tracking_item( $order_id, $tracking_item );
 		$tracking_item             = array_merge( $tracking_item, $formatted );
 
 		$request->set_param( 'context', 'edit' );

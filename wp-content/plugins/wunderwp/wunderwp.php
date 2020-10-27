@@ -3,7 +3,7 @@
  * Plugin Name: WunderWP
  * Plugin URI: https://wunderwp.com
  * Description: Apply preset styling to Elementor widgets and beautify your content in seconds!
- * Version: 1.5.1
+ * Version: 1.6.0
  * Author: Artbees
  * Author URI: https://artbees.net
  * Text Domain: wunderwp
@@ -174,6 +174,7 @@ if ( ! class_exists( 'WunderWP' ) ) {
 					'/core/store-preset',
 					'/core/custom-preset',
 					'/connect/class',
+					'/feedback-notification-bar/class',
 					'/options/class',
 					'/template-library/class',
 				]
@@ -415,6 +416,11 @@ if ( ! class_exists( 'WunderWP' ) ) {
 				[ 'jquery' ],
 				self::$version,
 				true
+			);
+
+			wp_enqueue_style(
+				'wunderwp-admin-style',
+				self::$plugin_assets_url . 'css/admin' . $suffix . '.css'
 			);
 
 			// Disabled for now.

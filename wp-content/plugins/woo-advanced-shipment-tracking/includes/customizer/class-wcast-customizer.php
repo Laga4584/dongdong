@@ -92,7 +92,7 @@ class WC_Advanced_Shipment_Tracking_Customizer {
 		
 		$wp_customize->add_section( 'ast_tracking_per_item',
 			array(
-				'title' => __( 'Tracking Per Item Add-on', 'woo-advanced-shipment-tracking' ),
+				'title' => 'Tracking Per Item Add-on',
 				'description' => '',
 				'panel' => 'ast_tracking_display_panel'
 			)

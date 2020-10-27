@@ -22,16 +22,17 @@
 			
 			$.post( ajaxurl, ajax_data, function(response) {				
 				$wc_ast_settings_form.find(".spinner").removeClass("active");
-				var snackbarContainer = document.querySelector('#demo-toast-example');
-				var data = {message: shipment_tracking_table_rows.i18n.data_saved };
-				snackbarContainer.MaterialSnackbar.showSnackbar(data);
+				jQuery("#ast_settings_snackbar").addClass('show_snackbar');	
+				jQuery("#ast_settings_snackbar").text(shipment_tracking_table_rows.i18n.data_saved);			
+				setTimeout(function(){ jQuery("#ast_settings_snackbar").removeClass('show_snackbar'); }, 3000);
 			});
 			
 		},				
 	};
-	$(window).load(function(e) {
-        wc_table_rate_rows.init();
-    });
+	
+	$(window).on('load',function () {
+		wc_table_rate_rows.init();	
+	});	
 })( jQuery, shipment_tracking_table_rows, wp, ajaxurl );
 
 
@@ -54,9 +55,9 @@ jQuery(document).on("change", ".wc_ast_default_provider", function(){
 		type: 'POST',
 		success: function(response) {	
 			jQuery(".d_s_select_section ").unblock();
-			var snackbarContainer = document.querySelector('#demo-toast-example');
-			var data = {message: shipment_tracking_table_rows.i18n.data_saved};
-			snackbarContainer.MaterialSnackbar.showSnackbar(data);			
+			jQuery("#ast_settings_snackbar").addClass('show_snackbar');	
+			jQuery("#ast_settings_snackbar").text(shipment_tracking_table_rows.i18n.data_saved);			
+			setTimeout(function(){ jQuery("#ast_settings_snackbar").removeClass('show_snackbar'); }, 3000);			
 		},
 		error: function(response) {					
 		}
@@ -109,9 +110,7 @@ jQuery(document).on("submit", "#wc_ast_upload_csv_form", function(){
 		replace_tracking_info = 1;
 	} else{
 		replace_tracking_info = 0;
-	}
-	
-	
+	}		
 	
 	var ext = jQuery('#trcking_csv_file').val().split('.').pop().toLowerCase();	
 	
@@ -167,12 +166,10 @@ jQuery(document).on("submit", "#wc_ast_upload_csv_form", function(){
  				
 				var csv_length = trackings.length;
 				
-				jQuery("#wc_ast_upload_csv_form")[0].reset();				
+				jQuery("#wc_ast_upload_csv_form")[0].reset();												
 				
-				jQuery("#p1 .progressbar").css('background-color','rgb(63,81,181)');
-				var querySelector = document.querySelector('#p1');
-				querySelector.MaterialProgress.setProgress(0);
-				jQuery("#p1").show();
+				jQuery(".progress-moved .progress-bar2").css('width',0+'%');
+				
 				
 				jQuery(".progress_step1").removeClass("active");
 				jQuery(".progress_step1").addClass("done");
@@ -221,14 +218,16 @@ jQuery(document).on("submit", "#wc_ast_upload_csv_form", function(){
 						data: data,
 						type: 'POST',
 						success:function(data){	
-							//alert(data);
+							
 							jQuery('.progress_number').html((index+1)+'/'+csv_length);
 							
 							jQuery('.csv_upload_status').append(data);
 							var progress = (index+1)*100/csv_length;
 							jQuery('.bulk_upload_status_tr').show();
 							jQuery('.progress_title').show();	
-							querySelector.MaterialProgress.setProgress(progress);
+							
+							jQuery(".progress-moved .progress-bar2").css('width',progress+'%');
+							
 							if(progress == 100){
 								jQuery( ".csv_upload_status li" ).each(function( index ) {
 									if(this.className == 'success'){
@@ -238,7 +237,7 @@ jQuery(document).on("submit", "#wc_ast_upload_csv_form", function(){
 										error_class++;
 									}																		
 								});									
-								jQuery('#p1').hide();
+								
 								jQuery('.progress_title').hide();
 								jQuery(".progress_step2").removeClass("active");
 								jQuery(".progress_step2").addClass("done");								
@@ -246,12 +245,18 @@ jQuery(document).on("submit", "#wc_ast_upload_csv_form", function(){
 								jQuery(".bulk_upload_status_div").addClass("csv_import_done");
 								jQuery(".bulk_upload_status_action ").show();
 								if(error_class > 0){
-									error_message = error_class+' Tracking information not imported.';
-								}								
-								success_message = success_class+' Tracking information imported.';								
-								jQuery(".bulk_upload_status_heading_tr h2").html("Import Completed! "+success_message+" "+error_message);
-								jQuery(".bulk_upload_status_heading_tr h2").css('margin-bottom','0');								
-								jQuery(".bulk_upload_status_heading_tr p").hide();
+									error_message = error_class+' tracking numbers import failed';
+									jQuery(".bulk_upload_status_overview_td.csv_fail_msg").show();
+								}	
+								jQuery(".bulk_upload_status_overview_td.csv_success_msg").show();								
+								success_message = success_class+' tracking numbers imported successfully';								
+								jQuery(".bulk_upload_status_heading_tr h2").html("Import Completed!");
+								jQuery(".bulk_upload_status_overview_td.csv_success_msg span").html(success_message);
+								jQuery(".bulk_upload_status_overview_td.csv_fail_msg span").html(error_message);								
+								jQuery(".bulk_upload_status_heading_tr p").hide();								
+								jQuery(".csv_upload_status").hide();	
+								jQuery('.bulk_upload_status_tr').hide();								
+								jQuery('.bulk_upload_status_overview_td').show();	
 							}												
 						},
 				
@@ -278,7 +283,9 @@ jQuery(document).on("submit", "#wc_ast_upload_csv_form", function(){
 
 jQuery(document).on("click", ".csv_upload_again", function(){
 	jQuery('.csv_upload_status li').remove();	
+	jQuery('.csv_upload_status').show();	
 	jQuery('.bulk_upload_status_tr').hide();
+	jQuery('.bulk_upload_status_overview_td').hide();	
 	jQuery('.progress_title').hide();
 	jQuery(".bulk_upload_status_heading_tr h2").html('Importing'+'<span class="spinner is-active"></span>');
 	jQuery(".bulk_upload_status_heading_tr p").show();
@@ -311,9 +318,9 @@ jQuery(document).on("change", "#wcast_enable_late_shipments_admin_email", functi
 		data: ajax_data,
 		type: 'POST',
 		success: function(response) {				
-			var snackbarContainer = document.querySelector('#demo-toast-example');
-			var data = {message: shipment_tracking_table_rows.i18n.data_saved};
-			snackbarContainer.MaterialSnackbar.showSnackbar(data);			
+			jQuery("#ast_settings_snackbar").addClass('show_snackbar');	
+			jQuery("#ast_settings_snackbar").text(shipment_tracking_table_rows.i18n.data_saved);			
+			setTimeout(function(){ jQuery("#ast_settings_snackbar").removeClass('show_snackbar'); }, 3000);						
 		},
 		error: function(response) {					
 		}
@@ -352,16 +359,14 @@ jQuery(document).on("click", ".status_filter a", function(){
 				nextPage:'',
 				lastPage:'',
 				sort: [false, false, false, false, false, false],    
-				onChange: function(old_page, new_page){      
-					componentHandler.upgradeAllRegistered();
+				onChange: function(old_page, new_page){      					
 					jQuery(".woocommerce-help-tip").tipTip();
 				},
 				counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		
 					return 'Showing ' + firstRow +  ' to ' + lastRow + ' of ' + totalRow + ' entries' ;
 				}	
 			});
-			jQuery(".woocommerce-help-tip").tipTip();
-			componentHandler.upgradeAllRegistered();			
+			jQuery(".woocommerce-help-tip").tipTip();				
 		},
 		error: function(response) {					
 		}
@@ -487,15 +492,13 @@ jQuery(document).on( "input", "#search_provider", function(){
 				lastPage:'',
 				sort: [false, false, false, false, false, false],    
 				onChange: function(old_page, new_page){      
-					componentHandler.upgradeAllRegistered();
 					jQuery(".woocommerce-help-tip").tipTip();
 				},
 				counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		
 					return 'Showing ' + firstRow +  ' to ' + lastRow + ' of ' + totalRow + ' entries' ;
 				}	
 			});
-			jQuery(".woocommerce-help-tip").tipTip();
-			componentHandler.upgradeAllRegistered();
+			jQuery(".woocommerce-help-tip").tipTip();			
 		},
 		error: function(response) {					
 		}
@@ -513,6 +516,11 @@ jQuery(document).on("click", ".popupclose", function(){
 	jQuery('.how_to_video_popup').hide();
 	jQuery('.ts_video_popup').hide();
 	jQuery('.import_tracking_video_popup').hide();
+});
+jQuery(document).on("click", ".popup_close_icon", function(){
+	jQuery('.add_provider_popup').hide();
+	jQuery('.edit_provider_popup').hide();
+	jQuery('.sync_provider_popup').hide();	
 });
 jQuery(document).on("click", ".popupclose_btn", function(){
 	jQuery('.add_provider_popup').hide();
@@ -593,15 +601,13 @@ jQuery(document).on("click", ".close_synch_popup", function(){
 				lastPage:'',
 				sort: [false, false, false, false, false, false],    
 				onChange: function(old_page, new_page){      
-					componentHandler.upgradeAllRegistered();
 					jQuery(".woocommerce-help-tip").tipTip();
 				},
 				counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		
 					return 'Showing ' + firstRow +  ' to ' + lastRow + ' of ' + totalRow + ' entries' ;
 				}	
 			});
-			jQuery(".woocommerce-help-tip").tipTip();
-			componentHandler.upgradeAllRegistered();
+			jQuery(".woocommerce-help-tip").tipTip();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -653,15 +659,13 @@ jQuery(document).on("click", ".remove", function(){
 				lastPage:'',
 				sort: [false, false, false, false, false, false],    
 				onChange: function(old_page, new_page){      
-					componentHandler.upgradeAllRegistered();
 					jQuery(".woocommerce-help-tip").tipTip();
 				},
 				counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		
 					return 'Showing ' + firstRow +  ' to ' + lastRow + ' of ' + totalRow + ' entries' ;
 				}	
 			});
-			jQuery(".woocommerce-help-tip").tipTip();
-			componentHandler.upgradeAllRegistered();
+			jQuery(".woocommerce-help-tip").tipTip();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -687,6 +691,7 @@ jQuery(document).on("click", ".edit_provider", function(){
 			var provider_url = response.provider_url;
 			var shipping_country = response.shipping_country;
 			var custom_thumb_id = response.custom_thumb_id;
+			var api_provider_name = response.api_provider_name;
 			var image = response.image;
 			if(provider == 'custom_provider'){				
 				jQuery('.edit_provider_popup .shipping_provider').val(provider_name);
@@ -709,6 +714,7 @@ jQuery(document).on("click", ".edit_provider", function(){
 			} else{				
 				jQuery('.edit_provider_popup .shipping_provider').val(provider_name);
 				jQuery('.edit_provider_popup .shipping_display_name').val(custom_provider_name);
+				jQuery('.edit_provider_popup .api_provider_name').val(api_provider_name);
 				jQuery('.edit_provider_popup .thumb_url').val(image);
 				jQuery('.edit_provider_popup .thumb_id').val(custom_thumb_id);
 				jQuery('.edit_provider_popup #provider_id').val(id);
@@ -768,15 +774,13 @@ jQuery(document).on("click", ".reset_default_provider", function(){
 				lastPage:'',
 				sort: [false, false, false, false, false, false],    
 				onChange: function(old_page, new_page){      
-					componentHandler.upgradeAllRegistered();
 					jQuery(".woocommerce-help-tip").tipTip();
 				},
 				counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		
 					return 'Showing ' + firstRow +  ' to ' + lastRow + ' of ' + totalRow + ' entries' ;
 				}	
 			});
-			jQuery(".woocommerce-help-tip").tipTip();
-			componentHandler.upgradeAllRegistered();
+			jQuery(".woocommerce-help-tip").tipTip();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -844,15 +848,13 @@ jQuery(document).on("submit", "#edit_provider_form", function(){
 				lastPage:'',
 				sort: [false, false, false, false, false, false],    
 				onChange: function(old_page, new_page){      
-					componentHandler.upgradeAllRegistered();
 					jQuery(".woocommerce-help-tip").tipTip();
 				},
 				counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		
 					return 'Showing ' + firstRow +  ' to ' + lastRow + ' of ' + totalRow + ' entries' ;
 				}	
 			});
-			jQuery(".woocommerce-help-tip").tipTip();
-			componentHandler.upgradeAllRegistered();
+			jQuery(".woocommerce-help-tip").tipTip();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -907,15 +909,13 @@ jQuery(document).on("click", ".reset_active", function(){
 				lastPage:'',
 				sort: [false, false, false, false, false, false],    
 				onChange: function(old_page, new_page){      
-					componentHandler.upgradeAllRegistered();
 					jQuery(".woocommerce-help-tip").tipTip();
 				},
 				counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		
 					return 'Showing ' + firstRow +  ' to ' + lastRow + ' of ' + totalRow + ' entries' ;
 				}	
 			});	
-			jQuery(".woocommerce-help-tip").tipTip();
-			componentHandler.upgradeAllRegistered();
+			jQuery(".woocommerce-help-tip").tipTip();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -962,15 +962,13 @@ jQuery(document).on("click", ".reset_inactive", function(){
 				lastPage:'',
 				sort: [false, false, false, false, false, false],    
 				onChange: function(old_page, new_page){      
-					componentHandler.upgradeAllRegistered();
 					jQuery(".woocommerce-help-tip").tipTip();
 				},
 				counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		
 					return 'Showing ' + firstRow +  ' to ' + lastRow + ' of ' + totalRow + ' entries' ;
 				}	
 			});	
-			jQuery(".woocommerce-help-tip").tipTip();
-			componentHandler.upgradeAllRegistered();
+			jQuery(".woocommerce-help-tip").tipTip();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -983,8 +981,10 @@ jQuery(document).on("click", ".sync_providers", function(){
 	jQuery("#reset_tracking_providers").prop("checked", false);	
 });
 
-jQuery(document).on("click", ".sync_providers_btn", function(){	
-	jQuery('.sync_provider_popup .spinner').addClass('active');
+jQuery(document).on("click", ".sync_providers_btn", function(){
+	
+	jQuery('.sync_providers_btn').attr("disabled", true);	
+	jQuery('.sync_provider_popup .spinner').addClass('active');	
 	jQuery('#reset_tracking_providers').val;
 	
 	var reset_checked = 0;
@@ -1036,6 +1036,7 @@ jQuery(document).on("click", ".sync_providers_btn", function(){
 			}
 			
 			jQuery(".reset_db_fieldset").hide();
+			jQuery(".sync_providers_btn").attr("disabled", false);
 			jQuery(".sync_providers_btn").hide();
 			jQuery(".close_synch_popup").show();
 							
@@ -1048,15 +1049,13 @@ jQuery(document).on("click", ".sync_providers_btn", function(){
 				lastPage:'',
 				sort: [false, false, false, false, false, false],    
 				onChange: function(old_page, new_page){      
-					componentHandler.upgradeAllRegistered();
 					jQuery(".woocommerce-help-tip").tipTip();
 				},
 				counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		
 					return 'Showing ' + firstRow +  ' to ' + lastRow + ' of ' + totalRow + ' entries' ;
 				}				
 			});
-			jQuery(".woocommerce-help-tip").tipTip();
-			componentHandler.upgradeAllRegistered();
+			jQuery(".woocommerce-help-tip").tipTip();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -1110,8 +1109,7 @@ jQuery(document).on("change", "#wcast_enable_delivered_email", function(){
 		 jQuery('.delivered_shipment_label .edit_customizer_a').removeClass('disabled_link');
 		 jQuery('.delivered_shipment_label .delivered_message').removeClass('disable_delivered');
 		 jQuery('#wcast_enable_delivered_status_email').removeAttr('disabled');
-	}
-	componentHandler.upgradeAllRegistered();
+	}	
 });
 jQuery(document).on("change", "#wc_ast_status_delivered", function(){	
 	if(jQuery(this).prop("checked") == false){		
@@ -1129,8 +1127,7 @@ jQuery(document).on("change", "#wc_ast_status_delivered", function(){
 		 jQuery('.delivered_shipment_label .edit_customizer_a').removeClass('disabled_link');
 		 jQuery('.delivered_shipment_label .delivered_message').removeClass('disable_delivered');
 		 jQuery('#wcast_enable_delivered_status_email').removeAttr('disabled');
-	}
-	componentHandler.upgradeAllRegistered();
+	}	
 });
 
 jQuery(document).click(function(){
@@ -1237,7 +1234,6 @@ jQuery('#shipping-provider-table').datatable({
 	dom: "Bfriptip",
     sort: [false, false, false, false, false, false],    
     onChange: function(old_page, new_page){      
-		componentHandler.upgradeAllRegistered();
 		jQuery(".woocommerce-help-tip").tipTip();
     },
 	counterText: function (currentPage, totalPage, firstRow, lastRow, totalRow) {		

@@ -29,9 +29,9 @@ $doc_types = jet_woo_builder()->documents->get_document_types();
 				<label for="template_name"><?php esc_html_e( 'Template Name:', 'jet-woo-builder' ); ?></label>
 				<input type="text" id="template_name" name="template_name" placeholder="<?php esc_html_e( 'Set template name', 'jet-woo-builder' ); ?>">
 			</div>
-			<h4 class="jet-template-popup__subheading"><?php
-				esc_html_e( 'Start from Layout', 'jet-woo-builder' );
-			?></h4>
+			<h4 class="jet-template-popup__subheading">
+				<?php esc_html_e( 'Start from Layout', 'jet-woo-builder' );	?>
+			</h4>
 			<div class="jet-template-popup__form-row predesigned-row template-<?php echo $doc_types['single']['slug']; ?> is-active"><?php
 				foreach ( $this->predesigned_single_templates() as $id => $data ) {
 					?>
@@ -59,33 +59,32 @@ $doc_types = jet_woo_builder()->documents->get_document_types();
 				}
 			?></div>
 			<div class="jet-template-popup__form-row predesigned-row template-<?php echo $doc_types['category']['slug']; ?>"><?php
-		  foreach ( $this->predesigned_category_templates() as $id => $data ) {
-			  ?>
-						<div class="jet-template-popup__item">
-							<label class="jet-template-popup__label">
-								<input type="radio" name="template_category" value="<?php echo $id; ?>">
-								<img src="<?php echo $data['thumb']; ?>" alt="">
-							</label>
-							<span class="jet-template-popup__item--uncheck"><span>×</span></span>
-						</div>
-			  <?php
-		  }
-		  ?></div>
+				foreach ( $this->predesigned_category_templates() as $id => $data ) {
+				?>
+					<div class="jet-template-popup__item">
+						<label class="jet-template-popup__label">
+							<input type="radio" name="template_category" value="<?php echo $id; ?>">
+							<img src="<?php echo $data['thumb']; ?>" alt="">
+						</label>
+						<span class="jet-template-popup__item--uncheck"><span>×</span></span>
+					</div>
+					<?php
+				}
+			?></div>
 			<div class="jet-template-popup__form-row predesigned-row template-<?php echo $doc_types['shop']['slug']; ?>">
 				<div class="predesigned-templates__description"><?php esc_html_e( 'For creating this template , you need combine shop template and archive template in Jet Woo Builder settings', 'jet-woo-builder' ); ?></div>
+				<?php foreach ( $this->predesigned_shop_templates() as $id => $data ) {
+				?>
+					<div class="jet-template-popup__item">
+						<label class="jet-template-popup__label">
+							<input type="radio" name="template_shop" value="<?php echo $id; ?>">
+							<img src="<?php echo $data['thumb']; ?>" alt="">
+						</label>
+						<span class="jet-template-popup__item--uncheck"><span>×</span></span>
+					</div>
 					<?php
-		  foreach ( $this->predesigned_shop_templates() as $id => $data ) {
-			  ?>
-						<div class="jet-template-popup__item">
-							<label class="jet-template-popup__label">
-								<input type="radio" name="template_shop" value="<?php echo $id; ?>">
-								<img src="<?php echo $data['thumb']; ?>" alt="">
-							</label>
-							<span class="jet-template-popup__item--uncheck"><span>×</span></span>
-						</div>
-			  <?php
-		  }
-		  ?></div>
+				}
+			?></div>
 			<div class="jet-template-popup__form-actions">
 				<button type="submit" id="templates_type_submit" class="button button-primary button-hero"><?php
 					esc_html_e( 'Create Template', 'jet-woo-builder' );

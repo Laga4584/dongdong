@@ -84,7 +84,19 @@ class Jet_Woo_Products_List_Shortcode extends Jet_Woo_Builder_Shortcode_Base {
 			),
 			'products_cat'    => array(
 				'type'        => 'select2',
-				'label'       => esc_html__( 'Category', 'jet-woo-builder' ),
+				'label'       => esc_html__( 'Include Category', 'jet-woo-builder' ),
+				'default'     => '',
+				'multiple'    => true,
+				'label_block' => true,
+				'options'     => $this->get_product_categories(),
+				'condition'   => array(
+					'products_query'     => 'category',
+					'use_current_query!' => 'yes',
+				),
+			),
+			'products_cat_exclude'  => array(
+				'type'        => 'select2',
+				'label'       => esc_html__( 'Exclude Category', 'jet-woo-builder' ),
 				'default'     => '',
 				'multiple'    => true,
 				'label_block' => true,
@@ -117,6 +129,7 @@ class Jet_Woo_Products_List_Shortcode extends Jet_Woo_Builder_Shortcode_Base {
 					'sales'      => esc_html__( 'Sales', 'jet-woo-builder' ),
 					'rated'      => esc_html__( 'Top Rated', 'jet-woo-builder' ),
 					'menu_order' => esc_html__( 'Menu Order', 'jet-woo-builder' ),
+					'sku'        => esc_html__( 'SKU', 'jet-woo-builder' ),
 					'current'    => esc_html__( 'Current', 'jet-woo-builder' ),
 				),
 				'condition' => array(
@@ -478,6 +491,14 @@ class Jet_Woo_Products_List_Shortcode extends Jet_Woo_Builder_Shortcode_Base {
 							'operator' => 'IN',
 						);
 					}
+					if ( '' !== $this->get_attr( 'products_cat_exclude' ) ) {
+						$query_args['tax_query'][] = array(
+							'taxonomy' => 'product_cat',
+							'field'    => 'term_id',
+							'terms'    => explode( ',', $this->get_attr( 'products_cat_exclude' ) ),
+							'operator' => 'NOT IN',
+						);
+					}
 					break;
 				case 'tag':
 					if ('' !== $this->get_attr('products_tag')) {
@@ -536,6 +557,10 @@ class Jet_Woo_Products_List_Shortcode extends Jet_Woo_Builder_Shortcode_Base {
 				break;
 			case 'menu_order':
 				$query_args['orderby']  = 'menu_order';
+				break;
+			case 'sku' :
+				$query_args['meta_key'] = '_sku';
+				$query_args['orderby']  = 'meta_value';
 				break;
 			default :
 				$query_args['orderby'] = 'date';

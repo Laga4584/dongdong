@@ -338,6 +338,14 @@ if ( ! function_exists( 'jupiterx_core_404_page_template' ) ) {
 		jupiterx_remove_action( 'jupiterx_main_header_partial_template' );
 		jupiterx_remove_action( 'jupiterx_main_footer_partial_template' );
 
+		$current_template = get_post_meta( $page_id, '_wp_page_template', true );
+		$canvas_template  = $elementor->modules_manager->get_modules( 'page-templates' )::TEMPLATE_CANVAS;
+
+		if ( $canvas_template === $current_template ) {
+			jupiterx_remove_action( 'jupiterx_get_custom_header' );
+			jupiterx_remove_action( 'jupiterx_get_custom_footer' );
+		}
+
 		jupiterx_modify_action( 'jupiterx_fullwidth_template_content', null, function () use ( $page_id ) {
 			jupiterx_output_e( 'jupiterx_custom_single_template', jupiterx_get_custom_template( $page_id ) );
 		} );
@@ -468,6 +476,14 @@ if ( ! function_exists( 'jupiterx_core_maintenance_page_template' ) ) {
 		jupiterx_add_filter( 'jupiterx_layout', 'c' );
 		jupiterx_remove_action( 'jupiterx_main_header_partial_template' );
 		jupiterx_remove_action( 'jupiterx_main_footer_partial_template' );
+
+		$current_template = get_post_meta( $page_id, '_wp_page_template', true );
+		$canvas_template  = $elementor->modules_manager->get_modules( 'page-templates' )::TEMPLATE_CANVAS;
+
+		if ( $canvas_template === $current_template ) {
+			jupiterx_remove_action( 'jupiterx_get_custom_header' );
+			jupiterx_remove_action( 'jupiterx_get_custom_footer' );
+		}
 
 		jupiterx_modify_action( 'jupiterx_fullwidth_template_content', null, function () use ( $page_id ) {
 			jupiterx_output_e( 'jupiterx_custom_single_template', jupiterx_get_custom_template( $page_id ) );

@@ -15,7 +15,7 @@ class WC_TrackShip_Email_Manager {
 	/**
 	 * code for send shipment status email
 	 */
-	public function shippment_status_email_trigger($order_id, $order, $old_status, $new_status ,$tracking_item){			
+	public function shippment_status_email_trigger( $order_id, $order, $old_status, $new_status , $tracking_item ){			
 		
 		$status = str_replace("_","",$new_status);
 		$status_class = 'wcast_'.$status.'_customizer_email';		
@@ -69,7 +69,7 @@ class WC_TrackShip_Email_Manager {
 						unset($tracking_items[$key]);
 					}
 				}				
-				//echo '<pre>';print_r($tracking_item);echo '</pre>';exit;
+				
 				if($wcast_show_tracking_details == 1){					
 					ob_start();
 					$local_template	= get_stylesheet_directory().'/woocommerce/emails/tracking-info.php';			
@@ -95,10 +95,10 @@ class WC_TrackShip_Email_Manager {
 					ob_start();
 					wc_get_template(
 						'emails/wcast-email-order-details.php', array(
-						'order'         => $order,
-						'sent_to_admin' => $sent_to_admin,
-						'plain_text'    => $plain_text,
-						'email'         => '',
+							'order'         => $order,
+							'sent_to_admin' => $sent_to_admin,
+							'plain_text'    => $plain_text,
+							'email'         => '',
 						),
 						'woocommerce-advanced-shipment-tracking/', 
 						wc_advanced_shipment_tracking()->get_plugin_path() . '/templates/'
@@ -198,11 +198,13 @@ class WC_TrackShip_Email_Manager {
 				
 				$wast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
 				$tracking_items = $wast->get_tracking_items( $order_id, true );
+				
 				foreach($tracking_items as $key => $item){
 					if($item['tracking_number'] != $tracking_item['tracking_number']){
 						unset($tracking_items[$key]);
 					}
 				}
+				
 				if($wcast_show_tracking_details == 1){						
 					ob_start();					
 					$local_template	= get_stylesheet_directory().'/woocommerce/emails/tracking-info.php';			
@@ -287,23 +289,29 @@ class WC_TrackShip_Email_Manager {
 	/**
 	 * code for format email subject
 	 */
-	public function email_subject($string,$order_id,$order){
+	public function email_subject( $string, $order_id, $order ){
+		
+		$ast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
+		$order_id = $ast->get_custom_order_number( $order_id );
+		
 		$customer_email = $order->get_billing_email();
 		$first_name = $order->get_billing_first_name();
 		$last_name = $order->get_billing_last_name();
 		$user = $order->get_user();
-		if($user){
-			$username = $user->user_login;
-		}
+		
+		if($user)$username = $user->user_login;
+		
 		$string =  str_replace( '{order_number}', $order_id, $string );
 		$string =  str_replace( '{customer_email}', $customer_email, $string );
 		$string =  str_replace( '{customer_first_name}', $first_name, $string );
 		$string =  str_replace( '{customer_last_name}', $last_name, $string );
+		
 		if(isset($username)){
 			$string = str_replace( '{customer_username}', $username, $string );
 		} else{
 			$string = str_replace( '{customer_username}', '', $string );
 		}
+		
 		$string =  str_replace( '{site_title}', $this->get_blogname(), $string );
 		return $string;
 	} 
@@ -311,23 +319,29 @@ class WC_TrackShip_Email_Manager {
 	/**
 	 * code for format email heading
 	 */	
-	public function email_heading($string,$order_id,$order){
+	public function email_heading( $string, $order_id, $order ){
+		
+		$ast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
+		$order_id = $ast->get_custom_order_number( $order_id );
+		
 		$customer_email = $order->get_billing_email();
 		$first_name = $order->get_billing_first_name();
 		$last_name = $order->get_billing_last_name();
 		$user = $order->get_user();
-		if($user){
-			$username = $user->user_login;
-		}
+		
+		if($user)$username = $user->user_login;		
+		
 		$string =  str_replace( '{order_number}', $order_id, $string );
 		$string =  str_replace( '{customer_email}', $customer_email, $string );
 		$string =  str_replace( '{customer_first_name}', $first_name, $string );
 		$string =  str_replace( '{customer_last_name}', $last_name, $string );
+		
 		if(isset($username)){
 			$string = str_replace( '{customer_username}', $username, $string );
 		} else{
 			$string = str_replace( '{customer_username}', '', $string );
 		}
+		
 		$string =  str_replace( '{site_title}', $this->get_blogname(), $string );
 		return $string;
 	} 
@@ -335,7 +349,7 @@ class WC_TrackShip_Email_Manager {
 	/**
 	 * code for format recipients 
 	 */	
-	public function email_to($string,$order,$order_id){
+	public function email_to( $string, $order, $order_id ){
 		$customer_email = $order->get_billing_email();
 		$admin_email = get_option('admin_email');
 		$string =  str_replace( '{admin_email}', $admin_email, $string );
@@ -347,20 +361,22 @@ class WC_TrackShip_Email_Manager {
 	 * code for format email content 
 	 */
 	public function email_content($email_content, $order_id, $order){						
+		
+		$ast = WC_Advanced_Shipment_Tracking_Actions::get_instance();
+		$order_id = $ast->get_custom_order_number( $order_id );
+		
 		$customer_email = $order->get_billing_email();
 		$first_name = $order->get_billing_first_name();
 		$last_name = $order->get_billing_last_name();
 		$company_name = $order->get_billing_company();
 		$user = $order->get_user();
-		if($user){
-			$username = $user->user_login;
-		}
+		
+		if($user)$username = $user->user_login;		
 		
 		$wc_ast_api_key = get_option('wc_ast_api_key');
 		$api_enabled = get_option( "wc_ast_api_enabled", 0);
-		if($wc_ast_api_key && $api_enabled){
-			$est_delivery_date = $this->get_est_delivery_date($order_id, $order);
-		}
+		
+		if($wc_ast_api_key && $api_enabled)$est_delivery_date = $this->get_est_delivery_date( $order->get_id(), $order );
 		
 		$email_content = str_replace( '{customer_email}', $customer_email, $email_content );
 		$email_content = str_replace( '{site_title}', $this->get_blogname(), $email_content );
@@ -378,10 +394,10 @@ class WC_TrackShip_Email_Manager {
 		} else{
 			$email_content = str_replace( '{customer_username}', '', $email_content );
 		}
+		
 		$email_content = str_replace( '{order_number}', $order_id, $email_content );
-		if($wc_ast_api_key && $api_enabled){		
-			$email_content = str_replace( '{est_delivery_date}', $est_delivery_date, $email_content );		
-		}
+		
+		if($wc_ast_api_key && $api_enabled)$email_content = str_replace( '{est_delivery_date}', $est_delivery_date, $email_content );
 		
 		return $email_content;
 	}
@@ -390,7 +406,9 @@ class WC_TrackShip_Email_Manager {
 	 * code for append analytics link
 	 */
 	public function append_analytics_link($message,$status){
+		
 		$ast = new WC_Advanced_Shipment_Tracking_Actions;	
+		
 		if($status == 'delivered_status'){
 			$analytics_link = $ast->get_option_value_from_array('wcast_delivered_email_settings','wcast_delivered_status_analytics_link','');	
 		} else{
@@ -415,6 +433,7 @@ class WC_TrackShip_Email_Manager {
 	 * code for get estimate delivery date
 	 */
 	public function get_est_delivery_date($order_id, $order){
+		
 		if ( version_compare( WC_VERSION, '3.0', '<' ) ) {
 			$tracking_items = get_post_meta( $order_id, '_wc_shipment_tracking_items', true );				
 		} else {
@@ -432,7 +451,7 @@ class WC_TrackShip_Email_Manager {
 					$est_delivery_date = $shipment_status[$key]['est_delivery_date'];
 					$unixTimestamp = strtotime($est_delivery_date);				
 					$day = date("l", $unixTimestamp);					
-					$html .= '<div>Estimated Delivery Date for Tracking Number - '.$tracking_number.'</div><h3 style="margin:0 0 10px;">'.$day.', '.date("M d", strtotime($est_delivery_date)).'</h3>';					
+					$html .= '<div>Estimated Delivery Date for Tracking Number - '.$tracking_number.'</div><h3 style="margin:0 0 10px;">'.$day.', '.date("M d", strtotime($est_delivery_date)).'</h3>';
 				}				
 			}	
 		}

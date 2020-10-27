@@ -62,14 +62,6 @@ class Form extends Base_Widget {
 		$repeater = new \Elementor\Repeater();
 
 		$repeater->add_control(
-			'_id',
-			[
-				'label' => __( 'ID', 'raven' ),
-				'type' => 'hidden',
-			]
-		);
-
-		$repeater->add_control(
 			'type',
 			[
 				'label' => __( 'Type', 'raven' ),

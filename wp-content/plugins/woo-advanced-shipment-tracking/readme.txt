@@ -116,6 +116,44 @@ If you use external shipping services that work with the WooCommerce REST API to
 
 == Changelog ==
 
+= 3.1.4 =
+* Enhancement - Added Tracking Button on Orders History (my-account) page
+* Dev - Set default preview in Tracking Info Customizer
+* Dev - Added new parameter - 'replace_tracking' in Add Tracking API Endpoint
+* Dev - Used Rest API name in Bulk upload CSV and programmatically add tracking info
+* Dev - Updated design of Late shipment Email Content
+* Fixed - Fix CSS issue in TrackShip Tracking page
+* Dev - Create Order (Admin) option to add the tracking info on initial order.
+* Fixed - Custom order status not enabled/diabled
+* Fixed - jQuery Depreciated - jQuery.fn.load() is deprecated
+
+= 3.1.3 =
+* Enhancement - Updated Add Tracking, Add Custom Shipping Provider, Edit Shipping Provider, Sync Shipping Provider popup background color
+* Dev - Removed Sync Providers notice and TrackShip notice from admin
+* Dev - Removed the material design library
+* Dev - Added filter in TrackShip Tracking page event message and location so user can add filter change event message and location - 'trackship_tracking_event_description' , 'trackship_tracking_event_location'
+* Fixed - Fixed TrackShip tools Get Shipment Status issue for 'TrackShip Balance 0' option
+
+= 3.1.2 =
+* Enhancement - Updated design of CSV Import process
+* Enhancement - Updated AST settings page design
+* Enhancement - Move Custom order status manager tab to general settings
+* Enhancement - Updated design of TrackShip tracking page
+* Enhancement - Updated design of TrackShip tracking page settings panel
+* Dev - Seperate code of Tracking Per Item Addon option from AST to Tracking Per Item Addon files
+* Dev - Remove the option to add tracking from order actions panel for Local Pickup Orders
+* Dev - Add Support - sequential order number plugin(free)
+* Dev - Updated Translation Files in Dutch (nl-nl)
+* Dev - TrackShip Emails - added hook in order details template for shipment status emails ('ast_email_order_items_args') 
+* Dev - Check if enable option - 'Rename the “Completed” Order status to “Shipped”' than change "Completed" tooltip in actions to "Mark as Shipped"
+* Dev - Move all Tracking Per Item Addon translations from AST to TPI
+* Dev - Remove ALP admin notice message
+* Dev - Set default settings of "On which order status email to include the shipment tracking info?" and "On which Order status to display Add Tracking icon in the Order Actions menu?" on initial installation
+* Fix - Sync Providers - duplicate view/hide details + updates issue
+* Fix - Can’t find variable: api_provider_name issue on edit custom shipping provider
+* Fix - Trying to access array offset on value of type bool on woo-advanced-shipment-tracking/includes/views/admin_options_osm.php:30
+* Dev - Added custom order number plugin compatibility in shipment status email variables "{order_number}"
+
 = 3.1.1 =
 * Enhancement - Added a option in AST general settings for select On which Order status to display Add Tracking icon in the Order Actions menu.
 * Enhancement - Uppdated Late Shipments Customizer

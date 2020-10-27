@@ -31,7 +31,7 @@ class Jet_Woo_Builder_Products_Result_Count extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-33';
+		return 'jet-woo-builder-icon-shop-result-count';
 	}
 
 	public function get_script_depends() {

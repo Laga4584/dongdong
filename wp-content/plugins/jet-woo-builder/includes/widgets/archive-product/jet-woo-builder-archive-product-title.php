@@ -24,7 +24,7 @@ class Jet_Woo_Builder_Archive_Product_Title extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-13';
+		return 'jet-woo-builder-icon-title';
 	}
 
 	public function get_help_url() {
@@ -70,7 +70,7 @@ class Jet_Woo_Builder_Archive_Product_Title extends Widget_Base {
 		$this->add_control(
 			'title_html_tag',
 			array(
-				'label'     => esc_html__( 'Title HTML Tag', 'jet-cw' ),
+				'label'     => esc_html__( 'Title HTML Tag', 'jet-woo-builder' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'h5',
 				'options'   => jet_woo_builder_tools()->get_available_title_html_tags(),

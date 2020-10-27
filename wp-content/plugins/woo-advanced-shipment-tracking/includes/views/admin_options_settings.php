@@ -24,8 +24,7 @@
 					<?php wp_nonce_field( 'wc_ast_settings_form', 'wc_ast_settings_form_nonce' );?>
 					<input type="hidden" name="action" value="wc_ast_settings_form_update">
 				</div>
-			</div>
-			<hr>	
+			</div>			
 			<div class="outer_form_table border_0">		
 				<table class="form-table heading-table">
 					<tbody>
@@ -46,8 +45,10 @@
 						</tr>
 					</tbody>
 				</table>
-			</div>						
-		</form>				
+			</div>							
+		</form>
+		<?php require_once( 'admin_options_osm.php' ); ?>
+		<?php do_action('ast_generat_settings_end'); ?>	
 	</div>	
 	<?php include 'zorem_admin_sidebar.php';?>
 </section>

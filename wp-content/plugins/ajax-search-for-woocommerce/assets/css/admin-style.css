@@ -7,6 +7,10 @@
     display: none;
 }
 
+.dgwt-wcas-font-thin {
+	font-weight: lighter;
+}
+
 .dgwt-wcas-settings:not(.dgwt-wcas-settings-theme-supported) .dgwt-wcas-only-desc > th {
     display: none;
 }
@@ -36,6 +40,7 @@
 .dgwt-wcas-settings > .info:not(.dgwt-wcas-notice),
 .dgwt-wcas-settings > .warning:not(.dgwt-wcas-notice),
 .dgwt-wcas-settings > .updated:not(.dgwt-wcas-notice),
+.woocommerce_page_dgwt_wcas_settings .update-nag,
 .dgwt-wcas-settings > .updated:not(.fs-slug-ajax-search-for-woocommerce) {
     display: none!important;
 }
@@ -470,6 +475,16 @@
     background: #fbfbfb none repeat scroll 0 0;
     border: 1px solid #ddd;
     padding: 15px;
+}
+
+.dgwt-wcas-troubleshooting-wrapper .dgwt-wcas-settings-info pre {
+	display: inline-block;
+	background: #eee;
+	padding: 10px;
+	border: 1px solid #ddd;
+	overflow-x: auto;
+	max-width: 96%;
+	font-size: 13px;
 }
 
 .wcas-opt-tntsearch .dgwt-wcas-settings-info {
@@ -1403,4 +1418,70 @@ td.dgwt-wcas-indexing-details-row a {
 
 .dgwt-wcas-sgs-themes-label h2 b {
     color: #000;
+}
+
+/**
+ * Troubleshooting
+ */
+#dgwt_wcas_troubleshooting-tab {
+	display: none;
+}
+
+#dgwt_wcas_troubleshooting-tab.enabled {
+	display: flex;
+	align-items: center;
+}
+
+#dgwt_wcas_troubleshooting .submit {
+	display: none;
+}
+
+.dgwt-wcas-troubleshooting-count {
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	margin: 1px 0 -1px 4px;
+	padding: 0 5px;
+	min-width: 18px;
+	height: 18px;
+	border-radius: 9px;
+	background-color: #ca4a1f;
+	color: #fff;
+	font-size: 11px;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.dgwt-wcas-troubleshooting-wrapper {
+	padding: 0 10px;
+	font-size: 14px;
+}
+.dgwt-wcas-troubleshooting-wrapper p {
+	font-size: 14px;
+}
+
+h3.dgwt-wcas-troubleshooting-issue-title {
+	font-size: 20px;
+	margin-bottom: 12px;
+}
+
+.dgwt-wcas-troubleshooting-wrapper .progress-bar-inner {
+	margin-left: 5px;
+}
+
+.dgwt-wcas-troubleshooting-wrapper .progress_bar {
+	display: none;
+}
+
+.dgwt-wcas-troubleshooting-wrapper .progress_bar .pro-bar {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.dgwt-wcas-troubleshooting-wrapper .dgwt-wcas-settings-info {
+	margin-bottom: 15px;
+}
+
+.dgwt-wcas-troubleshooting-wrapper input[name="dgwt-wcas-reset-async-tests"] {
+	margin-top: 30px;
 }

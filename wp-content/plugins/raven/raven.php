@@ -11,7 +11,7 @@
  * Plugin Name: Raven
  * Plugin URI:  https://artbees.net/
  * Description: New elements for Elementor plugin.
- * Version:     1.10.2
+ * Version:     1.11.0
  * Author:      Artbees
  * Author URI:  https://artbees.net
  * Text Domain: raven

@@ -184,7 +184,7 @@ if (! class_exists('Ivole_All_Reviews')) :
         								$comment->comment_author . '" /></a>';
         							$comment->comment_content .= '</div>';
         						}
-        						$comment->comment_content .= '<div style="clear:both;"></div></div';
+        						$comment->comment_content .= '<div style="clear:both;"></div></div>';
         					} else {
         						//new implementation of storing pictures in comments meta
         						$pics = get_comment_meta( $comment->comment_ID, 'ivole_review_image2' );
@@ -204,7 +204,7 @@ if (! class_exists('Ivole_All_Reviews')) :
         									$temp_comment_content .= '</div>';
         								}
         							}
-        							$temp_comment_content .= '<div style="clear:both;"></div></div';
+        							$temp_comment_content .= '<div style="clear:both;"></div></div>';
         							if( $temp_comment_content_flag ) {
         								$comment->comment_content .= $temp_comment_content;
         							}

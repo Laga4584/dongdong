@@ -31,7 +31,7 @@ class Jet_Woo_Builder_Products_Ordering extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-31';
+		return 'jet-woo-builder-icon-shop-ordering';
 	}
 
 	public function get_script_depends() {

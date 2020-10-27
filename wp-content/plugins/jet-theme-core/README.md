@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.0 - 23.10.2020
+- UPD: Jet Dashboard 2.0.2
+
 ## 1.1.25 - 16.09.2020
 - FIX: compatibility with Elementor 3.0
 

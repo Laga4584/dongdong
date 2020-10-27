@@ -25,7 +25,7 @@ class Jet_Woo_Builder_Products_Notices extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-30';
+		return 'jet-woo-builder-icon-shop-notice';
 	}
 
 	public function get_script_depends() {

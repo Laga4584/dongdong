@@ -66,8 +66,6 @@ class Plugin_Manager {
 	 */
 	public function __construct() {
 
-		add_action( 'wp_ajax_jet_dashboard_plugin_action', array( $this, 'plugin_action' ) );
-
 		$registered_plugins = Dashboard::get_instance()->get_registered_plugins();
 
 		if ( ! empty( $registered_plugins ) ) {
@@ -88,6 +86,13 @@ class Plugin_Manager {
 		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 3 );
 
 		add_filter( 'http_request_args', array( $this, 'allow_unsafe_urls' ) );
+
+		add_action( 'activated_plugin', array( $this, 'activate_plugin_handle' ), 10, 2 );
+
+		add_action( 'wp_ajax_jet_dashboard_plugin_action', array( $this, 'plugin_action' ) );
+
+		add_action( 'wp_ajax_jet_dashboard_wizard_plugin_action', array( $this, 'wizard_plugin_action' ) );
+
 	}
 
 	/**
@@ -156,7 +161,7 @@ class Plugin_Manager {
 		$plugin_api_data = get_site_transient( $registered_plugin_data['transient_key'] );
 
 		if ( empty( $plugin_api_data ) ) {
-			$changelog_remote_response = $this->changelog_remote_query( $registered_plugin_data['slug'] );
+			$changelog_remote_response = Dashboard::get_instance()->data_manager->changelog_remote_query( $registered_plugin_data['slug'] );
 
 			if ( ! $changelog_remote_response ) {
 				return $_data;
@@ -223,6 +228,40 @@ class Plugin_Manager {
 		}
 
 		return $plugin_meta;
+	}
+
+	/**
+	 * [activate_plugin_handle description]
+	 * @param  [type] $plugin       [description]
+	 * @param  [type] $network_wide [description]
+	 * @return [type]               [description]
+	 */
+	public function activate_plugin_handle( $plugin, $network_wide ) {
+
+		$jet_plugin_list = $this->get_remote_jet_plugin_list();
+
+		$is_jet_plugin = array_search( $plugin, array_column( $jet_plugin_list, 'slug' ) );
+
+		if ( ! $is_jet_plugin ) {
+			return false;
+		}
+
+		$query_url = add_query_arg(
+			array(
+				'action'   => 'plugin_activate_action',
+				'license'  => Utils::get_plugin_license_key( $plugin ),
+				'plugin'   => $plugin,
+				'site_url' => urlencode( Utils::get_site_url() ),
+			),
+			Utils::get_api_url()
+		);
+
+		wp_remote_post( $query_url, array(
+			'timeout'  => 30,
+			//'blocking' => false
+		) );
+
+		return false;
 	}
 
 	/**
@@ -385,6 +424,8 @@ class Plugin_Manager {
 
 				$plugin_data['licenseControl'] = array_key_exists( $plugin_slug, $registered_plugins ) ? true : false;
 
+				$plugin_data['usefulLinks'] = array_key_exists( $plugin_slug, $registered_plugins ) ? $registered_plugins[ $plugin_slug ]['plugin_links'] : array();
+
 				$plugins_list[ $plugin_data['slug'] ] = $plugin_data;
 			}
 		}
@@ -428,6 +469,27 @@ class Plugin_Manager {
 		}
 
 		return $plugin_list;
+	}
+
+	/**
+	 * [is_plugin_installed description]
+	 * @param  [type]  $plugin_file [description]
+	 * @param  boolean $plugin_url  [description]
+	 * @return boolean              [description]
+	 */
+	public function get_user_plugin( $plugin_file = false ) {
+
+		if ( ! $plugin_file ) {
+			return false;
+		}
+
+		$user_plugins = $this->get_user_plugins();
+
+		if ( isset( $user_plugins[ $plugin_file ] ) ) {
+			return $user_plugins[ $plugin_file ];
+		}
+
+		return false;
 	}
 
 	/**
@@ -544,6 +606,47 @@ class Plugin_Manager {
 	}
 
 	/**
+	 * [install_plugin description]
+	 * @param  [type]  $plugin     [description]
+	 * @param  boolean $plugin_url [description]
+	 * @return [type]              [description]
+	 */
+	public function wizard_plugin_action() {
+		$data = ( ! empty( $_POST['data'] ) ) ? $_POST['data'] : false;
+
+		if ( ! $data ) {
+			wp_send_json(
+				array(
+					'status' => 'error',
+					'message' => $this->sys_messages['server_error']
+				)
+			);
+		}
+
+		$action  = $data['action'];
+		$plugin  = $data['plugin'];
+
+		switch ( $action ) {
+
+			case 'install':
+				$this->install_plugin( $plugin, 'https://account.crocoblock.com/free-download/crocoblock-wizard.zip' );
+			break;
+
+			case 'activate':
+				$this->activate_plugin( $plugin );
+			break;
+		}
+
+		wp_send_json(
+			array(
+				'status'  => 'error',
+				'message' => 'Server Error',
+				'data'    => [],
+			)
+		);
+	}
+
+	/**
 	 * Performs plugin activation
 	 *
 	 * @param  [type] $plugin [description]
@@ -654,7 +757,7 @@ class Plugin_Manager {
 	 * @param  boolean $plugin_url [description]
 	 * @return [type]              [description]
 	 */
-	public function install_plugin( $plugin_file ) {
+	public function install_plugin( $plugin_file, $plugin_url = false ) {
 
 		$status = array();
 
@@ -676,7 +779,11 @@ class Plugin_Manager {
 			);
 		}
 
-		$package = Utils::package_url( $plugin_file );
+		if ( ! $plugin_url ) {
+			$package = Utils::package_url( $plugin_file );
+		} else {
+			$package = $plugin_url;
+		}
 
 		include_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
 		//include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );

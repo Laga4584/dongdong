@@ -1125,18 +1125,21 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 		}
 		?>
 		<div <?php echo $this->parent->get_render_attribute_string( 'wrapper' ); ?>>
+			<?php
+			foreach ( $this->terms as $term ) {
+				$this->term = $term;
+				if ( 'masonry' === $layout ) {
+					echo '<div class="raven-masonry-item">';
+				}
+
+				$this->render_item();
+
+				if ( 'masonry' === $layout ) {
+					echo '</div>';
+				}
+			}
+			?>
+		</div>
 		<?php
-		foreach ( $this->terms as $term ) {
-			$this->term = $term;
-			if ( 'masonry' === $layout ) {
-				echo '<div class="raven-masonry-item">';
-			}
-
-			$this->render_item();
-
-			if ( 'masonry' === $layout ) {
-				echo '</div>';
-			}
-		}
 	}
 }

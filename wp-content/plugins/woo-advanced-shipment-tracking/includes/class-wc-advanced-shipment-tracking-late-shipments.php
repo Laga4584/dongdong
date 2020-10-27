@@ -10,7 +10,9 @@ class WC_Advanced_Shipment_Tracking_Late_Shipments {
 	 *
 	 * @var object Class Instance
 	*/
-	private static $instance;		
+	private static $instance;	
+
+	const CRON_HOOK = 'ast_late_shipments_cron_hook';	
 	
 	/**
 	 * Get the class instance
@@ -51,16 +53,63 @@ class WC_Advanced_Shipment_Tracking_Late_Shipments {
 		if(!$wcast_enable_late_shipments_email || !$wc_ast_api_key){
 			return;	
 		}
+		
 		//cron schedule added
 		add_filter( 'cron_schedules', array( $this, 'late_shipments_cron_schedule') );				
 		add_action( 'wp_ajax_send_late_shipments_email', array( $this, 'send_late_shipments_email') );
 		add_action( 'wp_ajax_nopriv_send_late_shipments_email', array( $this, 'send_late_shipments_email') );
 		
 		//Send Late Shipments Email
-		add_action( 'ast_late_shipments_cron_hook', array( $this, 'send_late_shipments_email' ) );
+		add_action( self::CRON_HOOK, array( $this, 'send_late_shipments_email' ) );				
 		
-		if (!wp_next_scheduled( 'ast_late_shipments_cron_hook' ) ) {
-			wp_schedule_event( time(), 'ast_late_shipments_cron_events', 'ast_late_shipments_cron_hook' );
+		if (!wp_next_scheduled( self::CRON_HOOK ) ) {
+			wp_schedule_event( time() , 'ast_late_shipments_cron_events', self::CRON_HOOK );			
+		}
+	}
+	
+	/**
+	 * Remove the Cron
+	 *
+	 * @access public
+	 * @since  1.0.0
+	 */
+	public function remove_cron() {
+		wp_clear_scheduled_hook( self::CRON_HOOK );
+	}
+
+	/**
+	 * Setup the Cron
+	 * @access public
+	 * @since  1.0.0
+	 */
+	public function setup_cron() {
+
+		$late_shipments_email_settings = get_option('late_shipments_email_settings');
+		
+		$wcast_late_shipments_trigger_alert = isset( $late_shipments_email_settings['wcast_late_shipments_trigger_alert'] ) ? $late_shipments_email_settings['wcast_late_shipments_trigger_alert'] : '';						
+		
+		if($wcast_late_shipments_trigger_alert == 'daily_digest_on'){
+			
+			$wcast_late_shipments_daily_digest_time = isset( $late_shipments_email_settings['wcast_late_shipments_daily_digest_time'] ) ? $late_shipments_email_settings['wcast_late_shipments_daily_digest_time'] : '';
+			
+			// Create a Date Time object when the cron should run for the first time
+			$first_cron = new DateTime( date( 'Y-m-d' ) .' '. $wcast_late_shipments_daily_digest_time .':00', new DateTimeZone( wc_timezone_string() ) );	
+			
+			
+			$first_cron->setTimeZone(new DateTimeZone("GMT"));
+			
+			$time = new DateTime( date( 'Y-m-d H:i:s' ), new DateTimeZone( wc_timezone_string() ) );
+			
+			if( $time->getTimestamp() >  $first_cron->getTimestamp() ) {
+				$first_cron->modify( '+1 day' );
+			}
+
+			wp_schedule_event( $first_cron->format( 'U' ) + $first_cron->getOffset(), 'daily', self::CRON_HOOK );					
+		
+		} else{
+			if (!wp_next_scheduled( self::CRON_HOOK ) ) {
+				wp_schedule_event( time() , 'ast_late_shipments_cron_events', self::CRON_HOOK );			
+			}
 		}
 	}
 	
@@ -71,7 +120,8 @@ class WC_Advanced_Shipment_Tracking_Late_Shipments {
 	*
 	* @return  array
 	*/
-	function late_shipments_cron_schedule( $schedules ){
+	function late_shipments_cron_schedule( $schedules ){				
+		
 		$schedules[ 'ast_late_shipments_cron_events' ] = array(
 			'interval' => 86400,
 			'display'  => __( 'Every day' ),
@@ -123,13 +173,15 @@ class WC_Advanced_Shipment_Tracking_Late_Shipments {
 							if($late_shipments[$tracking_items[$key]['tracking_number']]['email_send'] != 1){
 								$email_send = $this->late_shippment_email_trigger($order_object->get_id(), $order_object, $tracker, $tracking_items[$key]['tracking_number']);
 								if($email_send){							
-									$late_shipments_array[$tracking_items[$key]['tracking_number']] = array( 'email_send'    => '1' );update_post_meta( $order_object->get_id(), 'late_shipments_email', $late_shipments_array );	
+									$late_shipments_array[$tracking_items[$key]['tracking_number']] = array( 'email_send'    => '1' );
+									update_post_meta( $order_object->get_id(), 'late_shipments_email', $late_shipments_array );	
 								}	
 							}
 						} else{
 							$email_send = $this->late_shippment_email_trigger($order_object->get_id(), $order_object, $tracker, $tracking_items[$key]['tracking_number']);
 							if($email_send){							
-								$late_shipments_array[$tracking_items[$key]['tracking_number']] = array( 'email_send'    => '1' );update_post_meta( $order_object->get_id(), 'late_shipments_email', $late_shipments_array );	
+								$late_shipments_array[$tracking_items[$key]['tracking_number']] = array( 'email_send'    => '1' );
+								update_post_meta( $order_object->get_id(), 'late_shipments_email', $late_shipments_array );	
 							}							
 						}									
 					}	
@@ -149,7 +201,7 @@ class WC_Advanced_Shipment_Tracking_Late_Shipments {
 		
 		$first = reset($ep_tracker['tracking_events']);
 		$first_date = $first->datetime;
-		$last = end($ep_tracker['tracking_events']);
+		$last = ( isset( $ep_tracker['tracking_destination_events'] ) && count( $ep_tracker['tracking_destination_events'] ) > 0  ) ? end($ep_tracker['tracking_destination_events']) : end($ep_tracker['tracking_events']);
 		$last_date = $last->datetime;
 		
 		$status = $ep_tracker['status'];

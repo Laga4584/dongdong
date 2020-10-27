@@ -27,8 +27,6 @@
 	}
 
 	&__icon{
-		margin-right: 5px;
-		margin-left: 5px;
 		transition: none;
 	}
 
@@ -78,10 +76,19 @@
 
 			.jet-quickview-button__icon {
 				order: 1;
+				margin-right: 10px;
+
+				.rtl & {
+					order: 2;
+				}
 			}
 
 			.jet-quickview-button__label {
 				order: 2;
+
+				.rtl & {
+					order: 1;
+				}
 			}
 		}
 	}
@@ -106,10 +113,19 @@
 
 			.jet-quickview-button__icon {
 				order: 2;
+				margin-left: 10px;
+
+				.rtl & {
+					order: 1;
+				}
 			}
 
 			.jet-quickview-button__label {
 				order: 1;
+
+				.rtl & {
+					order: 2;
+				}
 			}
 		}
 	}

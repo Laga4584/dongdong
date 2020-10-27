@@ -174,6 +174,15 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_Jet_Engine' ) ) {
 		}
 
 		/**
+		 * Action for wrapper selector - 'insert' into it or 'replace'
+		 *
+		 * @return string
+		 */
+		public function get_wrapper_action() {
+			return 'replace';
+		}
+
+		/**
 		 * If added unique ID this paramter will determine - search selector inside this ID, or is the same element
 		 *
 		 * @return bool
@@ -189,6 +198,10 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_Jet_Engine' ) ) {
 
 			if ( 'jet-listing-grid' !== $widget->get_name() ) {
 				return $settings;
+			}
+
+			if ( jet_smart_filters()->query->is_ajax_filter() ) {
+				remove_filter( 'jet-engine/listing/grid/custom-settings', array( $this, 'add_settings' ), 10, 2 );
 			}
 
 			return jet_smart_filters()->query->get_query_settings();
@@ -300,6 +313,10 @@ if ( ! class_exists( 'Jet_Smart_Filters_Provider_Jet_Engine' ) ) {
 					return $archive_query_vars;
 				}
 
+			}
+
+			if ( jet_smart_filters()->query->is_ajax_filter() ) {
+				remove_filter( 'jet-engine/listing/grid/posts-query-args', array( $this, 'add_query_args' ), 10, 2 );
 			}
 
 			$query_args = jet_smart_filters()->utils->merge_query_args( $args, jet_smart_filters()->query->get_query_args() );

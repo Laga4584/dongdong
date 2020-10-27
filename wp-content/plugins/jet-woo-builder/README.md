@@ -1,5 +1,23 @@
 # ChangeLog
 
+## [1.7.0](https://github.com/ZemezLab/jet-woo-builder/archive/1.7.0.zip)
+* Added: Woocommerce default pages builder - https://github.com/Crocoblock/suggestions/issues/498;
+* Added: Layout switcher - https://github.com/Crocoblock/suggestions/issues/565;
+* Added: Jet Woo Templates Active condition and Type admin columns;
+* Added: Single ajax add to cart quick view popup compatibility;
+* Added: Quick view btn compatibility;
+* Added: Better lazy load compatibility;
+* Added: SKU orderby option to Products Grid/List widgets;
+* Added: Execute products by category to Products Grid/List widgets;
+* Updated: Rename single ajax add to cart action & move handler to ajax-handler class;
+* Updated: Editor icons;
+* Updated: Elementor 3.0+ global styles compatibility;
+* Updated: .pot file;
+* Updated: Jet-Dashboard module to 1.1.0;
+* Fixed: JetPopup error in Single Add To Cart widget;
+* Fixed: Single product ajax add to cart when variations of product not selected;
+* Fixed: Swiper carousel display after ajax load.
+
 ## [1.6.6](https://github.com/ZemezLab/jet-woo-builder/archive/1.6.6.zip)
 * Fixed: Critical error while create Elementor templates.
 

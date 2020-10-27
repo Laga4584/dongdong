@@ -78,10 +78,11 @@ if ( ! class_exists( 'Jet_Woo_Builder_Template_Functions' ) ) {
 				return sprintf( '<img src="%s" alt="">', $placeholder_src );
 			}
 
-			$html = wp_get_attachment_image( $thumbnail_id, $image_size, false, $attr );
-
 			if ( $use_thumb_effect && $enable_thumb_effect ) {
+				$html = wp_get_attachment_image( $thumbnail_id, $image_size, false, $attr );
 				$html = $this->add_thumb_effect( $html, $product, $image_size, $attr );
+			} else {
+				$html = wp_get_attachment_image( $thumbnail_id, $image_size, false );
 			}
 
 			return apply_filters( 'jet-woo-builder/template-functions/product-thumbnail', $html );
@@ -361,6 +362,26 @@ if ( ! class_exists( 'Jet_Woo_Builder_Template_Functions' ) ) {
 			$after     = '</li></ul>';
 
 			return get_the_term_list( $product->get_id(), 'product_tag', $before, $separator, $after );
+		}
+
+		/**
+		 * Woocommerce Product last order id return
+		 *
+		 * @return string
+		 */
+		public function get_last_received_order() {
+			global $wpdb;
+
+			$statuses = array_keys( wc_get_order_statuses() );
+			$statuses = implode( "','", $statuses );
+
+			$results = $wpdb->get_col( "
+				SELECT MAX(ID) FROM {$wpdb->prefix}posts
+				WHERE post_type LIKE 'shop_order'
+				AND post_status IN ( '$statuses' )"
+			);
+
+			return reset( $results );
 		}
 
 		/**

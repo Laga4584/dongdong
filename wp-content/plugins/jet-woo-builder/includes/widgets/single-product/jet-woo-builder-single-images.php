@@ -36,7 +36,7 @@ class Jet_Woo_Builder_Single_Images extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-5';
+		return 'jet-woo-builder-icon-images';
 	}
 
 	public function get_jet_help_url() {
@@ -78,7 +78,7 @@ class Jet_Woo_Builder_Single_Images extends Jet_Woo_Builder_Base {
 			array(
 				'raw'             => esc_html__( 'This controls works only with main gallery image.', 'jet-woo-builder' ),
 				'type'            => Controls_Manager::RAW_HTML,
-				'content_classes' => 'elementor-descriptor',
+				'content_classes' => 'elementor-descriptor elementor-panel-alert elementor-panel-alert-info',
 			)
 		);
 

@@ -45,12 +45,12 @@ class CR_Product_Feed_Admin_Menu {
         //XML Product Feed
         $cron_options = get_option( 'ivole_product_feed_cron', array('started' => false) );
         if( $cron_options['started'] ){
-          WC_Admin_Settings::add_message( __( 'XML Product Feed for Google Shopping is being generated in background', IVOLE_TEXT_DOMAIN ) );
+          WC_Admin_Settings::add_message( __( 'XML Product Feed for Google Shopping is being generated in background', 'customer-reviews-woocommerce' ) );
         }
         //XML Product Review Feed
         $review_cron_options = get_option( 'ivole_product_reviews_feed_cron', array('started' => false) );
         if( $review_cron_options['started'] ){
-          WC_Admin_Settings::add_message( __( 'XML Product Review Feed for Google Shopping is being generated in background', IVOLE_TEXT_DOMAIN ) );
+          WC_Admin_Settings::add_message( __( 'XML Product Review Feed for Google Shopping is being generated in background', 'customer-reviews-woocommerce' ) );
         }
       }
     }
@@ -58,8 +58,8 @@ class CR_Product_Feed_Admin_Menu {
     public function register_settings_menu() {
         add_submenu_page(
             'ivole-reviews',
-            __( 'Integration with Google Services', IVOLE_TEXT_DOMAIN ),
-            __( 'Google', IVOLE_TEXT_DOMAIN ),
+            __( 'Integration with Google Services', 'customer-reviews-woocommerce' ),
+            __( 'Google', 'customer-reviews-woocommerce' ),
             'manage_options',
             $this->menu_slug,
             array( $this, 'display_productfeed_admin_page' )
@@ -125,7 +125,7 @@ class CR_Product_Feed_Admin_Menu {
 
     public function load_product_feed_css_js( $hook ) {
       //error_log( print_r( $hook, true ) );
-      $reviews_screen_id = sanitize_title( __( 'Reviews', IVOLE_TEXT_DOMAIN ) );
+      $reviews_screen_id = sanitize_title( __( 'Reviews', 'customer-reviews-woocommerce' ) );
       if( $reviews_screen_id . '_page_ivole-reviews-product-feed' === $hook ) {
         wp_enqueue_style( 'ivole_trustbadges_admin_css', plugins_url('css/admin.css', __FILE__) );
         wp_enqueue_style( 'ivole_select2_admin_css', plugins_url('css/select2.min.css', __FILE__) );

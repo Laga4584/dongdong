@@ -112,12 +112,6 @@ class Flatsome {
 				return 850;
 			} );
 
-			// Change overlay wrapper from body do .mfp-wrap .sidebar-menu
-			add_filter( 'dgwt/wcas/scripts/mobile_overlay_wrapper', function () {
-				return '.mfp-wrap .sidebar-menu';
-			} );
-
-
 		}
 	}
 
@@ -263,6 +257,15 @@ class Flatsome {
 								formWrapper.find('.dgwt-wcas-search-input').focus();
 							}, 1);
 
+						});
+
+						// Mobile
+						$(document).on('click', '.mobile-nav .header-search .icon-search', function () {
+
+							var $handler = $('.mobile-nav .header-search').find('.js-dgwt-wcas-enable-mobile-form');
+							if($handler.length){
+								$handler[0].click();
+							}
 						});
 					});
 

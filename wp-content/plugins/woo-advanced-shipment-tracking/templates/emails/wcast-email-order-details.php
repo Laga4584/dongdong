@@ -70,13 +70,15 @@ if ( true == $responsive_check ) { ?>
 			</thead>
 			<tbody>
 				<?php
-				echo wc_get_email_order_items( $order, array( // WPCS: XSS ok.
-					'show_sku'      => $sent_to_admin,
-					'show_image'    => false,
-					'image_size'    => array( 32, 32 ),
-					'plain_text'    => $plain_text,
-					'sent_to_admin' => $sent_to_admin,
-				) );
+				$args = array(
+							'show_sku'      => $sent_to_admin,
+							'show_image'    => false,
+							'image_size'    => array( 32, 32 ),
+							'plain_text'    => $plain_text,
+							'sent_to_admin' => $sent_to_admin,
+						);
+				$args = apply_filters( 'ast_email_order_items_args', $args);
+				echo wc_get_email_order_items( $order, $args );
 				?>
 			</tbody>
 			<tfoot>
@@ -119,13 +121,15 @@ if ( true == $responsive_check ) { ?>
 			</thead>
 			<tbody>
 				<?php
-				echo wc_get_email_order_items( $order, array( // WPCS: XSS ok.
-					'show_sku'      => $sent_to_admin,
-					'show_image'    => false,
-					'image_size'    => array( 32, 32 ),
-					'plain_text'    => $plain_text,
-					'sent_to_admin' => $sent_to_admin,
-				) );
+				$args = array(
+							'show_sku'      => $sent_to_admin,
+							'show_image'    => false,
+							'image_size'    => array( 32, 32 ),
+							'plain_text'    => $plain_text,
+							'sent_to_admin' => $sent_to_admin,
+						);
+				$args = apply_filters( 'ast_email_order_items_args', $args);
+				echo wc_get_email_order_items( $order, $args );
 				?>
 			</tbody>
 			<tfoot>

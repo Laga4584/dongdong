@@ -8,7 +8,7 @@
  *
  * @return array
  */
-function jet_smart_filters_woo_prices() {
+function jet_smart_filters_woo_prices( $args = array() ) {
 
 	global $wpdb;
 
@@ -73,6 +73,31 @@ function jet_smart_filters_woo_prices() {
 	}
 
 	return $price; // WPCS: unprepared SQL ok.
+
+}
+
+/**
+ * Callback to get min/max value for meta key
+ */
+function jet_smart_filters_meta_values( $args = array() ) {
+	$key = ! empty( $args['key'] ) ? $args['key'] : false;
+
+	if ( ! $key ) {
+		return array();
+	}
+
+	global $wpdb;
+
+	$data = $wpdb->get_results( 
+		"SELECT MIN( CAST( meta_value AS DECIMAL( 10, 0 ) ) ) AS min, MAX( CAST( meta_value AS DECIMAL( 10, 0 ) ) ) AS max FROM $wpdb->postmeta WHERE `meta_key` = '$key'",
+		ARRAY_A
+	);
+
+	if ( ! empty( $data ) ) {
+		return $data[0];
+	} else {
+		return array();
+	}
 
 }
 

@@ -25,14 +25,21 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 		 * @since 1.0.0
 		 * @var   object
 		 */
-		private static $instance = null;
-		private $current_template = null;
-		private $current_template_archive = null;
+		private static $instance                   = null;
+		private $current_template                  = null;
+		public  $current_template_archive          = null;
 		private $current_template_archive_category = null;
-		private $current_template_shop = null;
-		private $current_template_taxonomy = null;
-		private $current_loop = null;
-		private $current_category_args = array();
+		private $current_template_shop             = null;
+		private $current_template_taxonomy         = null;
+		private $current_loop                      = null;
+		private $current_category_args             = array();
+		private $current_template_cart             = null;
+		private $current_template_empty_cart       = null;
+		private $current_template_checkout         = null;
+		private $current_top_template_checkout     = null;
+		private $current_template_thankyou         = null;
+		private $current_template_myaccount        = null;
+		private $current_template_form_login       = null;
 
 		/**
 		 * Constructor for the class
@@ -55,6 +62,28 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 				add_action( 'init',  array( $this, 'taxonomy_meta' ), 99 );
 
 				add_filter( 'template_include', array( $this, 'set_taxonomy_page_template' ), 12 );
+			}
+
+			if ( ! empty( $_REQUEST['action'] ) && 'elementor' === $_REQUEST['action'] && is_admin() ) {
+				add_action( 'init', array( $this, 'register_fontend_wc_hooks' ), 5 );
+			}
+
+			add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'init_cart_for_builder' ) );
+
+			if ( 'yes' === jet_woo_builder_shop_settings()->get( 'custom_cart_page' ) ) {
+				add_filter( 'wc_get_template', array( $this, 'set_cart_page_template' ), 9999, 3 );
+			}
+
+			if ( 'yes' === jet_woo_builder_shop_settings()->get( 'custom_checkout_page' ) ) {
+				add_filter( 'wc_get_template', array( $this, 'set_checkout_page_template' ), 9999, 3 );
+			}
+
+			if ( 'yes' === jet_woo_builder_shop_settings()->get( 'custom_thankyou_page' ) ) {
+				add_filter( 'wc_get_template', array( $this, 'set_thankyou_page_template' ), 9999, 3 );
+			}
+
+			if ( 'yes' === jet_woo_builder_shop_settings()->get( 'custom_myaccount_page' ) ) {
+				add_filter( 'wc_get_template', array( $this, 'set_myaccount_page_template' ), 9999, 3 );
 			}
 
 			// Set blank page template for editing product content with Elementor
@@ -85,17 +114,33 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'maybe_enqueue_single_template_css' ) );
 
-			//Ajax single add to cart
-			if ( 'yes' === jet_woo_builder_shop_settings()->get( 'use_ajax_add_to_cart' ) ) {
-				add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_ajax_single_add_to_cart_js' ), 99 );
-
-				add_action( 'wp_ajax_woocommerce_ajax_add_to_cart', array( $this, 'woocommerce_ajax_single_add_to_cart' ) );
-				add_action( 'wp_ajax_nopriv_woocommerce_ajax_add_to_cart', array( $this, 'woocommerce_ajax_single_add_to_cart' ) );
-			}
-
 			//Default woocommerce styles in quick view popup
 			add_filter( 'jet-popup/widgets/woocommerce-styles', array( $this, 'get_quick_view_woocommerce_styles'), 10, 1 );
 
+		}
+
+		/**
+		 * Include WC fontend hooks.
+		*/
+		public function register_fontend_wc_hooks() {
+			WC()->frontend_includes();
+		}
+
+		/**
+		 * Initialize cart for elementor page builder.
+		*/
+		public function init_cart_for_builder() {
+			$has_cart = is_a( WC()->cart, 'WC_Cart' );
+
+			if ( ! $has_cart ) {
+				$session_class = apply_filters( 'woocommerce_session_handler', 'WC_Session_Handler' );
+				WC()->session  = new $session_class();
+
+				WC()->session->init();
+
+				WC()->cart     = new WC_Cart();
+				WC()->customer = new WC_Customer( get_current_user_id(), true );
+			}
 		}
 
 		/**
@@ -326,6 +371,9 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 				array_push( $classes, 'jet-woo-builder-columns-tab-' . $columns_tablet );
 				array_push( $classes, 'jet-woo-builder-columns-mob-' . $columns_mobile );
 			}
+
+			array_push( $classes, 'jet-woo-builder-layout-' . $this->get_custom_archive_template() );
+
 			remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories' );
 
 			$product_subcategories = woocommerce_maybe_show_product_subcategories();
@@ -624,6 +672,129 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 		}
 
 		/**
+		 * Rewrite default cart page template
+		 *
+		 * @param $located
+		 * @param $template_name
+		 * @param $args
+		 * @return mixed
+		 */
+		function set_cart_page_template( $located, $template_name, $args ) {
+
+			if ( $template_name === 'cart/cart.php' ) {
+
+				$custom_template = $this->get_custom_cart_template();
+
+				if ( $custom_template && 'default' !== $custom_template ) {
+					$this->current_template_cart = $custom_template;
+					$located                     = jet_woo_builder()->get_template( 'woocommerce/cart/cart.php' );
+				}
+
+			}
+
+			if ( $template_name === 'cart/cart-empty.php' ) {
+
+				$custom_template = $this->get_custom_empty_cart_template();
+
+				if ( $custom_template && 'default' !== $custom_template ) {
+					$this->current_template_empty_cart = $custom_template;
+					$located                           = jet_woo_builder()->get_template( 'woocommerce/cart/cart-empty.php' );
+				}
+
+			}
+
+			return $located;
+
+		}
+
+		/**
+		 * Rewrite default checkout page template
+		 *
+		 * @param $located
+		 * @param $template_name
+		 * @param $args
+		 * @return mixed
+		 */
+		function set_checkout_page_template( $located, $template_name, $args ) {
+
+			if ( $template_name === 'checkout/form-checkout.php' ) {
+
+				$custom_template = $this->get_custom_checkout_template();
+
+				if ( $custom_template && 'default' !== $custom_template ) {
+					$this->current_template_checkout     = $custom_template;
+					$this->current_top_template_checkout = $this->get_custom_top_checkout_template();
+					$located                             = jet_woo_builder()->get_template( 'woocommerce/checkout/form-checkout.php' );
+				}
+
+			}
+
+			return $located;
+
+		}
+
+		/**
+		 * Rewrite default thank you page template
+		 *
+		 * @param $located
+		 * @param $template_name
+		 * @param $args
+		 * @return mixed
+		 */
+		function set_thankyou_page_template( $located, $template_name, $args ) {
+
+			if ( $template_name === 'checkout/thankyou.php' ) {
+
+				$custom_template = $this->get_custom_thankyou_template();
+
+				if ( $custom_template && 'default' !== $custom_template ) {
+					$this->current_template_thankyou = $custom_template;
+					$located                         = jet_woo_builder()->get_template( 'woocommerce/checkout/thankyou.php' );
+				}
+
+			}
+
+			return $located;
+
+		}
+
+		/**
+		 * Rewrite default thank you page template
+		 *
+		 * @param $located
+		 * @param $template_name
+		 * @param $args
+		 * @return mixed
+		 */
+		function set_myaccount_page_template( $located, $template_name, $args ) {
+
+			if ( $template_name === 'myaccount/my-account.php' ) {
+
+				$custom_template = $this->get_custom_myaccount_template();
+
+				if ( $custom_template && 'default' !== $custom_template ) {
+					$this->current_template_myaccount = $custom_template;
+					$located                          = jet_woo_builder()->get_template( 'woocommerce/myaccount/my-account.php' );
+				}
+
+			}
+
+			if ( $template_name === 'myaccount/form-login.php' ) {
+
+				$custom_template = $this->get_custom_form_login_template();
+
+				if ( $custom_template && 'default' !== $custom_template ) {
+					$this->current_template_form_login = $custom_template;
+					$located                           = jet_woo_builder()->get_template( 'woocommerce/myaccount/form-login.php' );
+				}
+
+			}
+
+			return $located;
+
+		}
+
+		/**
 		 * Return args for current category
 		 *
 		 * @param $args
@@ -656,7 +827,7 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 		}
 
 		/**
-		 * Returns processed single template
+		 * Returns processed archive product card template
 		 *
 		 * @return mixed
 		 */
@@ -665,7 +836,7 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 		}
 
 		/**
-		 * Returns processed archive category template
+		 * Returns processed archive category card template
 		 *
 		 * @return mixed
 		 */
@@ -674,12 +845,75 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 		}
 
 		/**
-		 * Returns processed single template
+		 * Returns processed shop template
 		 *
 		 * @return mixed
 		 */
 		public function get_current_shop_template() {
 			return $this->current_template_shop;
+		}
+
+		/**
+		 * Returns processed cart template
+		 *
+		 * @return mixed
+		 */
+		public function get_current_cart_template() {
+			return $this->current_template_cart;
+		}
+
+		/**
+		 * Returns processed empty cart template
+		 *
+		 * @return mixed
+		 */
+		public function get_current_empty_cart_template() {
+			return $this->current_template_empty_cart;
+		}
+
+		/**
+		 * Returns processed checkout template
+		 *
+		 * @return mixed
+		 */
+		public function get_current_checkout_template() {
+			return $this->current_template_checkout;
+		}
+
+		/**
+		 * Returns processed top checkout template
+		 *
+		 * @return mixed
+		 */
+		public function get_current_top_checkout_template() {
+			return $this->current_top_template_checkout;
+		}
+
+		/**
+		 * Returns processed thank you template
+		 *
+		 * @return mixed
+		 */
+		public function get_current_thankyou_template() {
+			return $this->current_template_thankyou;
+		}
+
+		/**
+		 * Returns processed my account template
+		 *
+		 * @return mixed
+		 */
+		public function get_current_myaccount_template() {
+			return $this->current_template_myaccount;
+		}
+
+		/**
+		 * Returns processed form login template
+		 *
+		 * @return mixed
+		 */
+		public function get_current_form_login_template() {
+			return $this->current_template_form_login;
 		}
 
 		/**
@@ -785,10 +1019,17 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 				}
 			}
 
-			$this->current_template_archive = apply_filters(
-				'jet-woo-builder/custom-archive-template',
-				$custom_template
-			);
+			$layout          = ! empty( $_COOKIE['jet_woo_builder_layout'] ) ? absint( $_COOKIE['jet_woo_builder_layout'] ) : false;
+			$switcher_enable = apply_filters( 'jet-woo-builder/jet-products-loop/switcher-option-enable', false );
+
+			if ( $layout && $switcher_enable ) {
+				$this->current_template_archive = $layout;
+			} else {
+				$this->current_template_archive = apply_filters(
+					'jet-woo-builder/custom-archive-template',
+					$custom_template
+				);
+			}
 
 			return $this->current_template_archive;
 
@@ -825,6 +1066,216 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 			);
 
 			return $this->current_template_archive_category;
+
+		}
+
+		/**
+		 * Returns processed cart template
+		 *
+		 * @return mixed
+		 */
+		public function get_custom_cart_template() {
+
+			if ( null !== $this->current_template_cart ) {
+				return $this->current_template_cart;
+			}
+
+			$enabled = jet_woo_builder_shop_settings()->get( 'custom_cart_page' );
+
+			$custom_template = false;
+
+			if ( 'yes' === $enabled ) {
+				if ( 'default' !== jet_woo_builder_shop_settings()->get( 'cart_template' ) ) {
+					$custom_template = jet_woo_builder_shop_settings()->get( 'cart_template' );
+				}
+			}
+
+			$this->current_template_cart = apply_filters(
+				'jet-woo-builder/custom-cart-template',
+				$custom_template
+			);
+
+			return $this->current_template_cart;
+
+		}
+
+		/**
+		 * Returns processed checkout template
+		 *
+		 * @return mixed
+		 */
+		public function get_custom_checkout_template() {
+
+			if ( null !== $this->current_template_checkout ) {
+				return $this->current_template_checkout;
+			}
+
+			$enabled = jet_woo_builder_shop_settings()->get( 'custom_checkout_page' );
+
+			$custom_template = false;
+
+			if ( 'yes' === $enabled ) {
+				if ( 'default' !== jet_woo_builder_shop_settings()->get( 'checkout_template' ) ) {
+					$custom_template = jet_woo_builder_shop_settings()->get( 'checkout_template' );
+				}
+			}
+
+			$this->current_template_checkout = apply_filters(
+				'jet-woo-builder/custom-checkout-template',
+				$custom_template
+			);
+
+			return $this->current_template_checkout;
+
+		}
+
+		/**
+		 * Returns processed top checkout template
+		 *
+		 * @return mixed
+		 */
+		public function get_custom_top_checkout_template() {
+
+			if ( null !== $this->current_top_template_checkout ) {
+				return $this->current_top_template_checkout;
+			}
+
+			$enabled = jet_woo_builder_shop_settings()->get( 'custom_checkout_page' );
+
+			$custom_template = false;
+
+			if ( 'yes' === $enabled ) {
+				if ( 'default' !== jet_woo_builder_shop_settings()->get( 'checkout_top_template' ) ) {
+					$custom_template = jet_woo_builder_shop_settings()->get( 'checkout_top_template' );
+				}
+			}
+
+			$this->current_top_template_checkout = apply_filters(
+				'jet-woo-builder/custom-top-checkout-template',
+				$custom_template
+			);
+
+			return $this->current_top_template_checkout;
+
+		}
+
+		/**
+		 * Returns processed thank you template
+		 *
+		 * @return mixed
+		 */
+		public function get_custom_thankyou_template() {
+
+			if ( null !== $this->current_template_thankyou ) {
+				return $this->current_template_thankyou;
+			}
+
+			$enabled = jet_woo_builder_shop_settings()->get( 'custom_thankyou_page' );
+
+			$custom_template = false;
+
+			if ( 'yes' === $enabled ) {
+				if ( 'default' !== jet_woo_builder_shop_settings()->get( 'thankyou_template' ) ) {
+					$custom_template = jet_woo_builder_shop_settings()->get( 'thankyou_template' );
+				}
+			}
+
+			$this->current_template_thankyou = apply_filters(
+				'jet-woo-builder/custom-thankyou-template',
+				$custom_template
+			);
+
+			return $this->current_template_thankyou;
+
+		}
+
+		/**
+		 * Returns processed my account template
+		 *
+		 * @return mixed
+		 */
+		public function get_custom_myaccount_template() {
+
+			if ( null !== $this->current_template_myaccount ) {
+				return $this->current_template_myaccount;
+			}
+
+			$enabled = jet_woo_builder_shop_settings()->get( 'custom_myaccount_page' );
+
+			$custom_template = false;
+
+			if ( 'yes' === $enabled ) {
+				if ( 'default' !== jet_woo_builder_shop_settings()->get( 'myaccount_template' ) ) {
+					$custom_template = jet_woo_builder_shop_settings()->get( 'myaccount_template' );
+				}
+			}
+
+			$this->current_template_myaccount = apply_filters(
+				'jet-woo-builder/custom-myaccount-template',
+				$custom_template
+			);
+
+			return $this->current_template_myaccount;
+
+		}
+
+		/**
+		 * Returns processed form login template
+		 *
+		 * @return mixed
+		 */
+		public function get_custom_form_login_template() {
+
+			if ( null !== $this->current_template_form_login ) {
+				return $this->current_template_form_login;
+			}
+
+			$enabled = jet_woo_builder_shop_settings()->get( 'custom_myaccount_page' );
+
+			$custom_template = false;
+
+			if ( 'yes' === $enabled ) {
+				if ( 'default' !== jet_woo_builder_shop_settings()->get( 'form_login_template' ) ) {
+					$custom_template = jet_woo_builder_shop_settings()->get( 'form_login_template' );
+				}
+			}
+
+			$this->current_template_form_login = apply_filters(
+				'jet-woo-builder/custom-form-login-template',
+				$custom_template
+			);
+
+			return $this->current_template_form_login;
+
+		}
+
+		/**
+		 * Returns processed empty cart template
+		 *
+		 * @return mixed
+		 */
+		public function get_custom_empty_cart_template() {
+
+			if ( null !== $this->current_template_empty_cart ) {
+				return $this->current_template_empty_cart;
+			}
+
+			$enabled = jet_woo_builder_shop_settings()->get( 'custom_cart_page' );
+
+			$custom_template = false;
+
+			if ( 'yes' === $enabled ) {
+				if ( 'default' !== jet_woo_builder_shop_settings()->get( 'empty_cart_template' ) ) {
+					$custom_template = jet_woo_builder_shop_settings()->get( 'empty_cart_template' );
+				}
+			}
+
+			$this->current_template_empty_cart = apply_filters(
+				'jet-woo-builder/custom-empty-cart-template',
+				$custom_template
+			);
+
+			return $this->current_template_empty_cart;
 
 		}
 
@@ -959,67 +1410,6 @@ if ( ! class_exists( 'Jet_Woo_Builder_Integration_Woocommerce' ) ) {
 				return $doc_type;
 
 			}
-
-		}
-
-		/**
-		 * Enqueue single product ajax add to cart script
-		 *
-		 * @return void
-		 */
-		public function woocommerce_ajax_single_add_to_cart_js() {
-
-			if ( function_exists( 'is_product' ) && is_product() ) {
-
-				wp_enqueue_script( 
-					'woocommerce-ajax-single-add-to-cart',
-					jet_woo_builder()->plugin_url( 'assets/js/ajax-single-add-to-cart.js' ),
-					array( 'jquery' ),
-					jet_woo_builder()->get_version(),
-					true
-				);
-			}
-
-		}
-
-		/**
-		 * Update the cart with the information received by the jQuery file
-		 *
-		 * @return void
-		 */
-		public function woocommerce_ajax_single_add_to_cart() {
-
-			if ( ! isset( $_POST['product_id'] ) ) {
-				return;
-			}
-
-			$product_id        = apply_filters( 'woocommerce_add_to_cart_product_id', absint( $_POST['product_id'] ) );
-			$quantity          = empty( $_POST['quantity'] ) ? 1 : wc_stock_amount( $_POST['quantity'] );
-			$variation_id      = absint( $_POST['variation_id'] );
-			$passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity );
-			$product_status    = get_post_status( $product_id );
-
-			if ( $passed_validation && WC()->cart->add_to_cart( $product_id, $quantity, $variation_id ) && 'publish' === $product_status ) {
-
-				do_action( 'woocommerce_ajax_added_to_cart', $product_id );
-
-				if ( 'yes' === get_option( 'woocommerce_cart_redirect_after_add' ) ) {
-					wc_add_to_cart_message( array( $product_id => $quantity ), true );
-				}
-
-				WC_AJAX::get_refreshed_fragments();
-
-			} else {
-
-				$data = array(
-					'error'       => true,
-					'product_url' => apply_filters( 'woocommerce_cart_redirect_after_error', get_permalink( $product_id ), $product_id )
-				);
-
-				echo esc_html( wp_send_json( $data ) );
-			}
-
-			wp_die();
 
 		}
 

@@ -20,7 +20,7 @@ class Shortcode {
 	 *
 	 * @param array $atts bool show_details_box
 	 */
-	public static function addBody( $atts ) {
+	public static function addBody( $atts = array() ) {
 
 		$layout = Helpers::getLayoutSettings();
 

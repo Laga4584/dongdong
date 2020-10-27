@@ -118,6 +118,8 @@ if ( ! class_exists( 'Ivole_Manual' ) ) :
 				wp_send_json( array( 'code' => 9, 'message' => $result[1], 'order_id' => $order_id ) );
 			} elseif( is_array( $result ) && count( $result)  > 1 && 12 === $result[0] ) {
 				wp_send_json( array( 'code' => 12, 'message' => $result[1], 'order_id' => $order_id ) );
+			} elseif( is_array( $result ) && count( $result)  > 1 && 100 === $result[0] ) {
+				wp_send_json( array( 'code' => 100, 'message' => $result[1], 'order_id' => $order_id ) );
 			} elseif( 0 === $result ) {
 				//unschedule automatic review reminder if manual sending was successful (for reminders sent via WP Cron)
 				if( !$schedule ) {
@@ -144,6 +146,8 @@ if ( ! class_exists( 'Ivole_Manual' ) ) :
 				wp_send_json( array( 'code' => 10, 'message' => __( 'Error: the customer\'s email is invalid.', IVOLE_TEXT_DOMAIN ), 'order_id' => $order_id ) );
 			} elseif( 11 === $result ) {
 				wp_send_json( array( 'code' => 11, 'message' => __( 'Error: reminders are disabled for guests.', IVOLE_TEXT_DOMAIN ), 'order_id' => $order_id ) );
+			} elseif( 100 === $result ) {
+				wp_send_json( array( 'code' => 100, 'message' => __( 'Error: cURL library is missing on the server.', IVOLE_TEXT_DOMAIN ), 'order_id' => $order_id ) );
 			}
 			wp_send_json( array( 'code' => 98, 'message' => $msg, 'order_id' => $order_id ) );
 		}
@@ -236,5 +240,3 @@ if ( ! class_exists( 'Ivole_Manual' ) ) :
 	}
 
 endif;
-
-?>

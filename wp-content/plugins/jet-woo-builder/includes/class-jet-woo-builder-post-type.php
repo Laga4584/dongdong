@@ -38,6 +38,9 @@ if ( ! class_exists( 'Jet_Woo_Builder_Post_Type' ) ) {
 				add_action( 'admin_menu', array( $this, 'add_templates_page' ), 22 );
 			}
 
+			add_action( 'manage_' . $this->post_type . '_posts_columns', array( $this, 'admin_columns_headers' ) );
+			add_action( 'manage_' . $this->post_type . '_posts_custom_column', array( $this, 'admin_columns_content' ), 10, 2 );
+
 			add_filter( 'option_elementor_cpt_support', array( $this, 'set_option_support' ) );
 			add_filter( 'default_option_elementor_cpt_support', array( $this, 'set_option_support' ) );
 
@@ -434,6 +437,14 @@ if ( ! class_exists( 'Jet_Woo_Builder_Post_Type' ) ) {
 				$classes[] = 'single-product woocommerce';
 			}
 
+			$custom_cart_page      = jet_woo_builder_shop_settings()->get( 'custom_cart_page' );
+			$custom_checkout_page  = jet_woo_builder_shop_settings()->get( 'custom_checkout_page' );
+			$custom_myaccount_page = jet_woo_builder_shop_settings()->get( 'custom_myaccount_page' );
+
+			if ( ( $custom_cart_page === 'yes' && is_cart() ) || ( $custom_checkout_page === 'yes' && is_checkout() ) || ( $custom_myaccount_page === 'yes' && is_account_page() ) ) {
+				$classes[] = 'jet-woo-builder-elementor';
+			}
+
 			return $classes;
 		}
 
@@ -464,6 +475,180 @@ if ( ! class_exists( 'Jet_Woo_Builder_Post_Type' ) ) {
 				'edit_pages',
 				'edit.php?post_type=' . $this->slug()
 			);
+
+		}
+
+		/**
+		 * Set required post columns
+		 *
+		 * @param  array $posts_columns
+		 * @return array
+		 */
+		public function admin_columns_headers( $posts_columns ) {
+
+			$offset = 2;
+
+			$posts_columns = array_slice( $posts_columns, 0, $offset, true ) + array( 'type' => esc_html__( 'Type', 'jet-woo-builder' ), ) + array_slice( $posts_columns, $offset, null, true );
+
+			$offset = 3;
+
+			$posts_columns = array_slice( $posts_columns, 0, $offset, true ) + array( 'condition' => esc_html__( 'Active Condition', 'jet-woo-builder' ), ) + array_slice( $posts_columns, $offset, null, true );
+
+			return $posts_columns;
+
+		}
+
+		/**
+		 * Set required post columns content
+		 *
+		 * @param  string $column_name
+		 * @param  number $post_id
+		 *
+		 * @return mixed
+		 */
+		public function admin_columns_content( $column_name, $post_id ) {
+
+			$post_id = absint( $post_id );
+
+			if ( ! $post_id || ! get_post( $post_id ) ) {
+				return false;
+			}
+
+			$template_types = jet_woo_builder()->documents->get_document_types();
+			$documents      = Elementor\Plugin::instance()->documents;
+			$doc_type       = $documents->get_document_type( $this->slug() );
+			$doc_type_slug  = get_post_meta( $post_id, $doc_type::TYPE_META_KEY, true );
+
+			switch ( $column_name ) {
+
+				case 'type':
+
+					$col_type_content    = '';
+
+					foreach ( $template_types as $template => $template_type ) {
+
+						if ( ! isset( $template ) ) {
+							continue;
+						}
+
+						if ( $doc_type_slug === $template_type['slug'] ) {
+							$col_type_content = $template_type['name'];
+						}
+
+					}
+
+					printf( '<div class="jet-woo-builder-template-type">%s</div>', $col_type_content );
+
+					break;
+
+				case 'condition';
+
+					$col_condition_content    = '';
+
+					foreach ( $template_types as $template => $template_type ) {
+
+						if ( ! isset( $template ) ) {
+							continue;
+						}
+
+						if ( 'jet-woo-builder' === $doc_type_slug ) {
+							$single_page_id = absint( jet_woo_builder_integration_woocommerce()->get_custom_single_template() );
+
+							if ( $single_page_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Single Product', 'jet-woo-builder' );
+							}
+
+						}
+
+						if ( 'jet-woo-builder-archive' === $doc_type_slug ) {
+							$archive_template_id    = absint( jet_woo_builder_shop_settings()->get( 'archive_template' ) );
+							$search_template_id     = absint( jet_woo_builder_shop_settings()->get( 'search_template' ) );
+							$shortcode_template_id  = absint( jet_woo_builder_shop_settings()->get( 'shortcode_template' ) );
+							$related_template_id    = absint( jet_woo_builder_shop_settings()->get( 'related_template' ) );
+							$cross_sell_template_id = absint( jet_woo_builder_shop_settings()->get( 'cross_sells_template' ) );
+
+							if ( $archive_template_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Archive Template', 'jet-woo-builder' );
+							} elseif ( $search_template_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Search Template', 'jet-woo-builder' );
+							} elseif ( $shortcode_template_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Shortcode Template', 'jet-woo-builder' );
+							} elseif ( $related_template_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Related Template', 'jet-woo-builder' );
+							} elseif ( $cross_sell_template_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Cross Sell Template', 'jet-woo-builder' );
+							}
+
+						}
+
+						if ( 'jet-woo-builder-category' === $doc_type_slug ) {
+							$category_page_id = absint( jet_woo_builder_integration_woocommerce()->get_custom_archive_category_template() );
+
+							if ( $category_page_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Archive Category', 'jet-woo-builder' );
+							}
+
+						}
+
+						if ( 'jet-woo-builder-shop' === $doc_type_slug ) {
+							$shop_page_id = absint( jet_woo_builder_integration_woocommerce()->get_custom_shop_template() );
+
+							if ( $shop_page_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Shop Page', 'jet-woo-builder' );
+							}
+
+						}
+
+						if ( 'jet-woo-builder-cart' === $doc_type_slug ) {
+							$cart_page_id       = absint( jet_woo_builder_integration_woocommerce()->get_custom_cart_template() );
+							$cart_empty_page_id = absint( jet_woo_builder_integration_woocommerce()->get_custom_empty_cart_template() );
+
+							if ( $cart_page_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Cart Page', 'jet-woo-builder' );
+							} elseif ( $cart_empty_page_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Empty Cart Page', 'jet-woo-builder' );
+							}
+
+						}
+
+						if ( 'jet-woo-builder-checkout' === $doc_type_slug ) {
+							$checkout_page_id        = absint( jet_woo_builder_integration_woocommerce()->get_custom_checkout_template() );
+							$checkout_top_content_id = absint( jet_woo_builder_integration_woocommerce()->get_custom_top_checkout_template() );
+
+							if ( $checkout_page_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Checkout Page', 'jet-woo-builder' );
+							} elseif ( $checkout_top_content_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Checkout Top Content', 'jet-woo-builder' );
+							}
+
+						}
+
+						if ( 'jet-woo-builder-thankyou' === $doc_type_slug ) {
+							$thankyou_page_id = absint( jet_woo_builder_integration_woocommerce()->get_custom_thankyou_template() );
+
+							if ( $thankyou_page_id === $post_id ) {
+								$col_condition_content = esc_html__( 'Thank You Page', 'jet-woo-builder' );
+							}
+
+						}
+
+						if ( 'jet-woo-builder-myaccount' === $doc_type_slug ) {
+							$myaccount_page_id       = absint( jet_woo_builder_integration_woocommerce()->get_custom_myaccount_template() );
+							$myaccount_login_page_id = absint( jet_woo_builder_integration_woocommerce()->get_custom_form_login_template() );
+
+							if ( $myaccount_page_id === $post_id ) {
+								$col_condition_content = esc_html__( 'My Account Page', 'jet-woo-builder' );
+							} elseif ( $myaccount_login_page_id === $post_id ) {
+								$col_condition_content = esc_html__( 'My Account Login Page', 'jet-woo-builder' );
+							}
+
+						}
+
+					}
+
+					printf( '<div class="jet-woo-builder-active-conditions">%1$s</div>', $col_condition_content );
+
+			}
 
 		}
 

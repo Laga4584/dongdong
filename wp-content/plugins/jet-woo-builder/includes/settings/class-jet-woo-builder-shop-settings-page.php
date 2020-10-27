@@ -83,7 +83,7 @@ class Jet_Woo_Builder_Shop_Settings_Page extends WC_Settings_Page {
 
 			array(
 				'title'    => __( 'Widgets Render Method', 'jet-woo-builder' ),
-				'desc'     => __( 'Select widgets render method for archive product and archive category templates', 'jet-woo-builder' ),
+				'desc'     => __( 'Select widgets render method for archive product, archive category, cart, checkout, thank you and my account templates', 'jet-woo-builder' ),
 				'id'       => jet_woo_builder_shop_settings()->options_key . '[widgets_render_method]',
 				'default'  => 'macros',
 				'type'     => 'jet_woo_select_render_method_field',
@@ -270,6 +270,163 @@ class Jet_Woo_Builder_Shop_Settings_Page extends WC_Settings_Page {
 			array(
 				'type' => 'sectionend',
 				'id'   => 'categories_options',
+			),
+
+			array(
+				'title' => __( 'Cart', 'jet-woo-builder' ),
+				'type'  => 'title',
+				'desc'  => '',
+				'id'    => 'cart_options',
+			),
+
+			array(
+				'title'   => __( 'Custom Cart', 'jet-woo-builder' ),
+				'desc'    => __( 'Enable custom cart', 'jet-woo-builder' ),
+				'id'      => jet_woo_builder_shop_settings()->options_key . '[custom_cart_page]',
+				'default' => '',
+				'type'    => 'checkbox',
+			),
+
+			array(
+				'title'    => __( 'Cart Template', 'jet-woo-builder' ),
+				'desc'     => __( 'Select template to use it as cart template', 'jet-woo-builder' ),
+				'id'       => jet_woo_builder_shop_settings()->options_key . '[cart_template]',
+				'doc_type' => 'cart',
+				'default'  => '',
+				'type'     => 'jet_woo_select_template',
+				'class'    => 'wc-enhanced-select-nostd',
+				'css'      => 'min-width:300px;',
+			),
+
+			array(
+				'title'    => __( 'Empty Cart Template', 'jet-woo-builder' ),
+				'desc'     => __( 'Select template to use it as empty cart template', 'jet-woo-builder' ),
+				'id'       => jet_woo_builder_shop_settings()->options_key . '[empty_cart_template]',
+				'doc_type' => 'cart',
+				'default'  => '',
+				'type'     => 'jet_woo_select_template',
+				'class'    => 'wc-enhanced-select-nostd',
+				'css'      => 'min-width:300px;',
+			),
+
+			array(
+				'type' => 'sectionend',
+				'id'   => 'cart_options',
+			),
+
+			array(
+				'title' => __( 'Checkout', 'jet-woo-builder' ),
+				'type'  => 'title',
+				'desc'  => '',
+				'id'    => 'checkout_options',
+			),
+
+			array(
+				'title'   => __( 'Custom Checkout', 'jet-woo-builder' ),
+				'desc'    => __( 'Enable custom checkout', 'jet-woo-builder' ),
+				'id'      => jet_woo_builder_shop_settings()->options_key . '[custom_checkout_page]',
+				'default' => '',
+				'type'    => 'checkbox',
+			),
+
+			array(
+				'title'    => __( 'Checkout Template', 'jet-woo-builder' ),
+				'desc'     => __( 'Select template to use it as checkout template', 'jet-woo-builder' ),
+				'id'       => jet_woo_builder_shop_settings()->options_key . '[checkout_template]',
+				'doc_type' => 'checkout',
+				'default'  => '',
+				'type'     => 'jet_woo_select_template',
+				'class'    => 'wc-enhanced-select-nostd',
+				'css'      => 'min-width:300px;',
+			),
+
+			array(
+				'title'    => __( 'Checkout Top Template', 'jet-woo-builder' ),
+				'desc'     => __( 'Select template to use it as checkout top content template (E.g: Coupon form, login form etc.)', 'jet-woo-builder' ),
+				'id'       => jet_woo_builder_shop_settings()->options_key . '[checkout_top_template]',
+				'doc_type' => 'checkout',
+				'default'  => '',
+				'type'     => 'jet_woo_select_template',
+				'class'    => 'wc-enhanced-select-nostd',
+				'css'      => 'min-width:300px;',
+			),
+
+			array(
+				'type' => 'sectionend',
+				'id'   => 'checkout_options',
+			),
+
+			array(
+				'title' => __( 'Thank You Page', 'jet-woo-builder' ),
+				'type'  => 'title',
+				'desc'  => '',
+				'id'    => 'thankyou_options',
+			),
+
+			array(
+				'title'   => __( 'Custom Thank You Page', 'jet-woo-builder' ),
+				'desc'    => __( 'Enable custom thank you page', 'jet-woo-builder' ),
+				'id'      => jet_woo_builder_shop_settings()->options_key . '[custom_thankyou_page]',
+				'default' => '',
+				'type'    => 'checkbox',
+			),
+
+			array(
+				'title'    => __( 'Thank You Template', 'jet-woo-builder' ),
+				'desc'     => __( 'Select template to use it as thank you template', 'jet-woo-builder' ),
+				'id'       => jet_woo_builder_shop_settings()->options_key . '[thankyou_template]',
+				'doc_type' => 'thankyou',
+				'default'  => '',
+				'type'     => 'jet_woo_select_template',
+				'class'    => 'wc-enhanced-select-nostd',
+				'css'      => 'min-width:300px;',
+			),
+
+			array(
+				'type' => 'sectionend',
+				'id'   => 'myaccount_options',
+			),
+
+			array(
+				'title' => __( 'My Account Page', 'jet-woo-builder' ),
+				'type'  => 'title',
+				'desc'  => '',
+				'id'    => 'myaccount_options',
+			),
+
+			array(
+				'title'   => __( 'Custom My Account Page', 'jet-woo-builder' ),
+				'desc'    => __( 'Enable custom my account page', 'jet-woo-builder' ),
+				'id'      => jet_woo_builder_shop_settings()->options_key . '[custom_myaccount_page]',
+				'default' => '',
+				'type'    => 'checkbox',
+			),
+
+			array(
+				'title'    => __( 'My Account Template', 'jet-woo-builder' ),
+				'desc'     => __( 'Select template to use it as my account template', 'jet-woo-builder' ),
+				'id'       => jet_woo_builder_shop_settings()->options_key . '[myaccount_template]',
+				'doc_type' => 'myaccount',
+				'default'  => '',
+				'type'     => 'jet_woo_select_template',
+				'class'    => 'wc-enhanced-select-nostd',
+				'css'      => 'min-width:300px;',
+			),
+
+			array(
+				'title'    => __( 'My Account Login Page Template', 'jet-woo-builder' ),
+				'desc'     => __( 'Select template to use it as login page template (E.g: Registration form, login form etc.)', 'jet-woo-builder' ),
+				'id'       => jet_woo_builder_shop_settings()->options_key . '[form_login_template]',
+				'doc_type' => 'myaccount',
+				'default'  => '',
+				'type'     => 'jet_woo_select_template',
+				'class'    => 'wc-enhanced-select-nostd',
+				'css'      => 'min-width:300px;',
+			),
+
+			array(
+				'type' => 'sectionend',
+				'id'   => 'myaccount_options',
 			),
 
 			array(

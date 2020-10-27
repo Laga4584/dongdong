@@ -13,9 +13,9 @@ if ( ! class_exists( 'CR_Checkout' ) ) :
 			if( 'yes' === get_option( 'ivole_customer_consent', 'no' ) ) {
 				$def_consumer_consent_text = '';
 				if( 'yes' === get_option( 'ivole_coupon_enable', 'no' ) ) {
-					$def_consumer_consent_text = __( 'Check here to receive an invitation from CR (an independent third-party organization) to review your order. Once the review is published, you will receive a coupon to use for your next purchase.', IVOLE_TEXT_DOMAIN );
+					$def_consumer_consent_text = __( 'Check here to receive an invitation from CR (an independent third-party organization) to review your order. Once the review is published, you will receive a coupon to use for your next purchase.', 'customer-reviews-woocommerce' );
 				} else {
-					$def_consumer_consent_text = __( 'Check here to receive an invitation from CR (an independent third-party organization) to review your order', IVOLE_TEXT_DOMAIN );
+					$def_consumer_consent_text = __( 'Check here to receive an invitation from CR (an independent third-party organization) to review your order', 'customer-reviews-woocommerce' );
 				}
 				$this->consent_text = get_option( 'ivole_customer_consent_text', $def_consumer_consent_text );
 				// WPML integration

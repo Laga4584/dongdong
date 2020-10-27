@@ -74,7 +74,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Filter_Manager' ) ) {
 					'week_start' => get_option( 'start_of_week' ),
 				),
 				'props'     => jet_smart_filters()->query->get_query_props(),
-				'templates' => $this->get_localization_templates()
+				'templates' => $this->get_localization_templates(),
 			) );
 
 			wp_localize_script( 'jet-smart-filters', 'JetSmartFilterSettings', $localized_data );

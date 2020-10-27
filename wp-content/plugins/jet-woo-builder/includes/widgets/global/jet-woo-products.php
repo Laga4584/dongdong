@@ -31,7 +31,7 @@ class Jet_Woo_Products extends Jet_Woo_Builder_Base {
 	}
 
 	public function get_icon() {
-		return 'jetwoobuilder-icon-16';
+		return 'jet-woo-builder-icon-products-grid';
 	}
 
 	public function get_jet_help_url() {

@@ -15,10 +15,7 @@
 			<input id="tab_tools" type="radio" name="tabs" class="tab_input" data-label="<?php _e('Tools', 'woo-advanced-shipment-tracking'); ?>" data-tab="tools" <?php if(isset($_GET['tab']) && $_GET['tab'] == 'tools'){ echo 'checked'; } ?>>
 			<label for="tab_tools" class="tab_label"><?php _e('Tools', 'woo-advanced-shipment-tracking'); ?></label>			
 			
-			<?php } ?>
-			<form method="post" id="wc_ast_trackship_form" action="" enctype="multipart/form-data">
-				<?php 
-				
+			<?php } 
 				if($wc_ast_api_key){								
 					$url = 'https://my.trackship.info/wp-json/tracking/get_user_plan';								
 					$args['body'] = array(
@@ -35,9 +32,8 @@
 					require_once( 'admin_tracking_page_settings.php' );
 					require_once( 'admin_status_notifications.php' );
 					require_once( 'admin_options_tools.php' );
-				 }
+				}
 			?>			
-			</form>
 		</div>                   					
    </div>				
 </div> 

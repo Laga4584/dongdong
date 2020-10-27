@@ -18,10 +18,62 @@
 				elementorFrontend.hooks.addAction( 'frontend/element_ready/' + widget, callback );
 			});
 
+			if ( $.browser && $.browser.safari ) {
+				document.addEventListener( 'click', function ( event ) {
+					if ( event.target.matches( '.add_to_cart_button' ) || event.target.matches( '.single_add_to_cart_button' ) ) {
+						event.target.focus();
+					}
+				} );
+			}
+
 			$( document ).on( 'jet-filter-content-rendered', JetWooBuilder.reInitCarousel );
 			elementorFrontend.hooks.addFilter( 'jet-popup/widget-extensions/popup-data', JetWooBuilder.prepareJetPopup );
 			$( window ).on( 'jet-popup/render-content/ajax/success', JetWooBuilder.jetPopupLoaded );
 			$( document ).on( 'wc_update_cart added_to_cart', JetWooBuilder.jetCartPopupOpen);
+
+			$( document ).on( 'click', '.jet-woo-switcher-btn', JetWooBuilder.gridListSwitcher );
+
+		},
+
+		gridListSwitcher : function ( event ) {
+
+			event.preventDefault();
+
+			var layout          = $( document ).find( '.jet-woo-products-wrapper' ).data( 'layout-switcher' ),
+				activeLayout    = $( event.currentTarget ).hasClass( 'jet-woo-switcher-btn-main' ) ? layout.main : layout.secondary,
+				activeControl   = $( document ).find( '.jet-woo-switcher-controls-wrapper .jet-woo-switcher-btn' ),
+				productsWrapper = $( document ).find( '.jet-woo-products-wrapper' );
+
+			if ( window.JetSmartFilters && window.JetSmartFilters.filterGroups['woocommerce-archive/default'] ) {
+				var jetSmartFiltersProvider = window.JetSmartFilters.filterGroups['woocommerce-archive/default'],
+					jetSmartFiltersQuery    = jetSmartFiltersProvider.query;
+			}
+
+			if ( ! $( event.currentTarget ).hasClass( 'active' ) ) {
+				if ( activeControl.hasClass( 'active' ) ) {
+					activeControl.removeClass( 'active' );
+				}
+
+				$( event.currentTarget ).addClass( 'active' );
+			}
+
+			$.ajax( {
+				type: 'POST',
+				url: window.jetWooBuilderData.ajax_url,
+				data: {
+					action: 'jet_woo_builder_get_layout',
+					query: window.jetWooBuilderData.products,
+					layout: activeLayout,
+					filters: jetSmartFiltersQuery
+				},
+				beforeSend: function ( xhr ) {
+					productsWrapper.addClass( 'jet-layout-loading' );
+				},
+				success: function ( data ) {
+					productsWrapper.removeClass( 'jet-layout-loading' );
+					productsWrapper.html( data );
+				}
+			} );
 
 		},
 
@@ -168,16 +220,18 @@
 			}
 
 			defaultOptions = {
-				slidesPerView: desktopSlides,
-				handleElementorBreakpoints: true,
+				slidesPerView: 1,
 				breakpoints: {
-					768: {
+					0: {
 						slidesPerView: mobileSlides,
 						slidesPerGroup: 1,
 					},
-					1025: {
+					768: {
 						slidesPerView: tabletSlides,
 						slidesPerGroup: 1,
+					},
+					1025: {
+						slidesPerView: desktopSlides
 					},
 				},
 				pagination: {

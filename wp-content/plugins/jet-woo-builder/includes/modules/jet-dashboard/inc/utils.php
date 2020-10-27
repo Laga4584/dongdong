@@ -182,7 +182,7 @@ class Utils {
 	 * @param  [type] $key [description]
 	 * @return [type]      [description]
 	 */
-	public static function package_url( $plugin_slug = false ) {
+	public static function package_url( $plugin_slug = false, $version = false ) {
 
 		$license_key = self::get_plugin_license_key( $plugin_slug );
 
@@ -195,6 +195,7 @@ class Utils {
 				'action'   => 'get_plugin_update',
 				'license'  => self::get_plugin_license_key( $plugin_slug ),
 				'plugin'   => $plugin_slug,
+				'version'  => $version,
 				'site_url' => urlencode( self::get_site_url() ),
 			),
 			self::get_api_url()

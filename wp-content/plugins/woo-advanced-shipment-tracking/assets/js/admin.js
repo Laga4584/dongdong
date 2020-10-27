@@ -330,6 +330,10 @@ jQuery(document).on("click", ".popupclose", function(){
 	jQuery('.add_tracking_popup').hide();	
 });
 
+jQuery(document).on("click", ".popup_close_icon", function(){
+	jQuery('.add_tracking_popup').hide();	
+});
+
 jQuery(document).on("submit", "#add_tracking_number_form", function(){
 	
 	var form = jQuery('#add_tracking_number_form');

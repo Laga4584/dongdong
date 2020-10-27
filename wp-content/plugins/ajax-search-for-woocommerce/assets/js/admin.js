@@ -134,9 +134,11 @@
 		layoutSelect: "select[id*='search_layout']",
 		overlayMobile: "input[id*='enable_mobile_overlay']",
 		mobileBreakpoint: "input[id*='mobile_breakpoint']",
+		searchIconColor: "input[id*='search_icon_color']",
 		$select: null,
 		$overlayMobileEl: null,
 		$mobileBreakpointEl: null,
+		$searchIconColorEl: null,
 		setConditions: function () {
 			var _this = this,
 				currentVal = _this.$select.find('option:selected').val(),
@@ -144,16 +146,23 @@
 
 			_this.hideOption(_this.$overlayMobileEl);
 			_this.hideOption(_this.$mobileBreakpointEl);
+			_this.hideOption(_this.$searchIconColorEl);
 
 			$("input[id*='bg_search_icon_color']").closest('tr').show();
 
 			switch (currentVal) {
 				case 'icon':
+
+					if (hasAdvSettings) {
+						_this.showOption(_this.$searchIconColorEl);
+					}
+
 					break;
 				case 'icon-flexible':
 
 					if (hasAdvSettings) {
 						_this.showOption(_this.$mobileBreakpointEl);
+						_this.showOption(_this.$searchIconColorEl);
 					}
 
 					break;
@@ -199,6 +208,7 @@
 				_this.$select = $sel;
 				_this.$overlayMobileEl = $(_this.overlayMobile);
 				_this.$mobileBreakpointEl = $(_this.mobileBreakpoint);
+				_this.$searchIconColorEl = $(_this.searchIconColor);
 				_this.registerListeners();
 
 				setTimeout(function(){
@@ -1135,6 +1145,7 @@
                 style += '.dgwt-wcas-search-input:-moz-placeholder{opacity: 0.3; color:' + value + '!important;}';
                 style += '.dgwt-wcas-search-input::-moz-placeholder{opacity: 0.3; color:' + value + '!important;}';
                 style += '.dgwt-wcas-search-input:-ms-input-placeholder{opacity: 0.3; color:' + value + '!important;}';
+				style += '.dgwt-wcas-ico-magnifier path {fill:' + value + '}';
                 style += '</style>';
 
                 $('head').append(style);
@@ -1340,6 +1351,138 @@
         }
     };
 
+	var TROUBLESHOOTING = {
+		settingsTab: '#dgwt_wcas_troubleshooting-tab',
+		noIssuesClass: '.js-dgwt-wcas-troubleshooting-no-issues',
+		counterClass: '.js-dgwt-wcas-troubleshooting-count',
+		issuesListClass: '.js-dgwt-wcas-troubleshooting-issues',
+		progressBar: '.dgwt-wcas-troubleshooting-wrapper .progress_bar',
+		progressBarInner: '.dgwt-wcas-troubleshooting-wrapper .progress-bar-inner',
+		resetButtonName: 'dgwt-wcas-reset-async-tests',
+		init: function () {
+			var _this = this;
+			if (typeof dgwt_wcas['troubleshooting'] === 'undefined') {
+				return;
+			}
+
+			const count = dgwt_wcas['troubleshooting']['tests']['issues']['critical'] + dgwt_wcas['troubleshooting']['tests']['issues']['recommended'];
+			if (count > 0) {
+				$(_this.counterClass).text(count);
+				$(_this.settingsTab).addClass('enabled');
+			}
+
+			if (dgwt_wcas.troubleshooting.tests.results_async.length > 0) {
+				$.each(dgwt_wcas.troubleshooting.tests.results_async, function () {
+					_this.appendIssue(this, false);
+				});
+			}
+
+			if (dgwt_wcas.troubleshooting.tests.direct.length > 0) {
+				$.each(dgwt_wcas.troubleshooting.tests.direct, function () {
+					_this.appendIssue(this, false);
+				});
+			}
+
+			if (dgwt_wcas.troubleshooting.tests.async.length > 0) {
+				_this.maybeRunNextAsyncTest();
+			}
+
+			$(document).on('click', 'input[name="' + _this.resetButtonName + '"]', function (e) {
+				$('input[name="' + _this.resetButtonName + '"]').attr('disabled', 'disabled');
+				var data = {
+					'action': 'dgwt_wcas_troubleshooting_reset_async_tests',
+					'_wpnonce': dgwt_wcas.troubleshooting.nonce.troubleshooting_reset_async_tests
+				};
+				$.post(
+					ajaxurl,
+					data,
+					function () {
+						location.reload();
+					}
+				);
+				return false;
+			});
+		},
+		appendIssue: function (issue, incrementCounter) {
+			var _this = this;
+			var template = wp.template('dgwt-wcas-troubleshooting-issue'),
+				issueWrapper = $(_this.issuesListClass + '-' + issue.status),
+				count;
+
+			if (issue.status === 'good') {
+				return;
+			}
+
+			$(_this.noIssuesClass).hide();
+
+			if (incrementCounter) {
+				dgwt_wcas.troubleshooting.tests.issues[issue.status]++;
+			}
+
+			count = dgwt_wcas.troubleshooting.tests.issues['critical'] + dgwt_wcas.troubleshooting.tests.issues['recommended'];
+
+			if (count > 0) {
+				$(_this.counterClass).text(count);
+				$(_this.settingsTab).addClass('enabled');
+			}
+
+			$(issueWrapper).append(template(issue));
+		},
+		maybeRunNextAsyncTest: function () {
+			var _this = this;
+
+			if (dgwt_wcas.troubleshooting.tests.async.length > 0) {
+				$.each(dgwt_wcas.troubleshooting.tests.async, function () {
+					var data = {
+						'action': 'dgwt_wcas_troubleshooting_test',
+						'test': this.test,
+						'_wpnonce': dgwt_wcas.troubleshooting.nonce.troubleshooting_async_test
+					};
+
+					if (this.completed) {
+						return true;
+					}
+
+					this.completed = true;
+
+					$(_this.progressBar).show();
+
+					$.post(
+						ajaxurl,
+						data,
+						function (response) {
+							if (response.success) {
+								_this.appendIssue(response.data, true)
+							}
+							_this.maybeRunNextAsyncTest();
+						}
+					);
+
+					return false;
+				});
+			}
+
+			_this.recalculateProgression();
+		},
+		recalculateProgression: function () {
+			var _this = this;
+			var total = dgwt_wcas.troubleshooting.tests.async.length;
+			var completed = 0;
+
+			$.each(dgwt_wcas.troubleshooting.tests.async, function () {
+				if (this.completed) {
+					completed++;
+				}
+			});
+			var progress = Math.ceil((completed / total) * 100);
+			$(_this.progressBarInner).css('width', progress + '%');
+			if (progress === 100) {
+				setTimeout(function () {
+					$(_this.progressBar).slideUp();
+				}, 2000);
+			}
+		},
+	}
 
     function automateSettingsColspan() {
         var $el = $('.js-dgwt-wcas-sgs-autocolspan');
@@ -1398,6 +1541,7 @@
         SELECTIZE.init();
         TOOLTIP.init();
         ADVANCED_SETTINGS.init();
+		TROUBLESHOOTING.init();
         window.DGWT_WCAS_SEARCH_PREVIEW.init();
 
     });
