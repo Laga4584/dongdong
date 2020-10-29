@@ -36,6 +36,7 @@ jupiterx_add_smart_action( 'wp_enqueue_scripts', 'jupiterx_enqueue_jupiterx_comp
  * @since 1.0.0
  *
  * @return void
+ * @SuppressWarnings(PHPMD.UnusedFormalParameter)
  */
 function jupiterx_enqueue_jupiterx_components() {
 

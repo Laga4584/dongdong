@@ -30,7 +30,7 @@ if ( ! apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
 		$is_visible        = $product && $product->is_visible();
 		$product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visible ? $product->get_permalink( $item ) : '', $item, $order );
 
-		if ( true === get_theme_mod( 'jupiterx_checkout_cart_thumbnail', true ) ) {
+		if ( true === get_theme_mod( 'jupiterx_checkout_cart_thumbnail', true ) && ! empty( $product ) ) {
 			echo $product->get_image();
 		}
 

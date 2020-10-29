@@ -19,302 +19,318 @@ msgstr ""
 msgid "Full Width"
 msgstr ""
 
-#: lib/admin/assets.php:41
+#: lib/admin/assets.php:43
 msgid "Add New Custom Sidebar"
 msgstr ""
 
-#: lib/admin/assets.php:42
+#: lib/admin/assets.php:44
 msgid "Add Custom Sidebar"
 msgstr ""
 
-#: lib/admin/assets.php:43
+#: lib/admin/assets.php:45
 msgid "Delete Custom Sidebar"
 msgstr ""
 
-#: lib/admin/assets.php:44
+#: lib/admin/assets.php:46
 msgid "Deleting"
 msgstr ""
 
-#: lib/admin/assets.php:45
+#: lib/admin/assets.php:47
 msgid "Learn more about Pro features"
 msgstr ""
 
-#: lib/admin/assets.php:46
+#: lib/admin/assets.php:48
 msgid "Jupiter X is upgraded"
 msgstr ""
 
-#: lib/admin/assets.php:47
+#: lib/admin/assets.php:49
 msgid "Congrats! you have successfully upgraded to Jupiter X Pro. Now you can enjoy working with Jupiter X at its maximum potential."
 msgstr ""
 
-#: lib/admin/assets.php:48
+#: lib/admin/assets.php:50
 msgid "Jupiter X is activated"
 msgstr ""
 
-#: lib/admin/assets.php:49
+#: lib/admin/assets.php:51
 msgid "Congrats! Jupiter X is activated successfully. Now you can enjoy working with Jupiter at its maximum potential."
 msgstr ""
 
-#: lib/admin/assets.php:50, lib/admin/control-panel/includes/js-messages.php:83
+#: lib/admin/assets.php:52, lib/admin/control-panel/includes/js-messages.php:83
 msgid "Oops! Registration was unsuccessful."
 msgstr ""
 
-#: lib/admin/assets.php:51
+#: lib/admin/assets.php:53
 msgid "Your API key could not be verified. There is no such API key or it is used in another site"
 msgstr ""
 
-#: lib/admin/assets.php:52
+#: lib/admin/assets.php:54
 msgid "Plugin removed"
 msgstr ""
 
-#: lib/admin/assets.php:53
+#: lib/admin/assets.php:55
 msgid "You have successfully removed Jupiter X Pro plugin."
 msgstr ""
 
-#: lib/admin/assets.php:54
+#: lib/admin/assets.php:56
 msgid "Uninstalling Jupiter X Pro Plugin"
 msgstr ""
 
 #. translators: 1: Pro Plugin notice. 2. Plugins page. 3. Installed Plugin. 4. Delete plugin. 5. Pro plugin name. 6. plugin.
-#: lib/admin/assets.php:56
+#: lib/admin/assets.php:58
 msgid "Important Notice!"
 msgstr ""
 
-#: lib/admin/assets.php:57
+#: lib/admin/assets.php:59
 msgid "Since Jupiter X v1.6.0, you will no longer need Jupiter X Pro plugin to be able to use premium features as we have moved those features to theme itself for a better user experience. Click the button down below to deactivate and delete the plugin from your site"
 msgstr ""
 
-#: lib/admin/assets.php:57
+#: lib/admin/assets.php:59
 msgid "If the button does not work, please go to"
 msgstr ""
 
-#: lib/admin/assets.php:57
+#: lib/admin/assets.php:59
 msgid "Plugins &gt; Installed Plugins"
 msgstr ""
 
-#: lib/admin/assets.php:57
+#: lib/admin/assets.php:59
 msgid "deactivate and delete the"
 msgstr ""
 
-#: lib/admin/assets.php:57, lib/pro/pro.php:194, lib/api/api/functions.php:34
+#: lib/admin/assets.php:59, lib/pro/pro.php:165, lib/api/api/functions.php:34
 msgid "Jupiter X Pro"
 msgstr ""
 
-#: lib/admin/assets.php:57
+#: lib/admin/assets.php:59
 msgid "plugin"
 msgstr ""
 
-#: lib/admin/assets.php:58, lib/api/onboarding/functions.php:62, lib/admin/control-panel/includes/js-messages.php:109
+#: lib/admin/assets.php:60, lib/api/onboarding/functions.php:62, lib/admin/control-panel/includes/js-messages.php:109
 msgid "Done"
 msgstr ""
 
-#: lib/admin/assets.php:118
+#: lib/admin/assets.php:95, lib/admin/welcome/view.php:40
+msgid "Install and activate all required plugins"
+msgstr ""
+
+#: lib/admin/assets.php:96
+msgid "Installing required plugins"
+msgstr ""
+
+#: lib/admin/assets.php:97
+msgid "Activating required plugins"
+msgstr ""
+
+#: lib/admin/assets.php:98
+msgid "Redirecting"
+msgstr ""
+
+#: lib/admin/assets.php:139
 msgid "Get a Jupiter X license"
 msgstr ""
 
-#: lib/admin/assets.php:122, lib/admin/functions.php:167
+#: lib/admin/assets.php:143, lib/admin/functions.php:167
 msgid "Help"
 msgstr ""
 
-#: lib/admin/assets.php:126
+#: lib/admin/assets.php:147
 msgid "Buy Jupiter X Pro"
 msgstr ""
 
-#: lib/admin/assets.php:134
+#: lib/admin/assets.php:155
 msgid "Activate PRO version"
 msgstr ""
 
-#: lib/admin/assets.php:136, lib/admin/assets.php:160, lib/admin/setup-wizard/views/api-activation.php:19
+#: lib/admin/assets.php:157, lib/admin/assets.php:181, lib/admin/setup-wizard/views/api-activation.php:19
 msgid "Enter your API key"
 msgstr ""
 
-#: lib/admin/assets.php:139, lib/admin/assets.php:163
+#: lib/admin/assets.php:160, lib/admin/assets.php:184
 msgid "Getting an API key"
 msgstr ""
 
-#: lib/admin/assets.php:142, lib/admin/assets.php:166, lib/admin/control-panel/views/layout/sidebar.php:32, lib/admin/control-panel/views/panes/home.php:101, lib/admin/control-panel/views/panes/home.php:114
+#: lib/admin/assets.php:163, lib/admin/assets.php:187, lib/admin/control-panel/views/layout/sidebar.php:32, lib/admin/control-panel/views/panes/home.php:101, lib/admin/control-panel/views/panes/home.php:114
 msgid "Activate Product"
 msgstr ""
 
-#: lib/admin/assets.php:150
+#: lib/admin/assets.php:171
 msgid "Install Jupiter X Pro plugin"
 msgstr ""
 
-#: lib/admin/assets.php:185, lib/admin/control-panel/includes/js-messages.php:208
+#: lib/admin/assets.php:206, lib/admin/control-panel/includes/js-messages.php:208
 msgid "Email Address"
 msgstr ""
 
-#: lib/admin/assets.php:186
+#: lib/admin/assets.php:207
 msgid "This address will be used to provide you technical support."
 msgstr ""
 
-#: lib/admin/assets.php:188
+#: lib/admin/assets.php:209
 msgid "Envato purchase code"
 msgstr ""
 
-#: lib/admin/assets.php:189
+#: lib/admin/assets.php:210
 msgid "Please check <a href='https://themes.artbees.net/docs/getting-the-purchase-code/' target='_blank'>this</a> to learn how to find your purchase code."
 msgstr ""
 
-#: lib/admin/assets.php:191
+#: lib/admin/assets.php:212
 msgid "Artbees API key"
 msgstr ""
 
-#: lib/admin/assets.php:192
+#: lib/admin/assets.php:213
 msgid "Please check <a href='https://themes.artbees.net/docs/getting-an-api-key/' target='_blank'>this</a> to learn how to find your API key."
 msgstr ""
 
-#: lib/admin/assets.php:194
+#: lib/admin/assets.php:215
 msgid "Or insert API key"
 msgstr ""
 
-#: lib/admin/assets.php:198
+#: lib/admin/assets.php:219
 msgid "I’d like to subscribe to Artbees Themes newsletter to get product updates & news, early access, weekly digests and more."
 msgstr ""
 
-#: lib/admin/assets.php:205
+#: lib/admin/assets.php:226
 msgid "Privacy policy"
 msgstr ""
 
-#: lib/admin/assets.php:205
+#: lib/admin/assets.php:226
 msgid "Terms of use"
 msgstr ""
 
-#: lib/admin/assets.php:240, lib/admin/control-panel/includes/js-messages.php:222
+#: lib/admin/assets.php:261, lib/admin/control-panel/includes/js-messages.php:222
 msgid "All"
 msgstr ""
 
-#: lib/admin/assets.php:241
+#: lib/admin/assets.php:262
 msgid "No template found."
 msgstr ""
 
-#: lib/admin/assets.php:242
+#: lib/admin/assets.php:263
 msgid "Clear some filters and try again."
 msgstr ""
 
-#: lib/admin/assets.php:243
+#: lib/admin/assets.php:264
 msgid "Load More"
 msgstr ""
 
-#: lib/admin/assets.php:244, lib/admin/setup-wizard/setup-wizard.php:329, lib/admin/setup-wizard/setup-wizard.php:331, lib/admin/setup-wizard/setup-wizard.php:335, lib/admin/setup-wizard/setup-wizard.php:337, lib/admin/control-panel/includes/js-messages.php:35
+#: lib/admin/assets.php:265, lib/admin/setup-wizard/setup-wizard.php:329, lib/admin/setup-wizard/setup-wizard.php:331, lib/admin/setup-wizard/setup-wizard.php:335, lib/admin/setup-wizard/setup-wizard.php:337, lib/admin/control-panel/includes/js-messages.php:35
 msgid "Import"
 msgstr ""
 
-#: lib/admin/assets.php:245, lib/admin/setup-wizard/setup-wizard.php:340, lib/admin/control-panel/includes/js-messages.php:34
+#: lib/admin/assets.php:266, lib/admin/setup-wizard/setup-wizard.php:340, lib/admin/control-panel/includes/js-messages.php:34
 msgid "Preview"
 msgstr ""
 
-#: lib/admin/assets.php:246, lib/admin/setup-wizard/setup-wizard.php:192
+#: lib/admin/assets.php:267, lib/admin/setup-wizard/setup-wizard.php:192
 msgid "Confirm"
 msgstr ""
 
-#: lib/admin/assets.php:247, lib/admin/setup-wizard/setup-wizard.php:193, lib/admin/control-panel/includes/js-messages.php:87
+#: lib/admin/assets.php:268, lib/admin/setup-wizard/setup-wizard.php:193, lib/admin/control-panel/includes/js-messages.php:87
 msgid "Cancel"
 msgstr ""
 
-#: lib/admin/assets.php:248, lib/admin/notices/feedback-notification-bar.php:100, lib/admin/notices/feedback-notification-bar.php:109, lib/admin/setup-wizard/setup-wizard.php:235, lib/api/onboarding/functions.php:63, lib/admin/control-panel/includes/js-messages.php:81, lib/admin/control-panel/views/panes/home.php:24
+#: lib/admin/assets.php:269, lib/admin/notices/feedback-notification-bar.php:100, lib/admin/notices/feedback-notification-bar.php:109, lib/admin/setup-wizard/setup-wizard.php:235, lib/api/onboarding/functions.php:63, lib/admin/control-panel/includes/js-messages.php:81, lib/admin/control-panel/views/panes/home.php:24
 msgid "Discard"
 msgstr ""
 
-#: lib/admin/assets.php:249, lib/admin/tgmpa/class-tgm-plugin-activation.php:2740, lib/admin/control-panel/includes/js-messages.php:136
+#: lib/admin/assets.php:270, lib/admin/tgmpa/class-tgm-plugin-activation.php:2754, lib/admin/control-panel/includes/js-messages.php:136
 msgid "Install"
 msgstr ""
 
-#: lib/admin/assets.php:250, lib/admin/control-panel/includes/js-messages.php:25, lib/admin/custom-fields/post-types/options/footer.php:108, lib/admin/custom-fields/post-types/options/footer.php:138, lib/admin/custom-fields/post-types/options/header.php:52, lib/admin/custom-fields/post-types/options/main.php:170, lib/admin/custom-fields/post-types/options/main.php:188, lib/admin/custom-fields/post-types/options/main.php:207, lib/admin/custom-fields/post-types/options/main.php:225, lib/admin/custom-fields/post-types/options/main.php:243, lib/admin/custom-fields/post-types/options/main.php:262, lib/admin/custom-fields/post-types/options/main.php:280, lib/admin/custom-fields/post-types/options/main.php:374, lib/admin/custom-fields/post-types/options/main.php:389, lib/admin/custom-fields/post-types/options/title-bar.php:31, lib/admin/custom-fields/post-types/options/title-bar.php:47
+#: lib/admin/assets.php:271, lib/admin/control-panel/includes/js-messages.php:25, lib/admin/custom-fields/post-types/options/footer.php:108, lib/admin/custom-fields/post-types/options/footer.php:138, lib/admin/custom-fields/post-types/options/header.php:52, lib/admin/custom-fields/post-types/options/main.php:170, lib/admin/custom-fields/post-types/options/main.php:188, lib/admin/custom-fields/post-types/options/main.php:207, lib/admin/custom-fields/post-types/options/main.php:225, lib/admin/custom-fields/post-types/options/main.php:243, lib/admin/custom-fields/post-types/options/main.php:262, lib/admin/custom-fields/post-types/options/main.php:280, lib/admin/custom-fields/post-types/options/main.php:374, lib/admin/custom-fields/post-types/options/main.php:389, lib/admin/custom-fields/post-types/options/title-bar.php:31, lib/admin/custom-fields/post-types/options/title-bar.php:47
 msgid "Yes"
 msgstr ""
 
-#: lib/admin/assets.php:251, lib/admin/control-panel/includes/js-messages.php:63
+#: lib/admin/assets.php:272, lib/admin/control-panel/includes/js-messages.php:63
 msgid "Are you sure to continue?"
 msgstr ""
 
-#: lib/admin/assets.php:252, lib/admin/setup-wizard/setup-wizard.php:194, lib/admin/control-panel/includes/js-messages.php:180
+#: lib/admin/assets.php:273, lib/admin/setup-wizard/setup-wizard.php:194, lib/admin/control-panel/includes/js-messages.php:180
 msgid "Important Notice"
 msgstr ""
 
-#: lib/admin/assets.php:253, lib/admin/setup-wizard/setup-wizard.php:195
+#: lib/admin/assets.php:274, lib/admin/setup-wizard/setup-wizard.php:195
 msgid "You are about to install <strong>{template}</strong> template. Installing a new template will remove all current data on your website. Are you sure you want to proceed?"
 msgstr ""
 
-#: lib/admin/assets.php:254, lib/admin/setup-wizard/setup-wizard.php:196, lib/admin/control-panel/includes/js-messages.php:41
+#: lib/admin/assets.php:275, lib/admin/setup-wizard/setup-wizard.php:196, lib/admin/control-panel/includes/js-messages.php:41
 msgid "Include Images and Videos?"
 msgstr ""
 
 #. translators: Learn more URL
 #. translators: Learn more URL
-#: lib/admin/assets.php:257, lib/admin/setup-wizard/setup-wizard.php:199
+#: lib/admin/assets.php:278, lib/admin/setup-wizard/setup-wizard.php:199
 msgid "Would you like to import images and videos as preview? <br> Notice that all images are <strong>strictly copyrighted</strong> and you need to acquire the license in case you want to use them on your project. <a href=\"%s\" target=\"_blank\">Learn More</a>"
 msgstr ""
 
-#: lib/admin/assets.php:260, lib/admin/setup-wizard/setup-wizard.php:202
+#: lib/admin/assets.php:281, lib/admin/setup-wizard/setup-wizard.php:202
 msgid "Do not include"
 msgstr ""
 
-#: lib/admin/assets.php:261, lib/admin/setup-wizard/setup-wizard.php:203, lib/admin/control-panel/includes/js-messages.php:48
+#: lib/admin/assets.php:282, lib/admin/setup-wizard/setup-wizard.php:203, lib/admin/control-panel/includes/js-messages.php:48
 msgid "Include"
 msgstr ""
 
-#: lib/admin/assets.php:262, lib/admin/assets.php:266, lib/admin/control-panel/includes/js-messages.php:39
+#: lib/admin/assets.php:283, lib/admin/assets.php:287, lib/admin/control-panel/includes/js-messages.php:39
 msgid "Installing in progress..."
 msgstr ""
 
-#: lib/admin/assets.php:263
+#: lib/admin/assets.php:284
 msgid "Backup database"
 msgstr ""
 
-#: lib/admin/assets.php:264, lib/admin/control-panel/includes/js-messages.php:36
+#: lib/admin/assets.php:285, lib/admin/control-panel/includes/js-messages.php:36
 msgid "Downloading package"
 msgstr ""
 
-#: lib/admin/assets.php:265
+#: lib/admin/assets.php:286
 msgid "Installing required plugins..."
 msgstr ""
 
-#: lib/admin/assets.php:267, lib/admin/setup-wizard/setup-wizard.php:75, lib/admin/setup-wizard/setup-wizard.php:84, lib/admin/control-panel/includes/js-messages.php:31, lib/admin/control-panel/includes/js-messages.php:65
+#: lib/admin/assets.php:288, lib/admin/setup-wizard/setup-wizard.php:75, lib/admin/setup-wizard/setup-wizard.php:84, lib/admin/control-panel/includes/js-messages.php:31, lib/admin/control-panel/includes/js-messages.php:65
 msgid "All Done!"
 msgstr ""
 
-#: lib/admin/assets.php:268, lib/admin/control-panel/includes/js-messages.php:32
+#: lib/admin/assets.php:289, lib/admin/control-panel/includes/js-messages.php:32
 msgid "Template is successfully installed."
 msgstr ""
 
-#: lib/admin/assets.php:269, lib/admin/control-panel/includes/class-downgrade-theme.php:135, lib/admin/control-panel/includes/js-messages.php:144
+#: lib/admin/assets.php:290, lib/admin/control-panel/includes/class-downgrade-theme.php:139, lib/admin/control-panel/includes/js-messages.php:144
 msgid "Something went wrong!"
 msgstr ""
 
-#: lib/admin/assets.php:270
+#: lib/admin/assets.php:291
 msgid "There is an error while installing the template, please contact support."
 msgstr ""
 
-#: lib/admin/assets.php:271, lib/admin/control-panel/includes/js-messages.php:56
+#: lib/admin/assets.php:292, lib/admin/control-panel/includes/js-messages.php:56
 msgid "Choose how you want to import this template:"
 msgstr ""
 
-#: lib/admin/assets.php:272, lib/admin/control-panel/includes/js-messages.php:62
+#: lib/admin/assets.php:293, lib/admin/control-panel/includes/js-messages.php:62
 msgid "Include media (Copyrighted)."
 msgstr ""
 
-#: lib/admin/assets.php:273, lib/admin/control-panel/includes/js-messages.php:59
+#: lib/admin/assets.php:294, lib/admin/control-panel/includes/js-messages.php:59
 msgid "Full import "
 msgstr ""
 
-#: lib/admin/assets.php:274, lib/admin/control-panel/includes/js-messages.php:60
+#: lib/admin/assets.php:295, lib/admin/control-panel/includes/js-messages.php:60
 msgid "Your current content, settings, widgets, etc. will be removed and the database will be reset. New page contents and settings will be replaced."
 msgstr ""
 
-#: lib/admin/assets.php:275, lib/admin/control-panel/includes/js-messages.php:61
+#: lib/admin/assets.php:296, lib/admin/control-panel/includes/js-messages.php:61
 msgid "All your current content, settings, widgets, etc. will be removed and the new content will be replaced."
 msgstr ""
 
-#: lib/admin/assets.php:276, lib/admin/control-panel/includes/js-messages.php:57
+#: lib/admin/assets.php:297, lib/admin/control-panel/includes/js-messages.php:57
 msgid "Content import"
 msgstr ""
 
-#: lib/admin/assets.php:277, lib/admin/control-panel/includes/js-messages.php:58
+#: lib/admin/assets.php:298, lib/admin/control-panel/includes/js-messages.php:58
 msgid "Keep your current content, settings, widgets, etc. Only the new page contents will be imported."
 msgstr ""
 
-#: lib/admin/assets.php:278
+#: lib/admin/assets.php:299
 msgid "Plugins Used"
 msgstr ""
 
@@ -358,25 +374,16 @@ msgstr ""
 msgid "Revoking failed on the api server."
 msgstr ""
 
-#. translators: Link to Control Panel page
-#: lib/pro/pro.php:101
-msgid "Jupiter X - Please go to %s and enter your API key to complete registration and unlock its features."
-msgstr ""
-
-#: lib/pro/pro.php:102, lib/admin/control-panel/views/layout/header.php:9
-msgid "Control Panel"
-msgstr ""
-
 #. translators: Theme name
-#: lib/pro/pro.php:192
+#: lib/pro/pro.php:163
 msgid "%1$s - We have detected a deprecated %2$s plugin which causes conflict in your JupiterX theme. We strongly recommend you to remove the plugin now."
 msgstr ""
 
-#: lib/pro/pro.php:193, lib/admin/core-install/core-install.php:81, lib/admin/notices/feedback-notification-bar.php:84, lib/admin/notices/survey-notification-bar.php:129, lib/admin/setup-wizard/setup-wizard.php:232, lib/api/elementor/class-finder.php:27
+#: lib/pro/pro.php:164, lib/admin/core-install/core-install.php:81, lib/admin/notices/feedback-notification-bar.php:84, lib/admin/notices/survey-notification-bar.php:129, lib/admin/setup-wizard/setup-wizard.php:232, lib/api/elementor/class-finder.php:27
 msgid "Jupiter X"
 msgstr ""
 
-#: lib/pro/pro.php:198
+#: lib/pro/pro.php:169
 msgid "Deactivate JupiterX Pro Plugin Now"
 msgstr ""
 
@@ -425,27 +432,27 @@ msgstr ""
 msgid "Footer %d"
 msgstr ""
 
-#: lib/admin/control-panel/control-panel.php:257, lib/templates/fragments/breadcrumb.php:48, lib/pro/includes/control-panel/class-white-label.php:77
+#: lib/admin/control-panel/control-panel.php:268, lib/templates/fragments/breadcrumb.php:48, lib/pro/includes/control-panel/class-white-label.php:77
 msgid "Home"
 msgstr ""
 
-#: lib/admin/control-panel/control-panel.php:263, lib/admin/setup-wizard/setup-wizard.php:73, lib/admin/setup-wizard/setup-wizard.php:82, lib/api/elementor/class-finder.php:49, lib/admin/control-panel/includes/js-messages.php:149, lib/pro/includes/control-panel/class-white-label.php:78
+#: lib/admin/control-panel/control-panel.php:274, lib/admin/setup-wizard/setup-wizard.php:73, lib/admin/setup-wizard/setup-wizard.php:82, lib/api/elementor/class-finder.php:49, lib/admin/control-panel/includes/js-messages.php:149, lib/pro/includes/control-panel/class-white-label.php:78
 msgid "Plugins"
 msgstr ""
 
-#: lib/admin/control-panel/control-panel.php:269, lib/api/elementor/class-finder.php:55, lib/pro/includes/control-panel/class-white-label.php:79
+#: lib/admin/control-panel/control-panel.php:280, lib/api/elementor/class-finder.php:55, lib/pro/includes/control-panel/class-white-label.php:79
 msgid "Templates"
 msgstr ""
 
-#: lib/admin/control-panel/control-panel.php:275
+#: lib/admin/control-panel/control-panel.php:286
 msgid "Free vs Pro"
 msgstr ""
 
-#: lib/admin/control-panel/control-panel.php:282, lib/api/elementor/class-finder.php:67, lib/pro/includes/control-panel/class-white-label.php:82, lib/admin/control-panel/views/panes/support.php:6, lib/admin/control-panel/views/panes/update-theme.php:20
+#: lib/admin/control-panel/control-panel.php:293, lib/api/elementor/class-finder.php:67, lib/pro/includes/control-panel/class-white-label.php:82, lib/admin/control-panel/views/panes/support.php:6, lib/admin/control-panel/views/panes/update-theme.php:20
 msgid "Updates"
 msgstr ""
 
-#: lib/admin/control-panel/control-panel.php:288, lib/api/elementor/class-finder.php:79, lib/admin/setup-wizard/views/completed.php:26, lib/admin/control-panel/views/panes/free-vs-pro.php:149, lib/admin/control-panel/views/panes/home.php:163
+#: lib/admin/control-panel/control-panel.php:299, lib/api/elementor/class-finder.php:79, lib/admin/setup-wizard/views/completed.php:26, lib/admin/control-panel/views/panes/free-vs-pro.php:149, lib/admin/control-panel/views/panes/home.php:163
 msgid "Support"
 msgstr ""
 
@@ -570,7 +577,7 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: lib/admin/setup-wizard/setup-wizard.php:81, lib/admin/tgmpa/class-tgm-plugin-activation.php:2749, lib/admin/control-panel/includes/js-messages.php:137, lib/admin/setup-wizard/views/api-activation.php:20
+#: lib/admin/setup-wizard/setup-wizard.php:81, lib/admin/tgmpa/class-tgm-plugin-activation.php:2763, lib/admin/control-panel/includes/js-messages.php:137, lib/admin/setup-wizard/views/api-activation.php:20
 msgid "Activate"
 msgstr ""
 
@@ -674,15 +681,15 @@ msgstr[1] ""
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:388, lib/admin/tgmpa/class-tgm-plugin-activation.php:834, lib/admin/tgmpa/class-tgm-plugin-activation.php:2554, lib/admin/tgmpa/class-tgm-plugin-activation.php:3608
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:388, lib/admin/tgmpa/class-tgm-plugin-activation.php:834, lib/admin/tgmpa/class-tgm-plugin-activation.php:2568, lib/admin/tgmpa/class-tgm-plugin-activation.php:3622
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:389, lib/admin/tgmpa/class-tgm-plugin-activation.php:3187
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:389, lib/admin/tgmpa/class-tgm-plugin-activation.php:3201
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:390, lib/admin/tgmpa/class-tgm-plugin-activation.php:2980
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:390, lib/admin/tgmpa/class-tgm-plugin-activation.php:2994
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
@@ -735,68 +742,68 @@ msgstr ""
 msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:1134, lib/admin/tgmpa/class-tgm-plugin-activation.php:2976
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:1134, lib/admin/tgmpa/class-tgm-plugin-activation.php:2990
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
 #. translators: %s: version number
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:1997
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2011
 msgid "TGMPA v%s"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2294, lib/admin/control-panel/includes/js-messages.php:130
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2308, lib/admin/control-panel/includes/js-messages.php:130
 msgid "Required"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2297, lib/admin/control-panel/includes/js-messages.php:227
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2311, lib/admin/control-panel/includes/js-messages.php:227
 msgid "Recommended"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2313
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2327
 msgid "WordPress Repository"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2316
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2330
 msgid "External Source"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2319
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2333
 msgid "Pre-Packaged"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2336
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2350
 msgid "Not Installed"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2340
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2354
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2342, lib/admin/control-panel/includes/js-messages.php:223, lib/pro/includes/customizer/checkout-cart/steps.php:416, lib/pro/includes/customizer/product-list/product-list.php:388, lib/pro/includes/customizer/product-list/product-list.php:1103, lib/pro/includes/customizer/product-page/product-page.php:460, lib/pro/includes/customizer/product-page/product-page.php:1525
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2356, lib/admin/control-panel/includes/js-messages.php:223, lib/pro/includes/customizer/checkout-cart/steps.php:416, lib/pro/includes/customizer/product-list/product-list.php:388, lib/pro/includes/customizer/product-list/product-list.php:1103, lib/pro/includes/customizer/product-page/product-page.php:460, lib/pro/includes/customizer/product-page/product-page.php:1525
 msgid "Active"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2348
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2362
 msgid "Required Update not Available"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2351
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2365
 msgid "Requires Update"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2354
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2368
 msgid "Update recommended"
 msgstr ""
 
 #. translators: 1: install status, 2: update status
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2363
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2377
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
 #. translators: 1: number of plugins.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2409
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2423
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
@@ -804,170 +811,170 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2413
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2427
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2417
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2431
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2421
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2435
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2503
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2517
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2511
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2525
 msgid "Installed version:"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2519
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2533
 msgid "Minimum required version:"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2531
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2545
 msgid "Available version:"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2554
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2568
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2568
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2582
 msgid "Plugin"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2569
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2583
 msgid "Source"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2570, lib/admin/custom-fields/post-types/options/footer.php:37, lib/admin/custom-fields/post-types/options/header.php:62
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2584, lib/admin/custom-fields/post-types/options/footer.php:37, lib/admin/custom-fields/post-types/options/header.php:62
 msgid "Type"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2574
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2588
 msgid "Version"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2575
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2589
 msgid "Status"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2622, lib/admin/tgmpa/functions.php:151
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2636, lib/admin/tgmpa/functions.php:151
 msgid "Go Pro"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2626
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2640
 msgid "Install %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2631
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2645
 msgid "Update %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2637
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2651
 msgid "Activate %2$s"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2707
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2721
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2746, lib/admin/control-panel/includes/js-messages.php:148
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2760, lib/admin/control-panel/includes/js-messages.php:148
 msgid "Update"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2780
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2794
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2782
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2796
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2828
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2842
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2830
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2844
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2936
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2950
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2962
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:2976
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3186
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3200
 msgid "Plugin activation failed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3526
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3540
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: plugin name, 2: error message.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3529
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3543
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3531
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3545
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3535
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3549
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3537
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3551
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3538
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3552
 msgid "All installations and activations have been completed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3540
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3554
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3543
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3557
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3545
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3559
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3546
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3560
 msgid "All installations have been completed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3548
+#: lib/admin/tgmpa/class-tgm-plugin-activation.php:3562
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
@@ -1010,6 +1017,23 @@ msgstr ""
 #. translators: 1: Link start tag, 2: Link end Tag.
 #: lib/admin/update-theme/class-update-theme.php:316, lib/admin/control-panel/includes/class-downgrade-theme.php:73
 msgid "You need to authorize this site in order to get upgrades or support for this theme. %1$sRegsiter Your Theme%2$s."
+msgstr ""
+
+#. translators: %s: Jupiter X version
+#: lib/admin/welcome/view.php:17
+msgid "Welcome to Jupiter X v%s"
+msgstr ""
+
+#: lib/admin/welcome/view.php:21
+msgid "Thanks for installing Jupiter X WordPress theme! Jupiter X is a fast, light and powerful WordPress theme for building all kinds of websites. Everything in your website, from header and footer to your custom post types and woo-commerce store, is now customizable thanks to Jupiter X."
+msgstr ""
+
+#: lib/admin/welcome/view.php:26
+msgid "To complete the installation and unlock all Jupiter X features, install and activate these plugins:"
+msgstr ""
+
+#: lib/admin/welcome/view.php:46
+msgid "Watch this quick walk-through video to get started:"
 msgstr ""
 
 #: lib/api/api/ajax.php:84, lib/api/api/ajax.php:127, lib/admin/setup-wizard/includes/ajax.php:99
@@ -1256,7 +1280,7 @@ msgstr ""
 msgid "Activate Jupiter 6"
 msgstr ""
 
-#: lib/api/utilities/functions.php:1016
+#: lib/api/utilities/functions.php:1021
 msgid " Archive"
 msgstr ""
 
@@ -1571,11 +1595,11 @@ msgstr ""
 msgid "Your API key has been successfully revoked."
 msgstr ""
 
-#: lib/admin/control-panel/includes/class-downgrade-theme.php:246
+#: lib/admin/control-panel/includes/class-downgrade-theme.php:250
 msgid "API Key is missing."
 msgstr ""
 
-#: lib/admin/control-panel/includes/class-downgrade-theme.php:271
+#: lib/admin/control-panel/includes/class-downgrade-theme.php:275
 msgid "The response is not a valid JSON object."
 msgstr ""
 
@@ -2541,6 +2565,10 @@ msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
 msgstr[1] ""
+
+#: lib/admin/control-panel/views/layout/header.php:9
+msgid "Control Panel"
+msgstr ""
 
 #: lib/admin/control-panel/views/layout/sidebar.php:32, lib/admin/control-panel/views/layout/sidebar.php:35, lib/admin/control-panel/views/layout/sidebar.php:38
 msgid "Warning icon"

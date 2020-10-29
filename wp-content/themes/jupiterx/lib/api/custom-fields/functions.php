@@ -28,6 +28,12 @@ function jupiterx_get_field( $field, $default = false, $post_id = false, $format
 		return $default;
 	}
 
+	$pre = apply_filters( 'pre_jupiterx_get_field', $default, $post_id );
+
+	if ( is_array( $pre ) && true === $pre['skip'] ) {
+		return $pre['value'];
+	}
+
 	$value = get_field( $field, $post_id, $format_value );
 
 	/**
@@ -301,4 +307,28 @@ function jupiterx_get_template_field_choices( $field ) {
 	}
 
 	return $field;
+}
+
+add_filter( 'pre_jupiterx_get_field', 'jupiterx_filter_search_archive_acf_fields', 10, 2 );
+/**
+ * Filter field values on search & archive pages.
+ *
+ * @since 1.21.0
+ *
+ * @param mixed $default Default value.
+ * @param mixed $post_id Post Id.
+ * @return array
+ */
+function jupiterx_filter_search_archive_acf_fields( $default, $post_id ) {
+	if ( false !== $post_id ) {
+		return [
+			'skip' => false,
+			'value' => $default,
+		];
+	}
+
+	return [
+		'skip' => is_search() || is_archive(),
+		'value' => $default,
+	];
 }

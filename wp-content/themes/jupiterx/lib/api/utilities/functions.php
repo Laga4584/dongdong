@@ -11,6 +11,11 @@
  */
 
 /**
+ * Include plugin utilities.
+ */
+require_once JUPITERX_API_PATH . 'utilities/plugins.php';
+
+/**
  * Calls function given by the first parameter and passes the remaining parameters as arguments.
  *
  * The main purpose of this function is to store the content echoed by a function in a variable.
@@ -1187,4 +1192,32 @@ function jupiterx_is_help_links() {
 	}
 
 	return false;
+}
+
+
+/**
+ * WP color picker alpha localize since WordPress 5.5.
+ *
+ * @since 1.21.0
+ */
+if ( ! function_exists( 'jupiterx_wpcolorpickeralpha_localize' ) ) {
+	/**
+	 * Get archive post type. If there are multiple post types on the archive template then return empty.
+	 *
+	 * @since 1.21.0
+	 *
+	 * @return void
+	 */
+	function jupiterx_wpcolorpickeralpha_localize() {
+		$color_picker_strings = array(
+			'clear'            => __( 'Clear', 'jupiterx-core' ),
+			'clearAriaLabel'   => __( 'Clear color', 'jupiterx-core' ),
+			'defaultString'    => __( 'Default', 'jupiterx-core' ),
+			'defaultAriaLabel' => __( 'Select default color', 'jupiterx-core' ),
+			'pick'             => __( 'Select Color', 'jupiterx-core' ),
+			'defaultLabel'     => __( 'Color value', 'jupiterx-core' ),
+		);
+
+		wp_localize_script( 'wp-color-picker-alpha', 'wpColorPickerL10n', $color_picker_strings );
+	}
 }

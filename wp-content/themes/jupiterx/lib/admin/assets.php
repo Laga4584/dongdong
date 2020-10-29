@@ -22,6 +22,8 @@ function jupiterx_enqueue_admin_scripts() {
 		wp_enqueue_script( 'jupiterx-modal', JUPITERX_ASSETS_URL . 'dist/js/jupiterx-modal' . JUPITERX_MIN_JS . '.js', [], JUPITERX_VERSION, true );
 		wp_enqueue_script( 'jupiterx-gsap', JUPITERX_CONTROL_PANEL_ASSETS_URL . 'lib/gsap/gsap' . JUPITERX_MIN_JS . '.js', [], '1.19.1', true );
 		wp_enqueue_style( 'jupiterx-modal', JUPITERX_ASSETS_URL . 'dist/css/jupiterx-modal' . JUPITERX_MIN_CSS . '.css', [], JUPITERX_VERSION );
+
+		jupiterx_wpcolorpickeralpha_localize();
 	}
 
 	wp_enqueue_script( 'jupiterx-common', JUPITERX_ASSETS_URL . 'dist/js/common' . JUPITERX_MIN_JS . '.js', [ 'jquery', 'wp-util', 'updates' ], JUPITERX_VERSION, true );
@@ -78,6 +80,25 @@ span.jupiterx-cp-jupiterx-logo {
 	background-size: 100%;
 }' );
 	}
+	if ( 'jupiterx' === jupiterx_get( 'page' ) ) {
+		wp_enqueue_style( 'jupiterx-welcome', JUPITERX_ASSETS_URL . 'dist/css/welcome' . JUPITERX_MIN_CSS . '.css', [], JUPITERX_VERSION );
+		wp_enqueue_script( 'jupiterx-welcome', JUPITERX_ASSETS_URL . 'dist/js/welcome' . JUPITERX_MIN_CSS . '.js', [ 'jquery', 'wp-util' ], JUPITERX_VERSION, true );
+
+		wp_localize_script(
+			'jupiterx-welcome',
+			'jupiterxWelcome',
+			[
+				'controlPanelUrl' => admin_url( 'admin.php?page=jupiterx' ),
+				'i18n' => [
+					'defaultText'    => __( 'Install and activate all required plugins', 'jupiterx' ),
+					'installText' => __( 'Installing required plugins', 'jupiterx' ),
+					'activateText'   => __( 'Activating required plugins', 'jupiterx' ),
+					'redirecting'   => __( 'Redirecting', 'jupiterx' ),
+				],
+			]
+		);
+	}
+
 	wp_add_inline_script( 'jupiterx-common', 'var jupiterxPremium = true;', 'before' );
 	wp_add_inline_script( 'jupiterx-common', 'var jupiterXControlPanelURL = "' . esc_url( admin_url( 'admin.php?page=jupiterx' ) ) . '";', 'before' );
 

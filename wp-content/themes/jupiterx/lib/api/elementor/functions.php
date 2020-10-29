@@ -34,6 +34,7 @@ add_action( 'wp_enqueue_scripts', 'jupiterx_elementor_modify_template_enqueue', 
  * @since 1.2.0
  *
  * @return void
+ * @SuppressWarnings(PHPMD.NPathComplexity)
  */
 function jupiterx_elementor_modify_template_enqueue() {
 
@@ -51,16 +52,24 @@ function jupiterx_elementor_modify_template_enqueue() {
 		return;
 	}
 
+	$header_location_exists = false;
+	$footer_location_exists = false;
+
+	if ( jupiterx_is_elementor_pro() && function_exists( 'elementor_location_exits' ) ) {
+		$header_location_exists = elementor_location_exits( 'header', true );
+		$footer_location_exists = elementor_location_exits( 'footer', true );
+	}
+
 	$header_type = jupiterx_get_field_mod( 'jupiterx_header_type', 'global' );
 	$footer_type = jupiterx_get_field_mod( 'jupiterx_footer_type', 'global' );
 	$templates   = [];
 
-	if ( '_custom' === $header_type ) {
+	if ( '_custom' === $header_type && ! $header_location_exists ) {
 		$templates[] = jupiterx_get_field_mod( 'jupiterx_header_template', 'global', '' );
 		$templates[] = jupiterx_get_field_mod( 'jupiterx_header_sticky_template', 'global', '' );
 	}
 
-	if ( '_custom' === $footer_type ) {
+	if ( '_custom' === $footer_type && ! $footer_location_exists ) {
 		$templates[] = jupiterx_get_field_mod( 'jupiterx_footer_template', 'global', '' );
 	}
 

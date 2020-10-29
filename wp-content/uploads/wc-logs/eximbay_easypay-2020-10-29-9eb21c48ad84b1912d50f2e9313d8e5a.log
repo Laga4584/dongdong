@@ -1,0 +1,120 @@
+10-29-2020 @ 11:45:09 - Process Payment Response : request
+10-29-2020 @ 11:45:09 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172558_201029_024509
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 4617
+    [shop] => SEOUL LIFE
+    [buyer] => 杉山光希
+    [email] => paneepo.xxx@docomo.ne.jp
+    [tel] => 09014487308
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【ミジャンセン】 MISEENSCENE パーフェクトセラム オリジナル 80ml 외 2건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-29-2020 @ 11:45:19 - Process Payment Response : return
+10-29-2020 @ 11:45:19 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4617
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172558_201029_024509
+    [paymethod] => 
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => paneepo.xxx@docomo.ne.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => 決済がキャンセルされました. 
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => XXXX
+    [param2] => 
+    [fgkey] => D9C04AD1F5971F3D066C0CE61096CF136AB750BF44915C3DC8B6EF741F9400B5
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-29-2020 @ 11:45:20 - Process Payment Response : finish
+10-29-2020 @ 11:45:20 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4617
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172558_201029_024509
+    [paymethod] => 
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => paneepo.xxx@docomo.ne.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => 決済がキャンセルされました. 
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => XXXX
+    [param2] => 
+    [fgkey] => D9C04AD1F5971F3D066C0CE61096CF136AB750BF44915C3DC8B6EF741F9400B5
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+

@@ -81,7 +81,7 @@ class JupiterX_Theme_Update {
 		$release_version = trim( str_replace( 'V', '', $release->post_title ) );
 		$release_id      = $release->ID;
 
-		if ( $release_version === $theme_data['theme_version'] ) {
+		if ( version_compare( $release_version, $theme_data['theme_version'], '<=' ) ) {
 			return $transient;
 		}
 

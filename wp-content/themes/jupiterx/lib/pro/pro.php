@@ -63,11 +63,6 @@ if ( ! class_exists( 'JupiterX_Pro' ) ) {
 					'api/functions',
 				] );
 
-				if ( ! jupiterx_is_registered() ) {
-					add_action( 'admin_notices', [ $this, 'api_key_notice' ] );
-					return;
-				}
-
 				$this->init();
 			} );
 		}
@@ -83,29 +78,6 @@ if ( ! class_exists( 'JupiterX_Pro' ) ) {
 
 			// Define urls.
 			define( 'JUPITERX_PRO_URL', JUPITERX_URL . 'pro/' );
-		}
-
-		/**
-		 * Admin API key notice.
-		 *
-		 * @since 1.6.0
-		 */
-		public function api_key_notice() {
-			if ( current_user_can( 'manage_options' ) ) {
-				?>
-				<div class="notice notice-error">
-					<p>
-						<?php
-						printf(
-							/* translators: Link to Control Panel page */
-							esc_html__( 'Jupiter X - Please go to %s and enter your API key to complete registration and unlock its features.', 'jupiterx' ),
-							'<a href="' . esc_url( admin_url( 'admin.php?page=jupiterx' ) ) . '">' . esc_html__( 'Control Panel', 'jupiterx' ) . '</a>'
-						);
-						?>
-					</p>
-				</div>
-				<?php
-			}
 		}
 
 		/**
@@ -173,7 +145,6 @@ if ( function_exists( 'jupiterx_pro' ) ) {
 
 		// Remove generated notices by the pro plugin.
 		remove_action( 'admin_notices', [ $plugin_instance, 'theme_version_notice' ] );
-		remove_action( 'admin_notices', [ $plugin_instance, 'api_key_notice' ] );
 
 		add_action( 'admin_notices', function() {
 			if ( current_user_can( 'update_plugins' ) ) {

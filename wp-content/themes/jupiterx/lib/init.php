@@ -190,6 +190,7 @@ function jupiterx_includes() {
 		require_once JUPITERX_ADMIN_PATH . 'update-theme/class-update-theme.php';
 		require_once JUPITERX_ADMIN_PATH . 'notices/feedback-notification-bar.php';
 		require_once JUPITERX_ADMIN_PATH . 'notices/survey-notification-bar.php';
+		require_once JUPITERX_ADMIN_PATH . 'welcome/welcome.php';
 	}
 
 	// Include assets.
@@ -213,6 +214,12 @@ add_action( 'admin_menu', 'jupiterx_register_theme_page' );
  */
 function jupiterx_register_theme_page() {
 	add_theme_page( JUPITERX_NAME, JUPITERX_NAME, 'edit_theme_options', JUPITERX_SLUG, function() {
+		if ( ! jupiterx_has_required_plugins_activated() && JUPITERX_PREMIUM ) {
+			include_once JUPITERX_ADMIN_PATH . '/welcome/view.php';
+
+			return;
+		}
+
 		include_once JUPITERX_ADMIN_PATH . '/control-panel/views/layout/master.php';
 	} );
 }

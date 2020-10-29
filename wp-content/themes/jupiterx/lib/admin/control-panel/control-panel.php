@@ -12,6 +12,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Load old control panel based on Jupiter X Core version and the constant.
+$jupiterx_core_version = '';
+
+if ( function_exists( 'jupiterx_core' ) ) {
+	$jupiterx_core_version = jupiterx_core()->version();
+}
+
+if ( version_compare( $jupiterx_core_version, '1.18.0', '>=' ) && ! defined( 'JUPITERX_OLD_CONTROL_PANEL' ) ) {
+	return;
+}
+
 /**
  * Init class.
  *

@@ -108,6 +108,10 @@ class JupiterX_Control_Panel_Updates_Downgrades {
 	 * @return array    $checked_data
 	 */
 	public function check_for_update( $checked_data ) {
+		if ( ! is_object( $checked_data ) ) {
+			return $checked_data;
+		}
+
 		$transient_array = get_transient( 'jupiterx_modify_auto_update' );
 		if ( $transient_array ) {
 			// extract method array into variables

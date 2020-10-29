@@ -1759,6 +1759,20 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
+		 * Check if a plugin is active.
+		 *
+		 * Name is changed to pass Theme check.
+		 *
+		 * @since 1.21.0
+		 *
+		 * @param string $slug Plugin slug.
+		 * @return bool True if active, false otherwise.
+		 */
+		public function is_the_plugin_active( $slug ) {
+			return ( ( ! empty( $this->plugins[ $slug ]['is_callable'] ) && is_callable( $this->plugins[ $slug ]['is_callable'] ) ) || is_plugin_active( $this->plugins[ $slug ]['file_path'] ) );
+		}
+
+		/**
 		 * Check if a plugin can be updated, i.e. if we have information on the minimum WP version required
 		 * available, check whether the current install meets them.
 		 *
