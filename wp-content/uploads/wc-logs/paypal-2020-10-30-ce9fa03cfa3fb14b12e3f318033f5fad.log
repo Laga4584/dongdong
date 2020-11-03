@@ -1,0 +1,1126 @@
+2020-10-30T09:55:16+00:00 INFO Generating payment form for order 172783. Notify URL: https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+2020-10-30T09:55:16+00:00 INFO PayPal Request Args for order 172783: Array
+(
+    [cmd] => _cart
+    [business] => hedihedi@ddpac.co.kr
+    [no_note] => 1
+    [currency_code] => JPY
+    [charset] => utf-8
+    [rm] => 2
+    [upload] => 1
+    [return] => https://www.seoulperlife.com/checkout/order-received/172783/?key=wc_order_8576Ip5jLZcol&utm_nooverride=1
+    [cancel_return] => https://www.seoulperlife.com/cart/?cancel_order=true&order=wc_order_8576Ip5jLZcol&order_id=172783&redirect&_wpnonce=d24a0edc26
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => sale
+    [invoice] => SL-172783
+    [custom] => {"order_id":172783,"order_key":"wc_order_8576Ip5jLZcol"}
+    [notify_url] => https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [address_override] => 0
+    [no_shipping] => 0
+    [item_name_1] => 【ジ オーディナリー】The Ordinary グリコール酸7％+トーニングソリューション 240ml x 1, 【エチュードハウス】ETUDE HOUSE ミラーホリックリキッドアイズ - be101（シャンパンバブル） x 1, 【エチュードハ...
+    [quantity_1] => 1
+    [amount_1] => 5110
+    [item_number_1] => 172783
+    [bn] => WooThemes_Cart
+)
+
+2020-10-30T09:55:52+00:00 INFO Received invalid response from PayPal PDT
+2020-10-30T09:55:52+00:00 INFO Checking IPN response is valid
+2020-10-30T09:55:54+00:00 INFO IPN Response: Array
+(
+    [headers] => Requests_Utility_CaseInsensitiveDictionary Object
+        (
+            [data:protected] => Array
+                (
+                    [content-length] => 34
+                    [cache-control] => max-age=0, no-cache, no-store, must-revalidate
+                    [content-encoding] => gzip
+                    [content-type] => text/html; charset=UTF-8
+                    [paypal-debug-id] => 1e827768c6785
+                    [set-cookie] => Array
+                        (
+                            [0] => cwrClyrK4LoCV1fydGbAxiNL6iG=VpW_03lWCfRuvGNMwiN9vQ_aitKSMRNJGilQjJkGrkDl-V5dRLv-KRhXE2pzqHqvjE904Fvc_2KQHXYdn1bPQ9G8ZZjJ4Cj5qjB6uX2m5w9rtEv7XWC8MfFxtANsOcXRhs6PR1GcvGk4AEz2k56jGJ6bMZoRRT0M2rLyax_VPhk88cP1HVC5Ia6IYerbV0Za5z_qvSJEWy6Z3vreBQ6rhXWjiFTDs4KiC--yYcU1ImZCs4Xm3f5X6bj8jowLLEfIEvLr0BzNj7fJbgL3wALDblh2ovAGWsV-a9upKmfs9tE5YvH6o7jdKAQhMOD4XRUGprB20sdVbw0yxOAqC2X0stLAQRD7TP0IdcBJucVaILSWWB3wo31ni30rRRQyR7MEEi55RotQQzTTohoAvfx5MCi1GL8woGEzUKC_IgvIuK-UAY_mpfmrpM8_QQe; domain=.paypal.com; path=/; Secure; HttpOnly
+                            [1] => cookie_check=yes; expires=Mon, 28-Oct-2030 09:55:54 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+                            [2] => navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+                            [3] => navlns=0.0; expires=Sun, 30-Oct-2022 09:55:54 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+                            [4] => l7_az=dcg13.slc; Path=/; Domain=paypal.com; Expires=Fri, 30 Oct 2020 10:25:54 GMT; HttpOnly; Secure
+                            [5] => ts=vreXpYrS%3D1698659753%26vteXpYrS%3D1604053553%26vr%3D78ef58dd1750a7887265ccc3fd8862a7%26vt%3D78ef58dd1750a7887265ccc3fd8862a6%26vtyp%3Dnew; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 09:55:54 GMT; HttpOnly; Secure
+                            [6] => ts_c=vr%3D78ef58dd1750a7887265ccc3fd8862a7%26vt%3D78ef58dd1750a7887265ccc3fd8862a6; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 09:55:54 GMT; Secure
+                            [7] => x-cdn=fastly:TYO; Domain=paypal.com; Path=/; Secure
+                        )
+
+                    [x-frame-options] => SAMEORIGIN
+                    [dc] => ccg11-origin-www-1.paypal.com
+                    [accept-ranges] => bytes
+                    [via] => 1.1 varnish, 1.1 varnish
+                    [date] => Fri, 30 Oct 2020 09:55:54 GMT
+                    [strict-transport-security] => max-age=63072000; includeSubDomains; preload
+                    [x-served-by] => cache-sin18051-SIN, cache-tyo19938-TYO
+                    [x-cache] => MISS, MISS
+                    [x-cache-hits] => 0, 0
+                    [x-timer] => S1604051753.039569,VS0,VE1366
+                    [vary] => Accept-Encoding
+                )
+
+        )
+
+    [body] => VERIFIED
+    [response] => Array
+        (
+            [code] => 200
+            [message] => OK
+        )
+
+    [cookies] => Array
+        (
+            [0] => WP_Http_Cookie Object
+                (
+                    [name] => cwrClyrK4LoCV1fydGbAxiNL6iG
+                    [value] => VpW_03lWCfRuvGNMwiN9vQ_aitKSMRNJGilQjJkGrkDl-V5dRLv-KRhXE2pzqHqvjE904Fvc_2KQHXYdn1bPQ9G8ZZjJ4Cj5qjB6uX2m5w9rtEv7XWC8MfFxtANsOcXRhs6PR1GcvGk4AEz2k56jGJ6bMZoRRT0M2rLyax_VPhk88cP1HVC5Ia6IYerbV0Za5z_qvSJEWy6Z3vreBQ6rhXWjiFTDs4KiC--yYcU1ImZCs4Xm3f5X6bj8jowLLEfIEvLr0BzNj7fJbgL3wALDblh2ovAGWsV-a9upKmfs9tE5YvH6o7jdKAQhMOD4XRUGprB20sdVbw0yxOAqC2X0stLAQRD7TP0IdcBJucVaILSWWB3wo31ni30rRRQyR7MEEi55RotQQzTTohoAvfx5MCi1GL8woGEzUKC_IgvIuK-UAY_mpfmrpM8_QQe
+                    [expires] => 
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [1] => WP_Http_Cookie Object
+                (
+                    [name] => cookie_check
+                    [value] => yes
+                    [expires] => 1919411754
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [2] => WP_Http_Cookie Object
+                (
+                    [name] => navcmd
+                    [value] => _notify-validate
+                    [expires] => 
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [3] => WP_Http_Cookie Object
+                (
+                    [name] => navlns
+                    [value] => 0.0
+                    [expires] => 1667123754
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [4] => WP_Http_Cookie Object
+                (
+                    [name] => l7_az
+                    [value] => dcg13.slc
+                    [expires] => 1604053554
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [5] => WP_Http_Cookie Object
+                (
+                    [name] => ts
+                    [value] => vreXpYrS=1698659753&vteXpYrS=1604053553&vr=78ef58dd1750a7887265ccc3fd8862a7&vt=78ef58dd1750a7887265ccc3fd8862a6&vtyp=new
+                    [expires] => 1698659754
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [6] => WP_Http_Cookie Object
+                (
+                    [name] => ts_c
+                    [value] => vr=78ef58dd1750a7887265ccc3fd8862a7&vt=78ef58dd1750a7887265ccc3fd8862a6
+                    [expires] => 1698659754
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [7] => WP_Http_Cookie Object
+                (
+                    [name] => x-cdn
+                    [value] => fastly:TYO
+                    [expires] => 
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+        )
+
+    [filename] => 
+    [http_response] => WP_HTTP_Requests_Response Object
+        (
+            [response:protected] => Requests_Response Object
+                (
+                    [body] => VERIFIED
+                    [raw] => HTTP/1.1 200 OK
+Connection: close
+Content-Length: 34
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Content-Encoding: gzip
+Content-Type: text/html; charset=UTF-8
+Paypal-Debug-Id: 1e827768c6785
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=VpW_03lWCfRuvGNMwiN9vQ_aitKSMRNJGilQjJkGrkDl-V5dRLv-KRhXE2pzqHqvjE904Fvc_2KQHXYdn1bPQ9G8ZZjJ4Cj5qjB6uX2m5w9rtEv7XWC8MfFxtANsOcXRhs6PR1GcvGk4AEz2k56jGJ6bMZoRRT0M2rLyax_VPhk88cP1HVC5Ia6IYerbV0Za5z_qvSJEWy6Z3vreBQ6rhXWjiFTDs4KiC--yYcU1ImZCs4Xm3f5X6bj8jowLLEfIEvLr0BzNj7fJbgL3wALDblh2ovAGWsV-a9upKmfs9tE5YvH6o7jdKAQhMOD4XRUGprB20sdVbw0yxOAqC2X0stLAQRD7TP0IdcBJucVaILSWWB3wo31ni30rRRQyR7MEEi55RotQQzTTohoAvfx5MCi1GL8woGEzUKC_IgvIuK-UAY_mpfmrpM8_QQe; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Mon, 28-Oct-2030 09:55:54 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 30-Oct-2022 09:55:54 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: l7_az=dcg13.slc; Path=/; Domain=paypal.com; Expires=Fri, 30 Oct 2020 10:25:54 GMT; HttpOnly; Secure
+Set-Cookie: ts=vreXpYrS%3D1698659753%26vteXpYrS%3D1604053553%26vr%3D78ef58dd1750a7887265ccc3fd8862a7%26vt%3D78ef58dd1750a7887265ccc3fd8862a6%26vtyp%3Dnew; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 09:55:54 GMT; HttpOnly; Secure
+Set-Cookie: ts_c=vr%3D78ef58dd1750a7887265ccc3fd8862a7%26vt%3D78ef58dd1750a7887265ccc3fd8862a6; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 09:55:54 GMT; Secure
+X-Frame-Options: SAMEORIGIN
+DC: ccg11-origin-www-1.paypal.com
+Accept-Ranges: bytes
+Via: 1.1 varnish, 1.1 varnish
+Date: Fri, 30 Oct 2020 09:55:54 GMT
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Served-By: cache-sin18051-SIN, cache-tyo19938-TYO
+X-Cache: MISS, MISS
+X-Cache-Hits: 0, 0
+X-Timer: S1604051753.039569,VS0,VE1366
+Vary: Accept-Encoding
+Set-Cookie: x-cdn=fastly:TYO; Domain=paypal.com; Path=/; Secure
+
+VERIFIED
+                    [headers] => Requests_Response_Headers Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [content-length] => Array
+                                        (
+                                            [0] => 34
+                                        )
+
+                                    [cache-control] => Array
+                                        (
+                                            [0] => max-age=0, no-cache, no-store, must-revalidate
+                                        )
+
+                                    [content-encoding] => Array
+                                        (
+                                            [0] => gzip
+                                        )
+
+                                    [content-type] => Array
+                                        (
+                                            [0] => text/html; charset=UTF-8
+                                        )
+
+                                    [paypal-debug-id] => Array
+                                        (
+                                            [0] => 1e827768c6785
+                                        )
+
+                                    [set-cookie] => Array
+                                        (
+                                            [0] => cwrClyrK4LoCV1fydGbAxiNL6iG=VpW_03lWCfRuvGNMwiN9vQ_aitKSMRNJGilQjJkGrkDl-V5dRLv-KRhXE2pzqHqvjE904Fvc_2KQHXYdn1bPQ9G8ZZjJ4Cj5qjB6uX2m5w9rtEv7XWC8MfFxtANsOcXRhs6PR1GcvGk4AEz2k56jGJ6bMZoRRT0M2rLyax_VPhk88cP1HVC5Ia6IYerbV0Za5z_qvSJEWy6Z3vreBQ6rhXWjiFTDs4KiC--yYcU1ImZCs4Xm3f5X6bj8jowLLEfIEvLr0BzNj7fJbgL3wALDblh2ovAGWsV-a9upKmfs9tE5YvH6o7jdKAQhMOD4XRUGprB20sdVbw0yxOAqC2X0stLAQRD7TP0IdcBJucVaILSWWB3wo31ni30rRRQyR7MEEi55RotQQzTTohoAvfx5MCi1GL8woGEzUKC_IgvIuK-UAY_mpfmrpM8_QQe; domain=.paypal.com; path=/; Secure; HttpOnly
+                                            [1] => cookie_check=yes; expires=Mon, 28-Oct-2030 09:55:54 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+                                            [2] => navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+                                            [3] => navlns=0.0; expires=Sun, 30-Oct-2022 09:55:54 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+                                            [4] => l7_az=dcg13.slc; Path=/; Domain=paypal.com; Expires=Fri, 30 Oct 2020 10:25:54 GMT; HttpOnly; Secure
+                                            [5] => ts=vreXpYrS%3D1698659753%26vteXpYrS%3D1604053553%26vr%3D78ef58dd1750a7887265ccc3fd8862a7%26vt%3D78ef58dd1750a7887265ccc3fd8862a6%26vtyp%3Dnew; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 09:55:54 GMT; HttpOnly; Secure
+                                            [6] => ts_c=vr%3D78ef58dd1750a7887265ccc3fd8862a7%26vt%3D78ef58dd1750a7887265ccc3fd8862a6; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 09:55:54 GMT; Secure
+                                            [7] => x-cdn=fastly:TYO; Domain=paypal.com; Path=/; Secure
+                                        )
+
+                                    [x-frame-options] => Array
+                                        (
+                                            [0] => SAMEORIGIN
+                                        )
+
+                                    [dc] => Array
+                                        (
+                                            [0] => ccg11-origin-www-1.paypal.com
+                                        )
+
+                                    [accept-ranges] => Array
+                                        (
+                                            [0] => bytes
+                                        )
+
+                                    [via] => Array
+                                        (
+                                            [0] => 1.1 varnish, 1.1 varnish
+                                        )
+
+                                    [date] => Array
+                                        (
+                                            [0] => Fri, 30 Oct 2020 09:55:54 GMT
+                                        )
+
+                                    [strict-transport-security] => Array
+                                        (
+                                            [0] => max-age=63072000; includeSubDomains; preload
+                                        )
+
+                                    [x-served-by] => Array
+                                        (
+                                            [0] => cache-sin18051-SIN, cache-tyo19938-TYO
+                                        )
+
+                                    [x-cache] => Array
+                                        (
+                                            [0] => MISS, MISS
+                                        )
+
+                                    [x-cache-hits] => Array
+                                        (
+                                            [0] => 0, 0
+                                        )
+
+                                    [x-timer] => Array
+                                        (
+                                            [0] => S1604051753.039569,VS0,VE1366
+                                        )
+
+                                    [vary] => Array
+                                        (
+                                            [0] => Accept-Encoding
+                                        )
+
+                                )
+
+                        )
+
+                    [status_code] => 200
+                    [protocol_version] => 1.1
+                    [success] => 1
+                    [redirects] => 0
+                    [url] => https://www.paypal.com/cgi-bin/webscr
+                    [history] => Array
+                        (
+                        )
+
+                    [cookies] => Requests_Cookie_Jar Object
+                        (
+                            [cookies:protected] => Array
+                                (
+                                    [cwrClyrK4LoCV1fydGbAxiNL6iG] => Requests_Cookie Object
+                                        (
+                                            [name] => cwrClyrK4LoCV1fydGbAxiNL6iG
+                                            [value] => VpW_03lWCfRuvGNMwiN9vQ_aitKSMRNJGilQjJkGrkDl-V5dRLv-KRhXE2pzqHqvjE904Fvc_2KQHXYdn1bPQ9G8ZZjJ4Cj5qjB6uX2m5w9rtEv7XWC8MfFxtANsOcXRhs6PR1GcvGk4AEz2k56jGJ6bMZoRRT0M2rLyax_VPhk88cP1HVC5Ia6IYerbV0Za5z_qvSJEWy6Z3vreBQ6rhXWjiFTDs4KiC--yYcU1ImZCs4Xm3f5X6bj8jowLLEfIEvLr0BzNj7fJbgL3wALDblh2ovAGWsV-a9upKmfs9tE5YvH6o7jdKAQhMOD4XRUGprB20sdVbw0yxOAqC2X0stLAQRD7TP0IdcBJucVaILSWWB3wo31ni30rRRQyR7MEEi55RotQQzTTohoAvfx5MCi1GL8woGEzUKC_IgvIuK-UAY_mpfmrpM8_QQe
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [domain] => paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                            [httponly] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604051754
+                                                    [last-access] => 1604051754
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604051754
+                                        )
+
+                                    [cookie_check] => Requests_Cookie Object
+                                        (
+                                            [name] => cookie_check
+                                            [value] => yes
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [expires] => 1919411754
+                                                            [domain] => paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                            [httponly] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604051754
+                                                    [last-access] => 1604051754
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604051754
+                                        )
+
+                                    [navcmd] => Requests_Cookie Object
+                                        (
+                                            [name] => navcmd
+                                            [value] => _notify-validate
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [domain] => paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                            [httponly] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604051754
+                                                    [last-access] => 1604051754
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604051754
+                                        )
+
+                                    [navlns] => Requests_Cookie Object
+                                        (
+                                            [name] => navlns
+                                            [value] => 0.0
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [expires] => 1667123754
+                                                            [domain] => paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                            [httponly] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604051754
+                                                    [last-access] => 1604051754
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604051754
+                                        )
+
+                                    [l7_az] => Requests_Cookie Object
+                                        (
+                                            [name] => l7_az
+                                            [value] => dcg13.slc
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [path] => /
+                                                            [domain] => paypal.com
+                                                            [expires] => 1604053554
+                                                            [httponly] => 1
+                                                            [secure] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604051754
+                                                    [last-access] => 1604051754
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604051754
+                                        )
+
+                                    [ts] => Requests_Cookie Object
+                                        (
+                                            [name] => ts
+                                            [value] => vreXpYrS%3D1698659753%26vteXpYrS%3D1604053553%26vr%3D78ef58dd1750a7887265ccc3fd8862a7%26vt%3D78ef58dd1750a7887265ccc3fd8862a6%26vtyp%3Dnew
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [path] => /
+                                                            [domain] => paypal.com
+                                                            [expires] => 1698659754
+                                                            [httponly] => 1
+                                                            [secure] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604051754
+                                                    [last-access] => 1604051754
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604051754
+                                        )
+
+                                    [ts_c] => Requests_Cookie Object
+                                        (
+                                            [name] => ts_c
+                                            [value] => vr%3D78ef58dd1750a7887265ccc3fd8862a7%26vt%3D78ef58dd1750a7887265ccc3fd8862a6
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [path] => /
+                                                            [domain] => paypal.com
+                                                            [expires] => 1698659754
+                                                            [secure] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604051754
+                                                    [last-access] => 1604051754
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604051754
+                                        )
+
+                                    [x-cdn] => Requests_Cookie Object
+                                        (
+                                            [name] => x-cdn
+                                            [value] => fastly:TYO
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [domain] => paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604051754
+                                                    [last-access] => 1604051754
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604051754
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [filename:protected] => 
+            [data] => 
+            [headers] => 
+            [status] => 
+        )
+
+)
+
+2020-10-30T09:55:54+00:00 INFO Received valid response from PayPal IPN
+2020-10-30T09:55:54+00:00 INFO Found order #172783
+2020-10-30T09:55:54+00:00 INFO Payment status: completed
+2020-10-30T11:55:12+00:00 INFO Generating payment form for order 172784. Notify URL: https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+2020-10-30T11:55:12+00:00 INFO PayPal Request Args for order 172784: Array
+(
+    [cmd] => _cart
+    [business] => hedihedi@ddpac.co.kr
+    [no_note] => 1
+    [currency_code] => JPY
+    [charset] => utf-8
+    [rm] => 2
+    [upload] => 1
+    [return] => https://www.seoulperlife.com/checkout/order-received/172784/?key=wc_order_evWr67WOWFY0L&utm_nooverride=1
+    [cancel_return] => https://www.seoulperlife.com/cart/?cancel_order=true&order=wc_order_evWr67WOWFY0L&order_id=172784&redirect&_wpnonce=4fb9cd1469
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => sale
+    [invoice] => SL-172784
+    [custom] => {"order_id":172784,"order_key":"wc_order_evWr67WOWFY0L"}
+    [notify_url] => https://www.seoulperlife.com/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [address_override] => 0
+    [no_shipping] => 0
+    [item_name_1] => 【ジ オーディナリー】The Ordinary ナイアシンアミド10％+亜鉛1％ 30ml x 1, 【ドクタージャルト】 Dr.Jart+ シカペアリカバー55ml - シカペアリカバー1個 x 1, 【メディヒール】MEDIHEAL Teatr...
+    [quantity_1] => 1
+    [amount_1] => 5904
+    [item_number_1] => 172784
+    [bn] => WooThemes_Cart
+)
+
+2020-10-30T11:55:44+00:00 INFO Checking IPN response is valid
+2020-10-30T11:55:46+00:00 INFO IPN Response: Array
+(
+    [headers] => Requests_Utility_CaseInsensitiveDictionary Object
+        (
+            [data:protected] => Array
+                (
+                    [cache-control] => max-age=0, no-cache, no-store, must-revalidate
+                    [content-encoding] => gzip
+                    [content-type] => text/html; charset=UTF-8
+                    [paypal-debug-id] => b9b5ce0ba3506
+                    [x-frame-options] => SAMEORIGIN
+                    [dc] => ccg11-origin-www-1.paypal.com
+                    [x-akamai-transformed] => 9 34 0 pmb=mRUM,1
+                    [date] => Fri, 30 Oct 2020 11:55:46 GMT
+                    [content-length] => 28
+                    [vary] => Accept-Encoding
+                    [set-cookie] => Array
+                        (
+                            [0] => cwrClyrK4LoCV1fydGbAxiNL6iG=sloALUBEwhNbZtt-02SKrdvPhb8Sg2R8TqVYoQw9mM1DXbWESDaeABFH-wIfaHIq_SXTRf-zxZGWso7f5VrjatmdhqEhp-A4YQ0FPTcXpnAF_BYFYvHd7GyBWR8wZZC321Yokgj44qRK0uJVR8evloEgnS-9iXiqESTGWJYQoApdr4jYp5RgkggSlEHSqZ1raW-HGWj-E3KQRQ7CDJovibQIs79znHw1dobOe6mgNBLLqHRPKdY2Spec3IVma12F4txETpP2TaHJgia1fyYbAkIDR2uAuQOfn_yhBeV9Q431Zq4d0CFr4gOnrhn1L053Z2SBQM6oDnVDMG7DVzdLW8FLp-5p6f_aOLBI0pz7fXU9kmvbdxQw0w89pRjdeKnWwITQGAFrmZC3slYMwGerwy1mZiT1live1NJa_IZZQlcP1P1ucfKx5cSXzZG; domain=.paypal.com; path=/; Secure; HttpOnly
+                            [1] => cookie_check=yes; expires=Mon, 28-Oct-2030 11:55:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+                            [2] => navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+                            [3] => navlns=0.0; expires=Sun, 30-Oct-2022 11:55:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+                            [4] => l7_az=dcg14.slc; Path=/; Domain=paypal.com; Expires=Fri, 30 Oct 2020 12:25:46 GMT; HttpOnly; Secure
+                            [5] => ts=vreXpYrS%3D1698666945%26vteXpYrS%3D1604060745%26vr%3D795d18671750a7a065c8eb1ffdb3c36a%26vt%3D795d18671750a7a065c8eb1ffdb3c369%26vtyp%3Dnew; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 11:55:46 GMT; HttpOnly; Secure
+                            [6] => ts_c=vr%3D795d18671750a7a065c8eb1ffdb3c36a%26vt%3D795d18671750a7a065c8eb1ffdb3c369; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 11:55:46 GMT; Secure
+                            [7] => x-cdn=akamai; path=/; domain=.paypal.com; secure
+                            [8] => akavpau_ppsd=1604059546~id=567b84d6c607026b9beb1c3595b5b95a; Domain=www.paypal.com; Path=/; Secure; SameSite=None
+                        )
+
+                    [server-timing] => Array
+                        (
+                            [0] => edge; dur=1000
+                            [1] => origin; dur=1057
+                            [2] => cdn-cache; desc=MISS
+                        )
+
+                    [strict-transport-security] => max-age=63072000
+                )
+
+        )
+
+    [body] => VERIFIED
+    [response] => Array
+        (
+            [code] => 200
+            [message] => OK
+        )
+
+    [cookies] => Array
+        (
+            [0] => WP_Http_Cookie Object
+                (
+                    [name] => cwrClyrK4LoCV1fydGbAxiNL6iG
+                    [value] => sloALUBEwhNbZtt-02SKrdvPhb8Sg2R8TqVYoQw9mM1DXbWESDaeABFH-wIfaHIq_SXTRf-zxZGWso7f5VrjatmdhqEhp-A4YQ0FPTcXpnAF_BYFYvHd7GyBWR8wZZC321Yokgj44qRK0uJVR8evloEgnS-9iXiqESTGWJYQoApdr4jYp5RgkggSlEHSqZ1raW-HGWj-E3KQRQ7CDJovibQIs79znHw1dobOe6mgNBLLqHRPKdY2Spec3IVma12F4txETpP2TaHJgia1fyYbAkIDR2uAuQOfn_yhBeV9Q431Zq4d0CFr4gOnrhn1L053Z2SBQM6oDnVDMG7DVzdLW8FLp-5p6f_aOLBI0pz7fXU9kmvbdxQw0w89pRjdeKnWwITQGAFrmZC3slYMwGerwy1mZiT1live1NJa_IZZQlcP1P1ucfKx5cSXzZG
+                    [expires] => 
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [1] => WP_Http_Cookie Object
+                (
+                    [name] => cookie_check
+                    [value] => yes
+                    [expires] => 1919418946
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [2] => WP_Http_Cookie Object
+                (
+                    [name] => navcmd
+                    [value] => _notify-validate
+                    [expires] => 
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [3] => WP_Http_Cookie Object
+                (
+                    [name] => navlns
+                    [value] => 0.0
+                    [expires] => 1667130946
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [4] => WP_Http_Cookie Object
+                (
+                    [name] => l7_az
+                    [value] => dcg14.slc
+                    [expires] => 1604060746
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [5] => WP_Http_Cookie Object
+                (
+                    [name] => ts
+                    [value] => vreXpYrS=1698666945&vteXpYrS=1604060745&vr=795d18671750a7a065c8eb1ffdb3c36a&vt=795d18671750a7a065c8eb1ffdb3c369&vtyp=new
+                    [expires] => 1698666946
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [6] => WP_Http_Cookie Object
+                (
+                    [name] => ts_c
+                    [value] => vr=795d18671750a7a065c8eb1ffdb3c36a&vt=795d18671750a7a065c8eb1ffdb3c369
+                    [expires] => 1698666946
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [7] => WP_Http_Cookie Object
+                (
+                    [name] => x-cdn
+                    [value] => akamai
+                    [expires] => 
+                    [path] => /
+                    [domain] => paypal.com
+                    [host_only] => 
+                )
+
+            [8] => WP_Http_Cookie Object
+                (
+                    [name] => akavpau_ppsd
+                    [value] => 1604059546~id=567b84d6c607026b9beb1c3595b5b95a
+                    [expires] => 
+                    [path] => /
+                    [domain] => www.paypal.com
+                    [host_only] => 
+                )
+
+        )
+
+    [filename] => 
+    [http_response] => WP_HTTP_Requests_Response Object
+        (
+            [response:protected] => Requests_Response Object
+                (
+                    [body] => VERIFIED
+                    [raw] => HTTP/1.1 200 OK
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Content-Encoding: gzip
+Content-Type: text/html; charset=UTF-8
+Paypal-Debug-Id: b9b5ce0ba3506
+X-Frame-Options: SAMEORIGIN
+DC: ccg11-origin-www-1.paypal.com
+X-Akamai-Transformed: 9 34 0 pmb=mRUM,1
+Date: Fri, 30 Oct 2020 11:55:46 GMT
+Content-Length: 28
+Connection: close
+Vary: Accept-Encoding
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=sloALUBEwhNbZtt-02SKrdvPhb8Sg2R8TqVYoQw9mM1DXbWESDaeABFH-wIfaHIq_SXTRf-zxZGWso7f5VrjatmdhqEhp-A4YQ0FPTcXpnAF_BYFYvHd7GyBWR8wZZC321Yokgj44qRK0uJVR8evloEgnS-9iXiqESTGWJYQoApdr4jYp5RgkggSlEHSqZ1raW-HGWj-E3KQRQ7CDJovibQIs79znHw1dobOe6mgNBLLqHRPKdY2Spec3IVma12F4txETpP2TaHJgia1fyYbAkIDR2uAuQOfn_yhBeV9Q431Zq4d0CFr4gOnrhn1L053Z2SBQM6oDnVDMG7DVzdLW8FLp-5p6f_aOLBI0pz7fXU9kmvbdxQw0w89pRjdeKnWwITQGAFrmZC3slYMwGerwy1mZiT1live1NJa_IZZQlcP1P1ucfKx5cSXzZG; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Mon, 28-Oct-2030 11:55:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 30-Oct-2022 11:55:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: l7_az=dcg14.slc; Path=/; Domain=paypal.com; Expires=Fri, 30 Oct 2020 12:25:46 GMT; HttpOnly; Secure
+Set-Cookie: ts=vreXpYrS%3D1698666945%26vteXpYrS%3D1604060745%26vr%3D795d18671750a7a065c8eb1ffdb3c36a%26vt%3D795d18671750a7a065c8eb1ffdb3c369%26vtyp%3Dnew; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 11:55:46 GMT; HttpOnly; Secure
+Set-Cookie: ts_c=vr%3D795d18671750a7a065c8eb1ffdb3c36a%26vt%3D795d18671750a7a065c8eb1ffdb3c369; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 11:55:46 GMT; Secure
+Set-Cookie: x-cdn=akamai; path=/; domain=.paypal.com; secure
+Server-Timing: edge; dur=1000
+Server-Timing: origin; dur=1057
+Server-Timing: cdn-cache; desc=MISS
+Set-Cookie: akavpau_ppsd=1604059546~id=567b84d6c607026b9beb1c3595b5b95a; Domain=www.paypal.com; Path=/; Secure; SameSite=None
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+                    [headers] => Requests_Response_Headers Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [cache-control] => Array
+                                        (
+                                            [0] => max-age=0, no-cache, no-store, must-revalidate
+                                        )
+
+                                    [content-encoding] => Array
+                                        (
+                                            [0] => gzip
+                                        )
+
+                                    [content-type] => Array
+                                        (
+                                            [0] => text/html; charset=UTF-8
+                                        )
+
+                                    [paypal-debug-id] => Array
+                                        (
+                                            [0] => b9b5ce0ba3506
+                                        )
+
+                                    [x-frame-options] => Array
+                                        (
+                                            [0] => SAMEORIGIN
+                                        )
+
+                                    [dc] => Array
+                                        (
+                                            [0] => ccg11-origin-www-1.paypal.com
+                                        )
+
+                                    [x-akamai-transformed] => Array
+                                        (
+                                            [0] => 9 34 0 pmb=mRUM,1
+                                        )
+
+                                    [date] => Array
+                                        (
+                                            [0] => Fri, 30 Oct 2020 11:55:46 GMT
+                                        )
+
+                                    [content-length] => Array
+                                        (
+                                            [0] => 28
+                                        )
+
+                                    [vary] => Array
+                                        (
+                                            [0] => Accept-Encoding
+                                        )
+
+                                    [set-cookie] => Array
+                                        (
+                                            [0] => cwrClyrK4LoCV1fydGbAxiNL6iG=sloALUBEwhNbZtt-02SKrdvPhb8Sg2R8TqVYoQw9mM1DXbWESDaeABFH-wIfaHIq_SXTRf-zxZGWso7f5VrjatmdhqEhp-A4YQ0FPTcXpnAF_BYFYvHd7GyBWR8wZZC321Yokgj44qRK0uJVR8evloEgnS-9iXiqESTGWJYQoApdr4jYp5RgkggSlEHSqZ1raW-HGWj-E3KQRQ7CDJovibQIs79znHw1dobOe6mgNBLLqHRPKdY2Spec3IVma12F4txETpP2TaHJgia1fyYbAkIDR2uAuQOfn_yhBeV9Q431Zq4d0CFr4gOnrhn1L053Z2SBQM6oDnVDMG7DVzdLW8FLp-5p6f_aOLBI0pz7fXU9kmvbdxQw0w89pRjdeKnWwITQGAFrmZC3slYMwGerwy1mZiT1live1NJa_IZZQlcP1P1ucfKx5cSXzZG; domain=.paypal.com; path=/; Secure; HttpOnly
+                                            [1] => cookie_check=yes; expires=Mon, 28-Oct-2030 11:55:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+                                            [2] => navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+                                            [3] => navlns=0.0; expires=Sun, 30-Oct-2022 11:55:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+                                            [4] => l7_az=dcg14.slc; Path=/; Domain=paypal.com; Expires=Fri, 30 Oct 2020 12:25:46 GMT; HttpOnly; Secure
+                                            [5] => ts=vreXpYrS%3D1698666945%26vteXpYrS%3D1604060745%26vr%3D795d18671750a7a065c8eb1ffdb3c36a%26vt%3D795d18671750a7a065c8eb1ffdb3c369%26vtyp%3Dnew; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 11:55:46 GMT; HttpOnly; Secure
+                                            [6] => ts_c=vr%3D795d18671750a7a065c8eb1ffdb3c36a%26vt%3D795d18671750a7a065c8eb1ffdb3c369; Path=/; Domain=paypal.com; Expires=Mon, 30 Oct 2023 11:55:46 GMT; Secure
+                                            [7] => x-cdn=akamai; path=/; domain=.paypal.com; secure
+                                            [8] => akavpau_ppsd=1604059546~id=567b84d6c607026b9beb1c3595b5b95a; Domain=www.paypal.com; Path=/; Secure; SameSite=None
+                                        )
+
+                                    [server-timing] => Array
+                                        (
+                                            [0] => edge; dur=1000
+                                            [1] => origin; dur=1057
+                                            [2] => cdn-cache; desc=MISS
+                                        )
+
+                                    [strict-transport-security] => Array
+                                        (
+                                            [0] => max-age=63072000
+                                        )
+
+                                )
+
+                        )
+
+                    [status_code] => 200
+                    [protocol_version] => 1.1
+                    [success] => 1
+                    [redirects] => 0
+                    [url] => https://www.paypal.com/cgi-bin/webscr
+                    [history] => Array
+                        (
+                        )
+
+                    [cookies] => Requests_Cookie_Jar Object
+                        (
+                            [cookies:protected] => Array
+                                (
+                                    [cwrClyrK4LoCV1fydGbAxiNL6iG] => Requests_Cookie Object
+                                        (
+                                            [name] => cwrClyrK4LoCV1fydGbAxiNL6iG
+                                            [value] => sloALUBEwhNbZtt-02SKrdvPhb8Sg2R8TqVYoQw9mM1DXbWESDaeABFH-wIfaHIq_SXTRf-zxZGWso7f5VrjatmdhqEhp-A4YQ0FPTcXpnAF_BYFYvHd7GyBWR8wZZC321Yokgj44qRK0uJVR8evloEgnS-9iXiqESTGWJYQoApdr4jYp5RgkggSlEHSqZ1raW-HGWj-E3KQRQ7CDJovibQIs79znHw1dobOe6mgNBLLqHRPKdY2Spec3IVma12F4txETpP2TaHJgia1fyYbAkIDR2uAuQOfn_yhBeV9Q431Zq4d0CFr4gOnrhn1L053Z2SBQM6oDnVDMG7DVzdLW8FLp-5p6f_aOLBI0pz7fXU9kmvbdxQw0w89pRjdeKnWwITQGAFrmZC3slYMwGerwy1mZiT1live1NJa_IZZQlcP1P1ucfKx5cSXzZG
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [domain] => paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                            [httponly] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604058946
+                                                    [last-access] => 1604058946
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604058946
+                                        )
+
+                                    [cookie_check] => Requests_Cookie Object
+                                        (
+                                            [name] => cookie_check
+                                            [value] => yes
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [expires] => 1919418946
+                                                            [domain] => paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                            [httponly] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604058946
+                                                    [last-access] => 1604058946
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604058946
+                                        )
+
+                                    [navcmd] => Requests_Cookie Object
+                                        (
+                                            [name] => navcmd
+                                            [value] => _notify-validate
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [domain] => paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                            [httponly] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604058946
+                                                    [last-access] => 1604058946
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604058946
+                                        )
+
+                                    [navlns] => Requests_Cookie Object
+                                        (
+                                            [name] => navlns
+                                            [value] => 0.0
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [expires] => 1667130946
+                                                            [domain] => paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                            [httponly] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604058946
+                                                    [last-access] => 1604058946
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604058946
+                                        )
+
+                                    [l7_az] => Requests_Cookie Object
+                                        (
+                                            [name] => l7_az
+                                            [value] => dcg14.slc
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [path] => /
+                                                            [domain] => paypal.com
+                                                            [expires] => 1604060746
+                                                            [httponly] => 1
+                                                            [secure] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604058946
+                                                    [last-access] => 1604058946
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604058946
+                                        )
+
+                                    [ts] => Requests_Cookie Object
+                                        (
+                                            [name] => ts
+                                            [value] => vreXpYrS%3D1698666945%26vteXpYrS%3D1604060745%26vr%3D795d18671750a7a065c8eb1ffdb3c36a%26vt%3D795d18671750a7a065c8eb1ffdb3c369%26vtyp%3Dnew
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [path] => /
+                                                            [domain] => paypal.com
+                                                            [expires] => 1698666946
+                                                            [httponly] => 1
+                                                            [secure] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604058946
+                                                    [last-access] => 1604058946
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604058946
+                                        )
+
+                                    [ts_c] => Requests_Cookie Object
+                                        (
+                                            [name] => ts_c
+                                            [value] => vr%3D795d18671750a7a065c8eb1ffdb3c36a%26vt%3D795d18671750a7a065c8eb1ffdb3c369
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [path] => /
+                                                            [domain] => paypal.com
+                                                            [expires] => 1698666946
+                                                            [secure] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604058946
+                                                    [last-access] => 1604058946
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604058946
+                                        )
+
+                                    [x-cdn] => Requests_Cookie Object
+                                        (
+                                            [name] => x-cdn
+                                            [value] => akamai
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [path] => /
+                                                            [domain] => paypal.com
+                                                            [secure] => 1
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604058946
+                                                    [last-access] => 1604058946
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604058946
+                                        )
+
+                                    [akavpau_ppsd] => Requests_Cookie Object
+                                        (
+                                            [name] => akavpau_ppsd
+                                            [value] => 1604059546~id=567b84d6c607026b9beb1c3595b5b95a
+                                            [attributes] => Requests_Utility_CaseInsensitiveDictionary Object
+                                                (
+                                                    [data:protected] => Array
+                                                        (
+                                                            [domain] => www.paypal.com
+                                                            [path] => /
+                                                            [secure] => 1
+                                                            [samesite] => None
+                                                        )
+
+                                                )
+
+                                            [flags] => Array
+                                                (
+                                                    [creation] => 1604058946
+                                                    [last-access] => 1604058946
+                                                    [persistent] => 
+                                                    [host-only] => 
+                                                )
+
+                                            [reference_time] => 1604058946
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [filename:protected] => 
+            [data] => 
+            [headers] => 
+            [status] => 
+        )
+
+)
+
+2020-10-30T11:55:46+00:00 INFO Received valid response from PayPal IPN
+2020-10-30T11:55:46+00:00 INFO Found order #172784
+2020-10-30T11:55:46+00:00 INFO Payment status: completed
+2020-10-30T11:55:47+00:00 INFO Received invalid response from PayPal PDT

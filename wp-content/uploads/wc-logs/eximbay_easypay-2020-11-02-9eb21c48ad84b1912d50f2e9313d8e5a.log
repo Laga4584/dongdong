@@ -1,0 +1,378 @@
+11-02-2020 @ 12:04:45 - Process Payment Response : status
+11-02-2020 @ 12:04:45 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201102120445
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4200.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172794_201101_072830
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => i-zu14@i.softbank.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201101000003
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 7737190F02ABB14458556099877D923F3E0DF344C491CBCAC6E57A62A6F2502E
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-02-2020 @ 18:04:52 - Process Payment Response : status
+11-02-2020 @ 18:04:52 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201102180452
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4500.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172788_201031_092929
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => saya-starfestival@i.softbank.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201031000004
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 4C2E8DDDFCFBA37B9D16FA121E891F4FC2A87D4136EC41A9C96D17CA9155115C
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-02-2020 @ 19:05:08 - Process Payment Response : status
+11-02-2020 @ 19:05:08 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201102190507
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 1590.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172785_201030_061317
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => yuruducky@docomo.ne.jp
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201031000001
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 42F61198B7A6BF7AB0487DF59647A81016B3F354A4620D7B7957112946820A3E
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-02-2020 @ 21:05:12 - Process Payment Response : status
+11-02-2020 @ 21:05:12 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201102210512
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 5230.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172786_201031_043533
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => xxxazulxxx90@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201031000002
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => FC8B4CC1808E7DD947380E9B3698701AF04A763DE8133F7B4C1DBC3C359F7A60
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-02-2020 @ 23:04:42 - Process Payment Response : status
+11-02-2020 @ 23:04:42 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201102230441
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2730.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172792_201031_084433
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => aerialviolet0023@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201101000002
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 61BFB34A0A77824C63CDB2BA5A7B04BE484ACF930F44869E2223EB4CB70DF672
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-03-2020 @ 01:09:01 - Process Payment Response : request
+11-03-2020 @ 01:09:01 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172838_201102_040900
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 4840
+    [shop] => SEOUL LIFE
+    [buyer] => 翁川良子
+    [email] => skc121227@gmail.com
+    [tel] => 08012447687
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【CNP ラボラトリー 】CNP Laboratory プロポリス エネルギー アンプル35ml 외 1건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-03-2020 @ 01:09:11 - Process Payment Response : status
+11-03-2020 @ 01:09:11 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201103010911
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4840
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172838_201102_040900
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => skc121227@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201103000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=808675898575767f7e847588887d788003
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 54229A80CD2FE03CFECDFD216E336E227BAAA83DE6D9E745FCA0E77549B93977
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-03-2020 @ 01:09:16 - Process Payment Response : return
+11-03-2020 @ 01:09:16 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201103010911
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4840
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172838_201102_040900
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => skc121227@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201103000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=808675898575767f7e847588887d788003
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 54229A80CD2FE03CFECDFD216E336E227BAAA83DE6D9E745FCA0E77549B93977
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-03-2020 @ 01:09:17 - Process Payment Response : finish
+11-03-2020 @ 01:09:17 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201103010911
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4840
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172838_201102_040900
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => skc121227@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201103000001
+    [shipTo_firstName] => 
+    [paymentURL] => https://www5.econ.ne.jp/pay/p_paymain.aspx?odrno=808675898575767f7e847588887d788003
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => success!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 54229A80CD2FE03CFECDFD216E336E227BAAA83DE6D9E745FCA0E77549B93977
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Registered
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+

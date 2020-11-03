@@ -118,3 +118,160 @@
     [_wpnonce] => 
 )
 
+10-30-2020 @ 00:56:15 - Process Payment Response : request
+10-30-2020 @ 00:56:15 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172774_201029_035613
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 7330
+    [shop] => SEOUL LIFE
+    [buyer] => 上田菜帆
+    [email] => xxna.27xx@gmail.com
+    [tel] => 09067598545
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【メディヒール】MEDIHEAL N.M.F アクアリング アンプルマスク 27ml 10枚+2枚プレゼント 외 3건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-30-2020 @ 00:57:09 - Process Payment Response : status
+10-30-2020 @ 00:57:09 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 3584
+    [resdt] => 20201030005708
+    [cardno4] => 7002
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 7330
+    [accesscountry] => JP
+    [ref] => 172774_201029_035613
+    [paymethod] => P104
+    [dm_review] => 
+    [email] => xxna.27xx@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201030000001
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => NAHOUETA
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 738182
+    [fgkey] => FCE736256506C3D865113872013BBD91E146DB2A83898CEA51AEF082C5A314CE
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-30-2020 @ 00:57:15 - Process Payment Response : return
+10-30-2020 @ 00:57:15 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 3584
+    [resdt] => 20201030005708
+    [cardno4] => 7002
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 7330
+    [accesscountry] => JP
+    [ref] => 172774_201029_035613
+    [paymethod] => P104
+    [dm_review] => 
+    [email] => xxna.27xx@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201030000001
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => NAHOUETA
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 738182
+    [fgkey] => FCE736256506C3D865113872013BBD91E146DB2A83898CEA51AEF082C5A314CE
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+10-30-2020 @ 00:57:15 - Process Payment Response : finish
+10-30-2020 @ 00:57:15 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 3584
+    [resdt] => 20201030005708
+    [cardno4] => 7002
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 7330
+    [accesscountry] => JP
+    [ref] => 172774_201029_035613
+    [paymethod] => P104
+    [dm_review] => 
+    [email] => xxna.27xx@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201030000001
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => NAHOUETA
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 738182
+    [fgkey] => FCE736256506C3D865113872013BBD91E146DB2A83898CEA51AEF082C5A314CE
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
