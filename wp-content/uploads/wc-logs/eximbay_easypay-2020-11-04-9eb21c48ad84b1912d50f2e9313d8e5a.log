@@ -1,0 +1,320 @@
+11-04-2020 @ 13:04:47 - Process Payment Response : status
+11-04-2020 @ 13:04:47 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201104130447
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 4573.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172798_201101_010443
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => miwako20160216@gmail.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201101000006
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => B5738154263CA166115FB29A4BBA311D10333D9AD5F60034FAAC95B35EA1EE78
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-04-2020 @ 16:19:43 - Process Payment Response : request
+11-04-2020 @ 16:19:43 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172915_201104_071942
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 2790
+    [shop] => SEOUL LIFE
+    [buyer] => 柿谷七華
+    [email] => n.k0707_7@icloud.com
+    [tel] => 09063229255
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【イニスフリー】innisfree グリーンティーシードセラム 80mL 외 1건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-04-2020 @ 16:19:56 - Process Payment Response : return
+11-04-2020 @ 16:19:56 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2790
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172915_201104_071942
+    [paymethod] => 
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => n.k0707_7@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => 決済がキャンセルされました. 
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => XXXX
+    [param2] => 
+    [fgkey] => 7B0CF1AB4ED77E33BE9E98EC468DCC223FEDB82D59625225C5BDCE58E2346642
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-04-2020 @ 16:19:57 - Process Payment Response : finish
+11-04-2020 @ 16:19:57 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2790
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 172915_201104_071942
+    [paymethod] => 
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => n.k0707_7@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => 決済がキャンセルされました. 
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => XXXX
+    [param2] => 
+    [fgkey] => 7B0CF1AB4ED77E33BE9E98EC468DCC223FEDB82D59625225C5BDCE58E2346642
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+
+11-04-2020 @ 16:22:26 - Process Payment Response : request
+11-04-2020 @ 16:22:26 - Array
+(
+    [type] => request
+    [ver] => 230
+    [txntype] => PAYMENT
+    [charset] => UTF-8
+    [statusurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=status
+    [returnurl] => https://www.seoulperlife.com/wc-api/WC_Gateway_Eximbay_Easypay?type=return
+    [rescode] => 
+    [resmsg] => 
+    [mid] => 2C3CBCF133
+    [ref] => 172915_201104_071942
+    [ostype] => M
+    [displaytype] => P
+    [cur] => JPY
+    [amt] => 2790
+    [shop] => SEOUL LIFE
+    [buyer] => 柿谷七華
+    [email] => n.k0707_7@icloud.com
+    [tel] => 09063229255
+    [lang] => JP
+    [paymethod] => 
+    [item_0_product] => 【イニスフリー】innisfree グリーンティーシードセラム 80mL 외 1건
+    [param1] => https://www.seoulperlife.com/checkout/
+    [param2] => 
+    [param3] => 
+    [autoclose] => Y
+    [tokenBilling] => N
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-04-2020 @ 16:23:31 - Process Payment Response : status
+11-04-2020 @ 16:23:31 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 5208
+    [resdt] => 20201104162329
+    [cardno4] => 1045
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2790
+    [accesscountry] => JP
+    [ref] => 172915_201104_071942
+    [paymethod] => P102
+    [dm_review] => 
+    [email] => n.k0707_7@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201104000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => nanakakakitani
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 384497
+    [fgkey] => C64D2DF746CEBAA53A7F1CCB67F297F383E0EA35EE84F00DB8310930D8644C76
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-04-2020 @ 16:23:36 - Process Payment Response : return
+11-04-2020 @ 16:23:36 - Array
+(
+    [type] => return
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 5208
+    [resdt] => 20201104162329
+    [cardno4] => 1045
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2790
+    [accesscountry] => JP
+    [ref] => 172915_201104_071942
+    [paymethod] => P102
+    [dm_review] => 
+    [email] => n.k0707_7@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201104000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => nanakakakitani
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 384497
+    [fgkey] => C64D2DF746CEBAA53A7F1CCB67F297F383E0EA35EE84F00DB8310930D8644C76
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
+11-04-2020 @ 16:23:37 - Process Payment Response : finish
+11-04-2020 @ 16:23:37 - Array
+(
+    [type] => finish
+    [baserate] => 
+    [cur] => JPY
+    [dm_reject] => 
+    [cardno1] => 5208
+    [resdt] => 20201104162329
+    [cardno4] => 1045
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 2790
+    [accesscountry] => JP
+    [ref] => 172915_201104_071942
+    [paymethod] => P102
+    [dm_review] => 
+    [email] => n.k0707_7@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201104000002
+    [dm_decision] => ACCEPT
+    [param3] => 
+    [resmsg] => Success!!
+    [cardholder] => nanakakakitani
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [authcode] => 384497
+    [fgkey] => C64D2DF746CEBAA53A7F1CCB67F297F383E0EA35EE84F00DB8310930D8644C76
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [payto] => KRP*EXIMBAY
+    [baseamt] => 
+    [woocommerce-reset-password-nonce] => 
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+)
+

@@ -88,12 +88,13 @@ if( method_exists( $product, 'get_id' ) ) {
 				<div id="review_form">
 					<?php
 					$commenter    = wp_get_current_commenter();
-					if( $no_comments_yet ) {
-						$cr_submit_button = '</a><input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />';
-					} else {
-						$cr_submit_button = '<a href="' . esc_url( get_permalink( $cr_product_id ) ) . '#tab-reviews" id="cr-ajax-reviews-cancel">' . __( 'Cancel', 'customer-reviews-woocommerce' ) . '</a><input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />';
-					}
 
+					if( $no_comments_yet ) {
+						$cr_submit_button = '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />';
+					} else {
+						$cr_submit_button = '<a href="' . str_replace('%', '%%', esc_url( get_permalink( $cr_product_id ) ))  . '#tab-reviews" id="cr-ajax-reviews-cancel">' . __( 'Cancel', 'customer-reviews-woocommerce' ) . '</a><input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />';
+					}
+					
 					$comment_form = array(
 						/* translators: %s is product title */
 						'title_reply'         => have_comments() ? esc_html__( 'Add a review', 'woocommerce' ) : sprintf( esc_html__( 'Be the first to review &ldquo;%s&rdquo;', 'woocommerce' ), get_the_title() ),
