@@ -1,0 +1,43 @@
+11-09-2020 @ 18:04:56 - Process Payment Response : status
+11-09-2020 @ 18:04:56 - Array
+(
+    [type] => status
+    [baserate] => 
+    [cur] => JPY
+    [shipTo_lastName] => 
+    [resdt] => 20201109180455
+    [foreignrate] => 
+    [mid] => 2C3CBCF133
+    [amt] => 5630.0
+    [shipTo_state] => 
+    [accesscountry] => JP
+    [ref] => 173011_201108_023053
+    [paymethod] => P006
+    [shipTo_city] => 
+    [shipTo_street1] => 
+    [shipTo_postalCode] => 
+    [shipTo_country] => 
+    [email] => azurin.134@icloud.com
+    [ver] => 230
+    [foreignamt] => 
+    [basecur] => 
+    [dccrate] => 
+    [transid] => 2C3CBCF13320201108000001
+    [shipTo_firstName] => 
+    [paymentURL] => 
+    [shipTo_phoneNumber] => 
+    [param3] => 
+    [resmsg] => Success!!
+    [param1] => https://www.seoulperlife.com/checkout/
+    [rescode] => 0000
+    [param2] => 
+    [fgkey] => 01ED79437B1FBDBD12741ADCBBDAE6C5C4BD1A2FC9BAF3B9E4CCDCE6788B758D
+    [txntype] => PAYMENT
+    [foreigncur] => 
+    [baseamt] => 
+    [status] => Sale
+    [woocommerce-login-nonce] => 
+    [_wpnonce] => 
+    [woocommerce-reset-password-nonce] => 
+)
+
